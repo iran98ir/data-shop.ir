@@ -4,2489 +4,1056 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f8fc">
-<meta name="description" content="تجربه‌ای متفاوت از خرید اقساطی موبایل؛ ساده، شفاف و مطمئن.">
-<title>VÉRA | تجربه‌ای تازه از خرید موبایل</title>
+<meta name="description" content="خرید موبایل به شکل اقساطی؛ ۶ یا ۱۲ قسط، بدون سود و نزول.">
+<title>NOVA | دنیای تازه خرید موبایل</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================================
-   VÉRA — PREMIUM MOBILE EXPERIENCE
-   Editorial / Neo-luxury / App-first / Motion UI
-========================================================= */
-
 :root{
   --paper:#f7f8fc;
-  --white:#ffffff;
-  --ink:#171a2b;
-  --muted:#85899b;
-  --blue:#414df5;
-  --blue2:#6975ff;
-  --blue3:#dfe3ff;
-  --orange:#ff704e;
-  --orange2:#ff9478;
-  --line:rgba(30,35,75,.09);
-  --shadow:0 18px 55px rgba(40,48,120,.075);
-  --shadow2:0 8px 26px rgba(40,48,120,.09);
-  --ease:cubic-bezier(.2,.8,.2,1);
+  --white:#fff;
+  --ink:#171a35;
+  --muted:#777b92;
+  --blue:#3448ed;
+  --blue2:#596bff;
+  --coral:#ff604e;
+  --yellow:#ffd45c;
+  --mint:#a9f1d1;
+  --line:rgba(28,35,83,.10);
+  --shadow:0 22px 65px rgba(43,55,140,.12);
+  --deep-shadow:0 28px 75px rgba(38,49,130,.22);
   --radius:28px;
-  --nav-height:78px;
+  --nav-height:76px;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
-  font-family:'Vazirmatn',sans-serif;
+  margin:0;
   background:var(--paper);
   color:var(--ink);
+  font-family:"Vazirmatn",Tahoma,sans-serif;
   overflow-x:hidden;
-  min-height:100vh;
-  padding-bottom:calc(var(--nav-height) + 28px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing:antialiased;
 }
-
-button,a{
-  font-family:inherit;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button{
-  border:0;
-  cursor:pointer;
-}
-
-::selection{
-  background:#dce0ff;
-  color:#252b9a;
-}
-
-/* =========================
-   GLOBAL BACKGROUND
-========================= */
-
-.ambient{
+body:before{
+  content:"";
   position:fixed;
   inset:0;
   z-index:-2;
-  overflow:hidden;
   pointer-events:none;
-}
-
-.ambient::before{
-  content:"";
-  position:absolute;
-  width:460px;
-  height:460px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(103,117,255,.105),transparent 70%);
-  top:-230px;
-  right:-180px;
-}
-
-.ambient::after{
-  content:"";
-  position:absolute;
-  width:400px;
-  height:400px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,112,78,.075),transparent 70%);
-  bottom:5%;
-  left:-230px;
-}
-
-.noise{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:30;
-  opacity:.018;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-}
-
-/* =========================
-   APPLICATION SHELL
-========================= */
-
-.app{
-  width:100%;
-  max-width:760px;
-  margin:0 auto;
-  min-height:100vh;
-  position:relative;
-}
-
-.page-wrap{
-  padding:0 21px;
-}
-
-/* =========================
-   TOP HEADER
-========================= */
-
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  padding:calc(12px + env(safe-area-inset-top)) 21px 12px;
-  background:rgba(247,248,252,.84);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid rgba(30,35,75,.045);
-}
-
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:49px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
-}
-
-.brand-symbol{
-  width:43px;
-  height:43px;
-  position:relative;
-  border-radius:15px;
-  background:linear-gradient(145deg,#5c68ff,#3943dc);
-  display:grid;
-  place-items:center;
-  box-shadow:0 7px 17px rgba(65,77,245,.22);
-  overflow:hidden;
-}
-
-.brand-symbol::before{
-  content:"";
-  position:absolute;
-  width:26px;
-  height:26px;
-  border:2px solid rgba(255,255,255,.85);
-  border-radius:9px;
-  transform:rotate(45deg);
-}
-
-.brand-symbol::after{
-  content:"";
-  position:absolute;
-  width:8px;
-  height:8px;
-  background:#ff9a76;
-  border-radius:50%;
-  right:7px;
-  top:7px;
-}
-
-.brand-symbol span{
-  position:relative;
-  z-index:2;
-  color:white;
-  font-weight:900;
-  font-size:17px;
-}
-
-.brand-name{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:2px;
-  line-height:1;
-}
-
-.brand-caption{
-  font-size:9px;
-  font-weight:600;
-  color:#9295a8;
-  letter-spacing:1.1px;
-  margin-top:5px;
-}
-
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-
-.header-action{
-  width:43px;
-  height:43px;
-  border-radius:15px;
-  background:white;
-  border:1px solid var(--line);
-  display:grid;
-  place-items:center;
-  color:#34384e;
-  transition:.3s var(--ease);
-  box-shadow:0 3px 12px rgba(30,35,75,.035);
-}
-
-.header-action:active{
-  transform:scale(.91);
-  background:#eceeff;
-}
-
-.header-action svg{
-  width:20px;
-  height:20px;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* =========================
-   ANNOUNCEMENT
-========================= */
-
-.announcement{
-  margin:14px 21px 0;
-  min-height:38px;
-  border-radius:11px;
-  background:#edf0ff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  overflow:hidden;
-  position:relative;
-}
-
-.announcement-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--blue);
-  box-shadow:0 0 0 4px rgba(65,77,245,.09);
-}
-
-.announcement p{
-  font-size:11px;
-  font-weight:700;
-  color:#454db0;
-}
-
-.announcement strong{
-  color:var(--orange);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  position:relative;
-  margin:18px 14px 0;
-  border-radius:33px;
-  min-height:550px;
-  overflow:hidden;
   background:
-    radial-gradient(ellipse at 85% 25%,rgba(255,255,255,.95),transparent 39%),
-    linear-gradient(145deg,#e9ecff 0%,#dce2ff 45%,#f6e9e7 100%);
-  isolation:isolate;
+    radial-gradient(ellipse at 90% 8%,rgba(89,107,255,.075),transparent 33%),
+    radial-gradient(ellipse at 5% 45%,rgba(255,96,78,.055),transparent 30%),
+    radial-gradient(ellipse at 80% 90%,rgba(169,241,209,.14),transparent 32%);
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--blue);color:white}
+
+/* subtle editorial texture */
+.grain{
+  position:fixed;inset:0;z-index:20;pointer-events:none;opacity:.13;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  width:340px;
-  height:340px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.8);
-  right:-130px;
-  top:60px;
-  box-shadow:
-    0 0 0 30px rgba(255,255,255,.10),
-    0 0 0 65px rgba(255,255,255,.07);
+/* top app header */
+.app-header{
+  position:sticky;top:0;z-index:50;
+  height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;
+  background:rgba(247,248,252,.84);
+  backdrop-filter:blur(22px) saturate(1.4);
+  -webkit-backdrop-filter:blur(22px) saturate(1.4);
+  border-bottom:1px solid rgba(35,43,100,.07);
 }
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  background:rgba(255,255,255,.18);
-  border-radius:50%;
-  left:-130px;
-  bottom:-80px;
-  filter:blur(5px);
+.brand{
+  display:flex;align-items:center;gap:11px;
+  direction:ltr;
 }
-
-.hero-content{
-  position:relative;
-  z-index:5;
-  padding:32px 25px 0;
+.brand-mark{
+  width:42px;height:42px;border-radius:14px;
+  background:var(--blue);
+  display:grid;place-items:center;
+  position:relative;overflow:hidden;
+  box-shadow:0 7px 18px rgba(52,72,237,.28);
+  transform:rotate(-5deg);
 }
-
-.hero-kicker{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:#5d65ba;
+.brand-mark:before{
+  content:"";position:absolute;width:30px;height:30px;
+  border:2px solid rgba(255,255,255,.6);border-radius:10px;
+  transform:rotate(35deg);
 }
+.brand-mark:after{
+  content:"N";font-weight:1000;color:white;font-size:25px;
+  position:relative;z-index:1;transform:rotate(5deg);
+}
+.brand-name{
+  font-size:21px;font-weight:1000;letter-spacing:1.8px;
+  line-height:1;color:var(--ink);
+}
+.brand-sub{
+  display:block;font-size:9px;font-weight:700;letter-spacing:1.7px;
+  color:#8589a0;margin-top:5px;
+}
+.header-pill{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 13px;border:1px solid var(--line);
+  border-radius:30px;background:rgba(255,255,255,.72);
+  color:#535873;font-size:11px;font-weight:800;
+}
+.live-dot{
+  width:7px;height:7px;background:#24c98a;border-radius:50%;
+  box-shadow:0 0 0 4px rgba(36,201,138,.13);
+  animation:livePulse 2s infinite;
+}
+@keyframes livePulse{50%{box-shadow:0 0 0 7px rgba(36,201,138,0)}}
 
-.kicker-line{
-  width:24px;
-  height:2px;
-  background:var(--orange);
+/* main layout */
+main{max-width:760px;margin:auto;padding:0 17px 125px}
+section{position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:11px;font-weight:900;letter-spacing:.2px;
+  color:var(--blue);
+}
+.eyebrow:before{
+  content:"";width:22px;height:2px;background:var(--coral);
   border-radius:5px;
 }
-
-.hero h1{
-  font-size:clamp(38px,9vw,62px);
-  font-weight:900;
-  line-height:1.36;
-  letter-spacing:-2.3px;
-  margin-top:21px;
-  color:#20233a;
-  max-width:480px;
-}
-
-.hero h1 .accent{
-  color:var(--blue);
-  position:relative;
-  display:inline-block;
-}
-
-.hero h1 .accent::after{
-  content:"";
-  position:absolute;
-  bottom:4px;
-  right:0;
-  width:100%;
-  height:9px;
-  background:rgba(255,112,78,.19);
-  z-index:-1;
-  transform:skewX(-15deg);
-}
-
-.hero-description{
-  color:#6d718a;
-  font-size:13px;
-  line-height:2.2;
-  max-width:340px;
-  margin-top:13px;
-  font-weight:500;
-}
-
-.hero-buttons{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:23px;
-  position:relative;
-  z-index:8;
-}
-
-.primary-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:0 20px;
-  min-height:51px;
-  border-radius:13px;
-  background:linear-gradient(120deg,#4f5cff,#3542e6);
-  color:white;
-  font-size:12px;
-  font-weight:800;
-  box-shadow:0 10px 22px rgba(65,77,245,.25);
-  transition:.3s var(--ease);
-}
-
-.primary-btn:active{
-  transform:scale(.96);
-}
-
-.primary-btn svg{
-  width:17px;
-  height:17px;
-  stroke:white;
-  fill:none;
-  stroke-width:2;
-}
-
-.secondary-btn{
-  min-height:51px;
-  padding:0 16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(65,77,245,.16);
-  background:rgba(255,255,255,.56);
-  color:#444b9d;
-  border-radius:13px;
-  font-size:11px;
-  font-weight:800;
-  transition:.3s;
-}
-
-/* =========================
-   HERO PHONE ARTWORK
-========================= */
-
-.hero-art{
-  height:232px;
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index:2;
-  pointer-events:none;
-}
-
-.art-floor{
-  position:absolute;
-  bottom:-100px;
-  left:5%;
-  width:90%;
-  height:200px;
-  border-radius:50%;
-  background:radial-gradient(ellipse,rgba(79,91,215,.18),transparent 70%);
-}
-
-.phone{
-  position:absolute;
-  width:119px;
-  height:223px;
-  border-radius:27px;
-  background:linear-gradient(145deg,#30364c,#090e1e);
-  padding:5px;
-  box-shadow:
-    0 27px 45px rgba(35,43,110,.26),
-    0 4px 12px rgba(25,30,75,.15);
-  border:1px solid rgba(255,255,255,.7);
-  overflow:hidden;
-  transform-style:preserve-3d;
-}
-
-.phone-screen{
-  position:relative;
-  width:100%;
-  height:100%;
-  border-radius:22px;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 80% 20%,#ffb9a7,transparent 38%),
-    linear-gradient(155deg,#8290ff,#444ce3 65%,#252a94);
-}
-
-.phone-screen::before{
-  content:"";
-  position:absolute;
-  top:7px;
-  left:50%;
-  transform:translateX(-50%);
-  width:38px;
-  height:11px;
-  border-radius:20px;
-  background:#121727;
-  z-index:3;
-}
-
-.phone-screen::after{
-  content:"";
-  position:absolute;
-  width:115px;
-  height:115px;
-  border:1px solid rgba(255,255,255,.45);
-  border-radius:50%;
-  right:-50px;
-  top:48px;
-  box-shadow:0 0 0 16px rgba(255,255,255,.08);
-}
-
-.phone-orb{
-  position:absolute;
-  width:90px;
-  height:90px;
-  border-radius:28px;
-  background:linear-gradient(135deg,#fff,#dce0ff);
-  transform:rotate(36deg);
-  left:10px;
-  top:67px;
-  box-shadow:0 15px 35px rgba(20,25,90,.25);
-}
-
-.phone-orb::before{
-  content:"";
-  position:absolute;
-  inset:9px;
-  border:2px solid rgba(65,77,245,.23);
-  border-radius:22px;
-}
-
-.phone-orb::after{
-  content:"V";
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
-  color:#4653e8;
-  font-family:Georgia,serif;
-  font-size:48px;
-  font-weight:bold;
-  transform:rotate(-36deg);
-}
-
-.phone-one{
-  left:calc(50% - 58px);
-  bottom:-43px;
-  z-index:4;
-  transform:rotate(-7deg);
-  animation:phoneFloat 6s ease-in-out infinite;
-}
-
-.phone-two{
-  left:calc(50% - 143px);
-  bottom:-66px;
-  width:101px;
-  height:191px;
-  z-index:2;
-  transform:rotate(-20deg);
-  background:linear-gradient(140deg,#d9dbe7,#777d9b);
-  animation:phoneFloat2 7s ease-in-out infinite;
-}
-
-.phone-two .phone-screen{
-  background:linear-gradient(150deg,#ffbca6,#ff816a,#e45b71);
-}
-
-.phone-two .phone-orb{
-  width:70px;
-  height:70px;
-  left:10px;
-  top:60px;
-}
-
-.phone-two .phone-orb::after{
-  color:#e16b78;
-  font-size:36px;
-}
-
-.phone-three{
-  left:calc(50% + 48px);
-  bottom:-65px;
-  width:103px;
-  height:193px;
-  z-index:3;
-  transform:rotate(14deg);
-  background:linear-gradient(145deg,#f3f3f7,#a3a7ba);
-  animation:phoneFloat3 6.5s ease-in-out infinite;
-}
-
-.phone-three .phone-screen{
-  background:linear-gradient(145deg,#f9c9b9,#e9a1b5,#b7a8ed);
-}
-
-.phone-three .phone-orb{
-  width:72px;
-  height:72px;
-  left:10px;
-  top:62px;
-}
-
-.phone-three .phone-orb::after{
-  color:#a76d9e;
-  font-size:37px;
-}
-
-.art-label{
-  position:absolute;
-  z-index:6;
-  left:20px;
-  bottom:48px;
-  background:rgba(255,255,255,.84);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.8);
-  border-radius:13px;
-  padding:10px 13px;
-  box-shadow:0 8px 25px rgba(50,50,100,.08);
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-
-.art-label-icon{
-  width:27px;
-  height:27px;
-  border-radius:9px;
-  background:#fff0ec;
-  color:var(--orange);
-  display:grid;
-  place-items:center;
-  font-size:15px;
-}
-
-.art-label strong{
-  display:block;
-  font-size:10px;
-  font-weight:800;
-}
-
-.art-label small{
-  font-size:8px;
-  color:#9295a6;
-}
-
-.art-spark{
-  position:absolute;
-  color:white;
-  font-size:23px;
-  animation:sparkle 3s ease-in-out infinite;
-}
-
-.spark-one{right:16%;top:32px}
-.spark-two{left:17%;top:14px;font-size:17px}
-.spark-three{right:22%;bottom:30px;font-size:13px}
-
-/* =========================
-   HERO ANIMATIONS
-========================= */
-
-@keyframes phoneFloat{
-  0%,100%{transform:translateY(0) rotate(-7deg)}
-  50%{transform:translateY(-12px) rotate(-4deg)}
-}
-
-@keyframes phoneFloat2{
-  0%,100%{transform:translateY(0) rotate(-20deg)}
-  50%{transform:translateY(-9px) rotate(-16deg)}
-}
-
-@keyframes phoneFloat3{
-  0%,100%{transform:translateY(0) rotate(14deg)}
-  50%{transform:translateY(-14px) rotate(10deg)}
-}
-
-@keyframes sparkle{
-  0%,100%{opacity:.5;transform:scale(.8) rotate(0)}
-  50%{opacity:1;transform:scale(1.2) rotate(30deg)}
-}
-
-/* =========================
-   TRUST STRIP
-========================= */
-
-.trust-strip{
-  margin:25px 21px 0;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-
-.trust-item{
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  gap:8px;
-  padding:15px 5px;
-  border-left:1px solid var(--line);
-}
-
-.trust-item:last-child{
-  border-left:0;
-}
-
-.trust-icon{
-  width:38px;
-  height:38px;
-  border-radius:13px;
-  background:white;
-  border:1px solid var(--line);
-  display:grid;
-  place-items:center;
-  color:var(--blue);
-}
-
-.trust-icon svg{
-  width:19px;
-  height:19px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.trust-item strong{
-  font-size:10px;
-  font-weight:800;
-}
-
-.trust-item small{
-  font-size:9px;
-  color:#9699a8;
-}
-
-/* =========================
-   SECTION COMMON
-========================= */
-
-.section{
-  margin-top:62px;
-}
-
-.section-heading{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:22px;
-}
-
-.section-eyebrow{
-  color:var(--blue);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:1.5px;
-  margin-bottom:8px;
-}
-
 .section-title{
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:-.8px;
-  line-height:1.7;
+  font-size:clamp(27px,7vw,43px);
+  line-height:1.48;font-weight:1000;letter-spacing:-1.6px;
+  margin:13px 0 12px;
+}
+.section-copy{
+  color:var(--muted);font-size:14px;line-height:2.1;
+  font-weight:500;margin:0;
 }
 
-.section-subtitle{
-  font-size:11px;
-  color:#8b8fa0;
-  line-height:2;
-  margin-top:4px;
+/* hero */
+.hero{
+  padding:31px 0 28px;
+  min-height:650px;
+  display:flex;flex-direction:column;
 }
-
-.section-number{
-  font-size:36px;
-  font-weight:300;
-  font-family:Georgia,serif;
-  color:#d4d7e6;
-  line-height:1;
+.hero-topline{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:19px;
 }
-
-/* =========================
-   BRAND EXPERIENCE
-========================= */
-
-.experience{
-  position:relative;
-  margin-top:57px;
+.hero-index{
+  direction:ltr;font-size:10px;letter-spacing:2px;
+  font-weight:900;color:#a1a4b5;
 }
+.hero-tag{
+  background:#fff;border:1px solid var(--line);
+  border-radius:30px;padding:8px 12px;
+  display:flex;align-items:center;gap:7px;
+  font-size:10px;font-weight:800;color:#5d6280;
+  box-shadow:0 5px 16px rgba(40,50,110,.04);
+}
+.hero-tag b{color:var(--coral);font-size:14px}
+.hero-heading{
+  position:relative;z-index:2;
+  margin:0;font-size:clamp(43px,11vw,76px);
+  line-height:1.23;font-weight:1000;
+  letter-spacing:-3.5px;
+}
+.hero-heading .line-one{display:block;color:var(--ink)}
+.hero-heading .line-two{
+  display:inline-block;color:var(--blue);
+  position:relative;z-index:1;
+}
+.hero-heading .line-two:after{
+  content:"";position:absolute;z-index:-1;
+  height:13px;bottom:5px;right:2px;left:-5px;
+  background:var(--yellow);border-radius:5px;
+  transform:rotate(-1.5deg);
+}
+.hero-heading .line-three{
+  display:block;color:var(--ink);
+  font-size:.62em;letter-spacing:-1.5px;
+  margin-top:8px;
+}
+.hero-description{
+  max-width:390px;color:#747991;
+  font-size:14px;line-height:2.1;
+  font-weight:500;margin:17px 0 20px;
+}
+.hero-description strong{color:var(--ink);font-weight:900}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;z-index:4}
+.primary-btn{
+  border:0;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:54px;padding:0 21px;
+  color:white;background:var(--blue);
+  border-radius:16px;font-size:13px;font-weight:900;
+  box-shadow:0 12px 24px rgba(52,72,237,.24),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .25s,box-shadow .25s,background .25s;
+  position:relative;overflow:hidden;
+}
+.primary-btn:before{
+  content:"";position:absolute;top:-70%;left:-50%;
+  width:35%;height:240%;background:rgba(255,255,255,.22);
+  transform:rotate(25deg);transition:left .6s;
+}
+.primary-btn:hover:before{left:130%}
+.primary-btn:hover{transform:translateY(-4px);box-shadow:0 17px 30px rgba(52,72,237,.3)}
+.primary-btn:active{transform:scale(.97)}
+.btn-arrow{
+  display:grid;place-items:center;width:25px;height:25px;
+  border-radius:50%;background:rgba(255,255,255,.19);
+  font-size:17px;line-height:1;
+}
+.secondary-link{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:900;color:#777b92;padding:12px 4px;
+}
+.secondary-link span{font-size:17px;color:var(--coral)}
 
-.experience-main{
-  position:relative;
-  min-height:270px;
-  border-radius:27px;
-  overflow:hidden;
-  background:linear-gradient(120deg,#353fe4,#6976ff);
-  color:white;
-  padding:25px 23px;
+/* custom hero artwork */
+.hero-art{
+  height:300px;position:relative;margin-top:25px;
+  display:flex;align-items:center;justify-content:center;
   isolation:isolate;
 }
-
-.experience-main::before{
-  content:"";
-  position:absolute;
-  width:240px;
-  height:240px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:50%;
-  top:-100px;
-  left:-65px;
-  box-shadow:0 0 0 25px rgba(255,255,255,.055),
-             0 0 0 55px rgba(255,255,255,.04);
+.art-glow{
+  position:absolute;width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(90,108,255,.25),rgba(90,108,255,.07) 52%,transparent 72%);
+  filter:blur(8px);animation:glowBreathe 5s ease-in-out infinite;
+}
+@keyframes glowBreathe{50%{transform:scale(1.2);opacity:.65}}
+.orbit{
+  position:absolute;border:1px solid rgba(52,72,237,.18);
+  border-radius:50%;transform:rotate(-23deg);
+}
+.orbit.one{width:310px;height:130px;animation:orbitSpin 19s linear infinite}
+.orbit.two{width:260px;height:190px;transform:rotate(54deg);border-style:dashed;animation:orbitSpin 27s linear infinite reverse}
+.orbit.three{width:350px;height:245px;transform:rotate(12deg);border-color:rgba(255,96,78,.16)}
+@keyframes orbitSpin{to{rotate:360deg}}
+.orbit-point{
+  position:absolute;width:11px;height:11px;border-radius:50%;
+  background:var(--coral);box-shadow:0 0 0 6px rgba(255,96,78,.12);
+  top:17%;left:24%;
+}
+.orbit-point.p2{
+  width:8px;height:8px;background:var(--blue);
+  top:auto;left:auto;bottom:17%;right:19%;
+  box-shadow:0 0 0 6px rgba(52,72,237,.12);
+}
+.phone-wrap{
+  width:150px;height:265px;position:relative;z-index:2;
+  transform:rotate(-9deg) translateY(-2px);
+  animation:phoneFloat 5s ease-in-out infinite;
+  filter:drop-shadow(17px 24px 22px rgba(38,48,126,.22));
+}
+@keyframes phoneFloat{
+  0%,100%{transform:rotate(-9deg) translateY(0)}
+  50%{transform:rotate(-5deg) translateY(-13px)}
+}
+.phone{
+  position:absolute;inset:0;border-radius:30px;
+  background:linear-gradient(145deg,#242b50,#11162f 65%,#323d75);
+  padding:7px;border:1px solid rgba(255,255,255,.65);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.13);
+}
+.phone-screen{
+  height:100%;border-radius:24px;overflow:hidden;position:relative;
+  background:linear-gradient(155deg,#f9faff,#e9edff);
+  padding:17px 11px;
+}
+.phone-island{
+  position:absolute;top:8px;left:50%;transform:translateX(-50%);
+  width:48px;height:11px;border-radius:10px;background:#171b36;z-index:2;
+}
+.phone-mini-brand{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:14px;font-size:8px;font-weight:1000;color:#252b50;
+}
+.phone-mini-logo{
+  width:20px;height:20px;background:var(--blue);color:white;
+  display:grid;place-items:center;border-radius:7px;font-size:11px;
+}
+.phone-copy{
+  margin-top:25px;font-size:17px;font-weight:1000;
+  line-height:1.6;color:#20274a;
+}
+.phone-copy em{font-style:normal;color:var(--blue)}
+.phone-mini-line{
+  height:5px;border-radius:5px;background:#d7dcf3;margin-top:8px;width:72%;
+}
+.phone-mini-line.short{width:48%}
+.phone-mini-visual{
+  margin-top:18px;height:70px;border-radius:15px;
+  background:linear-gradient(130deg,#3448ed,#7d8bff);
+  position:relative;overflow:hidden;
+}
+.phone-mini-visual:before{
+  content:"";position:absolute;width:90px;height:90px;
+  border:1px solid rgba(255,255,255,.3);border-radius:50%;
+  right:-15px;top:-35px;
+}
+.phone-mini-visual:after{
+  content:"۶ / ۱۲";position:absolute;left:10px;bottom:10px;
+  font-size:17px;font-weight:1000;color:white;
+}
+.phone-mini-cta{
+  margin-top:13px;height:27px;border-radius:9px;
+  background:var(--coral);color:white;text-align:center;
+  font-size:8px;font-weight:900;line-height:27px;
+}
+.phone-mini-foot{
+  display:flex;justify-content:space-between;margin-top:12px;
+  font-size:7px;color:#7d829c;font-weight:800;
+}
+.float-chip{
+  position:absolute;z-index:5;
+  display:flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.9);
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);
+  padding:10px 13px;border-radius:15px;
+  box-shadow:0 12px 28px rgba(35,45,110,.12);
+  font-size:10px;font-weight:900;color:#333954;
+}
+.float-chip strong{display:block;font-size:14px;color:var(--blue)}
+.float-chip .chip-icon{
+  width:30px;height:30px;border-radius:10px;
+  display:grid;place-items:center;background:#eef0ff;color:var(--blue);
+  font-size:16px;
+}
+.chip-one{top:34px;right:0;animation:chipFloat 4s ease-in-out infinite}
+.chip-two{bottom:32px;left:0;animation:chipFloat 4.5s ease-in-out infinite reverse}
+.chip-two .chip-icon{background:#fff0ed;color:var(--coral)}
+@keyframes chipFloat{50%{transform:translateY(-9px) rotate(1deg)}}
+.art-caption{
+  position:absolute;bottom:0;right:50%;transform:translateX(50%);
+  font-size:9px;letter-spacing:2px;font-weight:900;color:#a1a5b8;
+  direction:ltr;white-space:nowrap;
 }
 
-.experience-main::after{
-  content:"V";
-  position:absolute;
-  font-family:Georgia,serif;
-  font-weight:900;
-  font-size:240px;
-  color:rgba(255,255,255,.075);
-  bottom:-110px;
-  left:8px;
-  z-index:-1;
+/* ticker */
+.ticker{
+  margin:3px -17px 0;background:var(--blue);
+  color:white;overflow:hidden;transform:rotate(-1.2deg) scale(1.015);
+  box-shadow:0 12px 30px rgba(52,72,237,.18);
 }
-
-.experience-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.ticker-track{
+  display:flex;width:max-content;align-items:center;
+  animation:tickerMove 24s linear infinite;
 }
-
-.experience-tag{
-  border:1px solid rgba(255,255,255,.3);
-  background:rgba(255,255,255,.12);
-  border-radius:30px;
-  padding:7px 12px;
-  font-size:9px;
-  font-weight:700;
+.ticker-item{
+  display:flex;align-items:center;gap:18px;
+  padding:13px 20px;font-size:12px;font-weight:900;white-space:nowrap;
 }
-
-.experience-star{
-  font-size:25px;
-  color:#ffd2bf;
+.ticker-item i{
+  width:7px;height:7px;border-radius:50%;background:var(--yellow);
+  display:block;
 }
+@keyframes tickerMove{to{transform:translateX(50%)}}
 
-.experience-main h2{
-  font-size:27px;
-  font-weight:900;
-  line-height:1.7;
-  margin-top:25px;
-  max-width:290px;
-}
-
-.experience-main p{
-  font-size:11px;
-  color:rgba(255,255,255,.76);
-  line-height:2;
-  max-width:300px;
-  margin-top:7px;
-}
-
-.experience-bottom{
-  margin-top:24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.experience-bottom span{
-  font-size:10px;
-  font-weight:700;
-}
-
-.experience-arrow{
-  width:34px;
-  height:34px;
-  display:grid;
-  place-items:center;
-  background:white;
-  color:var(--blue);
-  border-radius:11px;
-  font-size:19px;
-  transform:rotate(180deg);
-}
-
-/* =========================
-   DIFFERENTIATORS
-========================= */
-
-.values{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:18px;
-}
-
-.value-card{
-  position:relative;
-  min-height:170px;
-  padding:19px 16px;
-  background:white;
-  border:1px solid rgba(30,35,75,.055);
-  border-radius:21px;
-  overflow:hidden;
-  box-shadow:0 8px 24px rgba(40,48,120,.035);
-  transition:transform .4s var(--ease),box-shadow .4s;
-}
-
-.value-card:active{
-  transform:scale(.975);
-}
-
-.value-card::after{
-  content:"";
-  position:absolute;
-  width:95px;
-  height:95px;
-  border-radius:50%;
-  left:-30px;
-  bottom:-40px;
-  background:var(--card-glow,#eef0ff);
-}
-
-.value-icon{
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:var(--icon-bg,#eef0ff);
-  color:var(--icon-color,var(--blue));
-}
-
-.value-icon svg{
-  width:21px;
-  height:21px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.value-card h3{
-  font-size:13px;
-  font-weight:900;
-  margin-top:17px;
-}
-
-.value-card p{
-  font-size:10px;
-  color:#9295a5;
-  line-height:2;
-  margin-top:6px;
-  max-width:180px;
-}
-
-/* =========================
-   CAMPAIGN EDITORIAL PANEL
-========================= */
-
+/* campaign statement */
 .campaign{
-  margin-top:60px;
-  position:relative;
-  min-height:355px;
-  border-radius:29px;
-  background:#fff;
-  border:1px solid rgba(30,35,75,.06);
-  overflow:hidden;
+  padding:75px 0 62px;
 }
-
-.campaign-content{
-  position:relative;
-  z-index:4;
-  padding:25px 23px;
+.campaign-head{text-align:center;max-width:530px;margin:auto}
+.campaign-head .eyebrow{justify-content:center}
+.campaign-head .section-title{font-size:clamp(30px,8vw,49px);line-height:1.5}
+.campaign-head .section-copy{max-width:430px;margin:auto}
+.installment-stage{
+  margin:34px 0 0;position:relative;
+  border-radius:32px;overflow:hidden;
+  background:linear-gradient(135deg,#ff6655 0%,#ff7763 47%,#ff947b 100%);
+  min-height:310px;padding:27px 22px;
+  color:white;box-shadow:0 22px 50px rgba(255,96,78,.2);
+  isolation:isolate;
 }
-
-.campaign-label{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  color:#eb725a;
-  font-size:9px;
-  font-weight:900;
-}
-
-.campaign-label::before{
-  content:"";
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--orange);
-}
-
-.campaign h2{
-  font-size:29px;
-  font-weight:900;
-  line-height:1.65;
-  margin-top:14px;
-  max-width:300px;
-  letter-spacing:-1px;
-}
-
-.campaign h2 span{
-  color:var(--blue);
-}
-
-.campaign p{
-  font-size:11px;
-  color:#898d9e;
-  line-height:2.2;
-  margin-top:8px;
-  max-width:275px;
-}
-
-.campaign-link{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-top:18px;
-  font-size:11px;
-  font-weight:900;
-  color:var(--blue);
-  border-bottom:1px solid rgba(65,77,245,.3);
-  padding-bottom:5px;
-}
-
-.campaign-visual{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:115px;
+.installment-stage:before{
+  content:"";position:absolute;inset:0;z-index:-1;
   background:
-    linear-gradient(180deg,rgba(255,255,255,0),rgba(225,230,255,.9)),
-    radial-gradient(ellipse at 50% 100%,#d7dcff,#f5f6ff 72%);
+   radial-gradient(circle at 12% 80%,rgba(255,255,255,.2),transparent 30%),
+   radial-gradient(circle at 92% 15%,rgba(255,222,160,.4),transparent 28%);
+}
+.stage-ring{
+  position:absolute;border:1px solid rgba(255,255,255,.25);
+  border-radius:50%;width:310px;height:310px;left:-130px;bottom:-200px;
+}
+.stage-ring.r2{width:240px;height:240px;left:-95px;bottom:-165px}
+.stage-kicker{
+  display:inline-flex;padding:7px 11px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;background:rgba(255,255,255,.12);
+  font-size:10px;font-weight:900;
+}
+.stage-title{
+  font-size:clamp(25px,7vw,38px);line-height:1.55;
+  font-weight:1000;margin:17px 0 0;max-width:390px;
+  letter-spacing:-1.2px;
+}
+.stage-title span{color:#fff2b4}
+.stage-numbers{
+  display:flex;align-items:center;gap:10px;
+  margin-top:22px;position:relative;z-index:2;
+}
+.stage-number{
+  display:flex;align-items:baseline;gap:6px;
+  background:rgba(255,255,255,.17);
+  border:1px solid rgba(255,255,255,.36);
+  border-radius:14px;padding:9px 14px;
+  backdrop-filter:blur(9px);
+}
+.stage-number b{font-size:27px;font-weight:1000;line-height:1}
+.stage-number small{font-size:10px;font-weight:800}
+.stage-orb{
+  position:absolute;width:170px;height:170px;border-radius:50%;
+  left:22px;top:50px;
+  background:linear-gradient(145deg,rgba(255,255,255,.45),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:inset -15px -20px 35px rgba(190,55,46,.14),0 20px 40px rgba(170,48,40,.13);
+  transform:rotate(-20deg);
+}
+.stage-orb:before,.stage-orb:after{
+  content:"";position:absolute;border:1px solid rgba(255,255,255,.6);
+  border-radius:50%;inset:19px;
+}
+.stage-orb:after{inset:38px;border-style:dashed}
+.stage-orb span{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:45px;font-weight:1000;color:white;
+  text-shadow:0 5px 12px rgba(120,35,30,.2);
+}
+.stage-foot{
+  font-size:10px;color:rgba(255,255,255,.84);
+  margin-top:16px;font-weight:700;line-height:1.9;
 }
 
-.campaign-circle{
-  position:absolute;
-  border-radius:50%;
-  border:1px solid rgba(65,77,245,.16);
-  bottom:-95px;
-  left:50%;
-  transform:translateX(-50%);
+/* manifesto */
+.manifesto{
+  padding:59px 0 64px;
+  border-top:1px solid var(--line);
 }
-
-.campaign-circle.c1{width:300px;height:200px}
-.campaign-circle.c2{width:230px;height:155px;bottom:-75px}
-.campaign-circle.c3{width:160px;height:110px;bottom:-50px}
-
-.campaign-phone{
-  position:absolute;
-  bottom:-48px;
-  left:50%;
-  transform:translateX(-50%) rotate(-10deg);
-  width:72px;
-  height:135px;
-  border-radius:19px;
-  border:4px solid #343a58;
-  background:linear-gradient(145deg,#b8c1ff,#4a57ed);
-  box-shadow:0 12px 24px rgba(50,55,140,.2);
+.manifesto-top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;margin-bottom:23px;
 }
-
-.campaign-phone::before{
-  content:"";
-  position:absolute;
-  top:5px;
-  left:50%;
-  transform:translateX(-50%);
-  width:24px;
-  height:6px;
-  border-radius:10px;
-  background:#20263e;
+.manifesto-number{
+  direction:ltr;color:#b1b4c4;font-size:11px;font-weight:900;letter-spacing:2px;
 }
-
-.campaign-phone::after{
-  content:"V";
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
-  font-family:Georgia,serif;
-  font-size:43px;
-  color:white;
+.manifesto-title{
+  font-size:clamp(29px,8vw,47px);line-height:1.55;
+  font-weight:1000;letter-spacing:-1.8px;margin:0;
 }
-
-/* =========================
-   PROCESS SECTION
-========================= */
-
-.process{
-  margin-top:61px;
+.manifesto-title .outlined{
+  color:transparent;-webkit-text-stroke:1.5px var(--blue);
 }
-
-.process-list{
-  position:relative;
-  padding:4px 0;
+.manifesto-text{
+  margin:18px 0 0;max-width:500px;
+  color:#777b91;font-size:14px;line-height:2.25;font-weight:500;
 }
-
-.process-list::before{
-  content:"";
-  position:absolute;
-  top:28px;
-  bottom:30px;
-  right:19px;
-  width:1px;
-  background:linear-gradient(to bottom,#aab1ff,#e7e9f4);
+.manifesto-text strong{color:var(--ink);font-weight:900}
+.manifesto-signature{
+  margin-top:28px;display:flex;align-items:center;gap:12px;
 }
+.signature-line{width:38px;height:2px;background:var(--coral)}
+.signature-text{font-size:11px;font-weight:900;color:#626780}
 
-.process-item{
-  display:flex;
-  align-items:flex-start;
-  gap:16px;
-  position:relative;
-  padding:15px 0;
+/* benefit strip - editorial not product cards */
+.benefits{padding:15px 0 65px}
+.benefit-intro{margin-bottom:24px}
+.benefit-list{border-top:1px solid var(--line)}
+.benefit-row{
+  display:grid;grid-template-columns:48px 1fr 30px;
+  align-items:center;gap:13px;padding:20px 2px;
+  border-bottom:1px solid var(--line);
+  transition:padding .3s,background .3s;
 }
-
-.process-icon{
-  flex-shrink:0;
-  position:relative;
-  z-index:2;
-  width:39px;
-  height:39px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:#fff;
-  border:1px solid #e5e7fa;
-  color:var(--blue);
-  box-shadow:0 4px 12px rgba(40,48,120,.05);
+.benefit-row:hover{padding-right:10px;background:rgba(255,255,255,.55)}
+.benefit-icon{
+  width:43px;height:43px;border-radius:14px;
+  display:grid;place-items:center;font-size:19px;
+  background:#e9ecff;color:var(--blue);
+  box-shadow:inset 0 1px 0 white;
 }
+.benefit-row:nth-child(2) .benefit-icon{background:#fff0ed;color:var(--coral)}
+.benefit-row:nth-child(3) .benefit-icon{background:#e6f8ef;color:#199b70}
+.benefit-row:nth-child(4) .benefit-icon{background:#fff6dc;color:#b88311}
+.benefit-copy b{display:block;font-size:14px;font-weight:1000;margin-bottom:5px}
+.benefit-copy span{display:block;color:#85899e;font-size:11px;line-height:1.9;font-weight:500}
+.benefit-index{direction:ltr;color:#b9bdcc;font-size:10px;font-weight:900}
 
-.process-icon svg{
-  width:19px;
-  height:19px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.process-info{
-  padding-top:2px;
-  flex:1;
-}
-
-.process-info h3{
-  font-size:12px;
-  font-weight:900;
-}
-
-.process-info p{
-  color:#9699a8;
-  font-size:10px;
-  line-height:2;
-  margin-top:5px;
-}
-
-.process-index{
-  font-family:Georgia,serif;
-  font-size:19px;
-  color:#d0d3e3;
-  padding-top:5px;
-}
-
-/* =========================
-   FEATURED PROMO
-========================= */
-
-.promo{
-  margin-top:58px;
-  position:relative;
-  overflow:hidden;
-  border-radius:26px;
-  background:linear-gradient(125deg,#fff0eb,#fff8f5 58%,#fce7e5);
-  padding:23px 21px;
-  min-height:185px;
-}
-
-.promo::after{
-  content:"";
-  position:absolute;
-  width:170px;
-  height:170px;
-  border:1px solid rgba(245,113,87,.18);
-  border-radius:50%;
-  left:-60px;
-  top:30px;
-  box-shadow:0 0 0 22px rgba(245,113,87,.045);
-}
-
-.promo-content{
-  position:relative;
-  z-index:2;
-  max-width:280px;
-}
-
-.promo-small{
-  color:#e77a65;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.promo h2{
-  font-size:23px;
-  font-weight:900;
-  line-height:1.7;
-  margin-top:8px;
-}
-
-.promo p{
-  font-size:10px;
-  line-height:2;
-  color:#a17e78;
-  margin-top:5px;
-}
-
-.promo-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  margin-top:13px;
-  background:#fff;
-  color:#dc705b;
-  border-radius:10px;
-  padding:10px 14px;
-  font-size:10px;
-  font-weight:900;
-  box-shadow:0 6px 15px rgba(180,90,70,.08);
-}
-
-/* =========================
-   STORE PROMISE
-========================= */
-
+/* brand promise band */
 .promise{
-  margin-top:58px;
-  text-align:center;
+  position:relative;overflow:hidden;
+  margin:0 -17px 65px;padding:42px 25px 38px;
+  background:#20284f;color:white;
+  isolation:isolate;
 }
-
-.promise-mark{
-  width:58px;
-  height:58px;
-  border-radius:20px;
-  background:linear-gradient(140deg,#5d69ff,#3b46e5);
-  display:grid;
-  place-items:center;
-  margin:0 auto 16px;
-  color:white;
-  font-family:Georgia,serif;
-  font-size:34px;
-  box-shadow:0 12px 24px rgba(65,77,245,.19);
+.promise:before{
+  content:"";position:absolute;z-index:-1;
+  width:280px;height:280px;border-radius:50%;
+  left:-90px;top:-155px;
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 48px rgba(255,255,255,.025);
 }
-
+.promise:after{
+  content:"";position:absolute;z-index:-1;
+  width:180px;height:180px;border-radius:50%;
+  right:-110px;bottom:-100px;background:var(--blue);
+  filter:blur(1px);opacity:.65;
+}
+.promise-label{
+  display:flex;align-items:center;gap:8px;
+  color:#aeb8ff;font-size:10px;font-weight:900;
+}
+.promise-label i{width:6px;height:6px;background:var(--yellow);border-radius:50%}
 .promise h2{
-  font-size:23px;
-  font-weight:900;
+  font-size:clamp(28px,8vw,44px);line-height:1.55;
+  font-weight:1000;letter-spacing:-1.4px;
+  margin:18px 0 12px;max-width:530px;
 }
-
+.promise h2 span{color:var(--yellow)}
 .promise p{
-  color:#9295a5;
-  font-size:11px;
-  line-height:2.4;
-  max-width:340px;
-  margin:10px auto 0;
+  color:#c4c9e2;font-size:13px;line-height:2.1;
+  max-width:470px;margin:0;font-weight:500;
+}
+.promise-stamp{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:24px;border:1px solid rgba(255,255,255,.25);
+  border-radius:12px;padding:10px 13px;
+  font-size:10px;font-weight:900;color:#fff;
+  background:rgba(255,255,255,.07);
 }
 
-/* =========================
-   FAQ
-========================= */
-
-.faq{
-  margin-top:58px;
+/* brand story */
+.story{
+  padding:0 0 65px;
 }
-
-.faq-item{
-  background:#fff;
-  border:1px solid rgba(30,35,75,.06);
-  border-radius:16px;
-  margin-top:10px;
-  overflow:hidden;
-  transition:border-color .3s;
+.story-visual{
+  height:220px;border-radius:26px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,#e8ebff,#f8e8e5 70%,#fff5d7);
+  margin-bottom:27px;isolation:isolate;
 }
-
-.faq-question{
-  width:100%;
-  min-height:58px;
-  background:transparent;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  text-align:right;
-  padding:13px 15px;
-  color:#303449;
-  font-size:11px;
-  font-weight:800;
-  gap:12px;
+.story-visual:before{
+  content:"NOVA";position:absolute;left:-9px;bottom:-29px;
+  font-size:clamp(85px,24vw,150px);font-weight:1000;
+  color:rgba(52,72,237,.09);letter-spacing:-8px;direction:ltr;
 }
-
-.faq-plus{
-  flex-shrink:0;
-  width:27px;
-  height:27px;
-  border-radius:9px;
-  background:#f0f1ff;
-  color:var(--blue);
-  display:grid;
-  place-items:center;
-  font-size:19px;
-  transition:.3s;
+.story-disc{
+  position:absolute;width:170px;height:170px;border-radius:50%;
+  right:calc(50% - 85px);top:24px;
+  background:linear-gradient(145deg,#6576ff,#3448ed 65%,#2534b6);
+  box-shadow:0 25px 40px rgba(52,72,237,.24),inset -13px -13px 25px rgba(17,27,120,.2),inset 9px 9px 20px rgba(255,255,255,.25);
+  display:grid;place-items:center;
+  transform:rotate(-12deg);
 }
-
-.faq-item.active .faq-plus{
-  transform:rotate(45deg);
-  background:var(--blue);
-  color:white;
+.story-disc:before{
+  content:"";position:absolute;inset:13px;border:1px solid rgba(255,255,255,.4);border-radius:50%;
 }
-
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .4s var(--ease);
+.story-disc span{
+  color:white;font-size:51px;font-weight:1000;letter-spacing:-4px;
+  text-shadow:0 8px 18px rgba(14,24,100,.25);
 }
-
-.faq-answer p{
-  padding:0 15px 16px;
-  color:#9295a5;
-  font-size:10px;
-  line-height:2.3;
+.story-spark{
+  position:absolute;width:22px;height:22px;background:var(--coral);
+  border-radius:7px;right:16%;top:34px;transform:rotate(20deg);
+  box-shadow:0 0 0 8px rgba(255,96,78,.12);
 }
-
-/* =========================
-   CONTACT CTA
-========================= */
-
-.contact-banner{
-  margin-top:55px;
-  background:#252b4d;
-  color:white;
-  border-radius:24px;
-  padding:23px 19px;
-  position:relative;
-  overflow:hidden;
+.story-spark.two{
+  right:auto;left:14%;top:auto;bottom:35px;
+  width:13px;height:13px;background:#ffca4f;
+  box-shadow:0 0 0 7px rgba(255,202,79,.2);
 }
+.story-copy{max-width:530px}
+.story-copy .section-title{margin-top:10px}
+.story-copy p{font-size:13px;color:#7d8197;line-height:2.2;font-weight:500}
+.story-copy strong{color:var(--ink);font-weight:900}
 
-.contact-banner::before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:rgba(104,116,255,.17);
-  left:-65px;
-  top:-80px;
+/* closing conversion */
+.final-cta{
+  position:relative;overflow:hidden;
+  padding:34px 23px 27px;border-radius:30px;
+  background:linear-gradient(145deg,#3448ed,#5366fa 72%,#7280ff);
+  color:white;box-shadow:0 24px 55px rgba(52,72,237,.22);
+  isolation:isolate;
 }
-
-.contact-row{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
+.final-cta:before{
+  content:"";position:absolute;z-index:-1;
+  width:230px;height:230px;border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;left:-90px;top:-135px;
+  box-shadow:0 0 0 20px rgba(255,255,255,.04),0 0 0 43px rgba(255,255,255,.035);
 }
-
-.contact-text h3{
-  font-size:15px;
-  font-weight:900;
+.final-cta:after{
+  content:"";position:absolute;z-index:-1;
+  width:100px;height:100px;border-radius:50%;
+  right:-35px;bottom:-60px;background:var(--coral);
+  filter:blur(2px);opacity:.8;
 }
-
-.contact-text p{
-  font-size:10px;
-  color:rgba(255,255,255,.58);
-  margin-top:7px;
-  line-height:1.9;
+.final-kicker{
+  font-size:10px;font-weight:900;color:#d8ddff;
+  display:flex;align-items:center;gap:8px;
 }
-
-.contact-action{
-  width:43px;
-  height:43px;
-  border-radius:14px;
-  background:white;
-  color:#303ee4;
-  display:grid;
-  place-items:center;
-  flex-shrink:0;
-  font-size:20px;
-  transform:rotate(180deg);
+.final-kicker:before{content:"";width:19px;height:2px;background:var(--yellow)}
+.final-cta h2{
+  font-size:clamp(29px,8vw,43px);line-height:1.55;
+  font-weight:1000;margin:16px 0 9px;letter-spacing:-1.4px;
 }
+.final-cta p{
+  color:#e0e4ff;font-size:12px;line-height:2;
+  max-width:400px;margin:0 0 22px;
+}
+.final-cta .primary-btn{
+  color:var(--blue);background:white;
+  box-shadow:0 10px 25px rgba(16,25,110,.2);
+}
+.final-cta .primary-btn .btn-arrow{background:#edf0ff}
+.final-note{
+  display:flex;align-items:center;gap:7px;
+  margin-top:18px;color:#d6dcff;font-size:9px;font-weight:700;
+}
+.final-note span{color:var(--yellow);font-size:13px}
 
-/* =========================
-   FOOTER
-========================= */
-
+/* footer */
 .footer{
-  padding:40px 22px 15px;
+  padding:29px 2px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
+.footer-brand{display:flex;align-items:center;gap:9px}
+.footer-brand .brand-mark{width:32px;height:32px;border-radius:10px}
+.footer-brand .brand-mark:before{width:23px;height:23px;border-radius:7px}
+.footer-brand .brand-mark:after{font-size:19px}
+.footer-brand b{font-size:15px;letter-spacing:1px;direction:ltr}
+.footer-copy{font-size:9px;color:#a0a4b6;font-weight:700;text-align:left;line-height:1.9}
 
-.footer-brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.footer-brand .brand-symbol{
-  width:37px;
-  height:37px;
-  border-radius:13px;
-}
-
-.footer-brand .brand-name{
-  font-size:19px;
-}
-
-.footer-description{
-  margin-top:15px;
-  font-size:10px;
-  color:#999cad;
-  line-height:2.3;
-  max-width:330px;
-}
-
-.footer-divider{
-  height:1px;
-  background:var(--line);
-  margin:22px 0 16px;
-}
-
-.footer-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.footer-bottom p{
-  font-size:9px;
-  color:#a1a4b1;
-}
-
-.footer-social{
-  display:flex;
-  gap:8px;
-}
-
-.social-dot{
-  width:30px;
-  height:30px;
-  display:grid;
-  place-items:center;
-  border-radius:10px;
-  background:white;
-  color:#626985;
-  font-size:12px;
-  border:1px solid var(--line);
-}
-
-/* =========================
-   FLOATING NAVIGATION
-========================= */
-
+/* bottom navigation */
 .bottom-nav{
-  position:fixed;
-  z-index:200;
-  bottom:calc(10px + env(safe-area-inset-bottom));
-  left:50%;
-  transform:translateX(-50%);
-  width:calc(100% - 24px);
-  max-width:520px;
-  height:72px;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border:1px solid rgba(50,55,100,.09);
-  border-radius:22px;
-  box-shadow:0 12px 40px rgba(30,35,85,.13);
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  align-items:center;
-  padding:5px 7px;
+  position:fixed;z-index:100;bottom:0;left:0;right:0;
+  padding:9px 12px calc(9px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.91);
+  border-top:1px solid rgba(31,40,94,.09);
+  backdrop-filter:blur(22px) saturate(1.5);
+  -webkit-backdrop-filter:blur(22px) saturate(1.5);
 }
-
+.nav-inner{
+  max-width:570px;margin:auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:5px;
+}
 .nav-item{
-  height:58px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:5px;
-  color:#a0a3b3;
+  min-height:52px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;
+  border-radius:15px;color:#999db0;
+  font-size:9px;font-weight:800;transition:.25s;
   position:relative;
-  transition:.3s var(--ease);
+}
+.nav-icon{
+  width:25px;height:25px;display:grid;place-items:center;
+  font-size:19px;line-height:1;transition:transform .25s;
+}
+.nav-item.active{color:var(--blue);background:#eef0ff}
+.nav-item.active .nav-icon{transform:translateY(-2px) scale(1.08)}
+.nav-item.active:after{
+  content:"";position:absolute;top:0;width:17px;height:3px;
+  border-radius:0 0 5px 5px;background:var(--blue);
 }
 
-.nav-item svg{
-  width:21px;
-  height:21px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  transition:.3s;
-}
-
-.nav-item span{
-  font-size:9px;
-  font-weight:700;
-}
-
-.nav-item.active{
-  color:var(--blue);
-}
-
-.nav-item.active::before{
-  content:"";
-  position:absolute;
-  top:0;
-  width:32px;
-  height:3px;
-  border-radius:0 0 5px 5px;
-  background:var(--blue);
-}
-
-.nav-item.active svg{
-  transform:translateY(-2px);
-  stroke-width:2.2;
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-
+/* reveal and motion */
 .reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:
-    opacity .8s var(--ease),
-    transform .8s var(--ease);
+  opacity:0;transform:translateY(25px);
+  transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);
 }
-
-.reveal.visible{
-  opacity:1;
-  transform:translateY(0);
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.12s}
+.delay-2{transition-delay:.22s}
+.delay-3{transition-delay:.32s}
+@keyframes softIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
 }
+.hero .hero-topline{animation:softIn .7s both}
+.hero .hero-heading{animation:softIn .8s .1s both}
+.hero .hero-description{animation:softIn .8s .2s both}
+.hero .hero-actions{animation:softIn .8s .3s both}
+.hero .hero-art{animation:softIn 1s .35s both}
 
-.delay-1{transition-delay:.08s}
-.delay-2{transition-delay:.16s}
-.delay-3{transition-delay:.24s}
-
-/* =========================
-   TOUCH / FEEDBACK
-========================= */
-
-.pressable{
-  transition:transform .25s var(--ease);
-}
-
-.pressable:active{
-  transform:scale(.975);
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(65,77,245,.2)}
-  70%{box-shadow:0 0 0 9px rgba(65,77,245,0)}
-  100%{box-shadow:0 0 0 0 rgba(65,77,245,0)}
-}
-
-/* =========================
-   DESKTOP RESPONSIVE
-========================= */
-
+/* responsive */
 @media(min-width:650px){
-
-  .app{
-    max-width:760px;
-    box-shadow:0 0 80px rgba(35,40,100,.035);
-    background:rgba(255,255,255,.12);
-  }
-
-  .hero{
-    min-height:600px;
-  }
-
-  .hero-art{
-    height:280px;
-  }
-
-  .phone{
-    transform-origin:center bottom;
-    scale:1.12;
-  }
-
-  .hero h1{
-    max-width:530px;
-  }
-
-  .trust-strip{
-    max-width:570px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .bottom-nav{
-    bottom:18px;
-  }
+  main{padding-left:25px;padding-right:25px}
+  .hero{padding-top:44px;min-height:700px}
+  .hero-art{height:330px}
+  .phone-wrap{transform:scale(1.08) rotate(-9deg)}
+  .ticker{margin-left:-25px;margin-right:-25px}
+  .promise{margin-left:-25px;margin-right:-25px;padding-left:45px;padding-right:45px}
+  .installment-stage{padding:34px 32px;min-height:330px}
+  .stage-orb{left:60px;top:65px;transform:scale(1.1) rotate(-20deg)}
 }
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media(max-width:380px){
-
-  .page-wrap{
-    padding:0 16px;
-  }
-
-  .hero{
-    margin-left:10px;
-    margin-right:10px;
-    min-height:535px;
-  }
-
-  .hero-content{
-    padding:27px 19px 0;
-  }
-
-  .hero h1{
-    font-size:37px;
-  }
-
-  .hero-description{
-    font-size:12px;
-  }
-
-  .hero-buttons{
-    gap:7px;
-  }
-
-  .primary-btn{
-    padding:0 13px;
-    font-size:11px;
-  }
-
-  .secondary-btn{
-    padding:0 11px;
-    font-size:10px;
-  }
-
-  .section-title{
-    font-size:22px;
-  }
-
-  .values{
-    gap:9px;
-  }
-
-  .value-card{
-    padding:15px 12px;
-  }
+  .app-header{padding:0 15px}
+  .hero-heading{font-size:42px;letter-spacing:-2.5px}
+  .hero-art{height:275px}
+  .phone-wrap{transform:scale(.9) rotate(-9deg)}
+  .chip-one{right:-5px}
+  .chip-two{left:-5px}
+  .stage-orb{width:130px;height:130px;top:75px;left:8px}
+  .stage-orb span{font-size:35px}
+  .stage-title{max-width:250px}
 }
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-
 @media(prefers-reduced-motion:reduce){
-  *,
-  *::before,
-  *::after{
+  *,*:before,*:after{
+    scroll-behavior:auto!important;
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
-    scroll-behavior:auto!important;
     transition-duration:.01ms!important;
   }
-
-  .reveal{
-    opacity:1;
-    transform:none;
-  }
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
+<div class="grain"></div>
 
-<div class="ambient"></div>
-<div class="noise"></div>
-
-<div class="app">
-
-<!-- ================= HEADER ================= -->
-
-<header class="topbar">
-  <div class="topbar-inner">
-
-    <a href="index.html" class="brand" aria-label="صفحه اصلی">
-      <div class="brand-symbol"><span>V</span></div>
-      <div>
-        <div class="brand-name">VÉRA</div>
-        <div class="brand-caption">MOBILE EXPERIENCE</div>
-      </div>
-    </a>
-
-    <div class="header-actions">
-
-      <a href="support.html" class="header-action" aria-label="پشتیبانی">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 12a8 8 0 0 1 16 0"/>
-          <path d="M4 12v4a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2"/>
-          <path d="M20 12v4a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2"/>
-          <path d="M15 19c-.8 1-2 1.5-4 1.5"/>
-        </svg>
-      </a>
-
-      <button class="header-action" id="menuButton" aria-label="منو">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-      </button>
-
-    </div>
-  </div>
+<header class="app-header">
+  <a class="brand" href="index.html" aria-label="NOVA خانه">
+    <span class="brand-mark"></span>
+    <span>
+      <span class="brand-name">NOVA</span>
+      <span class="brand-sub">A NEW WAY TO BUY</span>
+    </span>
+  </a>
+  <div class="header-pill"><i class="live-dot"></i> خرید هوشمند، تجربه‌ای تازه</div>
 </header>
-
-<!-- ================= ANNOUNCEMENT ================= -->
-
-<div class="announcement">
-  <span class="announcement-dot"></span>
-  <p>یک تجربه تازه برای <strong>خرید هوشمندانه موبایل</strong></p>
-</div>
-
-<!-- ================= HERO ================= -->
 
 <main>
 
-<section class="hero">
-
-  <div class="hero-content">
-
-    <div class="hero-kicker">
-      <span class="kicker-line"></span>
-      <span>نسل جدید خرید موبایل</span>
+  <!-- HERO: معرفی برند و وعده اصلی -->
+  <section class="hero">
+    <div class="hero-topline">
+      <div class="hero-tag"><b>✳</b> نسل تازه خرید موبایل</div>
+      <div class="hero-index">01 / NOVA EXPERIENCE</div>
     </div>
 
-    <h1>
-      انتخابت<br>
-      هوشمندانه‌تر،<br>
-      <span class="accent">خریدت آسان‌تر.</span>
+    <h1 class="hero-heading">
+      <span class="line-one">موبایلت رو</span>
+      <span class="line-two">همین حالا</span>
+      <span class="line-three">بخر؛ قسطی پرداخت کن.</span>
     </h1>
 
     <p class="hero-description">
-      دنیای موبایل را با نگاهی تازه تجربه کن.
-      گوشی مورد علاقه‌ات را انتخاب کن و مسیر خرید اقساطی را
-      با شرایط مشخص و شفاف آغاز کن.
+      به <strong>NOVA</strong> خوش اومدی؛ جایی که خرید موبایل از یک هزینه سنگین،
+      به یک انتخاب ساده‌تر تبدیل می‌شه.
+      گوشی دلخواهت رو انتخاب کن و هزینه‌اش رو در <strong>۶ یا ۱۲ قسط</strong> پرداخت کن.
     </p>
 
-    <div class="hero-buttons">
-
-      <a href="activate.html" class="primary-btn">
-        شروع تجربه خرید
-        <svg viewBox="0 0 24 24">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
+    <div class="hero-actions">
+      <a class="primary-btn" href="activate.html">
+        شروع خرید اقساطی
+        <span class="btn-arrow">←</span>
       </a>
-
-      <a href="guide.html" class="secondary-btn">
-        آشنایی با روش خرید
-      </a>
-
+      <a class="secondary-link" href="guide.html">با روش خرید آشنا شو <span>↗</span></a>
     </div>
 
-  </div>
+    <div class="hero-art" aria-label="تصویرسازی مفهومی تجربه خرید اقساطی">
+      <div class="art-glow"></div>
+      <div class="orbit one"><i class="orbit-point"></i></div>
+      <div class="orbit two"><i class="orbit-point p2"></i></div>
+      <div class="orbit three"></div>
 
-  <div class="hero-art">
-
-    <div class="art-floor"></div>
-
-    <div class="art-spark spark-one">✳</div>
-    <div class="art-spark spark-two">✦</div>
-    <div class="art-spark spark-three">✧</div>
-
-    <div class="phone phone-two">
-      <div class="phone-screen">
-        <div class="phone-orb"></div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-island"></div>
+            <div class="phone-mini-brand">
+              <span>NOVA EXPERIENCE</span>
+              <span class="phone-mini-logo">N</span>
+            </div>
+            <div class="phone-copy">خرید امروز،<br><em>پرداخت مرحله‌ای.</em></div>
+            <div class="phone-mini-line"></div>
+            <div class="phone-mini-line short"></div>
+            <div class="phone-mini-visual"></div>
+            <div class="phone-mini-cta">شروع یک انتخاب تازه</div>
+            <div class="phone-mini-foot">
+              <span>SMART BUYING</span>
+              <span>01 — 06</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="phone phone-three">
-      <div class="phone-screen">
-        <div class="phone-orb"></div>
+      <div class="float-chip chip-one">
+        <span class="chip-icon">↗</span>
+        <span><strong>۱۲ قسط</strong>پرداخت منعطف</span>
       </div>
-    </div>
-
-    <div class="phone phone-one">
-      <div class="phone-screen">
-        <div class="phone-orb"></div>
+      <div class="float-chip chip-two">
+        <span class="chip-icon">✳</span>
+        <span><strong>بدون سود</strong>شفاف و روشن</span>
       </div>
+      <div class="art-caption">A DIFFERENT WAY TO OWN YOUR PHONE</div>
+    </div>
+  </section>
+
+  <!-- حرکت تبلیغاتی -->
+  <div class="ticker" aria-label="مزایای خرید اقساطی">
+    <div class="ticker-track">
+      <div class="ticker-item"><i></i> خرید موبایل اقساطی</div>
+      <div class="ticker-item"><i></i> پرداخت ۶ یا ۱۲ قسط</div>
+      <div class="ticker-item"><i></i> بدون سود و نزول</div>
+      <div class="ticker-item"><i></i> شروع آسان فرایند خرید</div>
+      <div class="ticker-item"><i></i> خرید امروز، پرداخت مرحله‌ای</div>
+      <div class="ticker-item"><i></i> خرید موبایل اقساطی</div>
+      <div class="ticker-item"><i></i> پرداخت ۶ یا ۱۲ قسط</div>
+      <div class="ticker-item"><i></i> بدون سود و نزول</div>
+      <div class="ticker-item"><i></i> شروع آسان فرایند خرید</div>
+      <div class="ticker-item"><i></i> خرید امروز، پرداخت مرحله‌ای</div>
+    </div>
+  </div>
+
+  <!-- پیشنهاد تبلیغاتی اصلی -->
+  <section class="campaign">
+    <div class="campaign-head reveal">
+      <span class="eyebrow">فرصت خرید، همین امروز</span>
+      <h2 class="section-title">
+        لازم نیست برای خرید گوشی،
+        <span style="color:var(--coral)">منتظر بمونی.</span>
+      </h2>
+      <p class="section-copy">
+        هزینه خرید رو یک‌جا پرداخت نکن؛ انتخابت رو امروز انجام بده
+        و پرداخت رو در چند مرحله پیش ببر.
+      </p>
     </div>
 
-    <div class="art-label">
-      <div class="art-label-icon">✦</div>
-      <div>
-        <strong>انتخابی برای سبک تو</strong>
-        <small>تجربه‌ای متفاوت از خرید</small>
+    <div class="installment-stage reveal delay-1">
+      <div class="stage-ring"></div>
+      <div class="stage-ring r2"></div>
+      <div class="stage-orb"><span>۱۲</span></div>
+
+      <div class="stage-kicker">تو انتخاب می‌کنی؛ ما مسیر رو ساده می‌کنیم</div>
+      <h3 class="stage-title">
+        الان بخر؛<br>
+        در <span>۶ یا ۱۲ قسط</span> پرداخت کن.
+      </h3>
+      <div class="stage-numbers">
+        <div class="stage-number"><b>۶</b><small>قسط</small></div>
+        <div class="stage-number"><b>۱۲</b><small>قسط</small></div>
       </div>
+      <div class="stage-foot">یک خرید هوشمندانه؛ با پرداختی مرحله‌ای و قابل‌برنامه‌ریزی.</div>
+    </div>
+  </section>
+
+  <!-- بیانیه برند -->
+  <section class="manifesto reveal">
+    <div class="manifesto-top">
+      <span class="eyebrow">نگاه ما به خرید</span>
+      <span class="manifesto-number">02 — OUR PROMISE</span>
     </div>
 
-  </div>
-
-</section>
-
-<!-- ================= TRUST ================= -->
-
-<div class="trust-strip reveal">
-
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 3 20 7v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>
-        <path d="m8 12 2.5 2.5L16 9"/>
-      </svg>
-    </div>
-    <strong>فرایند شفاف</strong>
-    <small>از ابتدا تا خرید</small>
-  </div>
-
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg viewBox="0 0 24 24">
-        <rect x="4" y="3" width="16" height="18" rx="3"/>
-        <path d="M8 7h8M8 11h8M8 15h5"/>
-      </svg>
-    </div>
-    <strong>اعتبارسنجی مشخص</strong>
-    <small>بررسی شرایط متقاضی</small>
-  </div>
-
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
-        <path d="m9 12 2 2 4-4"/>
-      </svg>
-    </div>
-    <strong>خرید مطمئن</strong>
-    <small>همراهی در مسیر خرید</small>
-  </div>
-
-</div>
-
-<!-- ================= EXPERIENCE ================= -->
-
-<section class="experience page-wrap reveal">
-
-  <div class="experience-main">
-
-    <div class="experience-top">
-      <span class="experience-tag">A NEW WAY TO BUY</span>
-      <span class="experience-star">✳</span>
-    </div>
-
-    <h2>
-      خرید قسطی،
-      بدون پیچیدگی‌های همیشگی.
+    <h2 class="manifesto-title">
+      تکنولوژی باید<br>
+      <span class="outlined">در دسترس‌تر</span><br>
+      از همیشه باشه.
     </h2>
 
-    <p>
-      مسیر خرید را مرحله‌به‌مرحله پیش می‌بری؛
-      شرایطت بررسی می‌شود و در صورت تأیید،
-      امکان خرید اقساطی برایت فراهم خواهد شد.
+    <p class="manifesto-text">
+      ما در <strong>NOVA</strong> باور داریم برای داشتن یک گوشی خوب،
+      نباید تمام بودجه‌ات رو یک‌باره کنار بذاری.
+      برای همین، فروش موبایل رو با رویکردی متفاوت طراحی کردیم:
+      <strong>خرید اقساطی با شرایط روشن، پرداخت مرحله‌ای و فرایندی ساده‌تر.</strong>
     </p>
 
-    <div class="experience-bottom">
-      <span>از بررسی شرایط تا انتخاب گوشی</span>
-      <a href="guide.html" class="experience-arrow">←</a>
+    <div class="manifesto-signature">
+      <span class="signature-line"></span>
+      <span class="signature-text">NOVA؛ انتخابی برای سبک تازه خرید</span>
+    </div>
+  </section>
+
+  <!-- مزایای تبلیغاتی خدمات -->
+  <section class="benefits">
+    <div class="benefit-intro reveal">
+      <span class="eyebrow">چرا خرید از NOVA؟</span>
+      <h2 class="section-title">خرید قسطی،<br>بدون پیچیدگی اضافه.</h2>
+      <p class="section-copy">
+        ما روی چیزی تمرکز کردیم که واقعاً اهمیت داره:
+        خرید قابل‌فهم، شرایط شفاف و پرداختی که بتونی براش برنامه داشته باشی.
+      </p>
     </div>
 
-  </div>
+    <div class="benefit-list">
+      <div class="benefit-row reveal">
+        <div class="benefit-icon">✳</div>
+        <div class="benefit-copy">
+          <b>بدون سود و نزول</b>
+          <span>شرایط پرداخت شفاف؛ بدون اضافه‌کردن سود به مبلغ خرید.</span>
+        </div>
+        <span class="benefit-index">01</span>
+      </div>
 
-</section>
+      <div class="benefit-row reveal delay-1">
+        <div class="benefit-icon">◷</div>
+        <div class="benefit-copy">
+          <b>انتخاب بین ۶ یا ۱۲ قسط</b>
+          <span>مدت پرداخت رو متناسب با برنامه مالی خودت انتخاب کن.</span>
+        </div>
+        <span class="benefit-index">02</span>
+      </div>
 
-<!-- ================= BRAND VALUES ================= -->
+      <div class="benefit-row reveal delay-2">
+        <div class="benefit-icon">↗</div>
+        <div class="benefit-copy">
+          <b>شروع ساده و مرحله‌به‌مرحله</b>
+          <span>مسیر خرید از داخل همین اپلیکیشن شروع می‌شه و قدم‌به‌قدم پیش می‌ره.</span>
+        </div>
+        <span class="benefit-index">03</span>
+      </div>
 
-<section class="page-wrap section">
-
-  <div class="section-heading reveal">
-    <div>
-      <div class="section-eyebrow">THE VÉRA DIFFERENCE</div>
-      <h2 class="section-title">چرا تجربه‌ای متفاوت؟</h2>
-      <p class="section-subtitle">
-        جزئیاتی که خرید را برایت ساده‌تر می‌کنند.
-      </p>
+      <div class="benefit-row reveal delay-3">
+        <div class="benefit-icon">◇</div>
+        <div class="benefit-copy">
+          <b>شرایط روشن پیش از خرید</b>
+          <span>پیش از نهایی‌کردن خرید، شرایط و تعهدات مربوط به پرداخت رو بررسی می‌کنی.</span>
+        </div>
+        <span class="benefit-index">04</span>
+      </div>
     </div>
-    <div class="section-number">01</div>
-  </div>
+  </section>
 
-  <div class="values">
-
-    <article class="value-card reveal">
-      <div class="value-icon">
-        <svg viewBox="0 0 24 24">
-          <rect x="6" y="2" width="12" height="20" rx="3"/>
-          <path d="M10 5h4M11 18h2"/>
-        </svg>
-      </div>
-      <h3>انتخاب آگاهانه</h3>
-      <p>
-        با بررسی گزینه‌های موجود، گوشی متناسب با نیازت را انتخاب کن.
-      </p>
-    </article>
-
-    <article class="value-card reveal delay-1"
-      style="--icon-bg:#fff0ec;--icon-color:#ed765d;--card-glow:#fff1ed">
-
-      <div class="value-icon">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M12 7v5l3 2"/>
-        </svg>
-      </div>
-      <h3>مراحل مشخص</h3>
-      <p>
-        همه مراحل خرید را به ترتیب و بدون سردرگمی دنبال کن.
-      </p>
-    </article>
-
-    <article class="value-card reveal delay-1"
-      style="--icon-bg:#eaf8f3;--icon-color:#36a17b;--card-glow:#edfaf4">
-
-      <div class="value-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3v18M17 7H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6H6"/>
-        </svg>
-      </div>
-      <h3>خرید اقساطی</h3>
-      <p>
-        امکان خرید اقساطی پس از بررسی و تأیید شرایط اعتبار.
-      </p>
-    </article>
-
-    <article class="value-card reveal delay-2">
-      <div class="value-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 12a8 8 0 0 1 16 0"/>
-          <path d="M4 12v5h4v-5H4zm12 0v5h4v-5h-4z"/>
-          <path d="M8 19c1 2 7 2 8 0"/>
-        </svg>
-      </div>
-      <h3>پشتیبانی همراه</h3>
-      <p>
-        در طول مسیر خرید، امکان ارتباط با مجموعه را خواهی داشت.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- ================= CAMPAIGN ================= -->
-
-<section class="campaign page-wrap reveal">
-
-  <div class="campaign-content">
-
-    <div class="campaign-label">YOUR NEXT PHONE</div>
-
+  <!-- پیام اعتماد و شفافیت -->
+  <section class="promise reveal">
+    <div class="promise-label"><i></i> یک اصل مهم در NOVA</div>
     <h2>
-      گوشی بعدی‌ات،
-      <span>نزدیک‌تر از همیشه.</span>
+      خرید قسطی باید<br>
+      <span>شفاف باشه؛</span><br>
+      نه پر از غافلگیری.
     </h2>
-
     <p>
-      برای آشنایی با شرایط خرید اقساطی و مراحل دریافت اعتبار،
-      راهنمای خرید را مطالعه کن.
+      از ابتدا باید بدونی چه مسیری پیش روته.
+      شرایط پرداخت، مراحل لازم و تعهدات خرید باید روشن باشن؛
+      چون اعتماد، بخشی از خود خرید محسوب می‌شه.
     </p>
+    <div class="promise-stamp">✦ شفافیت در خرید، اولویت ماست</div>
+  </section>
 
-    <a href="guide.html" class="campaign-link">
-      راهنمای کامل خرید
-      <span>←</span>
+  <!-- معرفی رویکرد برند -->
+  <section class="story">
+    <div class="story-visual reveal">
+      <div class="story-disc"><span>N</span></div>
+      <i class="story-spark"></i>
+      <i class="story-spark two"></i>
+    </div>
+
+    <div class="story-copy reveal">
+      <span class="eyebrow">فراتر از یک خرید معمولی</span>
+      <h2 class="section-title">ما فقط موبایل نمی‌فروشیم؛<br>راه خرید رو تغییر می‌دیم.</h2>
+      <p>
+        <strong>NOVA</strong> برای کسانیه که می‌خوان انتخاب بهتری داشته باشن،
+        بدون اینکه پرداخت یک‌جای هزینه، مانع تصمیمشون بشه.
+        اینجا خرید اقساطی فقط یک روش پرداخت نیست؛
+        یک تجربه ساده‌تر و حساب‌شده‌تره.
+      </p>
+    </div>
+  </section>
+
+  <!-- دعوت نهایی -->
+  <section class="final-cta reveal">
+    <div class="final-kicker">YOUR NEXT MOVE STARTS HERE</div>
+    <h2>وقتشه گوشی بعدیت رو<br>با خیال راحت‌تر انتخاب کنی.</h2>
+    <p>
+      مسیر خرید اقساطی رو شروع کن؛ شرایطت بررسی می‌شه
+      و بعد از طی مراحل لازم، می‌تونی برای خرید اقدام کنی.
+    </p>
+    <a href="activate.html" class="primary-btn">
+      شروع فرایند خرید
+      <span class="btn-arrow">←</span>
     </a>
+    <div class="final-note"><span>✦</span> انتخاب امروز؛ پرداخت در ۶ یا ۱۲ قسط</div>
+  </section>
 
-  </div>
-
-  <div class="campaign-visual">
-    <div class="campaign-circle c1"></div>
-    <div class="campaign-circle c2"></div>
-    <div class="campaign-circle c3"></div>
-    <div class="campaign-phone"></div>
-  </div>
-
-</section>
-
-<!-- ================= PROCESS ================= -->
-
-<section class="process page-wrap">
-
-  <div class="section-heading reveal">
-    <div>
-      <div class="section-eyebrow">YOUR JOURNEY</div>
-      <h2 class="section-title">مسیر خریدت چطور است؟</h2>
-      <p class="section-subtitle">
-        پنج مرحله برای رسیدن به گوشی مورد علاقه‌ات.
-      </p>
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="brand-mark"></span>
+      <b>NOVA</b>
     </div>
-    <div class="section-number">02</div>
-  </div>
-
-  <div class="process-list">
-
-    <div class="process-item reveal">
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24">
-          <circle cx="10" cy="8" r="4"/>
-          <path d="M3 21v-2a7 7 0 0 1 14 0v2"/>
-          <path d="m17 11 2 2 4-4"/>
-        </svg>
-      </div>
-      <div class="process-info">
-        <h3>ثبت اطلاعات هویتی</h3>
-        <p>اطلاعات موردنیاز را در فرم ثبت می‌کنی.</p>
-      </div>
-      <span class="process-index">01</span>
+    <div class="footer-copy">
+      تجربه‌ای تازه برای خرید موبایل<br>
+      © NOVA — All rights reserved
     </div>
-
-    <div class="process-item reveal">
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M3 10 12 3l9 7"/>
-          <path d="M5 9v11h14V9"/>
-          <path d="M9 20v-7h6v7"/>
-        </svg>
-      </div>
-      <div class="process-info">
-        <h3>احراز محل سکونت</h3>
-        <p>اطلاعات مربوط به محل سکونت بررسی می‌شود.</p>
-      </div>
-      <span class="process-index">02</span>
-    </div>
-
-    <div class="process-item reveal">
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="5" width="18" height="14" rx="3"/>
-          <path d="M7 10h5M7 14h3M16 10h1"/>
-        </svg>
-      </div>
-      <div class="process-info">
-        <h3>اعتبارسنجی بانکی</h3>
-        <p>وضعیت اعتباری و رتبه متقاضی بررسی خواهد شد.</p>
-      </div>
-      <span class="process-index">03</span>
-    </div>
-
-    <div class="process-item reveal">
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 3h14v18H5z"/>
-          <path d="M8 7h8M8 11h8M8 15h5"/>
-          <path d="m14 18 2 2 4-4"/>
-        </svg>
-      </div>
-      <div class="process-info">
-        <h3>صدور سفته الکترونیک</h3>
-        <p>در صورت واجد شرایط بودن، مراحل سفته انجام می‌شود.</p>
-      </div>
-      <span class="process-index">04</span>
-    </div>
-
-    <div class="process-item reveal">
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 5h14l1 15H4z"/>
-          <path d="M9 9a3 3 0 0 0 6 0"/>
-          <path d="M8 5a4 4 0 0 1 8 0"/>
-        </svg>
-      </div>
-      <div class="process-info">
-        <h3>تکمیل فرایند خرید</h3>
-        <p>پس از تکمیل مراحل و تأیید نهایی، خرید انجام می‌شود.</p>
-      </div>
-      <span class="process-index">05</span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= PROMO ================= -->
-
-<section class="promo page-wrap reveal">
-
-  <div class="promo-content">
-
-    <div class="promo-small">A BETTER BUYING EXPERIENCE</div>
-
-    <h2>
-      قبل از شروع،
-      همه‌چیز را بدان.
-    </h2>
-
-    <p>
-      شرایط، مدارک و جزئیات خرید اقساطی را
-      پیش از ثبت درخواست بررسی کن.
-    </p>
-
-    <a href="guide.html" class="promo-btn">
-      مطالعه راهنمای خرید
-      <span>←</span>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- ================= PROMISE ================= -->
-
-<section class="promise page-wrap reveal">
-
-  <div class="promise-mark">V</div>
-
-  <h2>خرید خوب، از انتخاب خوب شروع می‌شود.</h2>
-
-  <p>
-    ما تلاش کرده‌ایم تجربه‌ای ساده‌تر و شفاف‌تر
-    برای خرید موبایل فراهم کنیم؛
-    از اولین قدم تا تکمیل فرایند خرید،
-    با اطلاعات روشن و مراحل مشخص.
-  </p>
-
-</section>
-
-<!-- ================= FAQ ================= -->
-
-<section class="faq page-wrap">
-
-  <div class="section-heading reveal">
-    <div>
-      <div class="section-eyebrow">GOOD TO KNOW</div>
-      <h2 class="section-title">سؤالات پرتکرار</h2>
-      <p class="section-subtitle">پاسخ چند سؤال پیش از شروع خرید.</p>
-    </div>
-    <div class="section-number">03</div>
-  </div>
-
-  <div class="faq-item reveal">
-    <button class="faq-question">
-      <span>برای خرید اقساطی از کجا شروع کنم؟</span>
-      <span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        ابتدا راهنمای خرید را مطالعه کن و سپس از بخش فعال‌سازی،
-        درخواست اعتبارسنجی خود را ثبت کن.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal">
-    <button class="faq-question">
-      <span>چه رتبه اعتباری برای خرید قابل قبول است؟</span>
-      <span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        رتبه‌های اعتباری A، B و C مطابق شرایط مجموعه
-        امکان ورود به مراحل بعدی خرید را دارند.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal">
-    <button class="faq-question">
-      <span>آیا برای خرید سفته الکترونیک لازم است؟</span>
-      <span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        بله، پس از تأیید اعتبارسنجی، مرحله صدور سفته الکترونیک
-        برای تکمیل فرایند در نظر گرفته شده است.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq-item reveal">
-    <button class="faq-question">
-      <span>چطور می‌توانم با پشتیبانی ارتباط بگیرم؟</span>
-      <span class="faq-plus">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>
-        از بخش پشتیبانی اپلیکیشن می‌توانی درخواست خود را ثبت
-        و با مجموعه ارتباط برقرار کنی.
-      </p>
-    </div>
-  </div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact-banner page-wrap reveal">
-
-  <div class="contact-row">
-
-    <div class="contact-text">
-      <h3>سؤالی داری؟ ما اینجاییم.</h3>
-      <p>برای دریافت راهنمایی، با پشتیبانی ارتباط بگیر.</p>
-    </div>
-
-    <a href="support.html" class="contact-action">←</a>
-
-  </div>
-
-</section>
+  </footer>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-  <div class="footer-brand">
-    <div class="brand-symbol"><span>V</span></div>
-    <div>
-      <div class="brand-name">VÉRA</div>
-      <div class="brand-caption">MOBILE EXPERIENCE</div>
-    </div>
+<!-- نوار ناوبری ثابت اپلیکیشن -->
+<nav class="bottom-nav" aria-label="منوی اصلی">
+  <div class="nav-inner">
+    <a class="nav-item active" href="index.html" aria-current="page">
+      <span class="nav-icon">⌂</span>
+      <span>خانه</span>
+    </a>
+    <a class="nav-item" href="guide.html">
+      <span class="nav-icon">▤</span>
+      <span>راهنمای خرید</span>
+    </a>
+    <a class="nav-item" href="activate.html">
+      <span class="nav-icon">✳</span>
+      <span>فعال‌سازی</span>
+    </a>
+    <a class="nav-item" href="support.html">
+      <span class="nav-icon">◌</span>
+      <span>پشتیبانی</span>
+    </a>
   </div>
-
-  <p class="footer-description">
-    تجربه‌ای تازه از خرید موبایل؛
-    با امکان بررسی شرایط خرید اقساطی،
-    اعتبارسنجی و همراهی در مسیر انتخاب.
-  </p>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-bottom">
-    <p>© تمامی حقوق متعلق به مجموعه VÉRA است.</p>
-    <div class="footer-social">
-      <a href="support.html" class="social-dot">✉</a>
-      <a href="support.html" class="social-dot">☎</a>
-    </div>
-  </div>
-
-</footer>
-
-</div>
-
-<!-- ================= BOTTOM APP NAVIGATION ================= -->
-
-<nav class="bottom-nav" aria-label="منوی اصلی اپلیکیشن">
-
-  <a href="index.html" class="nav-item active">
-    <svg viewBox="0 0 24 24">
-      <path d="m3 10 9-7 9 7"/>
-      <path d="M5 9v11h14V9"/>
-      <path d="M9 20v-6h6v6"/>
-    </svg>
-    <span>خانه</span>
-  </a>
-
-  <a href="guide.html" class="nav-item">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/>
-      <path d="M4 4.5v17M8 6h8M8 10h7"/>
-    </svg>
-    <span>راهنمای خرید</span>
-  </a>
-
-  <a href="activate.html" class="nav-item">
-    <svg viewBox="0 0 24 24">
-      <rect x="4" y="3" width="16" height="18" rx="3"/>
-      <path d="m8 12 2.5 2.5L16 9"/>
-      <path d="M9 6h6"/>
-    </svg>
-    <span>فعال‌سازی</span>
-  </a>
-
-  <a href="support.html" class="nav-item">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 12a8 8 0 0 1 16 0"/>
-      <path d="M4 12v5h4v-5H4zm12 0v5h4v-5h-4z"/>
-      <path d="M16 19c-1 2-5 2-8 0"/>
-    </svg>
-    <span>پشتیبانی</span>
-  </a>
-
 </nav>
 
 <script>
-/* =========================================================
-   VÉRA INTERACTION ENGINE
-========================================================= */
+/* Scroll reveal */
+(function(){
+  const items = document.querySelectorAll('.reveal');
 
-/* =========================
-   SCROLL REVEAL ENGINE
-========================= */
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.13,rootMargin:"0px 0px -35px 0px"});
 
-const revealElements = document.querySelectorAll('.reveal');
-
-if('IntersectionObserver' in window){
-
-  const revealObserver = new IntersectionObserver((entries,observer)=>{
-
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting){
-
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-
-      }
-
-    });
-
-  },{
-    threshold:.09,
-    rootMargin:'0px 0px -35px 0px'
-  });
-
-  revealElements.forEach(element=>{
-    revealObserver.observe(element);
-  });
-
-}else{
-
-  revealElements.forEach(element=>{
-    element.classList.add('visible');
-  });
-
-}
-
-/* =========================
-   FAQ ACCORDION
-========================= */
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item=>{
-
-  const button = item.querySelector('.faq-question');
-  const answer = item.querySelector('.faq-answer');
-
-  button.addEventListener('click',()=>{
-
-    const isOpen = item.classList.contains('active');
-
-    faqItems.forEach(other=>{
-
-      other.classList.remove('active');
-      other.querySelector('.faq-answer').style.maxHeight=null;
-
-    });
-
-    if(!isOpen){
-
-      item.classList.add('active');
-      answer.style.maxHeight=answer.scrollHeight+'px';
-
-    }
-
-  });
-
-});
-
-/* =========================
-   MENU BUTTON
-========================= */
-
-const menuButton = document.getElementById('menuButton');
-
-menuButton.addEventListener('click',()=>{
-
-  const nav = document.querySelector('.bottom-nav');
-
-  nav.scrollIntoView({
-    behavior:'smooth',
-    block:'nearest'
-  });
-
-  nav.animate([
-    {transform:'translateX(-50%) scale(1)'},
-    {transform:'translateX(-50%) scale(1.035)'},
-    {transform:'translateX(-50%) scale(1)'}
-  ],{
-    duration:380,
-    easing:'cubic-bezier(.2,.8,.2,1)'
-  });
-
-});
-
-/* =========================
-   NAVIGATION PRESS EFFECT
-========================= */
-
-document.querySelectorAll('.nav-item').forEach(item=>{
-
-  item.addEventListener('touchstart',()=>{
-    item.style.transform='scale(.94)';
-  },{passive:true});
-
-  item.addEventListener('touchend',()=>{
-    item.style.transform='';
-  },{passive:true});
-
-});
-
-/* =========================
-   BUTTON MICRO INTERACTIONS
-========================= */
-
-document.querySelectorAll('.primary-btn,.secondary-btn,.promo-btn,.contact-action').forEach(button=>{
-
-  button.addEventListener('pointerdown',()=>{
-    button.style.transform='scale(.96)';
-  });
-
-  ['pointerup','pointercancel','pointerleave'].forEach(event=>{
-
-    button.addEventListener(event,()=>{
-      button.style.transform='';
-    });
-
-  });
-
-});
-
-/* =========================
-   ACTIVE NAVIGATION
-========================= */
-
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-document.querySelectorAll('.nav-item').forEach(item=>{
-
-  const target = item.getAttribute('href');
-
-  if(target===currentPage){
-
-    document.querySelectorAll('.nav-item').forEach(nav=>{
-      nav.classList.remove('active');
-    });
-
-    item.classList.add('active');
-
+    items.forEach(item=>observer.observe(item));
+  } else {
+    items.forEach(item=>item.classList.add('visible'));
   }
+})();
 
-});
+/* Active navigation state */
+(function(){
+  const current = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-item').forEach(item=>{
+    const href = item.getAttribute('href');
+    if(href === current){
+      item.classList.add('active');
+      item.setAttribute('aria-current','page');
+    }else{
+      item.classList.remove('active');
+      item.removeAttribute('aria-current');
+    }
+  });
+})();
 
-/* =========================
-   SAFE IMAGE / VIEWPORT SUPPORT
-========================= */
+/* Subtle pointer response on the campaign panel */
+(function(){
+  const panel = document.querySelector('.installment-stage');
+  if(!panel || !window.matchMedia('(hover:hover)').matches) return;
 
-document.documentElement.style.setProperty(
-  '--viewport-height',
-  window.innerHeight+'px'
-);
-
-window.addEventListener('resize',()=>{
-
-  document.documentElement.style.setProperty(
-    '--viewport-height',
-    window.innerHeight+'px'
-  );
-
-},{passive:true});
-
-/* =========================
-   INITIALIZATION
-========================= */
-
-window.addEventListener('pageshow',()=>{
-
-  document.body.classList.add('page-ready');
-
-});
-
+  panel.addEventListener('pointermove',e=>{
+    const rect = panel.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    panel.style.setProperty('--mx',(x*100)+'%');
+    panel.style.setProperty('--my',(y*100)+'%');
+  });
+})();
 </script>
 
 </body>
