@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f8ff">
+<meta name="description" content="راهنمای خرید اقساطی موبایل از NOVA؛ پاسخ به پرسش‌های مهم پیش از خرید.">
+<title>راهنمای خرید | NOVA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f8f8ff;
+  --ink:#17152f;
+  --muted:#77758f;
+  --purple:#6744ff;
+  --purple2:#8b72ff;
+  --cyan:#36e3d0;
+  --lime:#d8ff58;
+  --pink:#ff68a8;
+  --white:#fff;
+  --stroke:rgba(40,30,90,.10);
+  --shadow:0 18px 45px rgba(57,39,133,.12);
+  --nav:82px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Vazirmatn",sans-serif;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+::selection{background:var(--purple);color:#fff}
+
+/* ═══════════════════════════════════
+   LIVING BACKGROUND
+═══════════════════════════════════ */
+.ambient{
+  position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 10% 12%,rgba(103,68,255,.13),transparent 33%),
+    radial-gradient(ellipse at 95% 37%,rgba(54,227,208,.13),transparent 31%),
+    radial-gradient(ellipse at 35% 100%,rgba(255,104,168,.08),transparent 35%);
+}
+.ambient-blob{
+  position:absolute;width:360px;height:360px;border-radius:50%;
+  filter:blur(75px);opacity:.24;
+  animation:blobDrift 19s ease-in-out infinite alternate;
+}
+.ambient-blob.a{background:var(--purple);top:5%;right:-240px}
+.ambient-blob.b{
+  background:var(--cyan);top:45%;left:-260px;
+  animation-delay:-7s;animation-duration:24s;
+}
+.ambient-blob.c{
+  background:var(--pink);bottom:-240px;right:30%;
+  animation-delay:-12s;animation-duration:21s;
+}
+@keyframes blobDrift{
+  0%{transform:translate(0,0) scale(.85)}
+  50%{transform:translate(90px,65px) scale(1.2)}
+  100%{transform:translate(-35px,100px) scale(.95)}
+}
+.noise{
+  position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════
+   BRAND HEADER — SAME IDENTITY
+═══════════════════════════════════ */
+.header{
+  position:sticky;top:0;z-index:80;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 19px;
+  background:rgba(248,248,255,.80);
+  border-bottom:1px solid rgba(65,50,130,.07);
+  backdrop-filter:blur(24px) saturate(1.5);
+  -webkit-backdrop-filter:blur(24px) saturate(1.5);
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-symbol{
+  width:42px;height:42px;position:relative;
+  display:grid;place-items:center;border-radius:15px;
+  background:linear-gradient(145deg,#8e7aff,#5530ec);
+  box-shadow:0 7px 17px rgba(103,68,255,.32),inset 0 1px 1px #ffffff80;
+  transform:rotate(-7deg);
+}
+.brand-symbol:before{
+  content:"";position:absolute;inset:7px;
+  border:1.5px solid rgba(255,255,255,.65);
+  border-radius:10px;transform:rotate(28deg);
+}
+.brand-symbol b{
+  color:white;font-size:23px;font-weight:1000;
+  transform:rotate(7deg);position:relative;
+}
+.brand-title{
+  font-size:21px;line-height:1;font-weight:1000;
+  letter-spacing:1.5px;direction:ltr;
+}
+.brand-caption{
+  display:block;margin-top:5px;font-size:8px;
+  letter-spacing:1.5px;color:#9995b0;font-weight:900;
+}
+.header-right{display:flex;align-items:center;gap:9px}
+.header-page{
+  padding:8px 12px;border:1px solid rgba(103,68,255,.13);
+  border-radius:30px;background:#fff9;
+  display:flex;align-items:center;gap:7px;
+  color:#655b91;font-size:10px;font-weight:900;
+}
+.header-page i{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--pink);box-shadow:0 0 0 4px #ff68a822;
+}
+.header-index{
+  direction:ltr;color:#aaa6bd;font-size:9px;
+  font-weight:900;letter-spacing:1.5px;
+}
+
+/* ═══════════════════════════════════
+   PAGE LAYOUT
+═══════════════════════════════════ */
+main{
+  max-width:700px;margin:auto;
+  padding:0 15px calc(var(--nav) + 35px);
+}
+.hero{padding:24px 0 18px;position:relative}
+.hero-overline{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:15px;
+}
+.eyebrow{
+  display:flex;align-items:center;gap:8px;
+  color:var(--purple);font-size:10px;font-weight:1000;
+}
+.eyebrow:before{
+  content:"";width:18px;height:3px;
+  border-radius:4px;background:var(--pink);
+}
+.hero-code{
+  direction:ltr;font-size:9px;letter-spacing:2px;
+  color:#aaa6bd;font-weight:900;
+}
+.hero-title{
+  margin:0;font-size:clamp(37px,9.5vw,62px);
+  line-height:1.35;font-weight:1000;letter-spacing:-2.5px;
+}
+.hero-title .line{display:block}
+.hero-title .purple{
+  display:inline-block;position:relative;
+  color:var(--purple);isolation:isolate;
+}
+.hero-title .purple:after{
+  content:"";position:absolute;z-index:-1;
+  right:-4px;left:-5px;bottom:5px;height:12px;
+  background:var(--lime);border-radius:4px;
+  transform:skewX(-13deg) rotate(-1deg);
+}
+.hero-title .outline{
+  color:transparent;-webkit-text-stroke:1.6px var(--purple);
+}
+.hero-description{
+  max-width:470px;margin:13px 0 17px;
+  color:var(--muted);font-size:13px;line-height:2.1;
+  font-weight:500;
+}
+.hero-description strong{color:var(--ink);font-weight:1000}
+.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.primary-btn{
+  min-height:47px;padding:0 15px;border:1px solid #a18cff;
+  border-radius:14px 14px 14px 5px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:linear-gradient(115deg,#7655ff,#5530ec);
+  color:white;font-size:11px;font-weight:1000;
+  box-shadow:0 9px 22px #6744ff35,inset 0 1px 1px #ffffff55;
+  transition:.25s;
+}
+.primary-btn:hover{transform:translateY(-3px);box-shadow:0 15px 28px #6744ff45}
+.primary-btn:active{transform:scale(.97)}
+.primary-btn .arrow{
+  width:23px;height:23px;border-radius:8px;
+  background:#ffffff2b;display:grid;place-items:center;font-size:16px;
+}
+.text-link{
+  color:#77718f;font-size:10px;font-weight:900;
+  display:inline-flex;align-items:center;gap:6px;padding:10px 3px;
+}
+.text-link span{color:var(--pink);font-size:17px}
+
+/* ═══════════════════════════════════
+   HERO ARTWORK
+═══════════════════════════════════ */
+.hero-art{
+  height:185px;margin-top:21px;position:relative;
+  border-radius:25px 25px 7px 25px;overflow:hidden;
+  isolation:isolate;
+  background:linear-gradient(120deg,#5b3be9,#7658ff 53%,#9581ff);
+  border:1px solid #ffffffa8;
+  box-shadow:0 20px 45px #583bd33b,inset 0 1px 1px #ffffff70;
+}
+.hero-art:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 80% 30%,#ffffff45,transparent 26%),
+    radial-gradient(circle at 12% 90%,#36e3d077,transparent 34%);
+}
+.art-grid{
+  position:absolute;inset:0;opacity:.24;
+  background-image:
+    linear-gradient(#ffffff25 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff25 1px,transparent 1px);
+  background-size:25px 25px;
+  mask-image:linear-gradient(90deg,transparent,black 45%,black);
+}
+.art-ring{
+  position:absolute;border:1px solid #ffffff55;border-radius:50%;
+  width:230px;height:115px;left:calc(50% - 115px);top:34px;
+  transform:rotate(-20deg);animation:ringSpin 18s linear infinite;
+}
+.art-ring.r2{
+  width:200px;height:150px;top:17px;left:calc(50% - 100px);
+  transform:rotate(42deg);border-style:dashed;
+  animation:ringSpin 24s linear infinite reverse;
+}
+.art-ring.r3{
+  width:290px;height:200px;top:-10px;left:calc(50% - 145px);
+  transform:rotate(15deg);opacity:.35;
+}
+@keyframes ringSpin{to{rotate:360deg}}
+.art-spark{
+  position:absolute;width:9px;height:9px;border-radius:50%;
+  background:var(--lime);left:17%;top:29%;
+  box-shadow:0 0 0 6px #d8ff5830,0 0 20px var(--lime);
+}
+.art-spark.s2{
+  left:auto;right:15%;top:auto;bottom:22%;
+  background:var(--cyan);box-shadow:0 0 0 6px #36e3d033,0 0 20px var(--cyan);
+}
+.art-device{
+  position:absolute;z-index:3;
+  width:95px;height:155px;left:50%;top:18px;
+  transform:translateX(-50%) rotate(-8deg);
+  padding:5px;border-radius:23px;
+  background:linear-gradient(145deg,#fff,#aaa5c7 35%,#27213f 75%,#fff);
+  box-shadow:13px 19px 27px #24115b66,inset 0 1px 2px white;
+  animation:deviceFloat 5s ease-in-out infinite;
+}
+@keyframes deviceFloat{
+  0%,100%{transform:translateX(-50%) rotate(-8deg) translateY(0)}
+  50%{transform:translateX(-50%) rotate(-4deg) translateY(-8px)}
+}
+.art-screen{
+  height:100%;border-radius:18px;overflow:hidden;
+  background:linear-gradient(150deg,#faf8ff,#d9d3ff);
+  padding:12px 8px;position:relative;
+}
+.art-camera{
+  position:absolute;top:5px;left:50%;transform:translateX(-50%);
+  width:32px;height:7px;border-radius:8px;background:#201b39;
+}
+.art-screen-brand{
+  margin-top:7px;display:flex;justify-content:space-between;
+  color:#382d69;font-size:6px;font-weight:1000;
+}
+.art-screen-brand i{
+  width:13px;height:13px;border-radius:5px;background:var(--purple);
+  color:white;font-size:8px;display:grid;place-items:center;font-style:normal;
+}
+.art-screen-text{
+  margin-top:17px;font-size:13px;line-height:1.5;
+  font-weight:1000;color:#262044;
+}
+.art-screen-text span{color:var(--purple)}
+.art-screen-graphic{
+  height:43px;margin-top:9px;border-radius:9px;
+  background:linear-gradient(130deg,#6744ff,#9d88ff);
+  position:relative;overflow:hidden;
+}
+.art-screen-graphic:after{
+  content:"۶ / ۱۲";position:absolute;left:6px;bottom:4px;
+  color:white;font-size:13px;font-weight:1000;
+}
+.art-screen-button{
+  height:17px;line-height:17px;text-align:center;
+  background:var(--lime);color:#34275f;
+  border-radius:6px;font-size:6px;font-weight:1000;margin-top:7px;
+}
+.art-chip{
+  position:absolute;z-index:5;display:flex;align-items:center;gap:7px;
+  padding:8px 10px;background:#ffffffed;border:1px solid white;
+  border-radius:12px;box-shadow:0 9px 22px #24105c3b;
+  backdrop-filter:blur(12px);color:#282047;
+}
+.art-chip b{display:block;font-size:10px;font-weight:1000;color:var(--purple)}
+.art-chip small{display:block;font-size:7px;color:#827d9c;font-weight:800}
+.art-chip i{
+  width:26px;height:26px;border-radius:9px;
+  display:grid;place-items:center;font-style:normal;
+  color:var(--purple);background:#eeeaff;font-size:14px;
+}
+.art-chip.one{right:12px;top:25px;animation:chipFloat 4s infinite}
+.art-chip.two{left:12px;bottom:24px;animation:chipFloat 4.5s infinite reverse}
+.art-chip.two i{background:#dffff8;color:#159c8e}
+@keyframes chipFloat{50%{transform:translateY(-7px) rotate(1deg)}}
+.art-label{
+  position:absolute;bottom:8px;right:50%;transform:translateX(50%);
+  font-size:7px;letter-spacing:2px;color:#ffffffa8;
+  font-weight:900;direction:ltr;white-space:nowrap;
+}
+
+/* ═══════════════════════════════════
+   GUIDE INTRO / QUICK INFO
+═══════════════════════════════════ */
+.guide-intro{
+  display:grid;grid-template-columns:1fr 70px;
+  gap:12px;align-items:center;margin:23px 0 17px;
+}
+.guide-intro h2{
+  margin:0;font-size:clamp(21px,6vw,29px);
+  line-height:1.6;font-weight:1000;letter-spacing:-.8px;
+}
+.guide-intro h2 span{
+  color:var(--purple);text-decoration:underline;
+  text-decoration-color:var(--lime);
+  text-decoration-thickness:6px;text-underline-offset:4px;
+}
+.guide-intro p{
+  margin:5px 0 0;color:var(--muted);
+  font-size:10px;line-height:1.9;font-weight:600;
+}
+.guide-emblem{
+  width:66px;height:66px;border-radius:22px 22px 7px 22px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,#fff,#e8e2ff);
+  border:1px solid white;
+  box-shadow:0 12px 25px #5a42a51d,inset 0 1px 1px white;
+  color:var(--purple);font-size:30px;
+  transform:rotate(7deg);
+  position:relative;
+}
+.guide-emblem:after{
+  content:"";position:absolute;inset:7px;
+  border:1px dashed #8e7aff77;border-radius:16px;
+  animation:emblemSpin 18s linear infinite;
+}
+@keyframes emblemSpin{to{transform:rotate(360deg)}}
+
+/* ═══════════════════════════════════
+   FAQ TOOLBAR
+═══════════════════════════════════ */
+.faq-section{position:relative;padding:5px 0 25px}
+.faq-heading{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:10px;margin-bottom:14px;
+}
+.faq-heading h2{
+  margin:0;font-size:22px;font-weight:1000;letter-spacing:-.8px;
+}
+.faq-heading p{
+  margin:4px 0 0;font-size:10px;color:#8a86a0;font-weight:600;
+}
+.faq-count{
+  min-width:47px;height:47px;border-radius:15px;
+  background:linear-gradient(145deg,#6744ff,#927cff);
+  color:white;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  box-shadow:0 8px 18px #6744ff35,inset 0 1px 1px #ffffff66;
+  transform:rotate(4deg);
+}
+.faq-count strong{font-size:17px;line-height:1;font-weight:1000}
+.faq-count small{font-size:7px;font-weight:800;margin-top:3px}
+
+/* small decorative progress line */
+.faq-progress{
+  height:5px;border-radius:20px;background:#e9e6f6;
+  overflow:hidden;margin-bottom:15px;
+  box-shadow:inset 0 1px 2px #33245c10;
+}
+.faq-progress span{
+  display:block;width:0;height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--purple),var(--pink),var(--cyan));
+  transition:width .35s ease;
+}
+
+/* ═══════════════════════════════════
+   ACCORDION — NO SCROLL JUMP
+═══════════════════════════════════ */
+.faq-list{
+  display:flex;flex-direction:column;gap:9px;
+  overflow-anchor:none;
+}
+.faq-item{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(85,65,155,.11);
+  border-radius:17px 17px 17px 6px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 7px 20px rgba(57,39,133,.055),inset 0 1px 0 white;
+  transition:border-color .3s,box-shadow .3s,transform .3s,background .3s;
+  isolation:isolate;
+}
+.faq-item:before{
+  content:"";position:absolute;z-index:-1;
+  right:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--purple),var(--cyan));
+  transform:scaleY(0);transform-origin:top;
+  transition:transform .35s;
+}
+.faq-item.open{
+  border-color:#9b88ff;
+  background:#fff;
+  box-shadow:0 13px 30px rgba(77,55,170,.12),0 0 0 3px #6744ff0b,inset 0 1px 0 white;
+}
+.faq-item.open:before{transform:scaleY(1)}
+.faq-question{
+  width:100%;min-height:65px;
+  border:0;background:transparent;color:var(--ink);
+  padding:11px 12px;
+  display:grid;grid-template-columns:33px 1fr 34px;
+  align-items:center;gap:10px;text-align:right;
+  cursor:pointer;
+}
+.faq-number{
+  width:31px;height:31px;border-radius:11px;
+  display:grid;place-items:center;
+  background:#f0edff;color:var(--purple);
+  font-size:10px;font-weight:1000;direction:ltr;
+  box-shadow:inset 0 1px 0 white;
+  transition:.3s;
+}
+.faq-question-text{
+  font-size:12px;line-height:1.9;
+  font-weight:900;color:#292541;
+}
+.faq-toggle{
+  width:32px;height:32px;border-radius:11px;
+  display:grid;place-items:center;
+  color:var(--purple);background:#f0edff;
+  border:1px solid #e4ddff;
+  box-shadow:0 3px 7px #6744ff0d;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s;
+}
+.faq-toggle svg{
+  width:15px;height:15px;stroke:currentColor;
+  stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+.faq-item.open .faq-toggle{
+  transform:rotate(45deg);
+  background:var(--purple);color:white;
+  border-color:#8b72ff;
+}
+.faq-item.open .faq-number{
+  color:#fff;background:linear-gradient(145deg,#8d76ff,#6744ff);
+  box-shadow:0 5px 12px #6744ff33;
+}
+.faq-question:focus-visible{
+  outline:2px solid var(--purple);outline-offset:-3px;border-radius:16px;
+}
+
+/* Grid accordion animation. No fixed max-height and no JS scrollIntoView. */
+.faq-answer-grid{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .38s cubic-bezier(.2,.8,.2,1);
+}
+.faq-item.open .faq-answer-grid{grid-template-rows:1fr}
+.faq-answer-clip{min-height:0;overflow:hidden}
+.faq-answer{
+  margin:0 13px 13px 13px;
+  padding:13px 13px 12px;
+  border-radius:12px 12px 12px 4px;
+  background:linear-gradient(145deg,#f8f6ff,#f0edff);
+  border:1px solid #e8e2ff;
+  color:#706b88;font-size:11px;line-height:2.15;
+  font-weight:500;
+}
+.faq-answer strong{color:#30264f;font-weight:1000}
+.faq-answer .answer-mark{
+  display:inline-block;color:var(--purple);
+  font-weight:1000;margin-left:4px;
+}
+.faq-answer a{color:var(--purple);font-weight:900;text-decoration:underline;text-underline-offset:3px}
+
+/* Accordion decorative mini detail */
+.faq-item:nth-child(3n+1) .faq-number{background:#f0edff;color:#6744ff}
+.faq-item:nth-child(3n+2) .faq-number{background:#e3fff8;color:#159c8e}
+.faq-item:nth-child(3n) .faq-number{background:#fff0f6;color:#e54c91}
+.faq-item:nth-child(3n+1).open .faq-number,
+.faq-item:nth-child(3n+2).open .faq-number,
+.faq-item:nth-child(3n).open .faq-number{
+  background:linear-gradient(145deg,#8d76ff,#6744ff);color:white;
+}
+
+/* ═══════════════════════════════════
+   GUIDE FOOTNOTE PANEL
+═══════════════════════════════════ */
+.guide-note{
+  margin-top:20px;padding:16px 15px;
+  border-radius:19px 19px 6px 19px;
+  background:linear-gradient(125deg,#211b42,#30245c);
+  color:white;position:relative;overflow:hidden;isolation:isolate;
+  box-shadow:0 15px 30px #24164c25;
+}
+.guide-note:before{
+  content:"";position:absolute;z-index:-1;
+  width:160px;height:160px;left:-65px;top:-100px;
+  border-radius:50%;background:radial-gradient(circle,#8c70ff,#8c70ff00 70%);
+}
+.note-top{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.note-label{
+  color:#c9c0f3;font-size:9px;font-weight:900;
+  display:flex;align-items:center;gap:7px;
+}
+.note-label i{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--lime);box-shadow:0 0 0 4px #d8ff5822;
+}
+.note-code{font-size:8px;color:#a49bcf;letter-spacing:1.5px;direction:ltr;font-weight:900}
+.guide-note h3{
+  font-size:19px;line-height:1.6;font-weight:1000;
+  margin:12px 0 5px;
+}
+.guide-note h3 span{color:var(--cyan)}
+.guide-note p{
+  margin:0;color:#c6c0df;font-size:10px;
+  line-height:2;font-weight:500;
+}
+.note-action{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:13px;padding:8px 11px;
+  border-radius:10px;background:#ffffff14;
+  border:1px solid #ffffff2d;color:white;
+  font-size:9px;font-weight:900;
+  transition:.25s;
+}
+.note-action:hover{background:#ffffff25;transform:translateY(-2px)}
+.note-action span{color:var(--lime);font-size:15px}
+
+/* ═══════════════════════════════════
+   FINAL ACTIVATION CARD
+═══════════════════════════════════ */
+.activation-card{
+  margin-top:17px;padding:18px 16px;
+  border-radius:22px 22px 22px 7px;
+  background:linear-gradient(120deg,#36e3d0,#9bf3dd);
+  border:1px solid white;
+  box-shadow:0 16px 33px #22bba72b,inset 0 1px 1px white;
+  position:relative;overflow:hidden;isolation:isolate;
+}
+.activation-card:before{
+  content:"N";position:absolute;left:-8px;bottom:-52px;
+  font-size:155px;line-height:1;font-weight:1000;
+  color:#ffffff45;direction:ltr;
+}
+.activation-card .eyebrow{color:#176f68}
+.activation-card .eyebrow:before{background:white}
+.activation-card h3{
+  position:relative;z-index:1;
+  font-size:23px;line-height:1.55;font-weight:1000;
+  margin:10px 0 5px;
+}
+.activation-card p{
+  position:relative;z-index:1;
+  font-size:10px;line-height:2;color:#286e68;
+  font-weight:700;margin:0 0 13px;max-width:400px;
+}
+.activation-card .primary-btn{
+  position:relative;z-index:2;
+  background:#241b4d;border-color:#51477b;
+  box-shadow:0 9px 20px #25194a38;
+}
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+.footer{
+  padding:21px 3px 13px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-brand{display:flex;align-items:center;gap:8px}
+.footer-brand .brand-symbol{width:31px;height:31px;border-radius:11px}
+.footer-brand .brand-symbol:before{inset:5px;border-radius:7px}
+.footer-brand .brand-symbol b{font-size:17px}
+.footer-brand strong{font-size:15px;letter-spacing:1px;direction:ltr}
+.footer-copy{
+  text-align:left;color:#a09cb4;font-size:8px;
+  line-height:1.9;font-weight:800;
+}
+
+/* ═══════════════════════════════════
+   FIXED BOTTOM NAV — MATCH HOME PAGE
+═══════════════════════════════════ */
+.bottom-nav{
+  position:fixed;z-index:100;bottom:0;left:0;right:0;
+  padding:8px 11px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.88);
+  border-top:1px solid #ffffff;
+  box-shadow:0 -10px 35px rgba(44,32,104,.09);
+  backdrop-filter:blur(26px) saturate(1.7);
+  -webkit-backdrop-filter:blur(26px) saturate(1.7);
+}
+.nav-inner{
+  max-width:540px;margin:auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:5px;
+}
+.nav-item{
+  min-height:62px;border-radius:17px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;color:#aaa6bd;font-size:9px;font-weight:900;
+  transition:all .25s;position:relative;
+}
+.nav-icon{
+  width:32px;height:32px;display:grid;place-items:center;
+  transition:transform .25s;
+}
+.nav-icon svg{
+  width:27px;height:27px;stroke:currentColor;
+  stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+.nav-item.active{
+  color:var(--purple);
+  background:linear-gradient(145deg,#f0edff,#e4deff);
+  box-shadow:inset 0 1px 2px white,0 4px 12px #6744ff12;
+}
+.nav-item.active .nav-icon{transform:translateY(-2px) scale(1.12)}
+.nav-item.active:before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:23px;height:3px;border-radius:0 0 5px 5px;background:var(--purple);
+}
+
+/* ═══════════════════════════════════
+   MOTION SYSTEM
+═══════════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(17px) scale(.99);
+  transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+.delay1{transition-delay:.08s}
+.delay2{transition-delay:.16s}
+.delay3{transition-delay:.24s}
+.hero .hero-title{animation:heroEnter .75s .08s both}
+.hero .hero-description{animation:heroEnter .75s .18s both}
+.hero .hero-actions{animation:heroEnter .75s .25s both}
+.hero .hero-art{animation:heroEnter .85s .3s both}
+@keyframes heroEnter{
+  from{opacity:0;transform:translateY(17px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media(min-width:600px){
+  main{padding-left:24px;padding-right:24px}
+  .hero{padding-top:34px}
+  .hero-art{height:205px}
+  .art-device{transform:translateX(-50%) rotate(-8deg) scale(1.08);top:25px}
+  .faq-question{min-height:70px;padding:13px 16px;grid-template-columns:37px 1fr 36px}
+  .faq-question-text{font-size:13px}
+  .faq-answer{font-size:12px;padding:15px}
+  .faq-list{gap:11px}
+}
+@media(max-width:370px){
+  .header{padding:0 13px}
+  .header-index{display:none}
+  .hero-title{font-size:36px;letter-spacing:-1.8px}
+  .hero-art{height:170px}
+  .art-device{transform:translateX(-50%) rotate(-8deg) scale(.9);top:14px}
+  .art-chip{padding:7px 8px}
+  .art-chip.one{right:7px}
+  .art-chip.two{left:7px}
+  .faq-question{grid-template-columns:29px 1fr 31px;gap:8px;padding:10px}
+  .faq-number{width:28px;height:28px}
+  .faq-toggle{width:29px;height:29px}
+  .faq-question-text{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<div class="ambient">
+  <span class="ambient-blob a"></span>
+  <span class="ambient-blob b"></span>
+  <span class="ambient-blob c"></span>
+</div>
+<div class="noise"></div>
+
+<!-- BRAND HEADER -->
+<header class="header">
+  <a class="brand" href="index.html" aria-label="NOVA صفحه اصلی">
+    <span class="brand-symbol"><b>N</b></span>
+    <span>
+      <span class="brand-title">NOVA</span>
+      <span class="brand-caption">A NEW WAY TO BUY</span>
+    </span>
+  </a>
+
+  <div class="header-right">
+    <span class="header-page"><i></i> راهنمای خرید</span>
+    <span class="header-index">02 / 04</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO: INVITATION TO READ -->
+  <section class="hero">
+    <div class="hero-overline">
+      <span class="eyebrow">قبل از انتخاب، آگاهانه بخون</span>
+      <span class="hero-code">NOVA GUIDE / 2026</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line">خرید قسطی،</span>
+      <span class="line"><span class="purple">بدون ابهام.</span></span>
+      <span class="line">با خیال <span class="outline">روشن.</span></span>
+    </h1>
+
+    <p class="hero-description">
+      اینجا راهنمای خرید از <strong>NOVA</strong> رو پیدا می‌کنی.
+      ۱۵ پرسش مهم رو آماده کردیم تا قبل از شروع،
+      با شرایط خرید اقساطی، اعتبارسنجی و تعهداتت آشنا بشی.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#questions" class="primary-btn">
+        مطالعه پرسش‌ها
+        <span class="arrow">↓</span>
+      </a>
+      <a href="activate.html" class="text-link">شروع خرید <span>↗</span></a>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-grid"></div>
+      <div class="art-ring"></div>
+      <div class="art-ring r2"></div>
+      <div class="art-ring r3"></div>
+      <i class="art-spark"></i>
+      <i class="art-spark s2"></i>
+
+      <div class="art-device">
+        <div class="art-screen">
+          <div class="art-camera"></div>
+          <div class="art-screen-brand">
+            <span>NOVA / GUIDE</span><i>N</i>
+          </div>
+          <div class="art-screen-text">اول آگاه شو،<br><span>بعد انتخاب کن.</span></div>
+          <div class="art-screen-graphic"></div>
+          <div class="art-screen-button">راهنمای خرید</div>
+        </div>
+      </div>
+
+      <div class="art-chip one">
+        <i>✳</i>
+        <span><b>۱۵ پرسش مهم</b><small>پاسخ‌های کاربردی خرید</small></span>
+      </div>
+      <div class="art-chip two">
+        <i>◇</i>
+        <span><b>شفاف و مرحله‌ای</b><small>قبل از شروع خرید</small></span>
+      </div>
+      <div class="art-label">KNOW THE PROCESS. OWN THE CHOICE.</div>
+    </div>
+  </section>
+
+  <!-- GUIDE INTRO -->
+  <section class="guide-intro reveal">
+    <div>
+      <h2>هر چیزی که باید بدونی،<br><span>یک‌جا و روشن.</span></h2>
+      <p>برای دیدن پاسخ، هر پرسش رو باز کن. دوباره لمسش کن تا بسته بشه.</p>
+    </div>
+    <div class="guide-emblem">?</div>
+  </section>
+
+  <!-- FAQ / ACCORDION -->
+  <section class="faq-section" id="questions">
+    <div class="faq-heading reveal">
+      <div>
+        <h2>پرسش‌های راهنمای خرید</h2>
+        <p>پاسخ پرسش‌های مهم پیش از خرید اقساطی</p>
+      </div>
+      <div class="faq-count">
+        <strong>۱۵</strong>
+        <small>پرسش</small>
+      </div>
+    </div>
+
+    <div class="faq-progress" aria-hidden="true"><span id="faqProgress"></span></div>
+
+    <div class="faq-list" id="faqList">
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-1">
+          <span class="faq-number">01</span>
+          <span class="faq-question-text">خرید اقساطی از NOVA چطور انجام می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-1" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              <span class="answer-mark">✳</span>
+              ابتدا وارد بخش فعال‌سازی می‌شی و اطلاعات موردنیاز رو ثبت می‌کنی.
+              بعد از بررسی و مشخص‌شدن نتیجه اعتبارسنجی، در صورت تأیید شرایط،
+              امکان ادامه فرایند و انتخاب گوشی اقساطی برات فراهم می‌شه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-2">
+          <span class="faq-number">02</span>
+          <span class="faq-question-text">پرداخت اقساط در چند ماه انجام می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-2" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              امکان انتخاب طرح پرداخت <strong>۶ قسطه یا ۱۲ قسطه</strong> در نظر گرفته شده.
+              گزینه‌های قابل انتخاب و مبلغ هر پرداخت، پیش از نهایی‌کردن خرید
+              بهت نمایش داده می‌شه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-3">
+          <span class="faq-number">03</span>
+          <span class="faq-question-text">آیا خرید اقساطی شامل سود می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-3" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              مدل اعلام‌شده فروشگاه، <strong>بدون سود و نزول</strong> است.
+              مبلغ خرید و شرایط پرداخت باید پیش از تأیید نهایی به‌صورت شفاف
+              در اختیار خریدار قرار بگیره.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-4">
+          <span class="faq-number">04</span>
+          <span class="faq-question-text">برای خرید اقساطی چه کسانی می‌تونن اقدام کنن؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-4" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              متقاضی باید اطلاعات هویتی معتبر و شرایط لازم برای اعتبارسنجی رو داشته باشه.
+              امکان خرید نهایی به نتیجه بررسی اعتبار و ضوابط اعلام‌شده فروشگاه بستگی داره.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-5">
+          <span class="faq-number">05</span>
+          <span class="faq-question-text">برای شروع فرایند چه اطلاعاتی لازم دارم؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-5" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              اطلاعات هویتی و اطلاعات تماس معتبر از موارد اولیه موردنیاز هستند.
+              در ادامه ممکنه اطلاعات تکمیلی برای اعتبارسنجی و احراز محل سکونت
+              ازت درخواست بشه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-6">
+          <span class="faq-number">06</span>
+          <span class="faq-question-text">اعتبارسنجی به چه معناست و چرا انجام می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-6" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              اعتبارسنجی برای بررسی وضعیت اعتباری متقاضی و تعیین امکان استفاده
+              از خرید اقساطی انجام می‌شه. نتیجه این بررسی در تعیین شرایط قابل ارائه
+              نقش داره.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-7">
+          <span class="faq-number">07</span>
+          <span class="faq-question-text">رتبه‌های اعتباری A، B و C چه تفاوتی دارن؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-7" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              این رتبه‌ها دسته‌بندی نتیجه اعتبارسنجی هستند و وضعیت اعتباری متقاضی
+              رو مشخص می‌کنن. شرایط خرید قابل ارائه بر اساس نتیجه بررسی و ضوابط
+              فروشگاه تعیین می‌شه؛ بنابراین نتیجه هر فرد ممکنه متفاوت باشه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-8">
+          <span class="faq-number">08</span>
+          <span class="faq-question-text">احراز محل سکونت چطور انجام می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-8" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              برای اطمینان از صحت نشانی، ممکنه لازم باشه اطلاعات یا مدارک مربوط
+              به محل سکونتت رو ثبت کنی. جزئیات و روش انجام این مرحله در زمان
+              ثبت درخواست بهت نمایش داده می‌شه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-9">
+          <span class="faq-number">09</span>
+          <span class="faq-question-text">سفته الکترونیکی چیه و چه کاربردی داره؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-9" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              سفته الکترونیکی یک سند تعهدآور دیجیتال است که در صورت نیاز،
+              برای تضمین تعهدات پرداخت استفاده می‌شه. مبلغ، شرایط صدور و
+              جزئیات تعهد باید پیش از تأیید در اختیار متقاضی قرار بگیره.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-10">
+          <span class="faq-number">10</span>
+          <span class="faq-question-text">آیا برای خرید حتماً باید سفته ارائه کنم؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-10" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              در فرایند خرید ممکنه ارائه سفته الکترونیکی بر اساس شرایط درخواست
+              و نتیجه بررسی لازم باشه. اگر این مرحله برای پرونده‌ات ضروری باشه،
+              جزئیاتش پیش از انجام بهت اعلام می‌شه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-11">
+          <span class="faq-number">11</span>
+          <span class="faq-question-text">بعد از اعتبارسنجی چطور گوشی موردنظرم رو می‌خرم؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-11" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              بعد از تکمیل مراحل و تأیید شرایط، امکان ورود به مرحله انتخاب و
+              خرید محصول برات فعال می‌شه. در آن مرحله می‌تونی از گزینه‌های
+              موجود، انتخابت رو انجام بدی.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-12">
+          <span class="faq-number">12</span>
+          <span class="faq-question-text">آیا مبلغ هر قسط قبل از خرید مشخص می‌شه؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-12" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              بله؛ مبلغ نهایی خرید، تعداد اقساط، مبلغ هر قسط و زمان‌بندی پرداخت
+              باید پیش از تأیید نهایی به‌صورت روشن نمایش داده بشه.
+              قبل از پذیرش تعهدات، همه جزئیات رو با دقت بررسی کن.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-13">
+          <span class="faq-number">13</span>
+          <span class="faq-question-text">اگر اعتبارسنجی تأیید نشه چه اتفاقی می‌افته؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-13" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              در صورت تأیید نشدن درخواست، امکان ادامه خرید اقساطی بر اساس همان
+              نتیجه فراهم نمی‌شه. نتیجه بررسی و در صورت وجود، راهکارهای بعدی
+              از طریق مسیرهای اعلام‌شده فروشگاه اطلاع‌رسانی می‌شن.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-14">
+          <span class="faq-number">14</span>
+          <span class="faq-question-text">اگر در میانه فرایند از ادامه منصرف بشم چی؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-14" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              اگر هنوز خرید نهایی نشده و تعهدی رو نپذیرفته باشی، می‌تونی
+              فرایند رو ادامه ندی. اگر سند یا تعهدی ثبت کرده باشی،
+              شرایط انصراف و آثار حقوقی اون باید طبق مفاد همان تعهد بررسی بشه.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="answer-15">
+          <span class="faq-number">15</span>
+          <span class="faq-question-text">برای پیگیری درخواست یا دریافت راهنمایی چه کار کنم؟</span>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-answer-grid" id="answer-15" role="region">
+          <div class="faq-answer-clip">
+            <div class="faq-answer">
+              برای پرسش درباره درخواست، مراحل خرید یا پیگیری وضعیت، وارد بخش
+              <strong>پشتیبانی</strong> اپلیکیشن شو و موضوعت رو با تیم پشتیبانی
+              مطرح کن.
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- NOTE -->
+  <section class="guide-note reveal">
+    <div class="note-top">
+      <span class="note-label"><i></i> یک یادآوری مهم</span>
+      <span class="note-code">READ BEFORE COMMIT</span>
+    </div>
+    <h3>قبل از تأیید نهایی،<br><span>جزئیات رو دقیق بخون.</span></h3>
+    <p>
+      مبلغ خرید، زمان‌بندی پرداخت و تمام تعهدات رو بررسی کن.
+      تصمیم آگاهانه، شروع یک خرید خوبه.
+    </p>
+    <a class="note-action" href="support.html">نیاز به راهنمایی بیشتر داری؟ <span>↗</span></a>
+  </section>
+
+  <!-- CTA -->
+  <section class="activation-card reveal">
+    <span class="eyebrow">قدم بعدی با توست</span>
+    <h3>آماده‌ای خریدت رو شروع کنی؟</h3>
+    <p>برای آغاز فرایند خرید اقساطی، وارد بخش فعال‌سازی شو.</p>
+    <a href="activate.html" class="primary-btn">
+      ورود به فعال‌سازی
+      <span class="arrow">←</span>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="brand-symbol"><b>N</b></span>
+      <strong>NOVA</strong>
+    </div>
+    <div class="footer-copy">
+      راهنمای خرید اقساطی موبایل<br>
+      © NOVA
+    </div>
+  </footer>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" aria-label="ناوبری اصلی">
+  <div class="nav-inner">
+
+    <a class="nav-item" href="index.html">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="m3 10 9-7 9 7"/>
+          <path d="M5 9v11h14V9"/>
+          <path d="M9 20v-6h6v6"/>
+        </svg>
+      </span>
+      <span>خانه</span>
+    </a>
+
+    <a class="nav-item active" href="guide.html" aria-current="page">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/>
+          <path d="M5 4.5v17"/>
+          <path d="M9 7h7M9 11h7"/>
+          <path d="M9 15h4"/>
+        </svg>
+      </span>
+      <span>راهنمای خرید</span>
+    </a>
+
+    <a class="nav-item" href="activate.html">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3v18M3 12h18"/>
+          <path d="m5.6 5.6 12.8 12.8M18.4 5.6 5.6 18.4"/>
+          <circle cx="12" cy="12" r="9"/>
+        </svg>
+      </span>
+      <span>فعال‌سازی</span>
+    </a>
+
+    <a class="nav-item" href="support.html">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 13v-2a8 8 0 0 1 16 0v2"/>
+          <path d="M4 13h3v6H6a2 2 0 0 1-2-2z"/>
+          <path d="M20 13h-3v6h1a2 2 0 0 0 2-2z"/>
+          <path d="M17 19a5 5 0 0 1-5 2"/>
+        </svg>
+      </span>
+      <span>پشتیبانی</span>
+    </a>
+
+  </div>
+</nav>
+
+<script>
+/* ═══════════════════════════════════
+   REVEAL ON SCROLL
+═══════════════════════════════════ */
+(()=>{
+  const elements=document.querySelectorAll('.reveal');
+
+  if(!('IntersectionObserver' in window)){
+    elements.forEach(el=>el.classList.add('visible'));
+    return;
+  }
+
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{
+    threshold:.10,
+    rootMargin:"0px 0px -20px 0px"
+  });
+
+  elements.forEach(el=>observer.observe(el));
+})();
+
+/* ═══════════════════════════════════
+   ACCORDION
+   - One open answer at a time
+   - No scrollIntoView
+   - No forced focus movement
+   - No manual scroll adjustment
+   - CSS grid animation instead of max-height
+═══════════════════════════════════ */
+(()=>{
+  const list=document.getElementById('faqList');
+  const items=[...list.querySelectorAll('.faq-item')];
+  const progress=document.getElementById('faqProgress');
+
+  function updateProgress(){
+    const openCount=items.filter(item=>item.classList.contains('open')).length;
+    progress.style.width=(openCount ? 100/15 : 0)+'%';
+  }
+
+  items.forEach(item=>{
+    const button=item.querySelector('.faq-question');
+
+    button.addEventListener('click',()=>{
+      const wasOpen=item.classList.contains('open');
+
+      items.forEach(other=>{
+        other.classList.remove('open');
+        other.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+
+      if(!wasOpen){
+        item.classList.add('open');
+        button.setAttribute('aria-expanded','true');
+      }
+
+      updateProgress();
+    });
+  });
+
+  updateProgress();
+})();
+
+/* ═══════════════════════════════════
+   ACTIVE BOTTOM NAV
+═══════════════════════════════════ */
+(()=>{
+  const page=location.pathname.split('/').pop()||'index.html';
+
+  document.querySelectorAll('.nav-item').forEach(item=>{
+    const target=item.getAttribute('href');
+
+    if(target===page){
+      item.classList.add('active');
+      item.setAttribute('aria-current','page');
+    }else{
+      item.classList.remove('active');
+      item.removeAttribute('aria-current');
+    }
+  });
+})();
+
+/* ═══════════════════════════════════
+   HERO DEVICE PARALLAX
+═══════════════════════════════════ */
+(()=>{
+  const stage=document.querySelector('.hero-art');
+  const device=document.querySelector('.art-device');
+
+  if(!stage||!device||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+
+  stage.addEventListener('pointermove',event=>{
+    const rect=stage.getBoundingClientRect();
+    const x=(event.clientX-rect.left)/rect.width-.5;
+    const y=(event.clientY-rect.top)/rect.height-.5;
+
+    device.style.marginLeft=(x*10)+'px';
+    device.style.marginTop=(y*7)+'px';
+  });
+
+  stage.addEventListener('pointerleave',()=>{
+    device.style.marginLeft='0';
+    device.style.marginTop='0';
+  });
+})();
+
+/* ═══════════════════════════════════
+   DEEP LINK TO FAQ
+═══════════════════════════════════ */
+(()=>{
+  if(location.hash==='#questions'){
+    requestAnimationFrame(()=>{
+      document.getElementById('questions')?.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+})();
+</script>
+
+</body>
+      </html>
