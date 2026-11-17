@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f6f5f1">
-<meta name="description" content="تجربه متفاوت خرید موبایل با امکان خرید اقساطی">
-<title>MONO | فروشگاه تخصصی موبایل</title>
+<meta name="theme-color" content="#f7f8fc">
+<meta name="description" content="تجربه‌ای متفاوت از خرید اقساطی موبایل؛ ساده، شفاف و مطمئن.">
+<title>VÉRA | تجربه‌ای تازه از خرید موبایل</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,3311 +13,2481 @@
 
 <style>
 /* =========================================================
-   01. DESIGN TOKENS
+   VÉRA — PREMIUM MOBILE EXPERIENCE
+   Editorial / Neo-luxury / App-first / Motion UI
 ========================================================= */
 
 :root{
- --paper:#f6f5f1;
- --paper2:#eeede7;
- --surface:#fffefa;
- --surface2:#f0f0eb;
- --ink:#171b20;
- --ink2:#343b43;
- --muted:#858b90;
- --muted2:#a9adb0;
- --blue:#315de8;
- --blue2:#2046c7;
- --blue-light:#e8edff;
- --blue-pale:#f0f3ff;
- --orange:#f17a48;
- --line:#e7e6df;
- --line2:#d9d9d1;
- --green:#4b8067;
- --radius-sm:12px;
- --radius-md:20px;
- --radius-lg:30px;
- --radius-xl:38px;
- --shadow-soft:0 12px 35px rgba(27,34,43,.055);
- --shadow-card:0 18px 45px rgba(27,34,43,.08);
- --shadow-float:0 24px 65px rgba(27,34,43,.13);
- --ease:cubic-bezier(.22,.8,.25,1);
- --nav-height:76px;
+  --paper:#f7f8fc;
+  --white:#ffffff;
+  --ink:#171a2b;
+  --muted:#85899b;
+  --blue:#414df5;
+  --blue2:#6975ff;
+  --blue3:#dfe3ff;
+  --orange:#ff704e;
+  --orange2:#ff9478;
+  --line:rgba(30,35,75,.09);
+  --shadow:0 18px 55px rgba(40,48,120,.075);
+  --shadow2:0 8px 26px rgba(40,48,120,.09);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --radius:28px;
+  --nav-height:78px;
 }
 
 *{
- box-sizing:border-box;
- margin:0;
- padding:0;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
 
 html{
- scroll-behavior:smooth;
- scroll-padding-top:30px;
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
 
 body{
- background:var(--paper);
- color:var(--ink);
- font-family:'Vazirmatn',sans-serif;
- overflow-x:hidden;
- -webkit-tap-highlight-color:transparent;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  min-height:100vh;
+  padding-bottom:calc(var(--nav-height) + 28px + env(safe-area-inset-bottom));
 }
 
-button,input{
- font-family:inherit;
-}
-
-button{
- cursor:pointer;
+button,a{
+  font-family:inherit;
 }
 
 a{
- color:inherit;
- text-decoration:none;
+  text-decoration:none;
+  color:inherit;
 }
 
-img{
- display:block;
- max-width:100%;
-}
-
-svg{
- display:block;
+button{
+  border:0;
+  cursor:pointer;
 }
 
 ::selection{
- background:var(--blue);
- color:white;
+  background:#dce0ff;
+  color:#252b9a;
 }
+
+/* =========================
+   GLOBAL BACKGROUND
+========================= */
+
+.ambient{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.ambient::before{
+  content:"";
+  position:absolute;
+  width:460px;
+  height:460px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(103,117,255,.105),transparent 70%);
+  top:-230px;
+  right:-180px;
+}
+
+.ambient::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,112,78,.075),transparent 70%);
+  bottom:5%;
+  left:-230px;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:30;
+  opacity:.018;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* =========================
+   APPLICATION SHELL
+========================= */
 
 .app{
- width:100%;
- max-width:560px;
- margin:0 auto;
- min-height:100vh;
- position:relative;
- overflow:hidden;
- background:var(--paper);
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  min-height:100vh;
+  position:relative;
 }
 
-.desktop-container{
- width:100%;
+.page-wrap{
+  padding:0 21px;
 }
 
-/* =========================================================
-   02. REUSABLE ELEMENTS
-========================================================= */
+/* =========================
+   TOP HEADER
+========================= */
 
-.eyebrow{
- display:flex;
- align-items:center;
- gap:9px;
- font-size:10px;
- font-weight:800;
- letter-spacing:.2px;
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:calc(12px + env(safe-area-inset-top)) 21px 12px;
+  background:rgba(247,248,252,.84);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(30,35,75,.045);
 }
 
-.eyebrow-line{
- width:21px;
- height:1px;
- background:currentColor;
-}
-
-.kicker{
- color:var(--blue);
- font-size:10px;
- font-weight:900;
- letter-spacing:.5px;
-}
-
-.display-title{
- font-size:clamp(30px,8vw,48px);
- font-weight:900;
- line-height:1.48;
- letter-spacing:-1.8px;
-}
-
-.display-title em{
- font-style:normal;
- color:var(--blue);
-}
-
-.muted{
- color:var(--muted);
-}
-
-.section{
- padding:37px 21px 0;
-}
-
-.section-heading{
- display:flex;
- align-items:flex-end;
- justify-content:space-between;
- gap:15px;
- margin-bottom:20px;
-}
-
-.section-heading h2{
- font-size:21px;
- font-weight:900;
- letter-spacing:-.7px;
-}
-
-.section-heading p{
- font-size:10px;
- color:var(--muted);
- margin-top:5px;
-}
-
-.text-link{
- color:var(--blue);
- font-size:11px;
- font-weight:800;
- display:inline-flex;
- align-items:center;
- gap:7px;
- white-space:nowrap;
-}
-
-.text-link svg{
- width:16px;
-}
-
-.pill{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- padding:6px 11px;
- border-radius:30px;
- font-size:9px;
- font-weight:800;
-}
-
-.pill-blue{
- background:var(--blue-light);
- color:var(--blue);
-}
-
-.pill-white{
- background:#ffffffd9;
- color:var(--ink);
-}
-
-.icon-button{
- width:43px;
- height:43px;
- border-radius:15px;
- display:grid;
- place-items:center;
- border:1px solid var(--line);
- background:var(--surface);
- color:var(--ink);
- transition:.25s var(--ease);
-}
-
-.icon-button:active{
- transform:scale(.92);
-}
-
-.icon-button svg{
- width:19px;
- height:19px;
-}
-
-/* =========================================================
-   03. ANNOUNCEMENT BAR
-========================================================= */
-
-.announcement{
- min-height:34px;
- background:#202a39;
- color:white;
- display:flex;
- align-items:center;
- justify-content:center;
- gap:9px;
- padding:7px 15px;
- font-size:9px;
- font-weight:600;
- text-align:center;
-}
-
-.announcement-dot{
- width:6px;
- height:6px;
- border-radius:50%;
- background:#7ea3ff;
- box-shadow:0 0 0 4px #ffffff12;
-}
-
-/* =========================================================
-   04. HEADER
-========================================================= */
-
-.header{
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:17px 20px 13px;
- position:relative;
- z-index:10;
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:49px;
 }
 
 .brand{
- display:flex;
- align-items:center;
- gap:10px;
+  display:flex;
+  align-items:center;
+  gap:11px;
 }
 
 .brand-symbol{
- width:43px;
- height:43px;
- border-radius:15px;
- background:var(--blue);
- color:white;
- display:grid;
- place-items:center;
- position:relative;
- overflow:hidden;
+  width:43px;
+  height:43px;
+  position:relative;
+  border-radius:15px;
+  background:linear-gradient(145deg,#5c68ff,#3943dc);
+  display:grid;
+  place-items:center;
+  box-shadow:0 7px 17px rgba(65,77,245,.22);
+  overflow:hidden;
+}
+
+.brand-symbol::before{
+  content:"";
+  position:absolute;
+  width:26px;
+  height:26px;
+  border:2px solid rgba(255,255,255,.85);
+  border-radius:9px;
+  transform:rotate(45deg);
 }
 
 .brand-symbol::after{
- content:"";
- position:absolute;
- width:34px;
- height:34px;
- border:1px solid #ffffff65;
- border-radius:50%;
- right:-17px;
- bottom:-15px;
+  content:"";
+  position:absolute;
+  width:8px;
+  height:8px;
+  background:#ff9a76;
+  border-radius:50%;
+  right:7px;
+  top:7px;
 }
 
-.brand-symbol svg{
- width:24px;
- height:24px;
+.brand-symbol span{
+  position:relative;
+  z-index:2;
+  color:white;
+  font-weight:900;
+  font-size:17px;
 }
 
 .brand-name{
- font-size:19px;
- font-weight:900;
- letter-spacing:1px;
- line-height:1.1;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:2px;
+  line-height:1;
 }
 
 .brand-caption{
- color:var(--muted);
- font-size:9px;
- margin-top:4px;
- font-weight:500;
+  font-size:9px;
+  font-weight:600;
+  color:#9295a8;
+  letter-spacing:1.1px;
+  margin-top:5px;
 }
 
 .header-actions{
- display:flex;
- align-items:center;
- gap:8px;
+  display:flex;
+  align-items:center;
+  gap:9px;
 }
 
-.header-profile{
- display:none;
+.header-action{
+  width:43px;
+  height:43px;
+  border-radius:15px;
+  background:white;
+  border:1px solid var(--line);
+  display:grid;
+  place-items:center;
+  color:#34384e;
+  transition:.3s var(--ease);
+  box-shadow:0 3px 12px rgba(30,35,75,.035);
 }
 
-/* =========================================================
-   05. INTRODUCTION
-========================================================= */
-
-.intro{
- padding:22px 23px 17px;
- position:relative;
+.header-action:active{
+  transform:scale(.91);
+  background:#eceeff;
 }
 
-.intro .eyebrow{
- color:var(--blue);
- margin-bottom:13px;
+.header-action svg{
+  width:20px;
+  height:20px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-.intro h1{
- font-size:34px;
- font-weight:900;
- line-height:1.55;
- letter-spacing:-1.5px;
+/* =========================
+   ANNOUNCEMENT
+========================= */
+
+.announcement{
+  margin:14px 21px 0;
+  min-height:38px;
+  border-radius:11px;
+  background:#edf0ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  overflow:hidden;
+  position:relative;
 }
 
-.intro h1 span{
- position:relative;
- color:var(--blue);
+.announcement-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 4px rgba(65,77,245,.09);
 }
 
-.intro h1 span::after{
- content:"";
- position:absolute;
- bottom:3px;
- right:0;
- width:100%;
- height:5px;
- border-radius:5px;
- background:#315de81c;
+.announcement p{
+  font-size:11px;
+  font-weight:700;
+  color:#454db0;
 }
 
-.intro-description{
- font-size:12px;
- line-height:2.1;
- color:var(--muted);
- max-width:360px;
- margin-top:10px;
+.announcement strong{
+  color:var(--orange);
 }
 
-.intro-index{
- position:absolute;
- left:22px;
- top:34px;
- color:#d8d9d3;
- font-size:44px;
- font-weight:300;
- letter-spacing:-4px;
-}
-
-/* =========================================================
-   06. EDITORIAL HERO
-========================================================= */
-
-.hero-shell{
- padding:7px 14px 0;
-}
+/* =========================
+   HERO
+========================= */
 
 .hero{
- min-height:385px;
- border-radius:30px;
- background:#e5e4dc;
- position:relative;
- overflow:hidden;
- isolation:isolate;
+  position:relative;
+  margin:18px 14px 0;
+  border-radius:33px;
+  min-height:550px;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 85% 25%,rgba(255,255,255,.95),transparent 39%),
+    linear-gradient(145deg,#e9ecff 0%,#dce2ff 45%,#f6e9e7 100%);
+  isolation:isolate;
 }
 
-.hero-background{
- position:absolute;
- inset:0;
- background:
- radial-gradient(ellipse at 68% 36%,#fdfcf6 0%,transparent 35%),
- linear-gradient(125deg,#e8e7df 0%,#d9dce0 53%,#c6ccd4 100%);
- z-index:-3;
+.hero::before{
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.8);
+  right:-130px;
+  top:60px;
+  box-shadow:
+    0 0 0 30px rgba(255,255,255,.10),
+    0 0 0 65px rgba(255,255,255,.07);
 }
 
-.hero-circle{
- position:absolute;
- width:390px;
- height:390px;
- border-radius:50%;
- border:1px solid #ffffff8a;
- top:25px;
- right:15%;
- transform:translateX(50%);
- z-index:-2;
-}
-
-.hero-circle::before,
-.hero-circle::after{
- content:"";
- position:absolute;
- border:1px solid #ffffff65;
- border-radius:50%;
- inset:25px;
-}
-
-.hero-circle::after{
- inset:55px;
-}
-
-.hero-image{
- position:absolute;
- width:82%;
- height:91%;
- right:16%;
- bottom:-3%;
- object-fit:contain;
- object-position:center bottom;
- z-index:-1;
- filter:drop-shadow(0 25px 25px #26303b2d);
- transform:rotate(-5deg);
- transition:transform 1s var(--ease);
-}
-
-.hero:hover .hero-image{
- transform:rotate(-2deg) translateY(-5px);
+.hero::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  background:rgba(255,255,255,.18);
+  border-radius:50%;
+  left:-130px;
+  bottom:-80px;
+  filter:blur(5px);
 }
 
 .hero-content{
- position:absolute;
- top:25px;
- right:22px;
- width:62%;
- z-index:2;
+  position:relative;
+  z-index:5;
+  padding:32px 25px 0;
 }
 
-.hero-index{
- font-size:9px;
- letter-spacing:2px;
- font-weight:900;
- color:#747b83;
+.hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#5d65ba;
 }
 
-.hero h2{
- font-size:29px;
- line-height:1.6;
- font-weight:900;
- letter-spacing:-1.2px;
- margin-top:14px;
+.kicker-line{
+  width:24px;
+  height:2px;
+  background:var(--orange);
+  border-radius:5px;
 }
 
-.hero h2 span{
- color:var(--blue);
+.hero h1{
+  font-size:clamp(38px,9vw,62px);
+  font-weight:900;
+  line-height:1.36;
+  letter-spacing:-2.3px;
+  margin-top:21px;
+  color:#20233a;
+  max-width:480px;
 }
 
-.hero-copy{
- color:#656d75;
- font-size:10px;
- line-height:2;
- margin-top:9px;
- max-width:190px;
+.hero h1 .accent{
+  color:var(--blue);
+  position:relative;
+  display:inline-block;
 }
 
-.hero-actions{
- display:flex;
- flex-wrap:wrap;
- gap:9px;
- margin-top:17px;
+.hero h1 .accent::after{
+  content:"";
+  position:absolute;
+  bottom:4px;
+  right:0;
+  width:100%;
+  height:9px;
+  background:rgba(255,112,78,.19);
+  z-index:-1;
+  transform:skewX(-15deg);
 }
 
-.primary-button{
- min-height:43px;
- display:inline-flex;
- justify-content:center;
- align-items:center;
- gap:9px;
- padding:0 15px;
- background:var(--blue);
- color:white;
- border-radius:12px;
- font-size:10px;
- font-weight:800;
- box-shadow:0 8px 20px #315de82e;
- transition:.3s var(--ease);
+.hero-description{
+  color:#6d718a;
+  font-size:13px;
+  line-height:2.2;
+  max-width:340px;
+  margin-top:13px;
+  font-weight:500;
 }
 
-.primary-button:hover{
- background:var(--blue2);
- transform:translateY(-2px);
+.hero-buttons{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:23px;
+  position:relative;
+  z-index:8;
 }
 
-.primary-button svg{
- width:16px;
+.primary-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:0 20px;
+  min-height:51px;
+  border-radius:13px;
+  background:linear-gradient(120deg,#4f5cff,#3542e6);
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  box-shadow:0 10px 22px rgba(65,77,245,.25);
+  transition:.3s var(--ease);
 }
 
-.secondary-button{
- min-height:43px;
- display:inline-flex;
- align-items:center;
- justify-content:center;
- padding:0 12px;
- color:var(--ink);
- font-size:10px;
- font-weight:800;
+.primary-btn:active{
+  transform:scale(.96);
 }
 
-.hero-bottom{
- position:absolute;
- bottom:17px;
- right:20px;
- left:20px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- z-index:3;
+.primary-btn svg{
+  width:17px;
+  height:17px;
+  stroke:white;
+  fill:none;
+  stroke-width:2;
 }
 
-.hero-product-caption{
- color:#505861;
- font-size:9px;
- font-weight:700;
+.secondary-btn{
+  min-height:51px;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(65,77,245,.16);
+  background:rgba(255,255,255,.56);
+  color:#444b9d;
+  border-radius:13px;
+  font-size:11px;
+  font-weight:800;
+  transition:.3s;
 }
 
-.hero-product-caption span{
- display:block;
- color:#838b91;
- font-size:8px;
- font-weight:400;
- margin-top:4px;
+/* =========================
+   HERO PHONE ARTWORK
+========================= */
+
+.hero-art{
+  height:232px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:2;
+  pointer-events:none;
 }
 
-.hero-counter{
- display:flex;
- align-items:center;
- gap:6px;
- font-size:9px;
- color:#656c73;
+.art-floor{
+  position:absolute;
+  bottom:-100px;
+  left:5%;
+  width:90%;
+  height:200px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(79,91,215,.18),transparent 70%);
 }
 
-.hero-counter b{
- font-size:14px;
- color:var(--blue);
+.phone{
+  position:absolute;
+  width:119px;
+  height:223px;
+  border-radius:27px;
+  background:linear-gradient(145deg,#30364c,#090e1e);
+  padding:5px;
+  box-shadow:
+    0 27px 45px rgba(35,43,110,.26),
+    0 4px 12px rgba(25,30,75,.15);
+  border:1px solid rgba(255,255,255,.7);
+  overflow:hidden;
+  transform-style:preserve-3d;
 }
 
-.hero-scroll{
- position:absolute;
- left:17px;
- top:25px;
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:7px;
- font-size:8px;
- color:#7b8389;
- writing-mode:vertical-rl;
+.phone-screen{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:22px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 20%,#ffb9a7,transparent 38%),
+    linear-gradient(155deg,#8290ff,#444ce3 65%,#252a94);
 }
 
-.hero-scroll::after{
- content:"";
- width:1px;
- height:38px;
- background:#899098;
+.phone-screen::before{
+  content:"";
+  position:absolute;
+  top:7px;
+  left:50%;
+  transform:translateX(-50%);
+  width:38px;
+  height:11px;
+  border-radius:20px;
+  background:#121727;
+  z-index:3;
 }
 
-/* =========================================================
-   07. HERO SLIDER CONTROLS
-========================================================= */
-
-.slider-controls{
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:13px 4px 0;
+.phone-screen::after{
+  content:"";
+  position:absolute;
+  width:115px;
+  height:115px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50%;
+  right:-50px;
+  top:48px;
+  box-shadow:0 0 0 16px rgba(255,255,255,.08);
 }
 
-.slider-progress{
- display:flex;
- align-items:center;
- gap:5px;
+.phone-orb{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#fff,#dce0ff);
+  transform:rotate(36deg);
+  left:10px;
+  top:67px;
+  box-shadow:0 15px 35px rgba(20,25,90,.25);
 }
 
-.slider-progress span{
- width:17px;
- height:3px;
- border-radius:5px;
- background:#d5d6d2;
- transition:.3s;
+.phone-orb::before{
+  content:"";
+  position:absolute;
+  inset:9px;
+  border:2px solid rgba(65,77,245,.23);
+  border-radius:22px;
 }
 
-.slider-progress span.active{
- width:32px;
- background:var(--blue);
+.phone-orb::after{
+  content:"V";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#4653e8;
+  font-family:Georgia,serif;
+  font-size:48px;
+  font-weight:bold;
+  transform:rotate(-36deg);
 }
 
-.slider-arrows{
- display:flex;
- gap:7px;
+.phone-one{
+  left:calc(50% - 58px);
+  bottom:-43px;
+  z-index:4;
+  transform:rotate(-7deg);
+  animation:phoneFloat 6s ease-in-out infinite;
 }
 
-.slider-arrow{
- width:31px;
- height:31px;
- display:grid;
- place-items:center;
- border-radius:50%;
- border:1px solid var(--line2);
- background:transparent;
- color:var(--ink);
+.phone-two{
+  left:calc(50% - 143px);
+  bottom:-66px;
+  width:101px;
+  height:191px;
+  z-index:2;
+  transform:rotate(-20deg);
+  background:linear-gradient(140deg,#d9dbe7,#777d9b);
+  animation:phoneFloat2 7s ease-in-out infinite;
 }
 
-.slider-arrow svg{
- width:15px;
+.phone-two .phone-screen{
+  background:linear-gradient(150deg,#ffbca6,#ff816a,#e45b71);
 }
 
-/* =========================================================
-   08. VALUE PROPOSITIONS
-========================================================= */
-
-.value-strip{
- padding:24px 20px 0;
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:0;
+.phone-two .phone-orb{
+  width:70px;
+  height:70px;
+  left:10px;
+  top:60px;
 }
 
-.value-item{
- padding:4px 9px;
- border-left:1px solid var(--line);
+.phone-two .phone-orb::after{
+  color:#e16b78;
+  font-size:36px;
 }
 
-.value-item:last-child{
- border:0;
+.phone-three{
+  left:calc(50% + 48px);
+  bottom:-65px;
+  width:103px;
+  height:193px;
+  z-index:3;
+  transform:rotate(14deg);
+  background:linear-gradient(145deg,#f3f3f7,#a3a7ba);
+  animation:phoneFloat3 6.5s ease-in-out infinite;
+}
+
+.phone-three .phone-screen{
+  background:linear-gradient(145deg,#f9c9b9,#e9a1b5,#b7a8ed);
+}
+
+.phone-three .phone-orb{
+  width:72px;
+  height:72px;
+  left:10px;
+  top:62px;
+}
+
+.phone-three .phone-orb::after{
+  color:#a76d9e;
+  font-size:37px;
+}
+
+.art-label{
+  position:absolute;
+  z-index:6;
+  left:20px;
+  bottom:48px;
+  background:rgba(255,255,255,.84);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:13px;
+  padding:10px 13px;
+  box-shadow:0 8px 25px rgba(50,50,100,.08);
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.art-label-icon{
+  width:27px;
+  height:27px;
+  border-radius:9px;
+  background:#fff0ec;
+  color:var(--orange);
+  display:grid;
+  place-items:center;
+  font-size:15px;
+}
+
+.art-label strong{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+}
+
+.art-label small{
+  font-size:8px;
+  color:#9295a6;
+}
+
+.art-spark{
+  position:absolute;
+  color:white;
+  font-size:23px;
+  animation:sparkle 3s ease-in-out infinite;
+}
+
+.spark-one{right:16%;top:32px}
+.spark-two{left:17%;top:14px;font-size:17px}
+.spark-three{right:22%;bottom:30px;font-size:13px}
+
+/* =========================
+   HERO ANIMATIONS
+========================= */
+
+@keyframes phoneFloat{
+  0%,100%{transform:translateY(0) rotate(-7deg)}
+  50%{transform:translateY(-12px) rotate(-4deg)}
+}
+
+@keyframes phoneFloat2{
+  0%,100%{transform:translateY(0) rotate(-20deg)}
+  50%{transform:translateY(-9px) rotate(-16deg)}
+}
+
+@keyframes phoneFloat3{
+  0%,100%{transform:translateY(0) rotate(14deg)}
+  50%{transform:translateY(-14px) rotate(10deg)}
+}
+
+@keyframes sparkle{
+  0%,100%{opacity:.5;transform:scale(.8) rotate(0)}
+  50%{opacity:1;transform:scale(1.2) rotate(30deg)}
+}
+
+/* =========================
+   TRUST STRIP
+========================= */
+
+.trust-strip{
+  margin:25px 21px 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.trust-item{
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  gap:8px;
+  padding:15px 5px;
+  border-left:1px solid var(--line);
+}
+
+.trust-item:last-child{
+  border-left:0;
+}
+
+.trust-icon{
+  width:38px;
+  height:38px;
+  border-radius:13px;
+  background:white;
+  border:1px solid var(--line);
+  display:grid;
+  place-items:center;
+  color:var(--blue);
+}
+
+.trust-icon svg{
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.trust-item strong{
+  font-size:10px;
+  font-weight:800;
+}
+
+.trust-item small{
+  font-size:9px;
+  color:#9699a8;
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+.section{
+  margin-top:62px;
+}
+
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:22px;
+}
+
+.section-eyebrow{
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  margin-bottom:8px;
+}
+
+.section-title{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-.8px;
+  line-height:1.7;
+}
+
+.section-subtitle{
+  font-size:11px;
+  color:#8b8fa0;
+  line-height:2;
+  margin-top:4px;
+}
+
+.section-number{
+  font-size:36px;
+  font-weight:300;
+  font-family:Georgia,serif;
+  color:#d4d7e6;
+  line-height:1;
+}
+
+/* =========================
+   BRAND EXPERIENCE
+========================= */
+
+.experience{
+  position:relative;
+  margin-top:57px;
+}
+
+.experience-main{
+  position:relative;
+  min-height:270px;
+  border-radius:27px;
+  overflow:hidden;
+  background:linear-gradient(120deg,#353fe4,#6976ff);
+  color:white;
+  padding:25px 23px;
+  isolation:isolate;
+}
+
+.experience-main::before{
+  content:"";
+  position:absolute;
+  width:240px;
+  height:240px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  top:-100px;
+  left:-65px;
+  box-shadow:0 0 0 25px rgba(255,255,255,.055),
+             0 0 0 55px rgba(255,255,255,.04);
+}
+
+.experience-main::after{
+  content:"V";
+  position:absolute;
+  font-family:Georgia,serif;
+  font-weight:900;
+  font-size:240px;
+  color:rgba(255,255,255,.075);
+  bottom:-110px;
+  left:8px;
+  z-index:-1;
+}
+
+.experience-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.experience-tag{
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.12);
+  border-radius:30px;
+  padding:7px 12px;
+  font-size:9px;
+  font-weight:700;
+}
+
+.experience-star{
+  font-size:25px;
+  color:#ffd2bf;
+}
+
+.experience-main h2{
+  font-size:27px;
+  font-weight:900;
+  line-height:1.7;
+  margin-top:25px;
+  max-width:290px;
+}
+
+.experience-main p{
+  font-size:11px;
+  color:rgba(255,255,255,.76);
+  line-height:2;
+  max-width:300px;
+  margin-top:7px;
+}
+
+.experience-bottom{
+  margin-top:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.experience-bottom span{
+  font-size:10px;
+  font-weight:700;
+}
+
+.experience-arrow{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  background:white;
+  color:var(--blue);
+  border-radius:11px;
+  font-size:19px;
+  transform:rotate(180deg);
+}
+
+/* =========================
+   DIFFERENTIATORS
+========================= */
+
+.values{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+}
+
+.value-card{
+  position:relative;
+  min-height:170px;
+  padding:19px 16px;
+  background:white;
+  border:1px solid rgba(30,35,75,.055);
+  border-radius:21px;
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(40,48,120,.035);
+  transition:transform .4s var(--ease),box-shadow .4s;
+}
+
+.value-card:active{
+  transform:scale(.975);
+}
+
+.value-card::after{
+  content:"";
+  position:absolute;
+  width:95px;
+  height:95px;
+  border-radius:50%;
+  left:-30px;
+  bottom:-40px;
+  background:var(--card-glow,#eef0ff);
 }
 
 .value-icon{
- width:31px;
- height:31px;
- color:var(--blue);
- margin-bottom:9px;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:var(--icon-bg,#eef0ff);
+  color:var(--icon-color,var(--blue));
 }
 
 .value-icon svg{
- width:22px;
- height:22px;
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-.value-item strong{
- display:block;
- font-size:10px;
- font-weight:900;
+.value-card h3{
+  font-size:13px;
+  font-weight:900;
+  margin-top:17px;
 }
 
-.value-item small{
- display:block;
- color:var(--muted);
- font-size:8px;
- line-height:1.8;
- margin-top:5px;
+.value-card p{
+  font-size:10px;
+  color:#9295a5;
+  line-height:2;
+  margin-top:6px;
+  max-width:180px;
 }
 
-/* =========================================================
-   09. PRODUCT DISCOVERY
-========================================================= */
+/* =========================
+   CAMPAIGN EDITORIAL PANEL
+========================= */
 
-.discovery{
- padding-top:38px;
+.campaign{
+  margin-top:60px;
+  position:relative;
+  min-height:355px;
+  border-radius:29px;
+  background:#fff;
+  border:1px solid rgba(30,35,75,.06);
+  overflow:hidden;
 }
 
-.discovery-head{
- display:flex;
- justify-content:space-between;
- align-items:flex-end;
- margin-bottom:16px;
+.campaign-content{
+  position:relative;
+  z-index:4;
+  padding:25px 23px;
 }
 
-.discovery-head h2{
- font-size:22px;
- font-weight:900;
+.campaign-label{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#eb725a;
+  font-size:9px;
+  font-weight:900;
 }
 
-.discovery-head p{
- font-size:10px;
- color:var(--muted);
- margin-top:5px;
+.campaign-label::before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--orange);
 }
 
-.search-field{
- display:flex;
- align-items:center;
- gap:10px;
- min-height:49px;
- padding:0 14px;
- background:#eeede7;
- border:1px solid #e6e5de;
- border-radius:15px;
- transition:.25s;
+.campaign h2{
+  font-size:29px;
+  font-weight:900;
+  line-height:1.65;
+  margin-top:14px;
+  max-width:300px;
+  letter-spacing:-1px;
 }
 
-.search-field:focus-within{
- border-color:var(--blue);
- background:white;
+.campaign h2 span{
+  color:var(--blue);
 }
 
-.search-field svg{
- width:19px;
- color:#777f86;
- flex-shrink:0;
+.campaign p{
+  font-size:11px;
+  color:#898d9e;
+  line-height:2.2;
+  margin-top:8px;
+  max-width:275px;
 }
 
-.search-field input{
- width:100%;
- background:transparent;
- border:0;
- outline:0;
- font-size:11px;
- color:var(--ink);
+.campaign-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+  font-size:11px;
+  font-weight:900;
+  color:var(--blue);
+  border-bottom:1px solid rgba(65,77,245,.3);
+  padding-bottom:5px;
 }
 
-.search-field input::placeholder{
- color:#a1a5a7;
+.campaign-visual{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:115px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,0),rgba(225,230,255,.9)),
+    radial-gradient(ellipse at 50% 100%,#d7dcff,#f5f6ff 72%);
 }
 
-.filter-row{
- display:flex;
- gap:8px;
- overflow-x:auto;
- padding:13px 0 4px;
- scrollbar-width:none;
+.campaign-circle{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(65,77,245,.16);
+  bottom:-95px;
+  left:50%;
+  transform:translateX(-50%);
 }
 
-.filter-row::-webkit-scrollbar{
- display:none;
+.campaign-circle.c1{width:300px;height:200px}
+.campaign-circle.c2{width:230px;height:155px;bottom:-75px}
+.campaign-circle.c3{width:160px;height:110px;bottom:-50px}
+
+.campaign-phone{
+  position:absolute;
+  bottom:-48px;
+  left:50%;
+  transform:translateX(-50%) rotate(-10deg);
+  width:72px;
+  height:135px;
+  border-radius:19px;
+  border:4px solid #343a58;
+  background:linear-gradient(145deg,#b8c1ff,#4a57ed);
+  box-shadow:0 12px 24px rgba(50,55,140,.2);
 }
 
-.filter-chip{
- white-space:nowrap;
- padding:8px 14px;
- border:1px solid var(--line2);
- border-radius:30px;
- color:#666f77;
- background:transparent;
- font-size:9px;
- font-weight:700;
- transition:.2s;
+.campaign-phone::before{
+  content:"";
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translateX(-50%);
+  width:24px;
+  height:6px;
+  border-radius:10px;
+  background:#20263e;
 }
 
-.filter-chip.active{
- background:var(--ink);
- color:white;
- border-color:var(--ink);
+.campaign-phone::after{
+  content:"V";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  font-size:43px;
+  color:white;
 }
 
-/* =========================================================
-   10. PRODUCT CARDS
-========================================================= */
+/* =========================
+   PROCESS SECTION
+========================= */
 
-.product-grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:12px;
- margin-top:15px;
-}
-
-.product-card{
- min-width:0;
- background:var(--surface);
- border:1px solid #eae9e2;
- border-radius:22px;
- overflow:hidden;
- position:relative;
- transition:transform .3s var(--ease),box-shadow .3s;
-}
-
-.product-card:active{
- transform:scale(.98);
-}
-
-.product-visual{
- height:175px;
- position:relative;
- overflow:hidden;
- display:grid;
- place-items:center;
- background:#efeee9;
-}
-
-.product-visual::before{
- content:"";
- position:absolute;
- width:155px;
- height:155px;
- border:1px solid #ffffffa8;
- border-radius:50%;
-}
-
-.product-visual::after{
- content:"";
- position:absolute;
- width:120px;
- height:120px;
- border:1px solid #ffffff8a;
- border-radius:50%;
-}
-
-.product-photo{
- width:100%;
- height:100%;
- object-fit:cover;
- position:absolute;
- inset:0;
- mix-blend-mode:multiply;
- transition:transform .7s var(--ease);
-}
-
-.product-card:hover .product-photo{
- transform:scale(1.055);
-}
-
-.product-badge{
- position:absolute;
- z-index:3;
- top:10px;
- right:10px;
- padding:5px 8px;
- border-radius:8px;
- background:#ffffffd9;
- font-size:8px;
- font-weight:900;
- color:var(--blue);
-}
-
-.favorite-button{
- position:absolute;
- z-index:4;
- top:9px;
- left:9px;
- width:32px;
- height:32px;
- border-radius:50%;
- background:#ffffffd9;
- display:grid;
- place-items:center;
- color:#666e75;
- border:0;
-}
-
-.favorite-button svg{
- width:16px;
-}
-
-.favorite-button.selected{
- color:#e55b70;
-}
-
-.product-body{
- padding:12px 12px 13px;
-}
-
-.product-overline{
- font-size:8px;
- color:#a0a3a0;
- font-weight:700;
- letter-spacing:.4px;
-}
-
-.product-name{
- font-size:12px;
- font-weight:900;
- margin-top:4px;
-}
-
-.product-description{
- color:var(--muted);
- font-size:9px;
- margin-top:5px;
-}
-
-.product-separator{
- height:1px;
- background:var(--line);
- margin:12px 0;
-}
-
-.product-meta{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:5px;
-}
-
-.product-installment{
- color:var(--blue);
- font-size:9px;
- font-weight:800;
-}
-
-.product-details-button{
- width:29px;
- height:29px;
- border-radius:10px;
- background:var(--blue-light);
- color:var(--blue);
- display:grid;
- place-items:center;
- border:0;
-}
-
-.product-details-button svg{
- width:15px;
-}
-
-.empty-state{
- display:none;
- text-align:center;
- padding:35px 15px;
- color:var(--muted);
- font-size:11px;
- grid-column:1/-1;
-}
-
-/* =========================================================
-   11. EDITORIAL FEATURE
-========================================================= */
-
-.feature{
- margin:34px 14px 0;
- min-height:260px;
- border-radius:28px;
- background:#e8e6de;
- overflow:hidden;
- position:relative;
- isolation:isolate;
-}
-
-.feature-background{
- position:absolute;
- inset:0;
- background:
- radial-gradient(circle at 80% 50%,#ffffffc9 0,transparent 30%),
- linear-gradient(120deg,#e7e5dd,#d9d9d2);
- z-index:-2;
-}
-
-.feature-image{
- position:absolute;
- left:-20px;
- bottom:-20px;
- width:56%;
- height:94%;
- object-fit:contain;
- filter:drop-shadow(0 17px 20px #2229);
- transform:rotate(-8deg);
-}
-
-.feature-content{
- padding:26px 23px;
- position:relative;
- z-index:2;
- width:66%;
-}
-
-.feature-content .eyebrow{
- color:var(--blue);
-}
-
-.feature-content h2{
- font-size:24px;
- font-weight:900;
- line-height:1.7;
- margin-top:12px;
-}
-
-.feature-content p{
- color:#777e80;
- font-size:10px;
- line-height:2;
- margin-top:7px;
-}
-
-.feature-link{
- display:inline-flex;
- align-items:center;
- gap:8px;
- margin-top:14px;
- font-size:10px;
- font-weight:900;
- color:var(--blue);
-}
-
-.feature-link svg{
- width:16px;
-}
-
-/* =========================================================
-   12. INSTALLMENT EXPERIENCE
-========================================================= */
-
-.credit-section{
- padding-top:38px;
-}
-
-.credit-panel{
- background:#253249;
- color:white;
- border-radius:28px;
- padding:24px 22px 22px;
- position:relative;
- overflow:hidden;
- isolation:isolate;
-}
-
-.credit-panel::before{
- content:"";
- position:absolute;
- width:280px;
- height:280px;
- border:1px solid #ffffff1c;
- border-radius:50%;
- top:-110px;
- left:-110px;
- z-index:-1;
-}
-
-.credit-panel::after{
- content:"";
- position:absolute;
- width:210px;
- height:210px;
- border:1px solid #ffffff16;
- border-radius:50%;
- top:-70px;
- left:-75px;
- z-index:-1;
-}
-
-.credit-top{
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
-
-.credit-label{
- font-size:9px;
- color:#c4d2e8;
- font-weight:700;
-}
-
-.credit-symbol{
- width:37px;
- height:37px;
- border:1px solid #ffffff45;
- border-radius:13px;
- display:grid;
- place-items:center;
-}
-
-.credit-symbol svg{
- width:20px;
-}
-
-.credit-panel h2{
- font-size:26px;
- line-height:1.6;
- font-weight:900;
- margin-top:22px;
-}
-
-.credit-panel h2 span{
- color:#a9c1ff;
-}
-
-.credit-panel p{
- color:#c2cbd7;
- font-size:10px;
- line-height:2.1;
- max-width:300px;
- margin-top:8px;
-}
-
-.credit-bottom{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:10px;
- margin-top:20px;
-}
-
-.credit-cta{
- display:inline-flex;
- align-items:center;
- gap:9px;
- padding:12px 15px;
- border-radius:12px;
- background:#fff;
- color:#263d78;
- font-size:10px;
- font-weight:900;
-}
-
-.credit-cta svg{
- width:16px;
-}
-
-.credit-note{
- font-size:8px;
- color:#b8c4d5;
- text-align:left;
- line-height:1.9;
-}
-
-/* =========================================================
-   13. PROCESS TIMELINE
-========================================================= */
-
-.process-section{
- padding-top:39px;
+.process{
+  margin-top:61px;
 }
 
 .process-list{
- position:relative;
- display:flex;
- flex-direction:column;
- gap:0;
+  position:relative;
+  padding:4px 0;
 }
 
 .process-list::before{
- content:"";
- position:absolute;
- top:23px;
- bottom:25px;
- right:19px;
- width:1px;
- background:#d8d9d3;
+  content:"";
+  position:absolute;
+  top:28px;
+  bottom:30px;
+  right:19px;
+  width:1px;
+  background:linear-gradient(to bottom,#aab1ff,#e7e9f4);
 }
 
 .process-item{
- display:flex;
- align-items:flex-start;
- gap:14px;
- padding:11px 0;
- position:relative;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  position:relative;
+  padding:15px 0;
 }
 
 .process-icon{
- width:39px;
- height:39px;
- border:1px solid #e1e2dc;
- background:var(--paper);
- color:var(--blue);
- border-radius:13px;
- display:grid;
- place-items:center;
- flex-shrink:0;
- z-index:1;
+  flex-shrink:0;
+  position:relative;
+  z-index:2;
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #e5e7fa;
+  color:var(--blue);
+  box-shadow:0 4px 12px rgba(40,48,120,.05);
 }
 
 .process-icon svg{
- width:19px;
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-.process-text{
- padding-top:2px;
+.process-info{
+  padding-top:2px;
+  flex:1;
 }
 
-.process-text strong{
- font-size:11px;
- font-weight:900;
- display:block;
+.process-info h3{
+  font-size:12px;
+  font-weight:900;
 }
 
-.process-text p{
- color:var(--muted);
- font-size:9px;
- line-height:1.9;
- margin-top:4px;
+.process-info p{
+  color:#9699a8;
+  font-size:10px;
+  line-height:2;
+  margin-top:5px;
 }
 
-.process-number{
- margin-right:auto;
- font-size:10px;
- color:#b3b6b2;
- font-weight:800;
+.process-index{
+  font-family:Georgia,serif;
+  font-size:19px;
+  color:#d0d3e3;
+  padding-top:5px;
 }
 
-/* =========================================================
-   14. BRAND STORY
-========================================================= */
+/* =========================
+   FEATURED PROMO
+========================= */
 
-.brand-story{
- padding:43px 23px 0;
+.promo{
+  margin-top:58px;
+  position:relative;
+  overflow:hidden;
+  border-radius:26px;
+  background:linear-gradient(125deg,#fff0eb,#fff8f5 58%,#fce7e5);
+  padding:23px 21px;
+  min-height:185px;
 }
 
-.story-label{
- color:var(--blue);
- font-size:9px;
- font-weight:900;
- letter-spacing:1px;
+.promo::after{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border:1px solid rgba(245,113,87,.18);
+  border-radius:50%;
+  left:-60px;
+  top:30px;
+  box-shadow:0 0 0 22px rgba(245,113,87,.045);
 }
 
-.story-title{
- font-size:27px;
- font-weight:900;
- line-height:1.7;
- margin-top:11px;
- letter-spacing:-1px;
+.promo-content{
+  position:relative;
+  z-index:2;
+  max-width:280px;
 }
 
-.story-title span{
- color:var(--blue);
+.promo-small{
+  color:#e77a65;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
-.story-description{
- font-size:11px;
- line-height:2.2;
- color:var(--muted);
- margin-top:9px;
- max-width:420px;
+.promo h2{
+  font-size:23px;
+  font-weight:900;
+  line-height:1.7;
+  margin-top:8px;
 }
 
-.story-stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- margin-top:22px;
- border-top:1px solid var(--line2);
- border-bottom:1px solid var(--line2);
- padding:17px 0;
+.promo p{
+  font-size:10px;
+  line-height:2;
+  color:#a17e78;
+  margin-top:5px;
 }
 
-.story-stat{
- border-left:1px solid var(--line);
- padding-right:10px;
+.promo-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-top:13px;
+  background:#fff;
+  color:#dc705b;
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:10px;
+  font-weight:900;
+  box-shadow:0 6px 15px rgba(180,90,70,.08);
 }
 
-.story-stat:last-child{
- border:0;
+/* =========================
+   STORE PROMISE
+========================= */
+
+.promise{
+  margin-top:58px;
+  text-align:center;
 }
 
-.story-stat strong{
- display:block;
- font-size:17px;
- font-weight:900;
- color:var(--blue);
+.promise-mark{
+  width:58px;
+  height:58px;
+  border-radius:20px;
+  background:linear-gradient(140deg,#5d69ff,#3b46e5);
+  display:grid;
+  place-items:center;
+  margin:0 auto 16px;
+  color:white;
+  font-family:Georgia,serif;
+  font-size:34px;
+  box-shadow:0 12px 24px rgba(65,77,245,.19);
 }
 
-.story-stat span{
- display:block;
- font-size:8px;
- color:var(--muted);
- margin-top:4px;
+.promise h2{
+  font-size:23px;
+  font-weight:900;
 }
 
-/* =========================================================
-   15. FAQ
-========================================================= */
+.promise p{
+  color:#9295a5;
+  font-size:11px;
+  line-height:2.4;
+  max-width:340px;
+  margin:10px auto 0;
+}
 
-.faq-section{
- padding-top:39px;
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  margin-top:58px;
 }
 
 .faq-item{
- border-bottom:1px solid var(--line2);
+  background:#fff;
+  border:1px solid rgba(30,35,75,.06);
+  border-radius:16px;
+  margin-top:10px;
+  overflow:hidden;
+  transition:border-color .3s;
 }
 
 .faq-question{
- width:100%;
- background:transparent;
- border:0;
- min-height:54px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- text-align:right;
- gap:12px;
- font-size:11px;
- font-weight:800;
- color:var(--ink);
+  width:100%;
+  min-height:58px;
+  background:transparent;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:right;
+  padding:13px 15px;
+  color:#303449;
+  font-size:11px;
+  font-weight:800;
+  gap:12px;
 }
 
-.faq-question svg{
- width:17px;
- color:var(--blue);
- flex-shrink:0;
- transition:transform .3s;
+.faq-plus{
+  flex-shrink:0;
+  width:27px;
+  height:27px;
+  border-radius:9px;
+  background:#f0f1ff;
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-size:19px;
+  transition:.3s;
+}
+
+.faq-item.active .faq-plus{
+  transform:rotate(45deg);
+  background:var(--blue);
+  color:white;
 }
 
 .faq-answer{
- max-height:0;
- overflow:hidden;
- transition:max-height .35s var(--ease);
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s var(--ease);
 }
 
 .faq-answer p{
- padding:0 0 16px;
- color:var(--muted);
- font-size:10px;
- line-height:2.2;
+  padding:0 15px 16px;
+  color:#9295a5;
+  font-size:10px;
+  line-height:2.3;
 }
 
-.faq-item.open .faq-answer{
- max-height:180px;
+/* =========================
+   CONTACT CTA
+========================= */
+
+.contact-banner{
+  margin-top:55px;
+  background:#252b4d;
+  color:white;
+  border-radius:24px;
+  padding:23px 19px;
+  position:relative;
+  overflow:hidden;
 }
 
-.faq-item.open .faq-question svg{
- transform:rotate(45deg);
+.contact-banner::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(104,116,255,.17);
+  left:-65px;
+  top:-80px;
 }
 
-/* =========================================================
-   16. FOOTER
-========================================================= */
+.contact-row{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.contact-text h3{
+  font-size:15px;
+  font-weight:900;
+}
+
+.contact-text p{
+  font-size:10px;
+  color:rgba(255,255,255,.58);
+  margin-top:7px;
+  line-height:1.9;
+}
+
+.contact-action{
+  width:43px;
+  height:43px;
+  border-radius:14px;
+  background:white;
+  color:#303ee4;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-size:20px;
+  transform:rotate(180deg);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
- margin:38px 14px 0;
- background:#e9e8e1;
- border-radius:25px 25px 0 0;
- padding:25px 19px 30px;
-}
-
-.footer-top{
- display:flex;
- justify-content:space-between;
- align-items:flex-start;
- gap:10px;
+  padding:40px 22px 15px;
 }
 
 .footer-brand{
- font-size:20px;
- font-weight:900;
- letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.footer-brand-caption{
- font-size:9px;
- color:var(--muted);
- margin-top:5px;
+.footer-brand .brand-symbol{
+  width:37px;
+  height:37px;
+  border-radius:13px;
 }
 
-.footer-social{
- display:flex;
- gap:7px;
-}
-
-.social-link{
- width:34px;
- height:34px;
- border-radius:11px;
- background:#ffffffb8;
- display:grid;
- place-items:center;
- color:var(--ink);
-}
-
-.social-link svg{
- width:16px;
+.footer-brand .brand-name{
+  font-size:19px;
 }
 
 .footer-description{
- color:#777e80;
- font-size:9px;
- line-height:2.2;
- margin-top:17px;
+  margin-top:15px;
+  font-size:10px;
+  color:#999cad;
+  line-height:2.3;
+  max-width:330px;
+}
+
+.footer-divider{
+  height:1px;
+  background:var(--line);
+  margin:22px 0 16px;
 }
 
 .footer-bottom{
- border-top:1px solid #d9d9d1;
- margin-top:18px;
- padding-top:14px;
- display:flex;
- justify-content:space-between;
- color:#8d928f;
- font-size:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
 }
 
-/* =========================================================
-   17. BOTTOM APP NAVIGATION
-========================================================= */
+.footer-bottom p{
+  font-size:9px;
+  color:#a1a4b1;
+}
+
+.footer-social{
+  display:flex;
+  gap:8px;
+}
+
+.social-dot{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:white;
+  color:#626985;
+  font-size:12px;
+  border:1px solid var(--line);
+}
+
+/* =========================
+   FLOATING NAVIGATION
+========================= */
 
 .bottom-nav{
- position:fixed;
- z-index:100;
- bottom:0;
- left:50%;
- transform:translateX(-50%);
- width:min(100%,560px);
- min-height:var(--nav-height);
- display:grid;
- grid-template-columns:repeat(4,1fr);
- padding:8px 12px calc(8px + env(safe-area-inset-bottom));
- background:#fffefaed;
- backdrop-filter:blur(22px);
- -webkit-backdrop-filter:blur(22px);
- border-top:1px solid #e8e7e1;
+  position:fixed;
+  z-index:200;
+  bottom:calc(10px + env(safe-area-inset-bottom));
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 24px);
+  max-width:520px;
+  height:72px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(50,55,100,.09);
+  border-radius:22px;
+  box-shadow:0 12px 40px rgba(30,35,85,.13);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  align-items:center;
+  padding:5px 7px;
 }
 
-.nav-link{
- display:flex;
- align-items:center;
- justify-content:center;
- flex-direction:column;
- gap:5px;
- color:#9a9fa1;
- font-size:9px;
- font-weight:700;
- transition:.25s;
+.nav-item{
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  color:#a0a3b3;
+  position:relative;
+  transition:.3s var(--ease);
 }
 
-.nav-link svg{
- width:21px;
- height:21px;
- stroke-width:1.7;
+.nav-item svg{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:.3s;
 }
 
-.nav-link.active{
- color:var(--blue);
+.nav-item span{
+  font-size:9px;
+  font-weight:700;
 }
 
-.nav-link.active .nav-icon{
- width:43px;
- height:28px;
- border-radius:10px;
- background:var(--blue-light);
- display:grid;
- place-items:center;
+.nav-item.active{
+  color:var(--blue);
 }
 
-.nav-icon{
- display:grid;
- place-items:center;
- width:43px;
- height:28px;
+.nav-item.active::before{
+  content:"";
+  position:absolute;
+  top:0;
+  width:32px;
+  height:3px;
+  border-radius:0 0 5px 5px;
+  background:var(--blue);
 }
 
-/* =========================================================
-   18. PRODUCT DETAIL MODAL
-========================================================= */
-
-.modal-overlay{
- position:fixed;
- inset:0;
- z-index:200;
- background:#151a20a8;
- backdrop-filter:blur(5px);
- display:flex;
- align-items:flex-end;
- justify-content:center;
- opacity:0;
- visibility:hidden;
- transition:.3s;
+.nav-item.active svg{
+  transform:translateY(-2px);
+  stroke-width:2.2;
 }
 
-.modal-overlay.open{
- opacity:1;
- visibility:visible;
-}
-
-.product-modal{
- width:min(100%,560px);
- max-height:88vh;
- overflow-y:auto;
- background:var(--surface);
- border-radius:28px 28px 0 0;
- padding:13px 20px calc(25px + env(safe-area-inset-bottom));
- transform:translateY(50px);
- transition:.35s var(--ease);
-}
-
-.modal-overlay.open .product-modal{
- transform:translateY(0);
-}
-
-.modal-handle{
- width:37px;
- height:4px;
- background:#d9d9d2;
- border-radius:10px;
- margin:0 auto 19px;
-}
-
-.modal-close{
- position:absolute;
- left:20px;
- top:18px;
- width:34px;
- height:34px;
- border-radius:50%;
- background:#eeeee8;
- border:0;
- display:grid;
- place-items:center;
-}
-
-.modal-close svg{
- width:17px;
-}
-
-.modal-product-image{
- width:100%;
- height:225px;
- border-radius:20px;
- background:#eeede7;
- overflow:hidden;
-}
-
-.modal-product-image img{
- width:100%;
- height:100%;
- object-fit:cover;
- mix-blend-mode:multiply;
-}
-
-.modal-product-title{
- font-size:21px;
- font-weight:900;
- margin-top:17px;
-}
-
-.modal-product-description{
- color:var(--muted);
- font-size:11px;
- line-height:2;
- margin-top:7px;
-}
-
-.modal-specs{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:9px;
- margin-top:18px;
-}
-
-.modal-spec{
- background:#f0f0eb;
- border-radius:12px;
- padding:12px;
-}
-
-.modal-spec span{
- display:block;
- font-size:8px;
- color:var(--muted);
-}
-
-.modal-spec strong{
- display:block;
- font-size:11px;
- margin-top:5px;
-}
-
-.modal-action{
- width:100%;
- border:0;
- margin-top:19px;
-}
-
-/* =========================================================
-   19. SEARCH OVERLAY
-========================================================= */
-
-.search-overlay{
- position:fixed;
- inset:0;
- z-index:210;
- background:var(--paper);
- padding:20px;
- opacity:0;
- visibility:hidden;
- transition:.25s;
-}
-
-.search-overlay.open{
- opacity:1;
- visibility:visible;
-}
-
-.search-top{
- display:flex;
- align-items:center;
- gap:10px;
- margin-top:15px;
-}
-
-.search-top input{
- flex:1;
- border:1px solid var(--line2);
- border-radius:14px;
- padding:14px;
- background:white;
- outline:0;
- font-size:12px;
-}
-
-.search-suggestions{
- margin-top:25px;
-}
-
-.search-suggestions h3{
- font-size:13px;
- margin-bottom:15px;
-}
-
-.search-suggestions button{
- display:block;
- width:100%;
- text-align:right;
- padding:12px 0;
- background:transparent;
- border:0;
- border-bottom:1px solid var(--line);
- font-size:11px;
- color:#6c747b;
-}
-
-/* =========================================================
-   20. SCROLL ANIMATIONS
-========================================================= */
+/* =========================
+   SCROLL REVEAL
+========================= */
 
 .reveal{
- opacity:0;
- transform:translateY(22px);
- transition:opacity .7s var(--ease),transform .7s var(--ease);
+  opacity:0;
+  transform:translateY(24px);
+  transition:
+    opacity .8s var(--ease),
+    transform .8s var(--ease);
 }
 
 .reveal.visible{
- opacity:1;
- transform:translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 
 .delay-1{transition-delay:.08s}
 .delay-2{transition-delay:.16s}
 .delay-3{transition-delay:.24s}
-.delay-4{transition-delay:.32s}
 
-@keyframes softFloat{
- 0%,100%{transform:translateY(0)}
- 50%{transform:translateY(-7px)}
+/* =========================
+   TOUCH / FEEDBACK
+========================= */
+
+.pressable{
+  transition:transform .25s var(--ease);
 }
 
-@keyframes shine{
- 0%{transform:translateX(-120%)}
- 100%{transform:translateX(120%)}
+.pressable:active{
+  transform:scale(.975);
 }
 
-/* =========================================================
-   21. RESPONSIVE DESIGN
-========================================================= */
-
-@media(min-width:400px){
-
- .hero{
-  min-height:410px;
- }
-
- .hero-content{
-  top:31px;
-  right:27px;
- }
-
- .hero h2{
-  font-size:32px;
- }
-
- .product-visual{
-  height:190px;
- }
-
- .product-body{
-  padding:14px;
- }
-
- .intro h1{
-  font-size:37px;
- }
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(65,77,245,.2)}
+  70%{box-shadow:0 0 0 9px rgba(65,77,245,0)}
+  100%{box-shadow:0 0 0 0 rgba(65,77,245,0)}
 }
 
-@media(min-width:520px){
+/* =========================
+   DESKTOP RESPONSIVE
+========================= */
 
- .app{
-  box-shadow:0 0 60px #252c3510;
- }
+@media(min-width:650px){
 
- .hero{
-  min-height:440px;
- }
+  .app{
+    max-width:760px;
+    box-shadow:0 0 80px rgba(35,40,100,.035);
+    background:rgba(255,255,255,.12);
+  }
 
- .hero-image{
-  width:78%;
- }
+  .hero{
+    min-height:600px;
+  }
 
- .section{
-  padding-left:25px;
-  padding-right:25px;
- }
+  .hero-art{
+    height:280px;
+  }
 
- .product-visual{
-  height:210px;
- }
+  .phone{
+    transform-origin:center bottom;
+    scale:1.12;
+  }
 
- .product-grid{
-  gap:15px;
- }
+  .hero h1{
+    max-width:530px;
+  }
+
+  .trust-strip{
+    max-width:570px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .bottom-nav{
+    bottom:18px;
+  }
 }
 
-@media(max-width:360px){
+/* =========================
+   SMALL MOBILE
+========================= */
 
- .intro h1{
-  font-size:29px;
- }
+@media(max-width:380px){
 
- .hero{
-  min-height:345px;
- }
+  .page-wrap{
+    padding:0 16px;
+  }
 
- .hero h2{
-  font-size:25px;
- }
+  .hero{
+    margin-left:10px;
+    margin-right:10px;
+    min-height:535px;
+  }
 
- .hero-content{
-  width:65%;
- }
+  .hero-content{
+    padding:27px 19px 0;
+  }
 
- .hero-image{
-  width:86%;
- }
+  .hero h1{
+    font-size:37px;
+  }
 
- .product-visual{
-  height:145px;
- }
+  .hero-description{
+    font-size:12px;
+  }
 
- .product-name{
-  font-size:11px;
- }
+  .hero-buttons{
+    gap:7px;
+  }
 
- .credit-panel h2{
-  font-size:23px;
- }
+  .primary-btn{
+    padding:0 13px;
+    font-size:11px;
+  }
 
- .value-strip{
-  padding-left:13px;
-  padding-right:13px;
- }
+  .secondary-btn{
+    padding:0 11px;
+    font-size:10px;
+  }
 
- .value-item{
-  padding-right:6px;
-  padding-left:5px;
- }
+  .section-title{
+    font-size:22px;
+  }
+
+  .values{
+    gap:9px;
+  }
+
+  .value-card{
+    padding:15px 12px;
+  }
 }
+
+/* =========================
+   ACCESSIBILITY
+========================= */
 
 @media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
 
- *,
- *::before,
- *::after{
-  scroll-behavior:auto!important;
-  animation-duration:.01ms!important;
-  transition-duration:.01ms!important;
- }
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
+<div class="ambient"></div>
+<div class="noise"></div>
+
 <div class="app">
 
-<!-- =====================================================
-     ANNOUNCEMENT
-====================================================== -->
+<!-- ================= HEADER ================= -->
 
-<div class="announcement">
- <span class="announcement-dot"></span>
- <span>تجربه‌ای تازه از خرید موبایل با امکان خرید اقساطی</span>
-</div>
+<header class="topbar">
+  <div class="topbar-inner">
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+    <a href="index.html" class="brand" aria-label="صفحه اصلی">
+      <div class="brand-symbol"><span>V</span></div>
+      <div>
+        <div class="brand-name">VÉRA</div>
+        <div class="brand-caption">MOBILE EXPERIENCE</div>
+      </div>
+    </a>
 
-<header class="header">
+    <div class="header-actions">
 
- <a href="index.html" class="brand">
+      <a href="support.html" class="header-action" aria-label="پشتیبانی">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 12a8 8 0 0 1 16 0"/>
+          <path d="M4 12v4a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2"/>
+          <path d="M20 12v4a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2"/>
+          <path d="M15 19c-.8 1-2 1.5-4 1.5"/>
+        </svg>
+      </a>
 
-  <div class="brand-symbol">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-    <rect x="6" y="2" width="12" height="20" rx="3"/>
-    <path d="M10 5h4M11 19h2"/>
-    <path d="M9 9h6M9 12h6"/>
-   </svg>
+      <button class="header-action" id="menuButton" aria-label="منو">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+
+    </div>
   </div>
-
-  <div>
-   <div class="brand-name">MONO.</div>
-   <div class="brand-caption">SMARTPHONE EXPERIENCE</div>
-  </div>
-
- </a>
-
- <div class="header-actions">
-
-  <button class="icon-button" id="searchOpen" aria-label="جستجو">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-    <circle cx="10.8" cy="10.8" r="7"/>
-    <path d="m16 16 5 5"/>
-   </svg>
-  </button>
-
-  <button class="icon-button" onclick="location.href='support.html'" aria-label="پشتیبانی">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-    <path d="M4 13v-2a8 8 0 0116 0v2"/>
-    <rect x="3" y="12" width="4" height="7" rx="2"/>
-    <rect x="17" y="12" width="4" height="7" rx="2"/>
-    <path d="M17 19a5 5 0 01-5 3h-1"/>
-   </svg>
-  </button>
-
- </div>
-
 </header>
 
-<!-- =====================================================
-     INTRO
-====================================================== -->
+<!-- ================= ANNOUNCEMENT ================= -->
 
-<section class="intro">
+<div class="announcement">
+  <span class="announcement-dot"></span>
+  <p>یک تجربه تازه برای <strong>خرید هوشمندانه موبایل</strong></p>
+</div>
 
- <div class="eyebrow">
-  <span class="eyebrow-line"></span>
-  MORE THAN A PHONE
- </div>
+<!-- ================= HERO ================= -->
 
- <div class="intro-index">01</div>
+<main>
 
- <h1>
-  انتخاب هوشمندانه،<br>
-  تجربه‌ای <span>متفاوت.</span>
- </h1>
-
- <p class="intro-description">
-  گوشی مورد علاقه‌ات را پیدا کن؛ با تجربه خریدی ساده، شفاف و امکان استفاده از شرایط خرید اقساطی.
- </p>
-
-</section>
-
-<!-- =====================================================
-     HERO
-====================================================== -->
-
-<section class="hero-shell">
-
- <div class="hero" id="heroSlider">
-
-  <div class="hero-background"></div>
-  <div class="hero-circle"></div>
-
-  <img
-   class="hero-image"
-   id="heroImage"
-   src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=90"
-   alt="گوشی هوشمند"
-  >
+<section class="hero">
 
   <div class="hero-content">
 
-   <div class="hero-index">COLLECTION / 001</div>
+    <div class="hero-kicker">
+      <span class="kicker-line"></span>
+      <span>نسل جدید خرید موبایل</span>
+    </div>
 
-   <h2 id="heroTitle">
-    تکنولوژی<br>
-    در <span>دسترس تو.</span>
-   </h2>
+    <h1>
+      انتخابت<br>
+      هوشمندانه‌تر،<br>
+      <span class="accent">خریدت آسان‌تر.</span>
+    </h1>
 
-   <p class="hero-copy" id="heroCopy">
-    انتخابی متناسب با سبک زندگی تو؛ با امکان خرید اقساطی پس از تأیید اعتبار.
-   </p>
+    <p class="hero-description">
+      دنیای موبایل را با نگاهی تازه تجربه کن.
+      گوشی مورد علاقه‌ات را انتخاب کن و مسیر خرید اقساطی را
+      با شرایط مشخص و شفاف آغاز کن.
+    </p>
 
-   <div class="hero-actions">
+    <div class="hero-buttons">
 
-    <a href="#products" class="primary-button">
-     کشف محصولات
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M19 12H5m7 7-7-7 7-7"/>
-     </svg>
+      <a href="activate.html" class="primary-btn">
+        شروع تجربه خرید
+        <svg viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </a>
+
+      <a href="guide.html" class="secondary-btn">
+        آشنایی با روش خرید
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-art">
+
+    <div class="art-floor"></div>
+
+    <div class="art-spark spark-one">✳</div>
+    <div class="art-spark spark-two">✦</div>
+    <div class="art-spark spark-three">✧</div>
+
+    <div class="phone phone-two">
+      <div class="phone-screen">
+        <div class="phone-orb"></div>
+      </div>
+    </div>
+
+    <div class="phone phone-three">
+      <div class="phone-screen">
+        <div class="phone-orb"></div>
+      </div>
+    </div>
+
+    <div class="phone phone-one">
+      <div class="phone-screen">
+        <div class="phone-orb"></div>
+      </div>
+    </div>
+
+    <div class="art-label">
+      <div class="art-label-icon">✦</div>
+      <div>
+        <strong>انتخابی برای سبک تو</strong>
+        <small>تجربه‌ای متفاوت از خرید</small>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= TRUST ================= -->
+
+<div class="trust-strip reveal">
+
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3 20 7v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>
+        <path d="m8 12 2.5 2.5L16 9"/>
+      </svg>
+    </div>
+    <strong>فرایند شفاف</strong>
+    <small>از ابتدا تا خرید</small>
+  </div>
+
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="18" rx="3"/>
+        <path d="M8 7h8M8 11h8M8 15h5"/>
+      </svg>
+    </div>
+    <strong>اعتبارسنجی مشخص</strong>
+    <small>بررسی شرایط متقاضی</small>
+  </div>
+
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </svg>
+    </div>
+    <strong>خرید مطمئن</strong>
+    <small>همراهی در مسیر خرید</small>
+  </div>
+
+</div>
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience page-wrap reveal">
+
+  <div class="experience-main">
+
+    <div class="experience-top">
+      <span class="experience-tag">A NEW WAY TO BUY</span>
+      <span class="experience-star">✳</span>
+    </div>
+
+    <h2>
+      خرید قسطی،
+      بدون پیچیدگی‌های همیشگی.
+    </h2>
+
+    <p>
+      مسیر خرید را مرحله‌به‌مرحله پیش می‌بری؛
+      شرایطت بررسی می‌شود و در صورت تأیید،
+      امکان خرید اقساطی برایت فراهم خواهد شد.
+    </p>
+
+    <div class="experience-bottom">
+      <span>از بررسی شرایط تا انتخاب گوشی</span>
+      <a href="guide.html" class="experience-arrow">←</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= BRAND VALUES ================= -->
+
+<section class="page-wrap section">
+
+  <div class="section-heading reveal">
+    <div>
+      <div class="section-eyebrow">THE VÉRA DIFFERENCE</div>
+      <h2 class="section-title">چرا تجربه‌ای متفاوت؟</h2>
+      <p class="section-subtitle">
+        جزئیاتی که خرید را برایت ساده‌تر می‌کنند.
+      </p>
+    </div>
+    <div class="section-number">01</div>
+  </div>
+
+  <div class="values">
+
+    <article class="value-card reveal">
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="6" y="2" width="12" height="20" rx="3"/>
+          <path d="M10 5h4M11 18h2"/>
+        </svg>
+      </div>
+      <h3>انتخاب آگاهانه</h3>
+      <p>
+        با بررسی گزینه‌های موجود، گوشی متناسب با نیازت را انتخاب کن.
+      </p>
+    </article>
+
+    <article class="value-card reveal delay-1"
+      style="--icon-bg:#fff0ec;--icon-color:#ed765d;--card-glow:#fff1ed">
+
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 2"/>
+        </svg>
+      </div>
+      <h3>مراحل مشخص</h3>
+      <p>
+        همه مراحل خرید را به ترتیب و بدون سردرگمی دنبال کن.
+      </p>
+    </article>
+
+    <article class="value-card reveal delay-1"
+      style="--icon-bg:#eaf8f3;--icon-color:#36a17b;--card-glow:#edfaf4">
+
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3v18M17 7H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6H6"/>
+        </svg>
+      </div>
+      <h3>خرید اقساطی</h3>
+      <p>
+        امکان خرید اقساطی پس از بررسی و تأیید شرایط اعتبار.
+      </p>
+    </article>
+
+    <article class="value-card reveal delay-2">
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 12a8 8 0 0 1 16 0"/>
+          <path d="M4 12v5h4v-5H4zm12 0v5h4v-5h-4z"/>
+          <path d="M8 19c1 2 7 2 8 0"/>
+        </svg>
+      </div>
+      <h3>پشتیبانی همراه</h3>
+      <p>
+        در طول مسیر خرید، امکان ارتباط با مجموعه را خواهی داشت.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ================= CAMPAIGN ================= -->
+
+<section class="campaign page-wrap reveal">
+
+  <div class="campaign-content">
+
+    <div class="campaign-label">YOUR NEXT PHONE</div>
+
+    <h2>
+      گوشی بعدی‌ات،
+      <span>نزدیک‌تر از همیشه.</span>
+    </h2>
+
+    <p>
+      برای آشنایی با شرایط خرید اقساطی و مراحل دریافت اعتبار،
+      راهنمای خرید را مطالعه کن.
+    </p>
+
+    <a href="guide.html" class="campaign-link">
+      راهنمای کامل خرید
+      <span>←</span>
     </a>
 
-    <a href="guide.html" class="secondary-button">
-     راهنمای خرید
+  </div>
+
+  <div class="campaign-visual">
+    <div class="campaign-circle c1"></div>
+    <div class="campaign-circle c2"></div>
+    <div class="campaign-circle c3"></div>
+    <div class="campaign-phone"></div>
+  </div>
+
+</section>
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process page-wrap">
+
+  <div class="section-heading reveal">
+    <div>
+      <div class="section-eyebrow">YOUR JOURNEY</div>
+      <h2 class="section-title">مسیر خریدت چطور است؟</h2>
+      <p class="section-subtitle">
+        پنج مرحله برای رسیدن به گوشی مورد علاقه‌ات.
+      </p>
+    </div>
+    <div class="section-number">02</div>
+  </div>
+
+  <div class="process-list">
+
+    <div class="process-item reveal">
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="10" cy="8" r="4"/>
+          <path d="M3 21v-2a7 7 0 0 1 14 0v2"/>
+          <path d="m17 11 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="process-info">
+        <h3>ثبت اطلاعات هویتی</h3>
+        <p>اطلاعات موردنیاز را در فرم ثبت می‌کنی.</p>
+      </div>
+      <span class="process-index">01</span>
+    </div>
+
+    <div class="process-item reveal">
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 10 12 3l9 7"/>
+          <path d="M5 9v11h14V9"/>
+          <path d="M9 20v-7h6v7"/>
+        </svg>
+      </div>
+      <div class="process-info">
+        <h3>احراز محل سکونت</h3>
+        <p>اطلاعات مربوط به محل سکونت بررسی می‌شود.</p>
+      </div>
+      <span class="process-index">02</span>
+    </div>
+
+    <div class="process-item reveal">
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="3"/>
+          <path d="M7 10h5M7 14h3M16 10h1"/>
+        </svg>
+      </div>
+      <div class="process-info">
+        <h3>اعتبارسنجی بانکی</h3>
+        <p>وضعیت اعتباری و رتبه متقاضی بررسی خواهد شد.</p>
+      </div>
+      <span class="process-index">03</span>
+    </div>
+
+    <div class="process-item reveal">
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 3h14v18H5z"/>
+          <path d="M8 7h8M8 11h8M8 15h5"/>
+          <path d="m14 18 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="process-info">
+        <h3>صدور سفته الکترونیک</h3>
+        <p>در صورت واجد شرایط بودن، مراحل سفته انجام می‌شود.</p>
+      </div>
+      <span class="process-index">04</span>
+    </div>
+
+    <div class="process-item reveal">
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 5h14l1 15H4z"/>
+          <path d="M9 9a3 3 0 0 0 6 0"/>
+          <path d="M8 5a4 4 0 0 1 8 0"/>
+        </svg>
+      </div>
+      <div class="process-info">
+        <h3>تکمیل فرایند خرید</h3>
+        <p>پس از تکمیل مراحل و تأیید نهایی، خرید انجام می‌شود.</p>
+      </div>
+      <span class="process-index">05</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PROMO ================= -->
+
+<section class="promo page-wrap reveal">
+
+  <div class="promo-content">
+
+    <div class="promo-small">A BETTER BUYING EXPERIENCE</div>
+
+    <h2>
+      قبل از شروع،
+      همه‌چیز را بدان.
+    </h2>
+
+    <p>
+      شرایط، مدارک و جزئیات خرید اقساطی را
+      پیش از ثبت درخواست بررسی کن.
+    </p>
+
+    <a href="guide.html" class="promo-btn">
+      مطالعه راهنمای خرید
+      <span>←</span>
     </a>
 
-   </div>
-
   </div>
-
-  <div class="hero-scroll">
-   EXPLORE
-  </div>
-
-  <div class="hero-bottom">
-   <div class="hero-product-caption">
-    MONO SELECTION
-    <span>انتخاب ویژه فروشگاه</span>
-   </div>
-
-   <div class="hero-counter">
-    <b id="heroCurrent">01</b>
-    <span>/</span>
-    <span>03</span>
-   </div>
-  </div>
-
- </div>
-
- <div class="slider-controls">
-
-  <div class="slider-progress">
-   <span class="active" data-slide="0"></span>
-   <span data-slide="1"></span>
-   <span data-slide="2"></span>
-  </div>
-
-  <div class="slider-arrows">
-
-   <button class="slider-arrow" id="heroPrev" aria-label="اسلاید قبلی">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="m15 18-6-6 6-6"/>
-    </svg>
-   </button>
-
-   <button class="slider-arrow" id="heroNext" aria-label="اسلاید بعدی">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="m9 18 6-6-6-6"/>
-    </svg>
-   </button>
-
-  </div>
-
- </div>
 
 </section>
 
-<!-- =====================================================
-     VALUE PROPOSITIONS
-====================================================== -->
+<!-- ================= PROMISE ================= -->
 
-<section class="value-strip reveal">
+<section class="promise page-wrap reveal">
 
- <div class="value-item">
+  <div class="promise-mark">V</div>
 
-  <div class="value-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
-    <path d="m9 12 2 2 4-4"/>
-   </svg>
-  </div>
-
-  <strong>فرآیند شفاف</strong>
-  <small>آگاهی از تمام مراحل خرید</small>
-
- </div>
-
- <div class="value-item">
-
-  <div class="value-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <rect x="2" y="5" width="20" height="14" rx="3"/>
-    <path d="M2 10h20M7 15h4"/>
-   </svg>
-  </div>
-
-  <strong>خرید اقساطی</strong>
-  <small>پس از تأیید اعتبار متقاضی</small>
-
- </div>
-
- <div class="value-item">
-
-  <div class="value-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="M4 12h16M12 4v16"/>
-    <circle cx="12" cy="12" r="9"/>
-   </svg>
-  </div>
-
-  <strong>انتخاب محصول</strong>
-  <small>مدل‌های متنوع گوشی</small>
-
- </div>
-
-</section>
-
-<!-- =====================================================
-     DISCOVERY
-====================================================== -->
-
-<section class="section discovery reveal" id="products">
-
- <div class="discovery-head">
-
-  <div>
-   <div class="kicker">THE COLLECTION</div>
-   <h2>ویترین انتخاب تو</h2>
-   <p>مدل‌ها را ببین، مقایسه کن و انتخاب کن.</p>
-  </div>
-
-  <span class="pill pill-blue">۱۰ مدل محصول</span>
-
- </div>
-
- <label class="search-field">
-
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-   <circle cx="10.8" cy="10.8" r="7"/>
-   <path d="m16 16 5 5"/>
-  </svg>
-
-  <input
-   id="productSearch"
-   type="search"
-   placeholder="نام یا مدل گوشی را جستجو کن..."
-   autocomplete="off"
-  >
-
- </label>
-
- <div class="filter-row" id="filterRow">
-
-  <button class="filter-chip active" data-filter="all">همه محصولات</button>
-  <button class="filter-chip" data-filter="flagship">پرچمدار</button>
-  <button class="filter-chip" data-filter="mid">میان‌رده</button>
-  <button class="filter-chip" data-filter="popular">محبوب</button>
-
- </div>
-
- <div class="product-grid" id="productGrid">
-
-  <!-- PRODUCT 01 -->
-
-  <article class="product-card" data-category="flagship" data-name="گوشی هوشمند مدل اول پرچمدار">
-
-   <div class="product-visual">
-    <span class="product-badge">منتخب فروشگاه</span>
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 001</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۱</h3>
-    <p class="product-description">طراحی مدرن · عملکرد قدرتمند</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="0" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 02 -->
-
-  <article class="product-card" data-category="popular" data-name="گوشی هوشمند مدل دوم محبوب">
-
-   <div class="product-visual" style="background:#e8e9eb">
-    <span class="product-badge">محبوب</span>
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 002</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۲</h3>
-    <p class="product-description">خوش‌ساخت · کاربردی</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="1" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 03 -->
-
-  <article class="product-card" data-category="mid" data-name="گوشی هوشمند مدل سوم اقتصادی">
-
-   <div class="product-visual" style="background:#e8e5de">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 003</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۳</h3>
-    <p class="product-description">سبک · خوش‌دست</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="2" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 04 -->
-
-  <article class="product-card" data-category="flagship" data-name="گوشی هوشمند مدل چهارم پیشرفته">
-
-   <div class="product-visual" style="background:#e3e8e7">
-    <span class="product-badge">ویژه</span>
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 004</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۴</h3>
-    <p class="product-description">طراحی خاص · امکانات پیشرفته</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="3" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 05 -->
-
-  <article class="product-card" data-category="popular" data-name="گوشی هوشمند مدل پنجم">
-
-   <div class="product-visual" style="background:#ece6e2">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 005</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۵</h3>
-    <p class="product-description">زیبا · مناسب استفاده روزانه</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="4" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 06 -->
-
-  <article class="product-card" data-category="mid" data-name="گوشی هوشمند مدل ششم">
-
-   <div class="product-visual" style="background:#e6e9e9">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 006</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۶</h3>
-    <p class="product-description">کاربردی · طراحی امروزی</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="5" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 07 -->
-
-  <article class="product-card" data-category="flagship" data-name="گوشی هوشمند مدل هفتم">
-
-   <div class="product-visual" style="background:#e9e6df">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 007</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۷</h3>
-    <p class="product-description">نسل جدید · تجربه پیشرفته</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="6" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 08 -->
-
-  <article class="product-card" data-category="popular" data-name="گوشی هوشمند مدل هشتم">
-
-   <div class="product-visual" style="background:#e5e9ef">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 008</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۸</h3>
-    <p class="product-description">انتخابی متعادل و جذاب</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="7" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 09 -->
-
-  <article class="product-card" data-category="mid" data-name="گوشی هوشمند مدل نهم">
-
-   <div class="product-visual" style="background:#e8e5df">
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 009</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۹</h3>
-    <p class="product-description">زیبا و خوش‌قیمت</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="8" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <!-- PRODUCT 10 -->
-
-  <article class="product-card" data-category="flagship" data-name="گوشی هوشمند مدل دهم">
-
-   <div class="product-visual" style="background:#e8e8e5">
-    <span class="product-badge">تازه‌وارد</span>
-    <button class="favorite-button" aria-label="افزودن به علاقه‌مندی‌ها">
-     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-      <path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/>
-     </svg>
-    </button>
-    <img class="product-photo" loading="lazy" src="https://images.unsplash.com/photo-1533228100845-08145b01de14?auto=format&fit=crop&w=600&q=85" alt="گوشی هوشمند">
-   </div>
-
-   <div class="product-body">
-    <div class="product-overline">MONO / 010</div>
-    <h3 class="product-name">گوشی هوشمند مدل ۱۰</h3>
-    <p class="product-description">تجربه‌ای تازه از تکنولوژی</p>
-    <div class="product-separator"></div>
-    <div class="product-meta">
-     <span class="product-installment">امکان خرید اقساطی</span>
-     <button class="product-details-button" data-product="9" aria-label="جزئیات">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-       <path d="M19 12H5m7 7-7-7 7-7"/>
-      </svg>
-     </button>
-    </div>
-   </div>
-
-  </article>
-
-  <div class="empty-state" id="emptyState">
-   محصولی با این مشخصات پیدا نشد.
-  </div>
-
- </div>
-
-</section>
-
-<!-- =====================================================
-     FEATURE EDITORIAL
-====================================================== -->
-
-<section class="feature reveal">
-
- <div class="feature-background"></div>
-
- <img
-  class="feature-image"
-  src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85"
-  alt="طراحی گوشی هوشمند"
-  loading="lazy"
- >
-
- <div class="feature-content">
-
-  <div class="eyebrow">
-   <span class="eyebrow-line"></span>
-   YOUR NEXT DEVICE
-  </div>
-
-  <h2>
-   انتخاب خوب،<br>
-   از شناخت شروع می‌شود.
-  </h2>
+  <h2>خرید خوب، از انتخاب خوب شروع می‌شود.</h2>
 
   <p>
-   پیش از خرید، مشخصات گوشی‌ها و شرایط هر محصول را بررسی کن.
+    ما تلاش کرده‌ایم تجربه‌ای ساده‌تر و شفاف‌تر
+    برای خرید موبایل فراهم کنیم؛
+    از اولین قدم تا تکمیل فرایند خرید،
+    با اطلاعات روشن و مراحل مشخص.
   </p>
 
-  <a href="guide.html" class="feature-link">
-   آشنایی با راهنمای خرید
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M19 12H5m7 7-7-7 7-7"/>
-   </svg>
-  </a>
+</section>
 
- </div>
+<!-- ================= FAQ ================= -->
+
+<section class="faq page-wrap">
+
+  <div class="section-heading reveal">
+    <div>
+      <div class="section-eyebrow">GOOD TO KNOW</div>
+      <h2 class="section-title">سؤالات پرتکرار</h2>
+      <p class="section-subtitle">پاسخ چند سؤال پیش از شروع خرید.</p>
+    </div>
+    <div class="section-number">03</div>
+  </div>
+
+  <div class="faq-item reveal">
+    <button class="faq-question">
+      <span>برای خرید اقساطی از کجا شروع کنم؟</span>
+      <span class="faq-plus">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        ابتدا راهنمای خرید را مطالعه کن و سپس از بخش فعال‌سازی،
+        درخواست اعتبارسنجی خود را ثبت کن.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <button class="faq-question">
+      <span>چه رتبه اعتباری برای خرید قابل قبول است؟</span>
+      <span class="faq-plus">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        رتبه‌های اعتباری A، B و C مطابق شرایط مجموعه
+        امکان ورود به مراحل بعدی خرید را دارند.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <button class="faq-question">
+      <span>آیا برای خرید سفته الکترونیک لازم است؟</span>
+      <span class="faq-plus">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        بله، پس از تأیید اعتبارسنجی، مرحله صدور سفته الکترونیک
+        برای تکمیل فرایند در نظر گرفته شده است.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <button class="faq-question">
+      <span>چطور می‌توانم با پشتیبانی ارتباط بگیرم؟</span>
+      <span class="faq-plus">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        از بخش پشتیبانی اپلیکیشن می‌توانی درخواست خود را ثبت
+        و با مجموعه ارتباط برقرار کنی.
+      </p>
+    </div>
+  </div>
 
 </section>
 
-<!-- =====================================================
-     INSTALLMENT
-====================================================== -->
+<!-- ================= CONTACT ================= -->
 
-<section class="section credit-section reveal">
+<section class="contact-banner page-wrap reveal">
 
- <div class="credit-panel">
+  <div class="contact-row">
 
-  <div class="credit-top">
+    <div class="contact-text">
+      <h3>سؤالی داری؟ ما اینجاییم.</h3>
+      <p>برای دریافت راهنمایی، با پشتیبانی ارتباط بگیر.</p>
+    </div>
 
-   <div class="credit-label">MONO / SMART PURCHASE</div>
-
-   <div class="credit-symbol">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-     <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
-     <path d="m9 12 2 2 4-4"/>
-    </svg>
-   </div>
+    <a href="support.html" class="contact-action">←</a>
 
   </div>
-
-  <h2>
-   گوشی بعدی تو،<br>
-   <span>با خرید اقساطی.</span>
-  </h2>
-
-  <p>
-   ابتدا اطلاعاتت را ثبت کن، سپس مراحل احراز محل سکونت و اعتبارسنجی را انجام بده. در صورت کسب رتبه اعتباری مجاز، می‌توانی مراحل سفته الکترونیک و خرید را ادامه بدهی.
-  </p>
-
-  <div class="credit-bottom">
-
-   <a href="activate.html" class="credit-cta">
-    شروع فرآیند اعتبارسنجی
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="M19 12H5m7 7-7-7 7-7"/>
-    </svg>
-   </a>
-
-   <div class="credit-note">
-    فرآیند مرحله‌ای<br>
-    با بررسی شرایط متقاضی
-   </div>
-
-  </div>
-
- </div>
 
 </section>
 
-<!-- =====================================================
-     PURCHASE PROCESS
-====================================================== -->
+</main>
 
-<section class="section process-section reveal">
-
- <div class="section-heading">
-
-  <div>
-   <div class="kicker">HOW IT WORKS</div>
-   <h2>مسیر خرید تو</h2>
-   <p>چهار مرحله تا تکمیل خرید اقساطی</p>
-  </div>
-
-  <a href="guide.html" class="text-link">
-   راهنمای کامل
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M19 12H5m7 7-7-7 7-7"/>
-   </svg>
-  </a>
-
- </div>
-
- <div class="process-list">
-
-  <div class="process-item">
-
-   <div class="process-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <circle cx="12" cy="8" r="4"/>
-     <path d="M4 21v-2a8 8 0 0116 0v2"/>
-    </svg>
-   </div>
-
-   <div class="process-text">
-    <strong>ثبت اطلاعات هویتی</strong>
-    <p>تکمیل اطلاعات شخصی مورد نیاز برای شروع درخواست</p>
-   </div>
-
-   <span class="process-number">01</span>
-
-  </div>
-
-  <div class="process-item">
-
-   <div class="process-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <path d="M3 10 12 3l9 7v10H3z"/>
-     <path d="M9 20v-6h6v6"/>
-    </svg>
-   </div>
-
-   <div class="process-text">
-    <strong>احراز محل سکونت</strong>
-    <p>ثبت و تکمیل اطلاعات مورد نیاز برای تأیید محل سکونت</p>
-   </div>
-
-   <span class="process-number">02</span>
-
-  </div>
-
-  <div class="process-item">
-
-   <div class="process-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <rect x="3" y="4" width="18" height="16" rx="3"/>
-     <path d="M8 9h8M8 13h5"/>
-     <path d="m15 16 2 2 4-4"/>
-    </svg>
-   </div>
-
-   <div class="process-text">
-    <strong>اعتبارسنجی و سفته الکترونیک</strong>
-    <p>بررسی رتبه اعتباری و تکمیل ضمانت در صورت تأیید</p>
-   </div>
-
-   <span class="process-number">03</span>
-
-  </div>
-
-  <div class="process-item">
-
-   <div class="process-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <path d="M3 3h2l2.5 12h11L21 7H6"/>
-     <circle cx="10" cy="20" r="1"/>
-     <circle cx="18" cy="20" r="1"/>
-    </svg>
-   </div>
-
-   <div class="process-text">
-    <strong>انتخاب محصول و خرید</strong>
-    <p>انتخاب یک محصول و نهایی‌کردن سفارش</p>
-   </div>
-
-   <span class="process-number">04</span>
-
-  </div>
-
- </div>
-
-</section>
-
-<!-- =====================================================
-     BRAND STORY
-====================================================== -->
-
-<section class="brand-story reveal">
-
- <div class="story-label">THE MONO EXPERIENCE</div>
-
- <h2 class="story-title">
-  خرید موبایل،<br>
-  با نگاهی <span>متفاوت.</span>
- </h2>
-
- <p class="story-description">
-  ما می‌خواهیم انتخاب و خرید گوشی برایت ساده‌تر باشد. محصولات را بررسی کن، مشخصاتشان را بشناس و با آگاهی از شرایط خرید، تصمیم بگیر.
- </p>
-
- <div class="story-stats">
-
-  <div class="story-stat">
-   <strong>۱۰</strong>
-   <span>مدل قابل انتخاب</span>
-  </div>
-
-  <div class="story-stat">
-   <strong>۴</strong>
-   <span>مرحله فرآیند خرید</span>
-  </div>
-
-  <div class="story-stat">
-   <strong>۱</strong>
-   <span>محصول در هر درخواست</span>
-  </div>
-
- </div>
-
-</section>
-
-<!-- =====================================================
-     FAQ
-====================================================== -->
-
-<section class="section faq-section reveal">
-
- <div class="section-heading">
-
-  <div>
-   <div class="kicker">NEED TO KNOW</div>
-   <h2>سؤالات متداول</h2>
-   <p>پاسخ پرسش‌های مهم پیش از خرید</p>
-  </div>
-
- </div>
-
- <div class="faq-list">
-
-  <div class="faq-item">
-
-   <button class="faq-question">
-    برای خرید اقساطی چه مراحلی باید طی شود؟
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="M12 5v14M5 12h14"/>
-    </svg>
-   </button>
-
-   <div class="faq-answer">
-    <p>
-     ابتدا اطلاعات هویتی و محل سکونت ثبت می‌شود. سپس اعتبارسنجی انجام می‌گیرد و در صورت تأیید شرایط، مرحله سفته الکترونیک و خرید انجام خواهد شد.
-    </p>
-   </div>
-
-  </div>
-
-  <div class="faq-item">
-
-   <button class="faq-question">
-    چه رتبه اعتباری برای خرید قابل قبول است؟
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="M12 5v14M5 12h14"/>
-    </svg>
-   </button>
-
-   <div class="faq-answer">
-    <p>
-     طبق شرایط اعلام‌شده فروشگاه، رتبه‌های A، B و C امکان ادامه فرآیند را دارند. تأیید نهایی منوط به بررسی سایر شرایط است.
-    </p>
-   </div>
-
-  </div>
-
-  <div class="faq-item">
-
-   <button class="faq-question">
-    آیا می‌توان هم‌زمان چند گوشی خرید؟
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="M12 5v14M5 12h14"/>
-    </svg>
-   </button>
-
-   <div class="faq-answer">
-    <p>
-     در طرح فعلی، هر متقاضی پس از تأیید اعتبار می‌تواند یک محصول را به‌صورت اقساطی خریداری کند.
-    </p>
-   </div>
-
-  </div>
-
-  <div class="faq-item">
-
-   <button class="faq-question">
-    آیا ثبت درخواست به معنی تأیید خرید است؟
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-     <path d="M12 5v14M5 12h14"/>
-    </svg>
-   </button>
-
-   <div class="faq-answer">
-    <p>
-     خیر. ثبت درخواست صرفاً شروع فرآیند است و خرید به تأیید اعتبار و تکمیل مراحل مورد نیاز بستگی دارد.
-    </p>
-   </div>
-
-  </div>
-
- </div>
-
-</section>
-
-<!-- =====================================================
-     FOOTER
-====================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
- <div class="footer-top">
-
-  <div>
-   <div class="footer-brand">MONO.</div>
-   <div class="footer-brand-caption">A DIFFERENT WAY TO BUY</div>
+  <div class="footer-brand">
+    <div class="brand-symbol"><span>V</span></div>
+    <div>
+      <div class="brand-name">VÉRA</div>
+      <div class="brand-caption">MOBILE EXPERIENCE</div>
+    </div>
   </div>
 
-  <div class="footer-social">
+  <p class="footer-description">
+    تجربه‌ای تازه از خرید موبایل؛
+    با امکان بررسی شرایط خرید اقساطی،
+    اعتبارسنجی و همراهی در مسیر انتخاب.
+  </p>
 
-   <a href="support.html" class="social-link" aria-label="پشتیبانی">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <path d="M4 13v-2a8 8 0 0116 0v2"/>
-     <rect x="3" y="12" width="4" height="7" rx="2"/>
-     <rect x="17" y="12" width="4" height="7" rx="2"/>
-    </svg>
-   </a>
+  <div class="footer-divider"></div>
 
-   <a href="guide.html" class="social-link" aria-label="راهنما">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-     <circle cx="12" cy="12" r="9"/>
-     <path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4m0 3h.01"/>
-    </svg>
-   </a>
-
+  <div class="footer-bottom">
+    <p>© تمامی حقوق متعلق به مجموعه VÉRA است.</p>
+    <div class="footer-social">
+      <a href="support.html" class="social-dot">✉</a>
+      <a href="support.html" class="social-dot">☎</a>
+    </div>
   </div>
-
- </div>
-
- <p class="footer-description">
-  فروشگاه تخصصی موبایل با امکان بررسی محصولات و ثبت درخواست خرید اقساطی. شرایط نهایی خرید تابع تأیید اعتبار و ضوابط فروشگاه است.
- </p>
-
- <div class="footer-bottom">
-  <span>© MONO MOBILE</span>
-  <span>تمام حقوق محفوظ است.</span>
- </div>
 
 </footer>
 
 </div>
 
-<!-- =====================================================
-     BOTTOM NAVIGATION
-====================================================== -->
+<!-- ================= BOTTOM APP NAVIGATION ================= -->
 
-<nav class="bottom-nav">
+<nav class="bottom-nav" aria-label="منوی اصلی اپلیکیشن">
 
- <a href="index.html" class="nav-link active">
+  <a href="index.html" class="nav-item active">
+    <svg viewBox="0 0 24 24">
+      <path d="m3 10 9-7 9 7"/>
+      <path d="M5 9v11h14V9"/>
+      <path d="M9 20v-6h6v6"/>
+    </svg>
+    <span>خانه</span>
+  </a>
 
-  <span class="nav-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="m3 10 9-7 9 7v10a1 1 0 01-1 1h-6v-7h-4v7H4a1 1 0 01-1-1z"/>
-   </svg>
-  </span>
+  <a href="guide.html" class="nav-item">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/>
+      <path d="M4 4.5v17M8 6h8M8 10h7"/>
+    </svg>
+    <span>راهنمای خرید</span>
+  </a>
 
-  خانه
+  <a href="activate.html" class="nav-item">
+    <svg viewBox="0 0 24 24">
+      <rect x="4" y="3" width="16" height="18" rx="3"/>
+      <path d="m8 12 2.5 2.5L16 9"/>
+      <path d="M9 6h6"/>
+    </svg>
+    <span>فعال‌سازی</span>
+  </a>
 
- </a>
-
- <a href="guide.html" class="nav-link">
-
-  <span class="nav-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="M4 5.5A2.5 2.5 0 016.5 3H20v16H6.5A2.5 2.5 0 014 16.5z"/>
-    <path d="M4 16a2 2 0 012-2h14M8 7h8M8 10h6"/>
-   </svg>
-  </span>
-
-  راهنمای خرید
-
- </a>
-
- <a href="activate.html" class="nav-link">
-
-  <span class="nav-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
-    <path d="m9 12 2 2 4-4"/>
-   </svg>
-  </span>
-
-  فعال‌سازی
-
- </a>
-
- <a href="support.html" class="nav-link">
-
-  <span class="nav-icon">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-    <path d="M4 13v-2a8 8 0 0116 0v2"/>
-    <rect x="3" y="12" width="4" height="7" rx="2"/>
-    <rect x="17" y="12" width="4" height="7" rx="2"/>
-    <path d="M17 19a5 5 0 01-5 3h-1"/>
-   </svg>
-  </span>
-
-  پشتیبانی
-
- </a>
+  <a href="support.html" class="nav-item">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 12a8 8 0 0 1 16 0"/>
+      <path d="M4 12v5h4v-5H4zm12 0v5h4v-5h-4z"/>
+      <path d="M16 19c-1 2-5 2-8 0"/>
+    </svg>
+    <span>پشتیبانی</span>
+  </a>
 
 </nav>
 
-<!-- =====================================================
-     PRODUCT MODAL
-====================================================== -->
-
-<div class="modal-overlay" id="productModal">
-
- <div class="product-modal">
-
-  <div class="modal-handle"></div>
-
-  <button class="modal-close" id="modalClose" aria-label="بستن">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="m18 6-12 12M6 6l12 12"/>
-   </svg>
-  </button>
-
-  <div class="modal-product-image">
-   <img id="modalImage" src="" alt="محصول">
-  </div>
-
-  <div class="product-overline" style="margin-top:17px">MONO COLLECTION</div>
-
-  <h2 class="modal-product-title" id="modalTitle">گوشی هوشمند</h2>
-
-  <p class="modal-product-description" id="modalDescription">
-   اطلاعات محصول و شرایط خرید
-  </p>
-
-  <div class="modal-specs">
-
-   <div class="modal-spec">
-    <span>نوع خرید</span>
-    <strong>اقساطی یا سایر شرایط فروش</strong>
-   </div>
-
-   <div class="modal-spec">
-    <span>وضعیت درخواست</span>
-    <strong>نیازمند تأیید اعتبار</strong>
-   </div>
-
-  </div>
-
-  <a href="activate.html" class="primary-button modal-action">
-   شروع فرآیند خرید
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M19 12H5m7 7-7-7 7-7"/>
-   </svg>
-  </a>
-
- </div>
-
-</div>
-
-<!-- =====================================================
-     SEARCH OVERLAY
-====================================================== -->
-
-<div class="search-overlay" id="searchOverlay">
-
- <div class="search-top">
-
-  <button class="icon-button" id="searchClose">
-   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="m18 6-12 12M6 6l12 12"/>
-   </svg>
-  </button>
-
-  <input type="search" id="overlaySearch" placeholder="دنبال چه گوشی هستی؟">
-
- </div>
-
- <div class="search-suggestions">
-
-  <h3>پیشنهادهای جستجو</h3>
-
-  <button data-search="گوشی هوشمند مدل ۱">گوشی‌های منتخب</button>
-  <button data-search="پرچمدار">گوشی‌های پرچمدار</button>
-  <button data-search="محبوب">محصولات محبوب</button>
-  <button data-search="میان‌رده">گوشی‌های میان‌رده</button>
-
- </div>
-
-</div>
-
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
-
 <script>
+/* =========================================================
+   VÉRA INTERACTION ENGINE
+========================================================= */
 
-/* -------------------------------------------------------
-   01. PRODUCT DATA
-------------------------------------------------------- */
+/* =========================
+   SCROLL REVEAL ENGINE
+========================= */
 
-const products = [
+const revealElements = document.querySelectorAll('.reveal');
 
- {
-  name:"گوشی هوشمند مدل ۱",
-  description:"طراحی مدرن و عملکرد قدرتمند",
-  image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=700&q=85"
- },
+if('IntersectionObserver' in window){
 
- {
-  name:"گوشی هوشمند مدل ۲",
-  description:"خوش‌ساخت و کاربردی",
-  image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=700&q=85"
- },
+  const revealObserver = new IntersectionObserver((entries,observer)=>{
 
- {
-  name:"گوشی هوشمند مدل ۳",
-  description:"سبک و خوش‌دست",
-  image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=85"
- },
+    entries.forEach(entry=>{
 
- {
-  name:"گوشی هوشمند مدل ۴",
-  description:"طراحی خاص و امکانات پیشرفته",
-  image:"https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=700&q=85"
- },
+      if(entry.isIntersecting){
 
- {
-  name:"گوشی هوشمند مدل ۵",
-  description:"مناسب استفاده روزانه",
-  image:"https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=700&q=85"
- },
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
 
- {
-  name:"گوشی هوشمند مدل ۶",
-  description:"طراحی امروزی",
-  image:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=85"
- },
+      }
 
- {
-  name:"گوشی هوشمند مدل ۷",
-  description:"نسل جدید و تجربه پیشرفته",
-  image:"https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=700&q=85"
- },
+    });
 
- {
-  name:"گوشی هوشمند مدل ۸",
-  description:"انتخابی متعادل",
-  image:"https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=700&q=85"
- },
-
- {
-  name:"گوشی هوشمند مدل ۹",
-  description:"زیبا و خوش‌قیمت",
-  image:"https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=700&q=85"
- },
-
- {
-  name:"گوشی هوشمند مدل ۱۰",
-  description:"تجربه‌ای تازه از تکنولوژی",
-  image:"https://images.unsplash.com/photo-1533228100845-08145b01de14?auto=format&fit=crop&w=700&q=85"
- }
-
-];
-
-
-/* -------------------------------------------------------
-   02. HERO SLIDER
-------------------------------------------------------- */
-
-const heroSlides = [
-
- {
-  title:"تکنولوژی<br>در <span>دسترس تو.</span>",
-  description:"انتخابی متناسب با سبک زندگی تو؛ با امکان خرید اقساطی پس از تأیید اعتبار.",
-  image:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=90"
- },
-
- {
-  title:"انتخاب کن.<br><span>متفاوت باش.</span>",
-  description:"از میان محصولات فروشگاه، گوشی مناسب خودت را پیدا کن.",
-  image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=900&q=90"
- },
-
- {
-  title:"شروعی تازه<br>با <span>خرید هوشمند.</span>",
-  description:"مسیر خرید اقساطی را با ثبت اطلاعات و اعتبارسنجی آغاز کن.",
-  image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=90"
- }
-
-];
-
-let currentSlide=0;
-
-function changeSlide(index){
-
- currentSlide=(index+heroSlides.length)%heroSlides.length;
-
- const slide=heroSlides[currentSlide];
-
- document.getElementById("heroTitle").innerHTML=slide.title;
-
- document.getElementById("heroCopy").textContent=slide.description;
-
- document.getElementById("heroImage").src=slide.image;
-
- document.getElementById("heroCurrent").textContent=
- String(currentSlide+1).padStart(2,"0");
-
- document.querySelectorAll(".slider-progress span").forEach((item,i)=>{
-  item.classList.toggle("active",i===currentSlide);
- });
-
-}
-
-document.getElementById("heroNext").addEventListener("click",()=>{
- changeSlide(currentSlide+1);
-});
-
-document.getElementById("heroPrev").addEventListener("click",()=>{
- changeSlide(currentSlide-1);
-});
-
-document.querySelectorAll(".slider-progress span").forEach(item=>{
-
- item.addEventListener("click",()=>{
-  changeSlide(Number(item.dataset.slide));
- });
-
-});
-
-
-/* -------------------------------------------------------
-   03. PRODUCT FILTER
-------------------------------------------------------- */
-
-let activeFilter="all";
-
-const filterButtons=document.querySelectorAll(".filter-chip");
-
-function filterProducts(){
-
- const query=document.getElementById("productSearch").value.trim().toLowerCase();
-
- let visible=0;
-
- document.querySelectorAll(".product-card").forEach(card=>{
-
-  const category=card.dataset.category;
-
-  const name=card.dataset.name.toLowerCase();
-
-  const categoryMatch=
-   activeFilter==="all" ||
-   category===activeFilter;
-
-  const searchMatch=
-   !query || name.includes(query);
-
-  const show=categoryMatch && searchMatch;
-
-  card.style.display=show?"":"none";
-
-  if(show) visible++;
-
- });
-
- document.getElementById("emptyState").style.display=
-  visible===0?"block":"none";
-
-}
-
-filterButtons.forEach(button=>{
-
- button.addEventListener("click",()=>{
-
-  filterButtons.forEach(item=>item.classList.remove("active"));
-
-  button.classList.add("active");
-
-  activeFilter=button.dataset.filter;
-
-  filterProducts();
-
- });
-
-});
-
-document.getElementById("productSearch").addEventListener("input",filterProducts);
-
-
-/* -------------------------------------------------------
-   04. FAVORITES
-------------------------------------------------------- */
-
-document.querySelectorAll(".favorite-button").forEach(button=>{
-
- button.addEventListener("click",()=>{
-
-  button.classList.toggle("selected");
-
-  const selected=button.classList.contains("selected");
-
-  button.innerHTML=selected
-   ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/></svg>'
-   : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.8 4.8 0 018.8-2.5 4.8 4.8 0 018.8 2.5z"/></svg>';
-
- });
-
-});
-
-
-/* -------------------------------------------------------
-   05. PRODUCT DETAIL MODAL
-------------------------------------------------------- */
-
-const productModal=document.getElementById("productModal");
-
-function openProduct(index){
-
- const product=products[index];
-
- if(!product)return;
-
- document.getElementById("modalImage").src=product.image;
-
- document.getElementById("modalTitle").textContent=product.name;
-
- document.getElementById("modalDescription").textContent=
-  product.description+"؛ برای اطلاع از قیمت و شرایط خرید با فروشگاه تماس بگیرید.";
-
- productModal.classList.add("open");
-
- document.body.style.overflow="hidden";
-
-}
-
-function closeProduct(){
-
- productModal.classList.remove("open");
-
- document.body.style.overflow="";
-
-}
-
-document.querySelectorAll(".product-details-button").forEach(button=>{
-
- button.addEventListener("click",()=>{
-  openProduct(Number(button.dataset.product));
- });
-
-});
-
-document.getElementById("modalClose").addEventListener("click",closeProduct);
-
-productModal.addEventListener("click",event=>{
-
- if(event.target===productModal){
-  closeProduct();
- }
-
-});
-
-
-/* -------------------------------------------------------
-   06. SEARCH OVERLAY
-------------------------------------------------------- */
-
-const searchOverlay=document.getElementById("searchOverlay");
-
-document.getElementById("searchOpen").addEventListener("click",()=>{
-
- searchOverlay.classList.add("open");
-
- document.body.style.overflow="hidden";
-
- setTimeout(()=>{
-  document.getElementById("overlaySearch").focus();
- },200);
-
-});
-
-document.getElementById("searchClose").addEventListener("click",()=>{
-
- searchOverlay.classList.remove("open");
-
- document.body.style.overflow="";
-
-});
-
-document.getElementById("overlaySearch").addEventListener("input",event=>{
-
- const query=event.target.value;
-
- document.getElementById("productSearch").value=query;
-
- activeFilter="all";
-
- filterButtons.forEach(item=>{
-  item.classList.toggle("active",item.dataset.filter==="all");
- });
-
- filterProducts();
-
-});
-
-document.querySelectorAll(".search-suggestions button").forEach(button=>{
-
- button.addEventListener("click",()=>{
-
-  const value=button.dataset.search;
-
-  document.getElementById("overlaySearch").value=value;
-
-  document.getElementById("productSearch").value=value;
-
-  activeFilter="all";
-
-  filterButtons.forEach(item=>{
-   item.classList.toggle("active",item.dataset.filter==="all");
+  },{
+    threshold:.09,
+    rootMargin:'0px 0px -35px 0px'
   });
 
-  filterProducts();
-
-  searchOverlay.classList.remove("open");
-
-  document.body.style.overflow="";
-
-  document.getElementById("products").scrollIntoView({
-   behavior:"smooth"
+  revealElements.forEach(element=>{
+    revealObserver.observe(element);
   });
 
- });
+}else{
+
+  revealElements.forEach(element=>{
+    element.classList.add('visible');
+  });
+
+}
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item=>{
+
+  const button = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+
+  button.addEventListener('click',()=>{
+
+    const isOpen = item.classList.contains('active');
+
+    faqItems.forEach(other=>{
+
+      other.classList.remove('active');
+      other.querySelector('.faq-answer').style.maxHeight=null;
+
+    });
+
+    if(!isOpen){
+
+      item.classList.add('active');
+      answer.style.maxHeight=answer.scrollHeight+'px';
+
+    }
+
+  });
 
 });
 
+/* =========================
+   MENU BUTTON
+========================= */
 
-/* -------------------------------------------------------
-   07. FAQ ACCORDION
-------------------------------------------------------- */
+const menuButton = document.getElementById('menuButton');
 
-document.querySelectorAll(".faq-question").forEach(button=>{
+menuButton.addEventListener('click',()=>{
 
- button.addEventListener("click",()=>{
+  const nav = document.querySelector('.bottom-nav');
 
-  const item=button.closest(".faq-item");
-
-  const wasOpen=item.classList.contains("open");
-
-  document.querySelectorAll(".faq-item").forEach(faq=>{
-   faq.classList.remove("open");
+  nav.scrollIntoView({
+    behavior:'smooth',
+    block:'nearest'
   });
 
-  if(!wasOpen){
-   item.classList.add("open");
-  }
-
- });
+  nav.animate([
+    {transform:'translateX(-50%) scale(1)'},
+    {transform:'translateX(-50%) scale(1.035)'},
+    {transform:'translateX(-50%) scale(1)'}
+  ],{
+    duration:380,
+    easing:'cubic-bezier(.2,.8,.2,1)'
+  });
 
 });
 
+/* =========================
+   NAVIGATION PRESS EFFECT
+========================= */
 
-/* -------------------------------------------------------
-   08. SCROLL REVEAL
-------------------------------------------------------- */
+document.querySelectorAll('.nav-item').forEach(item=>{
 
-const observer=new IntersectionObserver((entries)=>{
+  item.addEventListener('touchstart',()=>{
+    item.style.transform='scale(.94)';
+  },{passive:true});
 
- entries.forEach(entry=>{
+  item.addEventListener('touchend',()=>{
+    item.style.transform='';
+  },{passive:true});
 
-  if(entry.isIntersecting){
+});
 
-   entry.target.classList.add("visible");
+/* =========================
+   BUTTON MICRO INTERACTIONS
+========================= */
 
-   observer.unobserve(entry.target);
+document.querySelectorAll('.primary-btn,.secondary-btn,.promo-btn,.contact-action').forEach(button=>{
+
+  button.addEventListener('pointerdown',()=>{
+    button.style.transform='scale(.96)';
+  });
+
+  ['pointerup','pointercancel','pointerleave'].forEach(event=>{
+
+    button.addEventListener(event,()=>{
+      button.style.transform='';
+    });
+
+  });
+
+});
+
+/* =========================
+   ACTIVE NAVIGATION
+========================= */
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+document.querySelectorAll('.nav-item').forEach(item=>{
+
+  const target = item.getAttribute('href');
+
+  if(target===currentPage){
+
+    document.querySelectorAll('.nav-item').forEach(nav=>{
+      nav.classList.remove('active');
+    });
+
+    item.classList.add('active');
 
   }
 
- });
-
-},{threshold:.08});
-
-document.querySelectorAll(".reveal").forEach(element=>{
- observer.observe(element);
 });
 
+/* =========================
+   SAFE IMAGE / VIEWPORT SUPPORT
+========================= */
 
-/* -------------------------------------------------------
-   09. ESCAPE KEY
-------------------------------------------------------- */
+document.documentElement.style.setProperty(
+  '--viewport-height',
+  window.innerHeight+'px'
+);
 
-document.addEventListener("keydown",event=>{
+window.addEventListener('resize',()=>{
 
- if(event.key==="Escape"){
+  document.documentElement.style.setProperty(
+    '--viewport-height',
+    window.innerHeight+'px'
+  );
 
-  closeProduct();
+},{passive:true});
 
-  searchOverlay.classList.remove("open");
+/* =========================
+   INITIALIZATION
+========================= */
 
-  document.body.style.overflow="";
+window.addEventListener('pageshow',()=>{
 
- }
-
-});
-
-
-/* -------------------------------------------------------
-   10. IMAGE FALLBACK
-------------------------------------------------------- */
-
-document.querySelectorAll("img").forEach(image=>{
-
- image.addEventListener("error",()=>{
-
-  image.style.opacity=".25";
-
- });
-
-});
-
-
-/* -------------------------------------------------------
-   11. INITIALIZATION
-------------------------------------------------------- */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
- filterProducts();
+  document.body.classList.add('page-ready');
 
 });
 
 </script>
 
 </body>
-</html>
+       </html>
