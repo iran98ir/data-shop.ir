@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f8f5">
+<meta name="description" content="فروش ویژه موبایل با امکان خرید اقساطی و اعتبارسنجی آنلاین">
+<title>موبایل | خرید هوشمند اقساطی</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+ --bg:#f8f8f5;
+ --white:#ffffff;
+ --ink:#202922;
+ --muted:#858d86;
+ --green:#315c49;
+ --green2:#47745d;
+ --mint:#eaf1e9;
+ --gold:#bd9b62;
+ --line:#eceee8;
+ --radius:25px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+ font-family:'Vazirmatn',sans-serif;
+ background:var(--bg);
+ color:var(--ink);
+ padding-bottom:105px;
+ overflow-x:hidden;
+ -webkit-tap-highlight-color:transparent;
+}
+
+button,a{font-family:inherit}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:0}
+
+.app{
+ max-width:520px;
+ margin:auto;
+ min-height:100vh;
+ position:relative;
+}
+
+/* HEADER */
+
+.header{
+ padding:20px 21px 13px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+}
+
+.brand{
+ display:flex;
+ align-items:center;
+ gap:11px;
+}
+
+.brand-logo{
+ width:47px;
+ height:47px;
+ border-radius:17px;
+ background:var(--green);
+ color:white;
+ display:grid;
+ place-items:center;
+ box-shadow:0 7px 17px #315c4930;
+}
+
+.brand-logo svg{width:26px}
+
+.brand-name{
+ font-size:18px;
+ font-weight:900;
+ letter-spacing:-.7px;
+}
+
+.brand-sub{
+ font-size:10px;
+ color:var(--muted);
+ margin-top:1px;
+}
+
+.header-actions{
+ display:flex;
+ gap:9px;
+}
+
+.icon-btn{
+ width:43px;
+ height:43px;
+ border-radius:15px;
+ background:white;
+ border:1px solid var(--line);
+ display:grid;
+ place-items:center;
+ color:var(--ink);
+}
+
+.icon-btn svg{width:20px}
+
+/* WELCOME */
+
+.welcome{
+ padding:15px 22px 18px;
+}
+
+.eyebrow{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ color:var(--green);
+ font-size:11px;
+ font-weight:700;
+ margin-bottom:10px;
+}
+
+.eyebrow i{
+ width:7px;height:7px;
+ background:#79a78a;
+ border-radius:50%;
+ box-shadow:0 0 0 4px #79a78a20;
+}
+
+.welcome h1{
+ font-size:27px;
+ line-height:1.7;
+ font-weight:900;
+ letter-spacing:-1px;
+}
+
+.welcome h1 span{color:var(--green)}
+
+.welcome p{
+ font-size:12px;
+ color:var(--muted);
+ margin-top:3px;
+ line-height:2;
+}
+
+/* HERO */
+
+.hero-wrap{padding:4px 15px 0}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ min-height:295px;
+ border-radius:31px;
+ background:
+ radial-gradient(ellipse at 83% 23%,#ffffffa8 0,transparent 38%),
+ linear-gradient(135deg,#e8eee4 0%,#dce8dc 49%,#cad9cc 100%);
+ padding:26px 23px;
+ isolation:isolate;
+}
+
+.hero::before{
+ content:"";
+ position:absolute;
+ width:260px;height:260px;
+ border:1px solid #ffffff80;
+ border-radius:50%;
+ top:42px;right:-108px;
+ z-index:-1;
+}
+
+.hero::after{
+ content:"";
+ position:absolute;
+ width:205px;height:205px;
+ border:1px solid #ffffff80;
+ border-radius:50%;
+ top:70px;right:-80px;
+ z-index:-1;
+}
+
+.hero-content{
+ position:relative;
+ z-index:3;
+ max-width:65%;
+}
+
+.hero-label{
+ display:inline-flex;
+ padding:6px 11px;
+ background:#ffffff9c;
+ color:var(--green);
+ border-radius:30px;
+ font-size:10px;
+ font-weight:800;
+ margin-bottom:13px;
+}
+
+.hero h2{
+ font-size:28px;
+ line-height:1.65;
+ font-weight:900;
+ letter-spacing:-1px;
+}
+
+.hero h2 span{color:var(--green)}
+
+.hero p{
+ font-size:11px;
+ color:#617064;
+ line-height:2;
+ margin-top:6px;
+}
+
+.hero-cta{
+ display:inline-flex;
+ align-items:center;
+ gap:9px;
+ margin-top:17px;
+ padding:12px 16px;
+ border-radius:14px;
+ background:var(--green);
+ color:white;
+ font-size:11px;
+ font-weight:800;
+ box-shadow:0 8px 20px #315c4930;
+}
+
+.hero-cta svg{width:16px}
+
+.hero-phone{
+ position:absolute;
+ width:140px;
+ height:225px;
+ left:12px;
+ bottom:-17px;
+ transform:rotate(-11deg);
+ z-index:2;
+ filter:drop-shadow(0 19px 17px #344b3b40);
+}
+
+.phone-frame{
+ width:100%;
+ height:100%;
+ border:5px solid #344039;
+ background:#171d1b;
+ border-radius:27px;
+ padding:5px;
+ position:relative;
+}
+
+.phone-screen{
+ height:100%;
+ border-radius:19px;
+ overflow:hidden;
+ position:relative;
+ background:
+ radial-gradient(circle at 50% 34%,#d7c9ad 0,#829a7b 27%,transparent 48%),
+ linear-gradient(150deg,#d9e6cf,#738c76 58%,#263c34);
+}
+
+.phone-screen::before{
+ content:"";
+ position:absolute;
+ width:70px;height:130px;
+ border-radius:40px;
+ background:linear-gradient(120deg,#e8e3d5,#a1b5a1,#364b40);
+ left:31px;top:39px;
+ transform:rotate(26deg);
+ box-shadow:0 0 18px #fff7;
+}
+
+.phone-screen::after{
+ content:"";
+ position:absolute;
+ top:7px;left:50%;
+ transform:translateX(-50%);
+ width:42px;height:12px;
+ border-radius:10px;
+ background:#151a18;
+}
+
+/* TRUST STRIP */
+
+.trust-strip{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ padding:18px 18px 8px;
+}
+
+.trust-item{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ min-width:0;
+}
+
+.trust-icon{
+ width:36px;height:36px;
+ border-radius:13px;
+ background:#edf2eb;
+ color:var(--green);
+ display:grid;
+ place-items:center;
+ flex-shrink:0;
+}
+
+.trust-icon svg{width:18px}
+
+.trust-item strong{
+ display:block;
+ font-size:10px;
+ font-weight:800;
+ white-space:nowrap;
+}
+
+.trust-item small{
+ display:block;
+ color:var(--muted);
+ font-size:9px;
+ margin-top:3px;
+ white-space:nowrap;
+}
+
+/* SECTION */
+
+.section{
+ padding:25px 20px 0;
+}
+
+.section-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:15px;
+}
+
+.section-title{
+ font-size:18px;
+ font-weight:900;
+ letter-spacing:-.5px;
+}
+
+.section-caption{
+ color:var(--muted);
+ font-size:10px;
+ margin-top:4px;
+}
+
+.see-all{
+ color:var(--green);
+ font-size:11px;
+ font-weight:800;
+}
+
+/* CATEGORIES */
+
+.categories{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+}
+
+.category{
+ background:white;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:14px 8px;
+ text-align:center;
+ transition:.2s;
+}
+
+.category:active{transform:scale(.97)}
+
+.category-icon{
+ width:48px;height:48px;
+ border-radius:17px;
+ background:#f1f3ed;
+ margin:0 auto 9px;
+ display:grid;
+ place-items:center;
+ color:var(--green);
+}
+
+.category-icon svg{width:25px;height:25px}
+
+.category strong{
+ font-size:11px;
+ display:block;
+}
+
+.category small{
+ font-size:9px;
+ color:var(--muted);
+ display:block;
+ margin-top:4px;
+}
+
+/* FEATURED PRODUCTS */
+
+.product-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;
+}
+
+.product{
+ background:white;
+ border:1px solid #eeefe9;
+ border-radius:23px;
+ padding:11px;
+ overflow:hidden;
+ position:relative;
+}
+
+.product-image{
+ height:155px;
+ border-radius:17px;
+ background:linear-gradient(145deg,#f3f4ef,#e9ede7);
+ display:grid;
+ place-items:center;
+ position:relative;
+ overflow:hidden;
+}
+
+.product-image::before{
+ content:"";
+ position:absolute;
+ width:110px;height:110px;
+ background:#ffffffa0;
+ border-radius:50%;
+ filter:blur(1px);
+}
+
+.device{
+ position:relative;
+ z-index:2;
+ width:69px;
+ height:130px;
+ border:4px solid #363c39;
+ border-radius:17px;
+ background:linear-gradient(145deg,#dce6dc,#899d91);
+ box-shadow:0 10px 17px #263b302b;
+ transform:rotate(-7deg);
+}
+
+.device::before{
+ content:"";
+ position:absolute;
+ width:23px;height:7px;
+ background:#343b37;
+ border-radius:10px;
+ top:4px;left:50%;
+ transform:translateX(-50%);
+}
+
+.device::after{
+ content:"";
+ position:absolute;
+ inset:25px 7px;
+ border-radius:9px;
+ background:linear-gradient(155deg,#d7d6b6,#77917c,#293f34);
+}
+
+.device.color2{background:linear-gradient(145deg,#d9d9e6,#7b819d)}
+.device.color3{background:linear-gradient(145deg,#e7d9ce,#aa8a77)}
+.device.color4{background:linear-gradient(145deg,#d4e4e6,#668c96)}
+
+.product-tag{
+ position:absolute;
+ top:9px;right:9px;
+ background:#e7efe5;
+ color:var(--green);
+ padding:5px 8px;
+ border-radius:9px;
+ font-size:9px;
+ font-weight:800;
+ z-index:3;
+}
+
+.product-info{padding:12px 3px 3px}
+
+.product-info h3{
+ font-size:13px;
+ font-weight:900;
+}
+
+.product-info p{
+ color:var(--muted);
+ font-size:10px;
+ margin-top:5px;
+}
+
+.product-bottom{
+ margin-top:12px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+}
+
+.installment{
+ font-size:10px;
+ color:var(--green);
+ font-weight:800;
+}
+
+.product-arrow{
+ width:32px;height:32px;
+ border-radius:11px;
+ background:var(--green);
+ color:white;
+ display:grid;
+ place-items:center;
+}
+
+.product-arrow svg{width:17px}
+
+/* INSTALLMENT BANNER */
+
+.installment-banner{
+ margin:27px 15px 0;
+ padding:22px;
+ border-radius:25px;
+ background:linear-gradient(130deg,#315c49,#416e56);
+ color:white;
+ position:relative;
+ overflow:hidden;
+}
+
+.installment-banner::after{
+ content:"";
+ position:absolute;
+ width:190px;height:190px;
+ border:1px solid #ffffff22;
+ border-radius:50%;
+ left:-60px;top:-70px;
+ box-shadow:0 0 0 20px #ffffff08,0 0 0 40px #ffffff06;
+}
+
+.banner-content{position:relative;z-index:2}
+
+.banner-kicker{
+ font-size:10px;
+ color:#d4e5d7;
+ font-weight:700;
+}
+
+.installment-banner h2{
+ font-size:23px;
+ font-weight:900;
+ line-height:1.7;
+ margin-top:8px;
+}
+
+.installment-banner p{
+ font-size:11px;
+ line-height:2;
+ color:#d7e5da;
+ margin-top:4px;
+ max-width:80%;
+}
+
+.banner-button{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-top:16px;
+ padding:11px 15px;
+ background:#fff;
+ color:var(--green);
+ border-radius:13px;
+ font-size:11px;
+ font-weight:900;
+}
+
+.banner-button svg{width:16px}
+
+/* STEPS */
+
+.steps{
+ display:flex;
+ flex-direction:column;
+ gap:11px;
+}
+
+.step{
+ background:white;
+ border:1px solid var(--line);
+ border-radius:18px;
+ padding:13px;
+ display:flex;
+ align-items:center;
+ gap:13px;
+}
+
+.step-number{
+ width:40px;height:40px;
+ flex-shrink:0;
+ display:grid;
+ place-items:center;
+ border-radius:14px;
+ background:#edf2eb;
+ color:var(--green);
+ font-size:15px;
+ font-weight:900;
+}
+
+.step strong{
+ font-size:12px;
+ font-weight:900;
+ display:block;
+}
+
+.step p{
+ color:var(--muted);
+ font-size:10px;
+ margin-top:4px;
+ line-height:1.8;
+}
+
+.step-status{
+ margin-right:auto;
+ color:#8b9a8d;
+ font-size:9px;
+ white-space:nowrap;
+}
+
+/* FOOTER */
+
+.footer-note{
+ margin:25px 17px 15px;
+ background:#f0f1eb;
+ border-radius:19px;
+ padding:16px;
+ display:flex;
+ gap:12px;
+ align-items:center;
+}
+
+.footer-note svg{
+ width:23px;
+ flex-shrink:0;
+ color:var(--green);
+}
+
+.footer-note p{
+ font-size:10px;
+ color:#737d73;
+ line-height:2;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+ position:fixed;
+ z-index:50;
+ bottom:0;
+ left:50%;
+ transform:translateX(-50%);
+ width:min(100%,520px);
+ padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+ background:#ffffffed;
+ backdrop-filter:blur(20px);
+ border-top:1px solid #e9ebe5;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+}
+
+.nav-item{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ gap:5px;
+ color:#9ba19a;
+ font-size:9px;
+ font-weight:700;
+ min-height:48px;
+}
+
+.nav-item svg{width:21px;height:21px}
+
+.nav-item.active{color:var(--green)}
+
+.nav-item.active .nav-icon{
+ background:#eaf1e9;
+ border-radius:12px;
+ padding:5px 12px;
+}
+
+.nav-icon{
+ display:grid;
+ place-items:center;
+}
+
+/* ANIMATION */
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(12px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.hero,.product,.category,.step{
+ animation:appear .55s ease both;
+}
+
+@media(min-width:520px){
+ body{background:#eceee8}
+ .app{background:var(--bg);box-shadow:0 0 50px #00000008}
+ .bottom-nav{box-shadow:0 -5px 25px #00000008}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+<header class="header">
+
+ <div class="brand">
+  <div class="brand-logo">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="6" y="2" width="12" height="20" rx="3"/>
+    <path d="M10 5h4M11 19h2"/>
+    <circle cx="9" cy="9" r="1" fill="currentColor"/>
+    <circle cx="15" cy="9" r="1" fill="currentColor"/>
+   </svg>
+  </div>
+  <div>
+   <div class="brand-name">موبایل‌خانه</div>
+   <div class="brand-sub">تجربه‌ای متفاوت در خرید موبایل</div>
+  </div>
+ </div>
+
+ <div class="header-actions">
+  <button class="icon-btn" aria-label="سبد خرید" onclick="go('support.html')">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+    <path d="M3 3h2l2.5 12.5a2 2 0 002 1.5h8a2 2 0 002-1.5L21 8H6"/>
+    <circle cx="10" cy="21" r="1"/>
+    <circle cx="18" cy="21" r="1"/>
+   </svg>
+  </button>
+  <button class="icon-btn" aria-label="پشتیبانی" onclick="go('support.html')">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+    <path d="M4 13v-2a8 8 0 0116 0v2"/>
+    <rect x="3" y="12" width="4" height="7" rx="2"/>
+    <rect x="17" y="12" width="4" height="7" rx="2"/>
+    <path d="M17 19a5 5 0 01-5 3h-1"/>
+   </svg>
+  </button>
+ </div>
+
+</header>
+
+<!-- WELCOME -->
+<section class="welcome">
+ <div class="eyebrow"><i></i> خرید هوشمند، تجربه‌ای مطمئن</div>
+ <h1>گوشی دلخواهت،<br><span>آسان‌تر از همیشه!</span></h1>
+ <p>جدیدترین گوشی‌های هوشمند را انتخاب کن و با امکان خرید اقساطی، هوشمندانه‌تر خرید کن.</p>
+</section>
+
+<!-- HERO -->
+<section class="hero-wrap">
+ <div class="hero">
+
+  <div class="hero-content">
+   <div class="hero-label">ویژه خرید اقساطی</div>
+   <h2>همین امروز<br>صاحب گوشی<br><span>دلخواهت شو.</span></h2>
+   <p>اعتبارسنجی آنلاین، دریافت سفته الکترونیک و خرید آسان.</p>
+
+   <a href="activate.html" class="hero-cta">
+    شروع خرید اقساطی
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+     <path d="M19 12H5m7 7l-7-7 7-7"/>
+    </svg>
+   </a>
+  </div>
+
+  <div class="hero-phone">
+   <div class="phone-frame">
+    <div class="phone-screen"></div>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-strip">
+
+ <div class="trust-item">
+  <div class="trust-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+    <path d="m9 12 2 2 4-4"/>
+   </svg>
+  </div>
+  <div>
+   <strong>فرآیند شفاف</strong>
+   <small>مراحل مشخص خرید</small>
+  </div>
+ </div>
+
+ <div class="trust-item">
+  <div class="trust-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="3" y="5" width="18" height="14" rx="3"/>
+    <path d="M7 10h10M7 14h5"/>
+   </svg>
+  </div>
+  <div>
+   <strong>خرید اقساطی</strong>
+   <small>پس از تأیید اعتبار</small>
+  </div>
+ </div>
+
+ <div class="trust-item">
+  <div class="trust-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M12 3v18M3 12h18"/>
+    <circle cx="12" cy="12" r="9"/>
+   </svg>
+  </div>
+  <div>
+   <strong>انتخاب متنوع</strong>
+   <small>مدل‌های مختلف گوشی</small>
+  </div>
+ </div>
+
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+
+ <div class="section-head">
+  <div>
+   <h2 class="section-title">دنیای موبایل</h2>
+   <p class="section-caption">گوشی مورد علاقه‌ات را پیدا کن</p>
+  </div>
+  <a href="#products" class="see-all">مشاهده محصولات ←</a>
+ </div>
+
+ <div class="categories">
+
+  <a class="category" href="#products">
+   <div class="category-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+     <rect x="6" y="2" width="12" height="20" rx="3"/>
+     <path d="M10 5h4M11 19h2"/>
+    </svg>
+   </div>
+   <strong>گوشی هوشمند</strong>
+   <small>مدل‌های منتخب</small>
+  </a>
+
+  <a class="category" href="#products">
+   <div class="category-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+     <path d="M5 9a7 7 0 0114 0v5a3 3 0 01-3 3h-1"/>
+     <rect x="3" y="10" width="5" height="8" rx="2"/>
+     <rect x="16" y="10" width="5" height="8" rx="2"/>
+    </svg>
+   </div>
+   <strong>لوازم جانبی</strong>
+   <small>تجهیزات کاربردی</small>
+  </a>
+
+  <a class="category" href="guide.html">
+   <div class="category-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+     <path d="M12 18h.01M9.1 9a3 3 0 015.8 1c0 2-3 3-3 5"/>
+     <circle cx="12" cy="12" r="10"/>
+    </svg>
+   </div>
+   <strong>راهنمای خرید</strong>
+   <small>قدم به قدم</small>
+  </a>
+
+ </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+
+ <div class="section-head">
+  <div>
+   <h2 class="section-title">منتخب فروشگاه</h2>
+   <p class="section-caption">مدل‌های موجود برای خرید</p>
+  </div>
+  <a href="guide.html" class="see-all">راهنمای انتخاب ←</a>
+ </div>
+
+ <div class="product-grid">
+
+  <article class="product">
+   <div class="product-image">
+    <span class="product-tag">پیشنهاد ویژه</span>
+    <div class="device"></div>
+   </div>
+   <div class="product-info">
+    <h3>گوشی هوشمند ۱</h3>
+    <p>مشاهده مشخصات و شرایط خرید</p>
+    <div class="product-bottom">
+     <span class="installment">امکان خرید اقساطی</span>
+     <a href="activate.html" class="product-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+       <path d="M19 12H5m7 7-7-7 7-7"/>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="product-image">
+    <span class="product-tag">انتخاب محبوب</span>
+    <div class="device color2"></div>
+   </div>
+   <div class="product-info">
+    <h3>گوشی هوشمند ۲</h3>
+    <p>مشاهده مشخصات و شرایط خرید</p>
+    <div class="product-bottom">
+     <span class="installment">امکان خرید اقساطی</span>
+     <a href="activate.html" class="product-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+       <path d="M19 12H5m7 7-7-7 7-7"/>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="product-image">
+    <div class="device color3"></div>
+   </div>
+   <div class="product-info">
+    <h3>گوشی هوشمند ۳</h3>
+    <p>مشاهده مشخصات و شرایط خرید</p>
+    <div class="product-bottom">
+     <span class="installment">امکان خرید اقساطی</span>
+     <a href="activate.html" class="product-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+       <path d="M19 12H5m7 7-7-7 7-7"/>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="product-image">
+    <div class="device color4"></div>
+   </div>
+   <div class="product-info">
+    <h3>گوشی هوشمند ۴</h3>
+    <p>مشاهده مشخصات و شرایط خرید</p>
+    <div class="product-bottom">
+     <span class="installment">امکان خرید اقساطی</span>
+     <a href="activate.html" class="product-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+       <path d="M19 12H5m7 7-7-7 7-7"/>
+      </svg>
+     </a>
+    </div>
+   </div>
+  </article>
+
+ </div>
+</section>
+
+<!-- INSTALLMENT PROMO -->
+<section class="installment-banner">
+
+ <div class="banner-content">
+  <div class="banner-kicker">مسیر ساده تا خرید گوشی</div>
+  <h2>اول اعتبارت را بسنج،<br>بعد انتخاب کن.</h2>
+  <p>با چند مرحله ساده، وضعیت اعتبارت بررسی می‌شود. در صورت واجد شرایط بودن، مراحل دریافت سفته الکترونیک و خرید را ادامه بده.</p>
+
+  <a href="activate.html" class="banner-button">
+   شروع اعتبارسنجی
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M19 12H5m7 7-7-7 7-7"/>
+   </svg>
+  </a>
+ </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+
+ <div class="section-head">
+  <div>
+   <h2 class="section-title">خرید اقساطی چطور انجام می‌شود؟</h2>
+   <p class="section-caption">چهار قدم تا گوشی جدیدت</p>
+  </div>
+ </div>
+
+ <div class="steps">
+
+  <div class="step">
+   <div class="step-number">۰۱</div>
+   <div>
+    <strong>ثبت اطلاعات هویتی</strong>
+    <p>تکمیل اطلاعات اولیه و مشخصات فردی</p>
+   </div>
+   <span class="step-status">قدم اول</span>
+  </div>
+
+  <div class="step">
+   <div class="step-number">۰۲</div>
+   <div>
+    <strong>احراز محل سکونت</strong>
+    <p>تکمیل اطلاعات مورد نیاز برای احراز سکونت</p>
+   </div>
+   <span class="step-status">قدم دوم</span>
+  </div>
+
+  <div class="step">
+   <div class="step-number">۰۳</div>
+   <div>
+    <strong>اعتبارسنجی و سفته الکترونیک</strong>
+    <p>بررسی رتبه اعتباری و انجام مراحل ضمانت</p>
+   </div>
+   <span class="step-status">قدم سوم</span>
+  </div>
+
+  <div class="step">
+   <div class="step-number">۰۴</div>
+   <div>
+    <strong>انتخاب و خرید گوشی</strong>
+    <p>انتخاب محصول و تکمیل سفارش اقساطی</p>
+   </div>
+   <span class="step-status">قدم آخر</span>
+  </div>
+
+ </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-note">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+  <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+  <path d="M12 8v4m0 4h.01"/>
+ </svg>
+ <p>خرید اقساطی منوط به بررسی و تأیید اعتبار متقاضی و تکمیل شرایط ضمانت است. ثبت درخواست به‌تنهایی به معنی تأیید اعتبار نیست.</p>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+
+ <a href="index.html" class="nav-item active">
+  <span class="nav-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="m3 10 9-7 9 7v10a1 1 0 01-1 1h-6v-7h-4v7H4a1 1 0 01-1-1z"/>
+   </svg>
+  </span>
+  خانه
+ </a>
+
+ <a href="guide.html" class="nav-item">
+  <span class="nav-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M4 5.5A2.5 2.5 0 016.5 3H20v16H6.5A2.5 2.5 0 014 16.5z"/>
+    <path d="M4 16a2 2 0 012-2h14M8 7h8M8 10h6"/>
+   </svg>
+  </span>
+  راهنمای خرید
+ </a>
+
+ <a href="activate.html" class="nav-item">
+  <span class="nav-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+    <path d="m9 12 2 2 4-4"/>
+   </svg>
+  </span>
+  فعال‌سازی
+ </a>
+
+ <a href="support.html" class="nav-item">
+  <span class="nav-icon">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M4 13v-2a8 8 0 0116 0v2"/>
+    <rect x="3" y="12" width="4" height="7" rx="2"/>
+    <rect x="17" y="12" width="4" height="7" rx="2"/>
+    <path d="M17 19a5 5 0 01-5 3h-1"/>
+   </svg>
+  </span>
+  پشتیبانی
+ </a>
+
+</nav>
+
+</div>
+
+<script>
+function go(page){
+ window.location.href=page;
+}
+
+// Smooth section navigation
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+ link.addEventListener('click',function(e){
+  const target=document.querySelector(this.getAttribute('href'));
+  if(target){
+   e.preventDefault();
+   target.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+ });
+});
+</script>
+
+</body>
+</html>
