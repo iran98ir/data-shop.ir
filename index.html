@@ -3,750 +3,774 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f8ff">
-<title>NOVA — موبایل، جورِ تازه‌ای بخر</title>
+<meta name="theme-color" content="#0F0E0C">
+<title>NOVA — خرید اقساطی موبایل، بدون سود</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Vazirmatn:wght@200..900&display=swap" rel="stylesheet">
 
 <style>
+/* ═══════════════════════════════════════════
+   NOVA — DESIGN SYSTEM «OBSIDIAN & CHAMPAGNE»
+   پالت: مشکی گرم + یک لهجهٔ طلایی (انضباط کامل)
+   امضا: نشان ستاره + مونوگرام الماسی + مُهر چرخان
+   ═══════════════════════════════════════════ */
 :root{
-  --bg:#f8f8ff;
-  --ink:#17152f;
-  --muted:#77758f;
-  --purple:#6744ff;
-  --purple2:#8b72ff;
-  --cyan:#36e3d0;
-  --lime:#d8ff58;
-  --pink:#ff68a8;
-  --white:#fff;
-  --stroke:rgba(40,30,90,.10);
-  --shadow:0 18px 45px rgba(57,39,133,.12);
-  --shadow2:0 28px 70px rgba(57,39,133,.2);
-  --nav:82px;
+  --bg:#0F0E0C;
+  --panel:#161410;
+  --panel2:#1B1813;
+  --ink:#F4EFE6;
+  --muted:#A79E8F;
+  --faint:#7D766A;
+  --gold:#D6B36A;
+  --gold-hi:#F1D9A7;
+  --gold-lo:#B98F3E;
+  --hair:rgba(214,179,106,.16);
+  --hair-soft:rgba(244,239,230,.07);
+  --foil:linear-gradient(100deg,#B98F3E 0%,#E9CF9B 25%,#F6E7C1 50%,#D6B36A 75%,#B98F3E 100%);
+  --sh-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 32px -12px rgba(0,0,0,.75),0 34px 70px -30px rgba(0,0,0,.65);
+  --sh-gold:0 1px 0 rgba(255,255,255,.28) inset,0 -2px 6px rgba(120,85,20,.35) inset,0 14px 30px -10px rgba(214,179,106,.45),0 28px 55px -22px rgba(0,0,0,.7);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M30 22q1.8 6.2 8 8-6.2 1.8-8 8-1.8-6.2-8-8 6.2-1.8 8-8Z' fill='%23D6B36A' fill-opacity='.045'/%3E%3Cpath d='M90 84q1.3 4.7 6 6-4.7 1.3-6 6-1.3-4.7-6-6 4.7-1.3 6-6Z' fill='%23D6B36A' fill-opacity='.035'/%3E%3Crect x='84.5' y='24.5' width='11' height='11' transform='rotate(45 90 30)' fill='none' stroke='%23D6B36A' stroke-opacity='.05'/%3E%3Crect x='24.5' y='84.5' width='11' height='11' transform='rotate(45 30 90)' fill='none' stroke='%23D6B36A' stroke-opacity='.04'/%3E%3C/svg%3E");
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:84px;color-scheme:dark}
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Vazirmatn",sans-serif;
+  font-family:"Vazirmatn",sans-serif;font-weight:400;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-::selection{background:var(--purple);color:white}
+::selection{background:var(--gold);color:#171307}
+a:focus-visible,button:focus-visible{outline:2px solid rgba(214,179,106,.7);outline-offset:3px;border-radius:12px}
+.caps{font-family:"Cormorant Garamond",serif;direction:ltr;font-weight:600}
 
-/* ───── Animated atmosphere ───── */
+/* ───── اتمسفر: تاریکیِ گرم + هالهٔ طلاییِ آرام ───── */
 .ambient{
-  position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none;
+  position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;
   background:
-    radial-gradient(ellipse at 15% 5%,rgba(103,68,255,.12),transparent 34%),
-    radial-gradient(ellipse at 90% 25%,rgba(54,227,208,.14),transparent 32%),
-    radial-gradient(ellipse at 50% 100%,rgba(255,104,168,.09),transparent 35%);
+    radial-gradient(60% 42% at 85% -6%,rgba(214,179,106,.11),transparent 62%),
+    radial-gradient(52% 36% at 8% 108%,rgba(214,179,106,.07),transparent 60%),
+    var(--bg);
 }
 .ambient:before,.ambient:after{
-  content:"";position:absolute;width:430px;height:430px;border-radius:50%;
-  filter:blur(65px);opacity:.35;animation:ambientDrift 18s ease-in-out infinite alternate;
+  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+  filter:blur(90px);opacity:.08;background:var(--gold);
+  animation:drift 32s ease-in-out infinite alternate;
 }
-.ambient:before{
-  background:var(--purple);top:-250px;right:-180px;
+.ambient:before{top:-240px;right:-160px}
+.ambient:after{bottom:-260px;left:-190px;animation-delay:-16s}
+@keyframes drift{
+  0%{transform:translate(0,0) scale(.9)}
+  100%{transform:translate(-70px,80px) scale(1.15)}
 }
-.ambient:after{
-  background:var(--cyan);bottom:-280px;left:-200px;
-  animation-delay:-8s;
+.grain{
+  position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
 }
-@keyframes ambientDrift{
-  0%{transform:translate(0,0) scale(.85)}
-  50%{transform:translate(90px,65px) scale(1.18)}
-  100%{transform:translate(-40px,110px) scale(.95)}
-}
-.noise{
-  position:fixed;inset:0;z-index:30;pointer-events:none;opacity:.10;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
-}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
 
-/* ───── Header ───── */
+/* ───── هدر: شیشهٔ تیره + خط طلاییِ رونده ───── */
 .header{
-  position:sticky;top:0;z-index:50;height:68px;
+  position:sticky;top:0;z-index:50;height:66px;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 19px;
-  background:rgba(248,248,255,.78);
-  border-bottom:1px solid rgba(65,50,130,.07);
-  backdrop-filter:blur(24px) saturate(1.5);
-  -webkit-backdrop-filter:blur(24px) saturate(1.5);
+  padding:0 18px;
+  background:rgba(15,14,12,.78);
+  border-bottom:1px solid var(--hair);
+  backdrop-filter:blur(22px) saturate(1.2);
+  -webkit-backdrop-filter:blur(22px) saturate(1.2);
+  overflow:hidden;
 }
-.brand{display:flex;align-items:center;gap:10px}
-.brand-symbol{
-  width:42px;height:42px;position:relative;
-  display:grid;place-items:center;
-  border-radius:15px;
-  background:linear-gradient(145deg,#8e7aff,#5530ec);
-  box-shadow:0 7px 17px rgba(103,68,255,.32),inset 0 1px 1px #ffffff80;
-  transform:rotate(-7deg);
+.header:after{
+  content:"";position:absolute;bottom:0;right:0;left:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-hi),transparent);
+  transform:translateX(100%);animation:sweep 1.6s .3s var(--ease) forwards;
 }
-.brand-symbol:before{
-  content:"";position:absolute;inset:7px;
-  border:1.5px solid rgba(255,255,255,.65);
-  border-radius:10px;transform:rotate(28deg);
+@keyframes sweep{to{transform:translateX(-100%)}}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:38px;height:38px;flex:0 0 38px}
+.brand-name{
+  font-family:"Cormorant Garamond",serif;direction:ltr;
+  font-size:21px;font-weight:600;letter-spacing:.34em;line-height:1;
+  background:var(--foil);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.brand-symbol b{
-  color:white;font-size:23px;font-weight:1000;
-  transform:rotate(7deg);position:relative;
+.brand-sub{display:block;margin-top:5px;font-size:8.5px;color:var(--faint);font-weight:500}
+.header-pill{
+  display:flex;align-items:center;gap:6px;
+  border:1px solid var(--hair);border-radius:999px;
+  padding:7px 12px;font-size:10px;font-weight:700;color:var(--gold);
+  background:rgba(214,179,106,.05);
 }
-.brand-title{
-  font-size:21px;line-height:1;font-weight:1000;
-  letter-spacing:1.5px;direction:ltr;
-}
-.brand-caption{
-  display:block;margin-top:5px;font-size:8px;
-  letter-spacing:1.5px;color:#9995b0;font-weight:900;
-}
-.header-status{
-  display:flex;align-items:center;gap:7px;
-  border:1px solid rgba(103,68,255,.13);
-  border-radius:30px;padding:8px 12px;
-  background:#fff9;font-size:10px;font-weight:900;color:#655b91;
-}
-.status-light{
-  width:7px;height:7px;background:#20c994;border-radius:50%;
-  box-shadow:0 0 0 4px #20c99420;
-  animation:blink 2s infinite;
-}
-@keyframes blink{50%{box-shadow:0 0 0 7px #20c99400}}
+.header-pill svg{width:9px;height:9px;fill:var(--gold)}
 
-/* ───── App frame ───── */
-main{max-width:700px;margin:auto;padding:0 15px 105px}
-.hero{padding:23px 0 15px;position:relative}
-.hero-meta{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:16px;
-}
-.meta-label{
-  display:flex;align-items:center;gap:7px;
-  font-size:10px;font-weight:900;color:var(--purple);
-}
-.meta-label i{
-  display:block;width:8px;height:8px;border-radius:3px;
-  background:var(--pink);transform:rotate(45deg);
-}
-.meta-number{font-size:9px;letter-spacing:2px;color:#aaa6bd;direction:ltr;font-weight:900}
+/* ───── قاب اصلی ───── */
+main{max-width:680px;margin:auto;padding:0 16px 122px}
+
+/* ───── هیرو: تایپوگرافیِ وزنی + فویل طلایی ───── */
+.hero{padding:28px 0 0}
+.eyebrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.eyebrow-fa{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;color:var(--gold)}
+.eyebrow-fa svg{width:10px;height:10px;fill:var(--gold)}
+.eyebrow-num{font-size:10px;letter-spacing:.28em;color:var(--faint)}
 .hero-title{
-  margin:0;position:relative;z-index:2;
-  font-size:clamp(42px,10.5vw,70px);
-  line-height:1.23;font-weight:1000;letter-spacing:-2.8px;
+  margin:0;font-size:clamp(34px,9.2vw,56px);
+  line-height:1.55;font-weight:800;letter-spacing:0;
 }
-.hero-title .dark{display:block;color:var(--ink)}
-.hero-title .purple{
-  display:inline-block;color:var(--purple);
-  position:relative;isolation:isolate;
+.hero-title .line{display:block}
+.foil{
+  background:var(--foil);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:foil 8s ease infinite;
+  filter:drop-shadow(0 6px 26px rgba(214,179,106,.22));
 }
-.hero-title .purple:after{
-  content:"";position:absolute;z-index:-1;
-  bottom:3px;right:-4px;left:-5px;height:13px;
-  background:var(--lime);border-radius:3px;
-  transform:skewX(-12deg) rotate(-1deg);
+@keyframes foil{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.hero-sub{
+  margin:14px 0 0;max-width:420px;
+  color:var(--muted);font-size:12.5px;line-height:2.15;font-weight:400;
 }
-.hero-title .outline{
-  color:transparent;-webkit-text-stroke:1.7px var(--purple);
-  display:inline-block;transform:translateY(2px);
-}
-.hero-intro{
-  margin:14px 0 17px;max-width:430px;
-  color:#77748e;font-size:13px;line-height:2.05;font-weight:500;
-}
-.hero-intro strong{color:var(--ink);font-weight:1000}
-.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.btn-main{
+.hero-sub strong{color:var(--ink);font-weight:700}
+.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+.btn-gold{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  min-height:52px;padding:0 17px;
-  color:#fff;background:linear-gradient(115deg,#7655ff,#5530ec);
-  border:1px solid #a18cff;border-radius:15px 15px 15px 5px;
-  box-shadow:0 10px 24px #6744ff38,inset 0 1px 1px #ffffff55;
-  font-size:12px;font-weight:1000;
-  transition:.28s;position:relative;overflow:hidden;
+  min-height:54px;padding:0 20px;
+  color:#171307;background:linear-gradient(135deg,#E9CF9B,#D6B36A 45%,#B98F3E);
+  border:1px solid #F3E3BC;border-radius:14px;
+  box-shadow:var(--sh-gold);
+  font-size:13px;font-weight:800;
+  transition:transform .3s var(--ease),box-shadow .3s;
+  position:relative;overflow:hidden;
 }
-.btn-main:before{
-  content:"";position:absolute;top:-80%;left:-55%;width:35%;height:260%;
-  background:#ffffff50;transform:rotate(25deg);transition:.7s;
+.btn-gold:before{
+  content:"";position:absolute;top:-80%;left:-60%;width:34%;height:260%;
+  background:rgba(255,255,255,.55);transform:rotate(25deg);
+  animation:sheen 6s ease infinite;
 }
-.btn-main:hover:before{left:130%}
-.btn-main:hover{transform:translateY(-4px);box-shadow:0 17px 30px #6744ff48}
-.btn-main:active{transform:scale(.97)}
+@keyframes sheen{0%,72%{left:-60%}88%,100%{left:140%}}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-gold:active{transform:scale(.97)}
 .btn-arrow{
-  width:25px;height:25px;display:grid;place-items:center;
-  border-radius:9px;background:#ffffff2b;font-size:17px;
+  width:26px;height:26px;display:grid;place-items:center;
+  border-radius:9px;background:rgba(23,19,7,.14);font-size:16px;
 }
-.btn-quiet{
-  display:inline-flex;align-items:center;gap:7px;
-  color:#716d8d;font-size:11px;font-weight:900;padding:12px 4px;
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:46px;padding:0 16px;border-radius:13px;
+  border:1px solid var(--hair);color:var(--muted);
+  font-size:11.5px;font-weight:600;transition:.3s;
 }
-.btn-quiet span{color:var(--pink);font-size:18px}
+.btn-ghost:hover{color:var(--gold);background:rgba(214,179,106,.06)}
+.btn-ghost:active{transform:scale(.97)}
 
-/* ───── Hero visual stage ───── */
-.visual-stage{
-  margin-top:21px;min-height:280px;
-  border-radius:28px 28px 8px 28px;
-  position:relative;overflow:hidden;isolation:isolate;
-  background:linear-gradient(128deg,#5c3df0 0%,#7657ff 48%,#8e7cff 100%);
-  box-shadow:0 24px 55px rgba(78,55,190,.23),inset 0 1px 1px #ffffff65;
-  border:1px solid #ffffffa6;
+/* ───── نوار سنجه‌ها: دفترِ حسابِ مینیاتوری ───── */
+.metrics{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin-top:26px;border-block:1px solid var(--hair-soft);
 }
-.visual-stage:before{
-  content:"";position:absolute;inset:0;z-index:-1;
+.metric{padding:15px 4px;text-align:center}
+.metric + .metric{border-inline-start:1px solid var(--hair-soft)}
+.metric b{display:block;font-size:26px;font-weight:200;line-height:1.2;color:var(--ink)}
+.metric span{display:block;margin-top:5px;font-size:9px;color:var(--faint);font-weight:600}
+
+/* ───── صحنهٔ محصول: گوشیِ پرچم‌دار + کارت اعتبار NOVA BLACK ───── */
+.stage{
+  margin-top:26px;min-height:332px;position:relative;
+  border-radius:22px;overflow:hidden;isolation:isolate;
   background:
-   radial-gradient(circle at 78% 23%,#ffffff42,transparent 24%),
-   radial-gradient(circle at 20% 85%,#36e3d080,transparent 35%);
+    radial-gradient(90% 70% at 70% 0%,rgba(214,179,106,.09),transparent 55%),
+    linear-gradient(165deg,#1C1915,#100F0C 55%,#171410);
+  border:1px solid var(--hair);
+  box-shadow:0 40px 90px -32px rgba(0,0,0,.9),0 30px 80px -42px rgba(214,179,106,.2);
+  --px:0;--py:0;
 }
-.visual-stage:after{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.35;
-  background-image:linear-gradient(120deg,transparent 48%,#ffffff16 49%,transparent 50%);
-  background-size:35px 35px;
-  mask-image:linear-gradient(90deg,transparent,black);
+.stage:before{content:"";position:absolute;inset:0;background-image:var(--pattern);opacity:.9;z-index:0}
+.stage-frame{position:absolute;inset:10px;border:1px solid rgba(214,179,106,.14);border-radius:16px;pointer-events:none;z-index:1}
+.tick{position:absolute;width:9px;height:9px;z-index:1;border:0 solid rgba(214,179,106,.55)}
+.tick.tl{top:6px;left:6px;border-top-width:1px;border-left-width:1px}
+.tick.tr{top:6px;right:6px;border-top-width:1px;border-right-width:1px}
+.tick.bl{bottom:6px;left:6px;border-bottom-width:1px;border-left-width:1px}
+.tick.br{bottom:6px;right:6px;border-bottom-width:1px;border-right-width:1px}
+.stage-label{
+  position:absolute;top:17px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:8px;letter-spacing:.34em;color:rgba(214,179,106,.55);white-space:nowrap;
 }
-.stage-orbit{
-  position:absolute;border:1px solid #ffffff55;border-radius:50%;
-  width:280px;height:155px;left:calc(50% - 140px);top:66px;
-  transform:rotate(-22deg);animation:orbit 18s linear infinite;
+.stage-floor{
+  position:absolute;bottom:16px;left:12%;width:76%;height:26px;z-index:1;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.65),transparent 70%);
+  filter:blur(10px);
 }
-.stage-orbit.o2{
-  width:235px;height:210px;left:calc(50% - 117px);top:37px;
-  transform:rotate(45deg);border-style:dashed;opacity:.65;
-  animation:orbit 25s linear infinite reverse;
-}
-.stage-orbit.o3{
-  width:350px;height:260px;left:calc(50% - 175px);top:10px;
-  transform:rotate(15deg);opacity:.3;
-}
-@keyframes orbit{to{rotate:360deg}}
-.stage-star{
-  position:absolute;width:10px;height:10px;background:var(--lime);
-  border-radius:50%;left:19%;top:30%;
-  box-shadow:0 0 0 7px #d8ff5830,0 0 23px #d8ff58;
-}
-.stage-star.s2{
-  width:7px;height:7px;left:auto;right:15%;top:auto;bottom:23%;
-  background:var(--cyan);box-shadow:0 0 0 6px #36e3d033,0 0 22px #36e3d0;
-}
-.device{
-  width:128px;height:220px;position:absolute;left:50%;top:30px;
-  transform:translateX(-50%) rotate(-8deg);
-  z-index:3;border-radius:28px;padding:6px;
-  background:linear-gradient(145deg,#fafaff,#9ea0ba 30%,#292849 70%,#b4b3ce);
-  box-shadow:18px 23px 35px #21135d55,inset 0 1px 2px white;
-  animation:deviceFloat 5s ease-in-out infinite;
-}
-@keyframes deviceFloat{
-  0%,100%{transform:translateX(-50%) rotate(-8deg) translateY(0)}
-  50%{transform:translateX(-50%) rotate(-4deg) translateY(-10px)}
-}
-.device-screen{
-  width:100%;height:100%;border-radius:23px;overflow:hidden;
-  position:relative;background:linear-gradient(150deg,#f9f7ff,#d9d3ff);
-  padding:15px 10px;
-}
-.device-camera{
-  position:absolute;top:7px;left:50%;transform:translateX(-50%);
-  width:42px;height:9px;background:#1d1b34;border-radius:10px;z-index:2;
-}
-.device-brand{
-  margin-top:8px;display:flex;justify-content:space-between;
-  align-items:center;color:#332c63;font-size:7px;font-weight:1000;
-}
-.device-brand i{
-  width:17px;height:17px;border-radius:6px;background:var(--purple);
-  color:white;display:grid;place-items:center;font-style:normal;font-size:10px;
-}
-.device-word{
-  margin-top:23px;font-size:17px;line-height:1.55;
-  font-weight:1000;color:#252047;
-}
-.device-word span{color:#6744ff}
-.device-line{height:4px;background:#c2baf1;border-radius:9px;margin-top:7px;width:80%}
-.device-line.short{width:50%}
-.device-graphic{
-  margin-top:14px;height:62px;border-radius:13px;
-  background:linear-gradient(135deg,#6744ff,#a58dff);
-  position:relative;overflow:hidden;
-}
-.device-graphic:before{
-  content:"";position:absolute;width:80px;height:80px;
-  border:1px solid #ffffff88;border-radius:50%;right:-12px;top:-40px;
-  box-shadow:0 0 0 12px #ffffff19;
-}
-.device-graphic:after{
-  content:"۶ / ۱۲";position:absolute;bottom:8px;left:9px;
-  color:white;font-size:17px;font-weight:1000;
-}
-.device-button{
-  margin-top:10px;background:var(--lime);height:23px;border-radius:8px;
-  color:#32275d;font-size:7px;font-weight:1000;text-align:center;line-height:23px;
-}
-.device-footer{margin-top:9px;font-size:6px;color:#77708f;display:flex;justify-content:space-between;font-weight:900}
-.float-label{
-  position:absolute;z-index:5;display:flex;align-items:center;gap:9px;
-  padding:10px 12px;border-radius:14px;
-  color:#282047;background:#ffffffed;
-  border:1px solid #ffffff;
-  box-shadow:0 12px 28px #24105c36;
-  backdrop-filter:blur(12px);
-}
-.float-label b{display:block;font-size:13px;font-weight:1000;color:var(--purple)}
-.float-label small{display:block;font-size:8px;color:#827d9c;font-weight:800;margin-top:2px}
-.float-icon{
-  width:31px;height:31px;border-radius:10px;
-  display:grid;place-items:center;background:#eeeaff;
-  color:var(--purple);font-size:17px;
-}
-.float-a{top:30px;right:13px;animation:labelFloat 4s ease-in-out infinite}
-.float-b{bottom:27px;left:12px;animation:labelFloat 4.5s ease-in-out infinite reverse}
-.float-b .float-icon{background:#e0fff8;color:#159c8e}
-@keyframes labelFloat{50%{transform:translateY(-8px) rotate(1deg)}}
 .stage-caption{
-  position:absolute;bottom:11px;right:50%;transform:translateX(50%);
-  color:#ffffffa8;font-size:8px;font-weight:900;letter-spacing:2px;
-  white-space:nowrap;direction:ltr;
+  position:absolute;bottom:11px;left:50%;transform:translateX(-50%);z-index:6;
+  font-size:7.5px;letter-spacing:.3em;color:rgba(214,179,106,.45);white-space:nowrap;
 }
 
-/* ───── Compact campaign strip ───── */
-.quick-offer{
-  margin:16px 0 0;
-  display:grid;grid-template-columns:1.2fr .8fr;gap:11px;
+/* گوشی */
+.phone-wrap{
+  position:absolute;top:30px;right:13%;z-index:3;
+  transform:translate3d(calc(var(--px)*9px),calc(var(--py)*6px),0);
+  transition:transform .6s var(--ease);
 }
-.offer-main{
-  min-height:128px;position:relative;overflow:hidden;
-  border-radius:21px 8px 21px 21px;
-  padding:16px 15px;
-  background:linear-gradient(135deg,#d8ff58,#c7f344);
-  box-shadow:0 12px 25px #a6ca342c,inset 0 1px 1px #ffffffb5;
-  border:1px solid #ffffff;
+.phone{
+  width:132px;height:252px;border-radius:30px;padding:5px;position:relative;
+  background:linear-gradient(160deg,#4A443B,#17150F 30%,#0B0A08 70%,#37322A);
+  border:1px solid rgba(214,179,106,.4);
+  box-shadow:22px 30px 45px -12px rgba(0,0,0,.85),inset 0 1px 1px rgba(255,255,255,.22);
+  transform:rotate(6deg);
+  animation:floatA 7s ease-in-out infinite;
 }
-.offer-main:after{
-  content:"12";position:absolute;left:-5px;bottom:-30px;
-  font-size:100px;line-height:1;font-weight:1000;
-  color:#ffffff75;direction:ltr;letter-spacing:-8px;
+@keyframes floatA{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(5deg) translateY(-8px)}}
+.phone:before{content:"";position:absolute;left:-2px;top:64px;width:2px;height:34px;border-radius:2px;background:#3A352C}
+.phone-screen{
+  width:100%;height:100%;border-radius:25px;overflow:hidden;position:relative;
+  background:radial-gradient(120% 60% at 50% -10%,rgba(214,179,106,.14),transparent 55%),#0D0C09;
+  padding:13px 10px 8px;
 }
-.offer-kicker{font-size:9px;font-weight:1000;color:#4c5d1a}
-.offer-main strong{
-  display:block;font-size:23px;line-height:1.4;
-  color:#282a25;font-weight:1000;margin-top:8px;position:relative;z-index:1;
+.island{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:40px;height:10px;background:#000;border-radius:10px;border:1px solid rgba(255,255,255,.06);z-index:2}
+.p-status{display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:var(--faint);font-weight:600}
+.p-status i{display:flex;align-items:center;gap:3px;font-style:normal;color:var(--gold);letter-spacing:.18em;font-family:"Cormorant Garamond",serif;font-size:7px}
+.p-status svg{width:6px;height:6px;fill:var(--gold)}
+.p-title{margin-top:13px;font-size:10.5px;font-weight:700;color:var(--ink)}
+.p-ring{display:block;margin:9px auto 0;width:76px;height:76px}
+.p-dots{display:flex;justify-content:center;gap:3px;margin-top:9px}
+.p-dots i{width:4px;height:4px;border-radius:50%;background:rgba(244,239,230,.14)}
+.p-dots i.on{background:var(--gold)}
+.p-row{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:9px;padding-top:8px;border-top:1px solid rgba(244,239,230,.08);
+  font-size:7px;color:var(--faint);font-weight:600;
 }
-.offer-main small{font-size:9px;color:#52612c;font-weight:800}
-.offer-side{
-  min-height:128px;position:relative;overflow:hidden;
-  border-radius:8px 21px 21px 21px;padding:16px 13px;
-  background:linear-gradient(145deg,#ff75ae,#f84f9a);
-  border:1px solid #ffffff;
-  box-shadow:0 12px 25px #e94d9425,inset 0 1px 1px #ffffff8a;
-  color:white;
+.p-row b{color:var(--ink);font-size:7.5px}
+.p-btn{
+  margin-top:8px;height:23px;border-radius:8px;text-align:center;line-height:23px;
+  background:linear-gradient(135deg,#E9CF9B,#C89B4B);color:#171307;
+  font-size:7.5px;font-weight:800;
+  box-shadow:0 4px 12px -3px rgba(214,179,106,.5);
 }
-.offer-side:after{
-  content:"✳";position:absolute;left:-10px;bottom:-22px;
-  font-size:90px;color:#ffffff32;transform:rotate(-15deg);
-}
-.offer-side span{font-size:9px;font-weight:900;color:#fff2f8}
-.offer-side b{display:block;font-size:21px;font-weight:1000;margin-top:9px;line-height:1.5}
-.offer-side small{font-size:9px;font-weight:800;color:#ffe4f0}
+.home-bar{width:38px;height:3px;border-radius:3px;background:rgba(244,239,230,.2);margin:8px auto 0}
 
-/* ───── Brand statement ───── */
-.brand-statement{
-  margin:35px 0 18px;position:relative;
-  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+/* کارت اعتبار مشکی */
+.card-wrap{
+  position:absolute;bottom:34px;left:5%;z-index:4;
+  transform:translate3d(calc(var(--px)*-13px),calc(var(--py)*-8px),0);
+  transition:transform .6s var(--ease);
 }
-.statement-copy{max-width:450px}
-.kicker{
-  display:flex;align-items:center;gap:8px;
-  font-size:10px;font-weight:1000;color:var(--purple);
+.black-card{
+  width:232px;border-radius:16px;padding:14px 15px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#221F19,#0E0D0A 45%,#26221A);
+  border:1px solid rgba(214,179,106,.45);
+  box-shadow:0 34px 60px -16px rgba(0,0,0,.9),0 12px 30px -10px rgba(214,179,106,.16),inset 0 1px 0 rgba(255,255,255,.1);
+  transform:rotate(-7deg);
+  animation:floatB 8s ease-in-out infinite;
 }
-.kicker:before{content:"";width:18px;height:3px;border-radius:3px;background:var(--pink)}
-.statement-title{
-  font-size:clamp(24px,6.7vw,37px);line-height:1.55;
-  font-weight:1000;letter-spacing:-1.2px;margin:8px 0 0;
+@keyframes floatB{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-6deg) translateY(7px)}}
+.black-card:before{content:"";position:absolute;inset:0;background-image:var(--pattern);opacity:1.4}
+.black-card:after{content:"";position:absolute;top:0;right:0;left:0;height:1px;background:linear-gradient(90deg,transparent,rgba(241,217,167,.6),transparent)}
+.bc-top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.bc-top b{
+  font-family:"Cormorant Garamond",serif;direction:ltr;font-size:13px;font-weight:600;letter-spacing:.3em;
+  background:var(--foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.statement-title em{
-  font-style:normal;color:var(--purple);
-  text-decoration:underline;text-decoration-color:var(--lime);
-  text-decoration-thickness:7px;text-underline-offset:3px;
+.bc-top svg{width:12px;height:12px;fill:var(--gold)}
+.bc-chip{
+  width:30px;height:22px;border-radius:5px;margin-top:13px;position:relative;
+  background:linear-gradient(135deg,#F1D9A7,#C89B4B);
+  border:1px solid rgba(0,0,0,.3);
+  background-image:linear-gradient(rgba(0,0,0,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.16) 1px,transparent 1px),linear-gradient(135deg,#F1D9A7,#C89B4B);
+  background-size:8px 7px,8px 7px,100% 100%;
 }
-.statement-mark{
-  flex:0 0 65px;width:65px;height:65px;border-radius:23px 23px 7px 23px;
-  background:linear-gradient(145deg,#fff,#e9e4ff);
-  border:1px solid white;box-shadow:0 12px 25px #5a42a51e;
-  display:grid;place-items:center;color:var(--purple);
-  font-size:32px;font-weight:1000;transform:rotate(7deg);
-}
+.bc-line{margin-top:11px;font-size:9.5px;font-weight:600;color:rgba(244,239,230,.85);position:relative}
+.bc-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:9px;border-top:1px solid rgba(214,179,106,.2);position:relative}
+.bc-bottom b{font-size:8.5px;font-weight:700;color:var(--gold)}
+.bc-bottom span{font-family:"Cormorant Garamond",serif;direction:ltr;font-size:9px;letter-spacing:.2em;color:var(--faint)}
 
-/* ───── Bento benefits ───── */
-.bento{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;
-}
-.bento-card{
-  position:relative;overflow:hidden;min-height:132px;
-  padding:15px 14px;border-radius:20px;
-  border:1px solid #ffffff;
-  box-shadow:0 13px 28px rgba(50,40,100,.09),inset 0 1px 1px #ffffffd9;
-  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
-}
-.bento-card:hover{transform:translateY(-5px) rotate(-.5deg);box-shadow:0 22px 35px #392b6c20}
-.bento-card:nth-child(1){background:linear-gradient(145deg,#e9e4ff,#d7ceff)}
-.bento-card:nth-child(2){background:linear-gradient(145deg,#d8fff8,#b9f7eb)}
-.bento-card:nth-child(3){background:linear-gradient(145deg,#fff0f6,#ffd7e8)}
-.bento-card:nth-child(4){background:linear-gradient(145deg,#fff8d9,#ffec9d)}
-.bento-icon{
-  width:38px;height:38px;border-radius:13px;
-  display:grid;place-items:center;font-size:20px;
-  background:#ffffffb8;color:var(--purple);
-  box-shadow:0 5px 12px #3b2d7b12,inset 0 1px 1px white;
-  margin-bottom:11px;
-}
-.bento-card:nth-child(2) .bento-icon{color:#139f91}
-.bento-card:nth-child(3) .bento-icon{color:#df4488}
-.bento-card:nth-child(4) .bento-icon{color:#a17b09}
-.bento-card b{display:block;font-size:13px;font-weight:1000;position:relative;z-index:1}
-.bento-card p{margin:5px 0 0;color:#716c88;font-size:10px;line-height:1.8;font-weight:600;position:relative;z-index:1}
-.bento-card:after{
-  content:"";position:absolute;width:85px;height:85px;border:1px solid #ffffff85;
-  border-radius:50%;left:-30px;bottom:-40px;
-  box-shadow:0 0 0 10px #ffffff20,0 0 0 20px #ffffff14;
-}
+/* مُهر چرخان — امضای تضمین */
+.seal{position:absolute;top:16px;left:14px;z-index:5;width:88px;height:88px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.6))}
+.seal-rotor{transform-origin:44px 44px;animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ───── Signature brand panel ───── */
+/* ───── سربرگ بخش‌ها: شمارهٔ ژورنالی + خط مویی ───── */
+section{margin-top:48px}
+.hero{margin-top:0}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sec-num{font-family:"Cormorant Garamond",serif;font-style:italic;direction:ltr;font-size:16px;color:var(--gold);font-weight:500}
+.sec-head svg{width:8px;height:8px;fill:var(--gold);opacity:.8}
+.sec-title{font-size:15px;font-weight:800}
+.sec-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--hair),transparent)}
+.sec-caps{font-size:8.5px;letter-spacing:.3em;color:var(--faint)}
+
+/* ───── طرح‌های پرداخت: دو ردهٔ عضویت ───── */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.plan{
+  position:relative;border-radius:18px;padding:17px 15px;
+  background:linear-gradient(160deg,var(--panel2),var(--panel));
+  border:1px solid var(--hair-soft);box-shadow:var(--sh-card);
+  transition:transform .35s var(--ease),border-color .35s;
+}
+.plan:hover{transform:translateY(-4px);border-color:var(--hair)}
+.plan:active{transform:scale(.99)}
+.plan.featured{
+  border-color:rgba(214,179,106,.5);
+  background:radial-gradient(110% 60% at 50% -10%,rgba(214,179,106,.13),transparent 55%),linear-gradient(160deg,#1E1A13,#14120D);
+  box-shadow:var(--sh-card),0 24px 60px -24px rgba(214,179,106,.28);
+}
+.plan.featured:before{content:"";position:absolute;inset:0;background-image:var(--pattern);border-radius:inherit;pointer-events:none}
+.plan-badge{
+  position:absolute;top:-10px;right:13px;z-index:2;
+  display:flex;align-items:center;gap:5px;
+  padding:4px 10px;border-radius:999px;
+  background:linear-gradient(135deg,#E9CF9B,#C89B4B);color:#171307;
+  font-size:8.5px;font-weight:800;box-shadow:0 6px 16px -4px rgba(214,179,106,.55);
+}
+.plan-badge svg{width:7px;height:7px;fill:#171307}
+.plan-caps{font-size:8px;letter-spacing:.26em;color:var(--faint);position:relative}
+.plan.featured .plan-caps{color:rgba(214,179,106,.75)}
+.plan-num-row{display:flex;align-items:center;gap:11px;margin-top:11px;position:relative}
+.plan-num{font-size:46px;font-weight:200;line-height:1;color:var(--ink)}
+.plan.featured .plan-num{background:var(--foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.plan-names b{display:block;font-size:12px;font-weight:800}
+.plan-names span{display:block;margin-top:3px;font-size:9px;color:var(--faint);font-weight:600}
+.plan-rows{margin-top:13px;position:relative}
+.plan-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;border-top:1px solid var(--hair-soft);
+  font-size:9.5px;color:var(--muted);font-weight:500;
+}
+.plan-row b{font-size:10px;font-weight:700;color:var(--ink)}
+.plan-row b.zero{color:var(--gold)}
+.plan-link{
+  display:flex;align-items:center;gap:6px;margin-top:11px;position:relative;
+  font-size:10.5px;font-weight:700;color:var(--muted);transition:color .3s;
+}
+.plan.featured .plan-link,.plan:hover .plan-link{color:var(--gold)}
+
+/* ───── دفترِ اصول: ردیف‌های شماره‌دار با خط مویی ───── */
+.ledger{
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(170deg,#171511,#12110D);
+  border:1px solid var(--hair-soft);box-shadow:var(--sh-card);
+}
+.ledger-row{
+  display:flex;align-items:center;gap:13px;padding:15px 16px;
+  transition:background .3s;
+}
+.ledger-row:hover{background:rgba(214,179,106,.035)}
+.ledger-row + .ledger-row{border-top:1px solid var(--hair-soft)}
+.l-num{
+  flex:0 0 26px;font-family:"Cormorant Garamond",serif;font-style:italic;
+  direction:ltr;font-size:16px;color:var(--gold);font-weight:500;
+}
+.l-body{flex:1;min-width:0}
+.l-body b{display:block;font-size:12.5px;font-weight:800}
+.l-body p{margin:4px 0 0;font-size:10px;line-height:1.9;color:var(--muted);font-weight:400}
+.l-chip{
+  flex:0 0 auto;padding:5px 11px;border-radius:999px;
+  border:1px solid rgba(214,179,106,.5);background:rgba(214,179,106,.08);
+  font-size:11px;font-weight:700;color:var(--gold);
+}
+.l-star{
+  flex:0 0 28px;width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--hair);display:grid;place-items:center;
+}
+.l-star svg{width:9px;height:9px;fill:var(--gold);opacity:.85}
+
+/* ───── پنل امضا: مونوگرام + دست‌خطِ طلایی ───── */
 .signature-panel{
-  margin:23px 0 0;padding:20px 18px;
-  border-radius:22px 22px 6px 22px;
-  background:#211b42;color:white;
   position:relative;overflow:hidden;isolation:isolate;
-  box-shadow:0 18px 35px #24164c2d;
+  border-radius:22px;padding:26px 20px 20px;
+  background:radial-gradient(80% 70% at 100% 0%,rgba(214,179,106,.1),transparent 55%),linear-gradient(160deg,#1D1A14,#0F0E0B);
+  border:1px solid var(--hair);box-shadow:var(--sh-card);
 }
-.signature-panel:before{
-  content:"";position:absolute;z-index:-1;
-  width:210px;height:210px;border-radius:50%;
-  left:-100px;top:-135px;
-  background:radial-gradient(circle,#8064ff 0%,#8064ff00 70%);
+.signature-panel:before{content:"";position:absolute;inset:0;background-image:var(--pattern);opacity:1.5;z-index:-1}
+.sig-wm{position:absolute;left:-44px;bottom:-52px;width:210px;height:210px;opacity:.055;transform:rotate(-12deg);z-index:-1}
+.sig-top{display:flex;justify-content:space-between;align-items:center}
+.sig-top span{font-size:9px;color:var(--muted);font-weight:600}
+.sig-top b{font-size:9px;letter-spacing:.3em;color:var(--gold)}
+.sig-word{
+  display:block;direction:ltr;text-align:left;margin:16px 0 0;
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;
+  font-size:64px;line-height:1;
+  background:var(--foil);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:foil 8s ease infinite;
 }
-.signature-panel:after{
-  content:"";position:absolute;z-index:-1;
-  width:110px;height:110px;border:1px solid #ffffff27;
-  border-radius:50%;right:-48px;bottom:-50px;
-  box-shadow:0 0 0 13px #ffffff08,0 0 0 27px #ffffff06;
+.flourish{display:block;width:196px;height:26px;margin-top:2px}
+.flourish path{
+  fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;
+  stroke-dasharray:320;stroke-dashoffset:320;
 }
-.signature-top{display:flex;justify-content:space-between;align-items:center}
-.signature-top span{font-size:9px;font-weight:900;color:#b9b1e7}
-.signature-top b{font-size:10px;letter-spacing:2px;color:var(--lime);direction:ltr}
-.signature-panel h3{
-  font-size:23px;line-height:1.6;font-weight:1000;
-  margin:15px 0 7px;letter-spacing:-.6px;
+.signature-panel.show .flourish path{stroke-dashoffset:0;transition:stroke-dashoffset 1.7s cubic-bezier(.4,0,.2,1) .35s}
+.sig-fa{margin:15px 0 0;font-size:14.5px;font-weight:800;line-height:1.9}
+.sig-sub{margin:6px 0 0;font-size:10.5px;line-height:2.05;color:var(--muted);max-width:400px}
+.sig-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:18px;padding-top:13px;border-top:1px solid var(--hair-soft);
 }
-.signature-panel h3 em{font-style:normal;color:var(--cyan)}
-.signature-panel p{
-  color:#c8c3df;font-size:11px;line-height:2;
-  margin:0;max-width:430px;font-weight:500;
-}
-.signature-bottom{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-top:17px;padding-top:13px;border-top:1px solid #ffffff20;
-}
-.signature-bottom span{font-size:9px;color:#c8c3df;font-weight:800}
-.signature-bottom strong{font-size:10px;color:var(--lime);font-weight:1000}
+.sig-bottom span{font-size:8px;letter-spacing:.28em;color:var(--faint)}
+.sig-bottom b{font-size:10px;color:var(--gold);font-weight:700}
 
-/* ───── Final CTA ───── */
+/* ───── فراخوان پایانی: قابِ رسمیِ مرکزی ───── */
 .final-cta{
-  margin:22px 0 0;padding:22px 19px;
-  border-radius:24px 24px 24px 7px;
-  background:linear-gradient(120deg,#36e3d0,#91f5dc);
-  border:1px solid white;
-  box-shadow:0 18px 35px #22bba72b,inset 0 1px 1px white;
-  position:relative;overflow:hidden;
+  position:relative;text-align:center;
+  border-radius:22px;padding:32px 20px 28px;
+  background:radial-gradient(90% 60% at 50% -10%,rgba(214,179,106,.14),transparent 60%),linear-gradient(170deg,#191612,#100F0C);
+  border:1px solid rgba(214,179,106,.35);
+  box-shadow:var(--sh-card),0 30px 70px -30px rgba(214,179,106,.2);
 }
-.final-cta:before{
-  content:"N";position:absolute;left:-4px;bottom:-48px;
-  font-size:170px;line-height:1;font-weight:1000;
-  color:#ffffff48;direction:ltr;
-}
-.final-cta .kicker{color:#176f68}
-.final-cta .kicker:before{background:#fff}
-.final-cta h2{
-  position:relative;z-index:1;
-  margin:12px 0 8px;font-size:clamp(25px,7vw,36px);
-  line-height:1.5;font-weight:1000;letter-spacing:-1px;
-}
-.final-cta p{
-  position:relative;z-index:1;
-  margin:0 0 15px;color:#286e68;font-size:11px;
-  line-height:1.9;font-weight:700;max-width:400px;
-}
-.final-cta .btn-main{
-  position:relative;z-index:2;background:#241b4d;
-  border-color:#51477b;box-shadow:0 9px 20px #25194a38;
-}
-.final-cta .btn-arrow{background:#ffffff24}
+.c-star{position:absolute;width:9px;height:9px;fill:rgba(214,179,106,.6)}
+.c-star.tl{top:10px;left:10px}.c-star.tr{top:10px;right:10px}
+.c-star.bl{bottom:10px;left:10px}.c-star.br{bottom:10px;right:10px}
+.cta-seal{width:30px;height:30px;margin:0 auto 14px;display:block}
+.final-cta h2{margin:0;font-size:clamp(22px,6.4vw,32px);font-weight:800;line-height:1.65}
+.final-cta p{margin:9px auto 20px;font-size:11px;line-height:2;color:var(--muted);max-width:340px}
+.cta-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:10.5px;font-weight:600;color:var(--faint);transition:color .3s}
+.cta-link:hover{color:var(--gold)}
 
-/* ───── Footer ───── */
+/* ───── فوتر ───── */
 .footer{
-  padding:22px 3px 12px;
+  margin-top:44px;padding:20px 2px 8px;border-top:1px solid var(--hair-soft);
   display:flex;justify-content:space-between;align-items:center;
 }
-.footer-brand{display:flex;align-items:center;gap:8px}
-.footer-brand .brand-symbol{width:31px;height:31px;border-radius:11px}
-.footer-brand .brand-symbol:before{inset:5px;border-radius:7px}
-.footer-brand .brand-symbol b{font-size:17px}
-.footer-brand strong{font-size:15px;letter-spacing:1px;direction:ltr}
-.footer-note{text-align:left;color:#a09cb4;font-size:8px;line-height:1.9;font-weight:800}
+.footer-brand{display:flex;align-items:center;gap:9px}
+.footer-brand svg{width:27px;height:27px}
+.footer-brand b{
+  font-family:"Cormorant Garamond",serif;direction:ltr;
+  font-size:16px;font-weight:600;letter-spacing:.32em;color:var(--gold);
+}
+.footer-note{text-align:left;font-size:8.5px;line-height:2;color:var(--faint);font-weight:500}
+.footer-note i{font-style:normal;direction:ltr;display:block;letter-spacing:.14em}
 
-/* ───── Bottom navigation ───── */
+/* ───── ناوبری پایین: شیشهٔ تیره + نشانگر طلایی ───── */
 .bottom-nav{
   position:fixed;z-index:100;bottom:0;left:0;right:0;
-  padding:8px 11px calc(8px + env(safe-area-inset-bottom));
-  background:rgba(255,255,255,.87);
-  border-top:1px solid #ffffff;
-  box-shadow:0 -10px 35px rgba(44,32,104,.09);
-  backdrop-filter:blur(26px) saturate(1.7);
-  -webkit-backdrop-filter:blur(26px) saturate(1.7);
+  padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(15,14,12,.85);
+  border-top:1px solid var(--hair);
+  box-shadow:0 -18px 45px rgba(0,0,0,.55);
+  backdrop-filter:blur(24px) saturate(1.2);
+  -webkit-backdrop-filter:blur(24px) saturate(1.2);
 }
-.nav-inner{
-  max-width:540px;margin:auto;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:5px;
-}
+.nav-inner{max-width:540px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
 .nav-item{
-  min-height:62px;border-radius:17px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:3px;color:#aaa6bd;font-size:9px;font-weight:900;
-  transition:all .25s;position:relative;
+  min-height:60px;border-radius:15px;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  color:#8D867B;font-size:9px;font-weight:700;transition:all .25s;
 }
-.nav-icon{
-  width:32px;height:32px;display:grid;place-items:center;
-  transition:transform .25s;
-}
-.nav-icon svg{width:27px;height:27px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.nav-item.active{
-  color:var(--purple);
-  background:linear-gradient(145deg,#f0edff,#e4deff);
-  box-shadow:inset 0 1px 2px white,0 4px 12px #6744ff12;
-}
-.nav-item.active .nav-icon{transform:translateY(-2px) scale(1.12)}
+.nav-item:active{transform:scale(.94)}
+.nav-icon{width:30px;height:30px;display:grid;place-items:center;transition:transform .25s}
+.nav-icon svg{width:25px;height:25px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.nav-item.active{color:var(--gold);background:rgba(214,179,106,.07)}
+.nav-item.active .nav-icon{transform:translateY(-2px)}
 .nav-item.active:before{
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:23px;height:3px;border-radius:0 0 5px 5px;background:var(--purple);
+  width:22px;height:2px;border-radius:0 0 4px 4px;
+  background:linear-gradient(90deg,#B98F3E,#F1D9A7,#B98F3E);
 }
 
-/* ───── Motion & reveal ───── */
-.reveal{
-  opacity:0;transform:translateY(18px) scale(.99);
-  transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1);
-}
-.reveal.show{opacity:1;transform:translateY(0) scale(1)}
-.delay1{transition-delay:.08s}
-.delay2{transition-delay:.16s}
-.delay3{transition-delay:.24s}
-.hero .hero-title{animation:heroIn .8s .08s both}
-.hero .hero-intro{animation:heroIn .8s .2s both}
-.hero .hero-actions{animation:heroIn .8s .3s both}
-.visual-stage{animation:heroIn .9s .35s both}
-@keyframes heroIn{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
+/* ───── ظهور هنگام اسکرول ───── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s var(--ease)}
+.reveal.show{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.hero .eyebrow{animation:rise .8s .05s both}
+.hero .hero-title{animation:rise .8s .14s both}
+.hero .hero-sub{animation:rise .8s .24s both}
+.hero .hero-actions{animation:rise .8s .32s both}
+.hero .metrics{animation:rise .8s .4s both}
+.stage{animation:rise .9s .46s both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-/* ───── Responsive ───── */
+/* ───── واکنش‌گرایی ───── */
 @media(min-width:600px){
   main{padding-left:24px;padding-right:24px}
-  .hero{padding-top:35px}
-  .visual-stage{min-height:310px}
-  .device{transform:translateX(-50%) rotate(-8deg) scale(1.08);top:40px}
-  .quick-offer{gap:14px}
-  .bento{gap:13px}
-  .bento-card{min-height:145px;padding:18px}
+  .hero{padding-top:38px}
+  .stage{min-height:366px}
+  .phone-wrap{top:38px;right:16%}
+  .phone{transform:rotate(6deg) scale(1.06)}
+  .black-card{width:252px}
+  .card-wrap{left:8%;bottom:40px}
+  .seal{width:96px;height:96px;top:20px;left:20px}
+  .plans{gap:14px}
 }
 @media(max-width:370px){
   .header{padding:0 13px}
-  .hero-title{font-size:40px;letter-spacing:-2px}
-  .visual-stage{min-height:260px}
-  .device{transform:translateX(-50%) rotate(-8deg) scale(.9);top:24px}
-  .float-label{padding:8px 9px}
-  .float-a{right:7px}
-  .float-b{left:7px}
-  .offer-main,.offer-side{padding:13px 11px}
-  .offer-main strong{font-size:20px}
-  .offer-side b{font-size:18px}
+  .hero-title{font-size:32px}
+  .stage{min-height:304px}
+  .phone-wrap{right:9%;top:26px;transform:scale(.92)}
+  .card-wrap{left:3%;bottom:28px;transform:scale(.9)}
+  .seal{width:74px;height:74px}
+  .plan{padding:14px 12px}
+  .plan-num{font-size:40px}
+  .sig-word{font-size:54px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    scroll-behavior:auto!important;
-    transition-duration:.01ms!important;
-  }
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
+  .flourish path{stroke-dashoffset:0}
 }
 </style>
 </head>
 
 <body>
 <div class="ambient"></div>
-<div class="noise"></div>
+<div class="grain"></div>
+
+<!-- نشان‌های اختصاصی NOVA -->
+<svg class="defs" aria-hidden="true">
+  <defs>
+    <symbol id="star" viewBox="0 0 24 24">
+      <path d="M12 0Q13.6 10.4 24 12Q13.6 13.6 12 24Q10.4 13.6 0 12Q10.4 10.4 12 0Z"/>
+    </symbol>
+    <symbol id="mark" viewBox="0 0 48 48">
+      <rect x="9" y="9" width="30" height="30" transform="rotate(45 24 24)" fill="none" stroke="#D6B36A" stroke-width="1.2"/>
+      <rect x="13" y="13" width="22" height="22" transform="rotate(45 24 24)" fill="none" stroke="#D6B36A" stroke-width=".8" stroke-opacity=".35"/>
+      <path d="M18 30V18L30 30V18" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <use href="#star" x="31" y="1" width="11" height="11" fill="#D6B36A"/>
+    </symbol>
+    <linearGradient id="gld" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F1D9A7"/><stop offset="1" stop-color="#C89B4B"/>
+    </linearGradient>
+  </defs>
+</svg>
 
 <header class="header">
   <a class="brand" href="index.html">
-    <span class="brand-symbol"><b>N</b></span>
+    <svg class="brand-mark"><use href="#mark"/></svg>
     <span>
-      <span class="brand-title">NOVA</span>
-      <span class="brand-caption">A NEW WAY TO BUY</span>
+      <span class="brand-name">NOVA</span>
+      <span class="brand-sub">خرید اقساطی موبایل</span>
     </span>
   </a>
-  <div class="header-status"><i class="status-light"></i> تجربه تازه خرید موبایل</div>
+  <div class="header-pill"><svg><use href="#star"/></svg> بدون سود</div>
 </header>
 
 <main>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-meta">
-      <div class="meta-label"><i></i> خرید موبایل، با یک نگاه تازه</div>
-      <span class="meta-number">N° 001 — NOVA</span>
+    <div class="eyebrow">
+      <span class="eyebrow-fa"><svg><use href="#star"/></svg> خط اعتبار اختصاصی موبایل</span>
+      <span class="eyebrow-num caps">N° 001 — MMXXVI</span>
     </div>
 
     <h1 class="hero-title">
-      <span class="dark">گوشی جدیدت</span>
-      <span class="purple">دور از دسترس</span>
-      <span class="dark">نیست؛ <span class="outline">بخرش!</span></span>
+      <span class="line">امروز انتخاب کن،</span>
+      <span class="line foil">ماه‌به‌ماه بپرداز.</span>
     </h1>
 
-    <p class="hero-intro">
-      به <strong>NOVA</strong> خوش اومدی؛
-      برای خرید موبایل لازم نیست همه هزینه رو یک‌جا پرداخت کنی.
-      الان انتخاب کن و در <strong>۶ یا ۱۲ قسط</strong> پرداخت کن.
+    <p class="hero-sub">
+      <strong>NOVA</strong> مسیر اختصاصی خرید قسطی موبایل است؛
+      ۶ یا ۱۲ قسطِ ماهانه، بدون سود و نزول — با شرایطی که پیش از خرید،
+      کامل پیش روی توست.
     </p>
 
     <div class="hero-actions">
-      <a href="activate.html" class="btn-main">
+      <a href="activate.html" class="btn-gold">
         شروع خرید اقساطی
         <span class="btn-arrow">←</span>
       </a>
-      <a href="guide.html" class="btn-quiet">بیشتر درباره NOVA <span>↗</span></a>
+      <a href="guide.html" class="btn-ghost">راهنمای خرید ↗</a>
     </div>
 
-    <div class="visual-stage">
-      <div class="stage-orbit"></div>
-      <div class="stage-orbit o2"></div>
-      <div class="stage-orbit o3"></div>
-      <i class="stage-star"></i>
-      <i class="stage-star s2"></i>
+    <div class="metrics">
+      <div class="metric"><b>۰٪</b><span>سود و نزول</span></div>
+      <div class="metric"><b>۶–۱۲</b><span>قسط ماهانه</span></div>
+      <div class="metric"><b>۱۰۰٪</b><span>شفافیت شرایط</span></div>
+    </div>
 
-      <div class="device">
-        <div class="device-screen">
-          <div class="device-camera"></div>
-          <div class="device-brand">
-            <span>NOVA / SMART BUY</span>
-            <i>N</i>
+    <!-- صحنهٔ محصول -->
+    <div class="stage">
+      <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
+      <div class="stage-frame"></div>
+      <span class="stage-label caps">NOVA BLACK — PRIVATE LINE</span>
+      <div class="stage-floor"></div>
+
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="island"></div>
+            <div class="p-status">
+              <i><svg><use href="#star"/></svg>NOVA</i>
+              <span>۹:۴۱</span>
+            </div>
+            <div class="p-title">طرح ۱۲ ماهه</div>
+            <svg class="p-ring" viewBox="0 0 76 76">
+              <circle cx="38" cy="38" r="30" fill="none" stroke="rgba(214,179,106,.14)" stroke-width="5"/>
+              <circle cx="38" cy="38" r="30" fill="none" stroke="url(#gld)" stroke-width="5"
+                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="94.25"
+                transform="rotate(-90 38 38)"/>
+              <text x="38" y="37" text-anchor="middle" font-family="Vazirmatn" font-size="10.5" font-weight="500" fill="#F4EFE6">۶ از ۱۲</text>
+              <text x="38" y="49" text-anchor="middle" font-family="Vazirmatn" font-size="5.8" fill="#A79E8F">قسط پرداخت‌شده</text>
+            </svg>
+            <div class="p-dots">
+              <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="p-row"><span>قسط بعدی</span><b>ماه هفتم</b></div>
+            <div class="p-btn">پرداخت قسط این ماه</div>
+            <div class="home-bar"></div>
           </div>
-          <div class="device-word">امروز<br><span>انتخاب کن.</span></div>
-          <div class="device-line"></div>
-          <div class="device-line short"></div>
-          <div class="device-graphic"></div>
-          <div class="device-button">شروع تجربه خرید</div>
-          <div class="device-footer"><span>NEW EXPERIENCE</span><span>2026</span></div>
         </div>
       </div>
 
-      <div class="float-label float-a">
-        <span class="float-icon">↗</span>
-        <span><b>۶ یا ۱۲ قسط</b><small>پرداخت مرحله‌ای</small></span>
+      <div class="card-wrap">
+        <div class="black-card">
+          <div class="bc-top"><b>NOVA BLACK</b><svg><use href="#star"/></svg></div>
+          <div class="bc-chip"></div>
+          <div class="bc-line">خط اعتبار خرید موبایل</div>
+          <div class="bc-bottom"><b>۱۲ قسط • بدون سود</b><span>N° 0001</span></div>
+        </div>
       </div>
-      <div class="float-label float-b">
-        <span class="float-icon">✳</span>
-        <span><b>بدون سود</b><small>شرایط شفاف خرید</small></span>
-      </div>
-      <div class="stage-caption">YOUR NEXT PHONE. YOUR WAY.</div>
+
+      <svg class="seal" viewBox="0 0 88 88" aria-hidden="true">
+        <defs><path id="sealcirc" d="M44,44 m-31,0 a31,31 0 1,1 62,0 a31,31 0 1,1 -62,0"/></defs>
+        <circle cx="44" cy="44" r="40" fill="rgba(15,14,12,.72)" stroke="rgba(214,179,106,.4)" stroke-width="1"/>
+        <circle cx="44" cy="44" r="22" fill="none" stroke="rgba(214,179,106,.25)" stroke-width="1"/>
+        <path d="M44 2v5M44 81v5M2 44h5M81 44h5" stroke="rgba(214,179,106,.5)" stroke-width="1"/>
+        <g class="seal-rotor">
+          <text font-family="Cormorant Garamond,serif" font-size="8" letter-spacing="1.8" fill="#D6B36A" fill-opacity=".85">
+            <textPath href="#sealcirc">NOVA BLACK • ZERO INTEREST •</textPath>
+          </text>
+        </g>
+        <use href="#star" x="38" y="20" width="12" height="12" fill="#D6B36A"/>
+        <text x="44" y="50" text-anchor="middle" font-family="Vazirmatn" font-size="14" font-weight="200" fill="#F4EFE6">۰٪</text>
+        <text x="44" y="61" text-anchor="middle" font-family="Vazirmatn" font-size="6" fill="#A79E8F">سود</text>
+      </svg>
+
+      <span class="stage-caption caps">YOUR NEXT FLAGSHIP. SIGNED BY NOVA.</span>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <svg><use href="#star"/></svg>
+      <span class="sec-title">طرح‌های پرداخت</span>
+      <span class="sec-rule"></span>
+      <span class="sec-caps caps">THE PLANS</span>
     </div>
 
-    <div class="quick-offer">
-      <div class="offer-main">
-        <span class="offer-kicker">انتخاب با توست</span>
-        <strong>الان بخر؛<br>۱۲ قسط پرداخت کن.</strong>
-        <small>یا مسیر ۶ قسطه رو انتخاب کن.</small>
+    <div class="plans">
+      <article class="plan reveal d1">
+        <span class="plan-caps caps">PLAN 06 — CLASSIC</span>
+        <div class="plan-num-row">
+          <span class="plan-num">۶</span>
+          <span class="plan-names"><b>طرح شش‌ماهه</b><span>قسط ماهانه</span></span>
+        </div>
+        <div class="plan-rows">
+          <div class="plan-row"><span>سود و کارمزد</span><b class="zero">۰٪</b></div>
+          <div class="plan-row"><span>ریتم پرداخت</span><b>ماهانه</b></div>
+        </div>
+        <a class="plan-link" href="activate.html">انتخاب این طرح ←</a>
+      </article>
+
+      <article class="plan featured reveal d2">
+        <span class="plan-badge"><svg><use href="#star"/></svg> پیشنهاد NOVA</span>
+        <span class="plan-caps caps">PLAN 12 — BLACK</span>
+        <div class="plan-num-row">
+          <span class="plan-num">۱۲</span>
+          <span class="plan-names"><b>طرح دوازده‌ماهه</b><span>قسط ماهانه</span></span>
+        </div>
+        <div class="plan-rows">
+          <div class="plan-row"><span>سود و کارمزد</span><b class="zero">۰٪</b></div>
+          <div class="plan-row"><span>قسط ماهانه</span><b>سبک‌تر</b></div>
+        </div>
+        <a class="plan-link" href="activate.html">انتخاب این طرح ←</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- STANDARD -->
+  <section class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <svg><use href="#star"/></svg>
+      <span class="sec-title">استاندارد معامله</span>
+      <span class="sec-rule"></span>
+      <span class="sec-caps caps">THE STANDARD</span>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-row reveal">
+        <span class="l-num">01</span>
+        <div class="l-body">
+          <b>بدون سود و نزول</b>
+          <p>مبلغ خرید، بدون هیچ سود اضافه؛ همان عددی که می‌بینی.</p>
+        </div>
+        <span class="l-chip">۰٪</span>
       </div>
-      <div class="offer-side">
-        <span>یک خرید متفاوت</span>
-        <b>بدون سود<br>و نزول</b>
-        <small>پرداخت روشن و مشخص</small>
+      <div class="ledger-row reveal d1">
+        <span class="l-num">02</span>
+        <div class="l-body">
+          <b>اقساط ۶ یا ۱۲ ماهه</b>
+          <p>دورهٔ پرداخت را متناسب با برنامهٔ مالی خودت انتخاب کن.</p>
+        </div>
+        <span class="l-star"><svg><use href="#star"/></svg></span>
+      </div>
+      <div class="ledger-row reveal d2">
+        <span class="l-num">03</span>
+        <div class="l-body">
+          <b>شروع درون‌برنامه‌ای</b>
+          <p>تمام مسیر خرید، از انتخاب تا فعال‌سازی، داخل اپلیکیشن.</p>
+        </div>
+        <span class="l-star"><svg><use href="#star"/></svg></span>
+      </div>
+      <div class="ledger-row reveal d3">
+        <span class="l-num">04</span>
+        <div class="l-body">
+          <b>شفافیت پیش از خرید</b>
+          <p>شرایط و تعهدات، پیش از نهایی‌شدن معامله پیش روی توست.</p>
+        </div>
+        <span class="l-star"><svg><use href="#star"/></svg></span>
       </div>
     </div>
   </section>
 
-  <!-- BRAND MESSAGE -->
-  <section class="brand-statement reveal">
-    <div class="statement-copy">
-      <div class="kicker">NOVA یعنی چی؟</div>
-      <h2 class="statement-title">
-        موبایل رو <em>امروز</em> بخر؛
-        پرداختش رو مدیریت کن.
-      </h2>
-    </div>
-    <div class="statement-mark">N</div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section class="bento">
-    <article class="bento-card reveal">
-      <div class="bento-icon">✳</div>
-      <b>بدون سود و نزول</b>
-      <p>خرید با شرایط شفاف، بدون سود اضافه بر مبلغ خرید.</p>
-    </article>
-
-    <article class="bento-card reveal delay1">
-      <div class="bento-icon">◷</div>
-      <b>۶ یا ۱۲ قسط</b>
-      <p>مدت پرداخت رو متناسب با شرایط خودت انتخاب کن.</p>
-    </article>
-
-    <article class="bento-card reveal delay2">
-      <div class="bento-icon">↗</div>
-      <b>شروع آسان</b>
-      <p>مسیر خرید رو از داخل اپلیکیشن شروع کن.</p>
-    </article>
-
-    <article class="bento-card reveal delay3">
-      <div class="bento-icon">◇</div>
-      <b>شفافیت در خرید</b>
-      <p>شرایط و تعهدات رو پیش از نهایی‌کردن خرید ببین.</p>
-    </article>
-  </section>
-
-  <!-- BRAND SIGNATURE -->
+  <!-- SIGNATURE -->
   <section class="signature-panel reveal">
-    <div class="signature-top">
-      <span>نگاه ما به خرید موبایل</span>
-      <b>THE NOVA IDEA</b>
+    <svg class="sig-wm"><use href="#mark"/></svg>
+    <div class="sig-top">
+      <span>امضای اختصاصی فروشگاه</span>
+      <b class="caps">THE SIGNATURE</b>
     </div>
-    <h3>تکنولوژی برای زندگیه؛<br><em>نه برای منتظر موندن.</em></h3>
-    <p>
-      ما فروش موبایل رو با یک روش پرداخت متفاوت ارائه می‌کنیم؛
-      انتخاب امروز، پرداخت مرحله‌ای و تجربه‌ای روشن‌تر.
-    </p>
-    <div class="signature-bottom">
-      <span>یک تجربه تازه برای خرید موبایل</span>
-      <strong>NOVA ✳</strong>
+    <span class="sig-word">Nova</span>
+    <svg class="flourish" viewBox="0 0 196 26" aria-hidden="true">
+      <path d="M4 15 C 36 4, 66 24, 104 12 S 168 5, 186 13 M178 18 l8 -5"/>
+    </svg>
+    <p class="sig-fa">امضای NOVA، پای هر معامله.</p>
+    <p class="sig-sub">تعهد ما ساده است: شرایط شفاف، از قسط اول تا آخرین قسط. هر طرح پرداخت، با نشان ستارهٔ NOVA معتبر می‌شود.</p>
+    <div class="sig-bottom">
+      <span class="caps">NOVA — HOUSE OF INSTALLMENTS</span>
+      <b>N° 001</b>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta reveal">
-    <div class="kicker">READY FOR YOUR NEXT PHONE?</div>
-    <h2>گوشی بعدیت<br>منتظر انتخاب توئه.</h2>
-    <p>برای شروع خرید اقساطی وارد مرحله فعال‌سازی شو و مسیرت رو آغاز کن.</p>
-    <a href="activate.html" class="btn-main">
-      شروع فرایند خرید
+    <svg class="c-star tl"><use href="#star"/></svg>
+    <svg class="c-star tr"><use href="#star"/></svg>
+    <svg class="c-star bl"><use href="#star"/></svg>
+    <svg class="c-star br"><use href="#star"/></svg>
+    <svg class="cta-seal"><use href="#mark"/></svg>
+    <h2>گوشی بعدی‌ات،<br>یک امضا فاصله دارد.</h2>
+    <p>فعال‌سازی را شروع کن و طرح پرداختت را خودت انتخاب کن.</p>
+    <a href="activate.html" class="btn-gold">
+      فعال‌سازی و شروع خرید
       <span class="btn-arrow">←</span>
     </a>
+    <br>
+    <a class="cta-link" href="guide.html">مطالعهٔ راهنمای خرید ↗</a>
   </section>
 
   <footer class="footer">
     <div class="footer-brand">
-      <span class="brand-symbol"><b>N</b></span>
-      <strong>NOVA</strong>
+      <svg><use href="#mark"/></svg>
+      <b>NOVA</b>
     </div>
     <div class="footer-note">
-      خرید موبایل به روش تازه<br>
-      © NOVA
+      خرید اقساطی موبایل — بدون سود
+      <i>© 2026 NOVA — N° 001</i>
     </div>
   </footer>
 
@@ -755,89 +779,58 @@ main{max-width:700px;margin:auto;padding:0 15px 105px}
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav" aria-label="ناوبری اصلی">
   <div class="nav-inner">
-
     <a class="nav-item active" href="index.html" aria-current="page">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
-      </span>
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg></span>
       <span>خانه</span>
     </a>
-
     <a class="nav-item" href="guide.html">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 4.5v17"/><path d="M9 7h7M9 11h7"/></svg>
-      </span>
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 4.5v17"/><path d="M9 7h7M9 11h7"/></svg></span>
       <span>راهنمای خرید</span>
     </a>
-
     <a class="nav-item" href="activate.html">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="m5.6 5.6 12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="9"/></svg>
-      </span>
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="m5.6 5.6 12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="9"/></svg></span>
       <span>فعال‌سازی</span>
     </a>
-
     <a class="nav-item" href="support.html">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M4 13h3v6H6a2 2 0 0 1-2-2zM20 13h-3v6h1a2 2 0 0 0 2-2z"/><path d="M17 19a5 5 0 0 1-5 2"/></svg>
-      </span>
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M4 13h3v6H6a2 2 0 0 1-2-2zM20 13h-3v6h1a2 2 0 0 0 2-2z"/><path d="M17 19a5 5 0 0 1-5 2"/></svg></span>
       <span>پشتیبانی</span>
     </a>
-
   </div>
 </nav>
 
 <script>
-/* Reveal elements */
+/* ظهور هنگام اسکرول */
 (()=>{
-  const elements=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    elements.forEach(el=>el.classList.add('show'));
-    return;
-  }
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
-    });
+  const els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(el=>el.classList.add('show'));return;}
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
   },{threshold:.12,rootMargin:"0px 0px -25px 0px"});
-  elements.forEach(el=>observer.observe(el));
+  els.forEach(el=>io.observe(el));
 })();
 
-/* Current navigation item */
+/* آیتم فعال ناوبری */
 (()=>{
   const page=location.pathname.split('/').pop()||'index.html';
   document.querySelectorAll('.nav-item').forEach(item=>{
-    const target=item.getAttribute('href');
-    if(target===page){
-      item.classList.add('active');
-      item.setAttribute('aria-current','page');
-    }else{
-      item.classList.remove('active');
-      item.removeAttribute('aria-current');
-    }
+    if(item.getAttribute('href')===page){item.classList.add('active');item.setAttribute('aria-current','page');}
+    else{item.classList.remove('active');item.removeAttribute('aria-current');}
   });
 })();
 
-/* Soft pointer parallax on hero artwork */
+/* پارالاکس نرم صحنه (فقط دسکتاپ/پوینتر دقیق) */
 (()=>{
-  const stage=document.querySelector('.visual-stage');
-  const device=document.querySelector('.device');
-  if(!stage||!device||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
-  stage.addEventListener('pointermove',event=>{
-    const rect=stage.getBoundingClientRect();
-    const x=(event.clientX-rect.left)/rect.width-.5;
-    const y=(event.clientY-rect.top)/rect.height-.5;
-    device.style.marginLeft=(x*12)+'px';
-    device.style.marginTop=(y*8)+'px';
+  const stage=document.querySelector('.stage');
+  if(!stage||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  stage.addEventListener('pointermove',e=>{
+    const r=stage.getBoundingClientRect();
+    stage.style.setProperty('--px',((e.clientX-r.left)/r.width-.5).toFixed(3));
+    stage.style.setProperty('--py',((e.clientY-r.top)/r.height-.5).toFixed(3));
   });
   stage.addEventListener('pointerleave',()=>{
-    device.style.marginLeft='0';
-    device.style.marginTop='0';
+    stage.style.setProperty('--px',0);stage.style.setProperty('--py',0);
   });
 })();
 </script>
 </body>
-</html>
+            </html>
