@@ -3,519 +3,516 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08080d">
-<meta name="description" content="NOVA — خانهٔ تخصصی خرید اقساطی موبایل؛ ۶ یا ۱۲ قسط، بدون سود و نزول.">
-<title>NOVA — خانهٔ خرید اقساطی موبایل</title>
-
-<!--
-  ─────────────────────────────────────────────────────────────
-  NOVA · SIGNATURE EDITION
-  سیستم طراحی اختصاصی: ابسیدین + طلای شامپاینی + عاجی
-  امضای برند: مُهر NOVA / گیوشهٔ امنیتی / صفحه‌درجهٔ ۱۲ ضامن (۱۲ قسط)
-  موتور انیمیشن متن (از مخزن رسمی گیت‌هاب، رایگان و متن‌باز):
-  https://github.com/greensock/GSAP  →  SplitText + ScrollTrigger
-  ─────────────────────────────────────────────────────────────
--->
-
+<meta name="theme-color" content="#f6f3ec">
+<title>NOVA — موبایل، جورِ تازه‌ای بخر</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Vazirmatn:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+/* ═══════════════════════════════════════════════
+   NOVA — Atelier Edition
+   زبان طراحی: پرسلن روشن + فویل شامپاینی + سرمه‌ی عمیق
+   امضای اختصاصی: گوشه‌ی بریده‌ی الماسی + خط طلایی،
+   مهر چرخان NOVA، نقش گیوشه‌ی اسکناسی، ریبن ۱۲ قسط
+═══════════════════════════════════════════════ */
 :root{
-  --bg:#08080d;
-  --panel:#10101a;
-  --panel2:#151523;
-  --ink:#f4efe4;
-  --muted:#a6a094;
-  --gold:#d7b56d;
-  --gold2:#f2dc9e;
-  --gold-deep:#8f6d35;
-  --line:rgba(215,181,109,.26);
-  --line-soft:rgba(215,181,109,.12);
-  --ok:#3ecf9a;
-  --shadow-card:0 1px 0 rgba(255,255,255,.05) inset,0 10px 24px rgba(0,0,0,.45),0 30px 60px rgba(0,0,0,.35);
-  --shadow-deep:0 1px 0 rgba(255,255,255,.07) inset,0 18px 40px rgba(0,0,0,.55),0 45px 90px rgba(0,0,0,.45),0 0 70px rgba(215,181,109,.05);
-  --dw:158px;
-  --dh:318px;
+  --paper:#f6f3ec;
+  --card:#fdfbf6;
+  --ink:#1b1c30;
+  --ink2:#5f6076;
+  --gold:#b8934a;
+  --gold2:#e2c485;
+  --gold-deep:#8a682c;
+  --navy:#20234a;
+  --navy2:#14162e;
+  --hair:rgba(27,28,46,.09);
+  --goldhair:rgba(184,147,74,.38);
+  --foil:linear-gradient(100deg,#8a682c 0%,#c9a45c 22%,#f0dda8 46%,#d4b06a 62%,#8a682c 88%);
+  --foil-soft:linear-gradient(150deg,#f6ecd6,#ecd9a9);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:86px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+html,body{overflow-x:clip}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Vazirmatn",Tahoma,sans-serif;
-  font-size:16.5px;line-height:1.9;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Vazirmatn",sans-serif;font-size:16px;
+  -webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-::selection{background:var(--gold);color:#1a1206}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+::selection{background:var(--gold);color:#fff}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.w,.c{display:inline-block;will-change:transform}
 
-/* ───── اتمسفر: عمقِ ابسیدین + هالهٔ طلا ───── */
+/* ── اتمسفر روشن ── */
 .ambient{
-  position:fixed;inset:0;z-index:-3;pointer-events:none;
+  position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;
   background:
-    radial-gradient(ellipse 60% 42% at 88% -4%,rgba(215,181,109,.11),transparent 60%),
-    radial-gradient(ellipse 55% 40% at 6% 108%,rgba(62,58,130,.17),transparent 62%),
-    radial-gradient(ellipse 80% 55% at 50% 45%,rgba(20,20,34,.6),transparent 75%),
-    linear-gradient(180deg,#0a0a12,#07070c);
+    radial-gradient(ellipse at 12% 4%,rgba(184,147,74,.10),transparent 36%),
+    radial-gradient(ellipse at 92% 22%,rgba(32,35,74,.06),transparent 34%),
+    radial-gradient(ellipse at 50% 100%,rgba(226,196,133,.12),transparent 38%);
 }
-.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;box-shadow:inset 0 0 170px rgba(0,0,0,.8)}
+.ambient:before,.ambient:after{
+  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+  filter:blur(70px);opacity:.22;animation:drift 20s ease-in-out infinite alternate;
+}
+.ambient:before{background:var(--gold2);top:-240px;right:-160px}
+.ambient:after{background:#aab0d8;bottom:-260px;left:-180px;animation-delay:-9s}
+@keyframes drift{
+  0%{transform:translate(0,0) scale(.9)}
+  100%{transform:translate(70px,90px) scale(1.15)}
+}
 .noise{
   position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
 }
-.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;background:rgba(215,181,109,.08)}
-.scroll-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold2));transform:scaleX(0);transform-origin:right center}
 
-/* ───── هدر ───── */
-.header{
-  position:sticky;top:0;z-index:50;height:74px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 18px;
-  background:rgba(9,9,15,.74);
-  border-bottom:1px solid var(--line-soft);
-  backdrop-filter:blur(24px) saturate(1.4);
-  -webkit-backdrop-filter:blur(24px) saturate(1.4);
-}
-.brand{display:flex;align-items:center;gap:11px}
-.brand-seal{width:42px;height:42px;filter:drop-shadow(0 4px 10px rgba(215,181,109,.35))}
-.brand-title{
-  display:inline-block;font-family:"Cinzel",serif;
-  font-size:23px;line-height:1;font-weight:700;
-  letter-spacing:4px;direction:ltr;color:var(--gold2);
-}
-.brand-caption{
-  display:block;margin-top:5px;font-family:"Cinzel",serif;
-  font-size:11.5px;letter-spacing:2.6px;direction:ltr;
-  color:rgba(215,181,109,.55);font-weight:500;
-}
-.header-status{
-  display:flex;align-items:center;gap:8px;
-  border:1px solid var(--line);border-radius:30px;padding:9px 14px;
-  background:rgba(215,181,109,.06);font-size:13.5px;font-weight:800;color:var(--gold2);
-}
-.status-light{
-  width:8px;height:8px;background:var(--ok);border-radius:50%;
-  box-shadow:0 0 0 4px rgba(62,207,154,.16);animation:blink 2.2s infinite;
-}
-@keyframes blink{50%{box-shadow:0 0 0 8px rgba(62,207,154,0)}}
+/* ── امضا: گوشه‌ی بریده + لبه‌ی طلایی ── */
+.cut-xl{clip-path:polygon(44px 0,100% 0,100% 100%,0 100%,0 44px)}
+.cut-lg{clip-path:polygon(32px 0,100% 0,100% 100%,0 100%,0 32px)}
+.cut-md{clip-path:polygon(22px 0,100% 0,100% 100%,0 100%,0 22px)}
+.cut-sm{clip-path:polygon(12px 0,100% 0,100% 100%,0 100%,0 12px)}
+.cut-edge{position:absolute;pointer-events:none;background:var(--foil);height:2px}
+.cut-xl>.cut-edge{width:62px;top:21px;left:-9px;transform:rotate(-45deg)}
+.cut-lg>.cut-edge{width:45px;top:15px;left:-7px;transform:rotate(-45deg)}
+.cut-md>.cut-edge{width:31px;top:10px;left:-5px;transform:rotate(-45deg)}
 
-/* ───── قاب اصلی ───── */
-main{max-width:700px;margin:auto;padding:0 16px 118px}
-
-.kicker{
-  display:flex;align-items:center;gap:9px;
-  font-size:13.5px;font-weight:900;color:var(--gold);letter-spacing:.3px;
-}
-.kicker i{
-  width:8px;height:8px;flex:0 0 8px;transform:rotate(45deg);
-  background:linear-gradient(135deg,var(--gold2),var(--gold-deep));
-  box-shadow:0 0 12px rgba(215,181,109,.5);
-}
-.serial{font-size:12.5px;letter-spacing:2.4px;color:rgba(215,181,109,.45);direction:ltr;font-weight:700;font-family:"Cinzel",serif}
-
-/* ───── هیرو ───── */
-.hero{padding:26px 0 16px;position:relative}
-.hero-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px}
-.hero-title{
-  margin:0;position:relative;z-index:2;
-  font-size:clamp(44px,12vw,84px);
-  line-height:1.55;font-weight:1000;
-}
-.hero-title .line{display:block}
-.foil{
-  background:linear-gradient(105deg,#8a6a33,#e9cf94 28%,#fff3cf 50%,#caa25c 72%,#8a6a33);
-  background-size:220% 100%;
+/* ── فویل طلایی متحرک ── */
+.foil-anim{
+  background:var(--foil);background-size:220% auto;background-position:0% center;
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:sheen 7s ease-in-out infinite;
 }
-@keyframes sheen{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.sheen{
+  position:absolute;top:-30%;bottom:-30%;left:0;width:36%;pointer-events:none;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);
+  transform:skewX(-18deg);
+}
+
+/* ── هدر: فقط نشان + نام + زیرتیتر ── */
+.header{
+  position:sticky;top:0;z-index:50;height:78px;
+  display:flex;align-items:center;padding:0 18px;
+  background:rgba(246,243,236,.84);
+  backdrop-filter:blur(22px) saturate(1.4);
+  -webkit-backdrop-filter:blur(22px) saturate(1.4);
+}
+.header:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--goldhair),transparent);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-tile{
+  width:46px;height:46px;display:grid;place-items:center;flex:none;
+  background:var(--foil);
+  clip-path:polygon(12px 0,100% 0,100% 100%,0 100%,0 12px);
+  filter:drop-shadow(0 6px 14px rgba(184,147,74,.4));
+}
+.brand-tile b{font-family:"Cinzel",serif;font-weight:800;font-size:21px;color:var(--navy)}
+.brand-name{
+  display:block;font-family:"Cinzel",serif;font-weight:700;
+  font-size:21px;letter-spacing:4px;line-height:1;color:var(--ink);direction:ltr;
+}
+.brand-sub{display:block;margin-top:5px;font-size:13px;font-weight:700;color:var(--ink2)}
+
+/* ── قاب اصلی ── */
+main{max-width:720px;margin:auto;padding:0 16px 150px}
+
+/* ── هیرو ── */
+.hero{padding:26px 0 0;position:relative}
+.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px}
+.meta-label{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800;color:var(--gold-deep)}
+.meta-label i{width:9px;height:9px;flex:none;background:var(--foil);transform:rotate(45deg);border-radius:2px}
+.meta-number{
+  margin-inline-start:auto;direction:ltr;white-space:nowrap;
+  font-family:"Cinzel",serif;font-weight:600;font-size:12.5px;letter-spacing:2px;
+  color:#8b8ca0;border:1px solid var(--hair);border-radius:999px;padding:7px 13px;
+  background:rgba(253,251,246,.7);
+}
+.hero-title{
+  margin:0;font-size:clamp(42px,11.6vw,74px);
+  line-height:1.45;font-weight:900;position:relative;z-index:2;
+}
+.hero-title .block{display:block}
+.hero-title .buy{position:relative;isolation:isolate;white-space:nowrap}
+.buy-stroke{
+  position:absolute;z-index:-1;bottom:6px;right:-4px;left:-4px;height:10px;
+  background:var(--foil);border-radius:3px;transform:skewX(-10deg);
+}
 .hero-intro{
-  margin:16px 0 20px;max-width:460px;
-  color:var(--muted);font-size:17px;line-height:2.15;font-weight:500;
+  margin:16px 0 22px;max-width:480px;
+  font-size:16.5px;line-height:2.15;color:var(--ink2);font-weight:500;
 }
 .hero-intro strong{color:var(--ink);font-weight:900}
-.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 
+.btn-gold,.btn-navy{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:58px;padding:0 22px;
+  font-size:15.5px;font-weight:900;
+  clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
 .btn-gold{
-  display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  min-height:58px;padding:0 20px;cursor:pointer;
-  color:#241a08;background:linear-gradient(140deg,#f3dda2,#d7b56d 48%,#b98f45);
-  border:1px solid #f7e7bb;border-radius:17px 17px 17px 5px;
-  box-shadow:0 2px 0 rgba(255,255,255,.4) inset,0 -8px 14px rgba(122,88,32,.35) inset,0 14px 30px rgba(0,0,0,.5),0 8px 22px rgba(215,181,109,.22);
-  font-size:16.5px;font-weight:900;
-  transition:.28s;position:relative;overflow:hidden;
+  background:var(--foil);background-size:160% auto;color:var(--navy);
+  filter:drop-shadow(0 12px 26px rgba(184,147,74,.4)) drop-shadow(0 3px 8px rgba(138,104,44,.22));
 }
-.btn-gold:before{
-  content:"";position:absolute;top:-80%;left:-55%;width:35%;height:260%;
-  background:rgba(255,255,255,.55);transform:rotate(25deg);transition:.7s;
+.btn-navy{
+  background:linear-gradient(150deg,#2b2f60,var(--navy2));color:#f0dda8;
+  filter:drop-shadow(0 12px 26px rgba(20,22,46,.35)) drop-shadow(0 3px 8px rgba(20,22,46,.2));
 }
-.btn-gold:hover:before{left:130%}
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 2px 0 rgba(255,255,255,.4) inset,0 -8px 14px rgba(122,88,32,.35) inset,0 20px 40px rgba(0,0,0,.55),0 12px 30px rgba(215,181,109,.3)}
-.btn-gold:active{transform:scale(.97)}
-.btn-arrow{
-  width:28px;height:28px;display:grid;place-items:center;flex:0 0 28px;
-  border-radius:9px;background:rgba(36,26,8,.16);font-size:18px;font-weight:900;
-}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 16px;
-  color:var(--gold2);font-size:15px;font-weight:800;
-  border:1px solid var(--line);border-radius:15px;background:rgba(215,181,109,.05);
-  transition:.25s;
-}
-.btn-ghost:hover{background:rgba(215,181,109,.12);transform:translateY(-2px)}
+.btn-gold:hover,.btn-navy:hover{transform:translateY(-3px)}
+.btn-gold:active,.btn-navy:active{transform:scale(.97)}
+.btn-arrow{width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:9px}
+.btn-gold .btn-arrow{background:var(--navy)}
+.btn-navy .btn-arrow{background:var(--foil)}
+.btn-arrow svg{width:17px;height:17px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn-gold .btn-arrow svg{stroke:var(--gold2)}
+.btn-navy .btn-arrow svg{stroke:var(--navy)}
+.btn-quiet{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:800;color:var(--ink2);padding:12px 2px;transition:color .25s}
+.btn-quiet span{color:var(--gold-deep);font-size:18px}
+.btn-quiet:hover{color:var(--ink)}
 
-/* ───── صحنهٔ بصری: گاوصندوقِ NOVA ───── */
+/* ── ویترین هیرو ── */
 .visual-stage{
-  margin-top:24px;min-height:360px;
-  border-radius:28px 28px 8px 28px;
-  position:relative;overflow:hidden;isolation:isolate;
-  background:linear-gradient(150deg,#14141f 0%,#0c0c14 55%,#12121e 100%);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow-deep);
+  margin-top:26px;min-height:400px;position:relative;
+  background:linear-gradient(160deg,#fffef9 0%,#f6efdd 55%,#efe4c9 100%);
+  filter:drop-shadow(0 30px 60px rgba(32,35,74,.16)) drop-shadow(0 8px 18px rgba(32,35,74,.08));
 }
 .visual-stage:before{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:
-    radial-gradient(circle at 78% 18%,rgba(215,181,109,.14),transparent 30%),
-    radial-gradient(circle at 15% 90%,rgba(62,58,130,.22),transparent 40%);
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(138,104,44,.05) 0 1px,transparent 1px 9px);
 }
 .visual-stage:after{
-  content:"";position:absolute;inset:9px;border-radius:22px 22px 4px 22px;
-  border:1px solid var(--line-soft);pointer-events:none;
+  content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  right:-90px;top:-90px;
+  background:repeating-radial-gradient(circle,rgba(184,147,74,.15) 0 1px,transparent 1px 7px);
+  -webkit-mask:radial-gradient(circle,#000 25%,transparent 70%);
+  mask:radial-gradient(circle,#000 25%,transparent 70%);
 }
-.guilloche{
-  position:absolute;width:340px;height:340px;left:-90px;top:-70px;
-  color:var(--gold);opacity:.12;z-index:0;
-}
-.tick-ring{
-  position:absolute;width:310px;height:310px;left:calc(50% - 155px);top:22px;
-  color:var(--gold);opacity:.5;z-index:1;
-  animation:spin 70s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 
-.device-holder{
-  position:absolute;left:50%;top:36px;z-index:3;
-  width:var(--dw);height:var(--dh);margin-left:calc(var(--dw) / -2);
-}
+/* مهر چرخان — امضای NOVA */
+.seal{position:absolute;width:118px;height:118px;display:grid;place-items:center;pointer-events:none}
+.seal svg{position:absolute;inset:0;width:100%;height:100%}
+.seal b{font-family:"Cinzel",serif;font-weight:800;font-size:30px;color:var(--gold-deep)}
+.seal-hero{top:56px;left:14px;z-index:1}
+
+/* گوشی تیتانیومی */
 .device{
-  width:100%;height:100%;border-radius:34px;padding:5px;
-  background:linear-gradient(150deg,#3c3c48,#15151d 40%,#2d2d3a 70%,#0d0d13);
-  border:1px solid rgba(215,181,109,.4);
-  box-shadow:0 1px 1px rgba(255,255,255,.28) inset,0 -1px 1px rgba(0,0,0,.7) inset,22px 32px 48px rgba(0,0,0,.6),0 0 60px rgba(215,181,109,.09);
-  position:relative;
+  width:180px;height:330px;position:absolute;left:calc(50% - 90px);top:36px;z-index:3;
+  transform:rotate(-7deg);border-radius:36px;padding:7px;
+  background:linear-gradient(150deg,#f2f3f7,#c3c6d2 28%,#4a4d63 62%,#d8dae3 96%);
+  box-shadow:0 26px 44px rgba(20,22,46,.35),inset 0 1px 2px #fff,inset 0 -1px 2px rgba(0,0,0,.28);
 }
-.device:before{
-  content:"";position:absolute;left:-2px;top:78px;width:2px;height:44px;
-  background:linear-gradient(180deg,#4a4a58,#1a1a24);border-radius:2px;
-}
+.device:before,.device:after{content:"";position:absolute;width:3px;border-radius:3px;background:#3c3f52}
+.device:before{right:-2.5px;top:84px;height:46px}
+.device:after{left:-2.5px;top:70px;height:30px}
 .device-screen{
-  width:100%;height:100%;border-radius:29px;overflow:hidden;
-  position:relative;background:linear-gradient(168deg,#101019,#191926);
-  padding:13px 12px;
+  width:100%;height:100%;border-radius:29px;overflow:hidden;position:relative;
+  background:linear-gradient(165deg,#fffdf6,#f3ead6);padding:16px 13px 12px;
 }
-.device-island{
+.device-camera{
   position:absolute;top:8px;left:50%;transform:translateX(-50%);
-  width:52px;height:13px;background:#050508;border-radius:10px;z-index:2;
+  width:46px;height:11px;background:var(--navy2);border-radius:8px;z-index:2;
 }
-.device-island:after{
-  content:"";position:absolute;right:7px;top:4px;width:5px;height:5px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#3a3a55,#0a0a12);
-}
+.device-camera:after{content:"";position:absolute;right:5px;top:3px;width:5px;height:5px;border-radius:50%;background:#3c4066}
 .device-brand{
-  margin-top:14px;display:flex;justify-content:space-between;align-items:center;
-  color:var(--gold2);font-size:11px;font-weight:700;font-family:"Cinzel",serif;letter-spacing:1.6px;direction:ltr;
+  margin-top:10px;display:flex;justify-content:space-between;align-items:center;
+  font-family:"Cinzel",serif;font-weight:600;font-size:12.5px;letter-spacing:.8px;color:var(--navy);direction:ltr;
 }
-.mini-seal{width:17px;height:17px}
-.device-plan{margin-top:12px;font-size:15px;font-weight:900;color:var(--ink)}
-.device-ticks{display:flex;gap:3px;margin-top:10px}
-.device-ticks i{flex:1;height:16px;border-radius:3px;background:rgba(215,181,109,.14)}
-.device-ticks i.on{background:linear-gradient(180deg,var(--gold2),var(--gold-deep));box-shadow:0 0 8px rgba(215,181,109,.4)}
-.device-status{margin-top:8px;display:flex;justify-content:space-between;font-size:12.5px;font-weight:800;color:var(--muted)}
-.device-status b{color:var(--gold2)}
-.device-line{height:7px;background:rgba(215,181,109,.16);border-radius:9px;margin-top:10px;width:82%}
+.device-brand i{
+  width:20px;height:20px;border-radius:6px;background:var(--foil);
+  display:grid;place-items:center;font-style:normal;
+  font-family:"Cinzel",serif;font-weight:800;font-size:12px;color:var(--navy);
+}
+.device-word{margin-top:16px;font-size:21px;line-height:1.6;font-weight:900;color:var(--ink)}
+.device-word span{color:var(--gold-deep)}
+.device-line{height:4px;border-radius:4px;background:rgba(184,147,74,.35);margin-top:8px;width:82%}
 .device-line.short{width:52%}
-.device-btn{
-  margin-top:13px;height:30px;border-radius:9px;text-align:center;line-height:30px;
-  background:linear-gradient(140deg,#f3dda2,#c9a258);color:#241a08;
-  font-size:12.5px;font-weight:900;box-shadow:0 4px 12px rgba(215,181,109,.3);
+.device-module{
+  margin-top:14px;border-radius:14px;padding:11px 10px;position:relative;
+  background:linear-gradient(140deg,#ecd9a9,#dfc286);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.7),0 6px 14px rgba(138,104,44,.2);
 }
-.device-foot{
-  margin-top:10px;font-size:11px;color:rgba(215,181,109,.5);
-  display:flex;justify-content:space-between;font-weight:700;
-  font-family:"Cinzel",serif;letter-spacing:1.5px;direction:ltr;
+.device-module b{font-size:24px;font-weight:900;color:var(--navy)}
+.ribbon{margin-top:9px;display:flex;gap:3.5px}
+.ribbon i{width:6px;height:6px;border-radius:50%;background:rgba(32,35,74,.22)}
+.ribbon i.on{background:var(--navy)}
+.device-button{
+  margin-top:12px;height:30px;border-radius:9px;background:var(--navy);
+  color:#f0dda8;font-size:13px;font-weight:800;text-align:center;line-height:30px;
+}
+.device-footer{
+  margin-top:10px;display:flex;justify-content:space-between;direction:ltr;
+  font-family:"Cinzel",serif;font-weight:600;font-size:12.5px;letter-spacing:.5px;color:#8b8ca0;
 }
 
+/* چیپ‌های شناور */
 .float-label{
   position:absolute;z-index:5;display:flex;align-items:center;gap:10px;
-  padding:11px 13px;border-radius:15px;
-  background:rgba(16,16,26,.9);
-  border:1px solid var(--line);
-  box-shadow:0 14px 32px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.06) inset;
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  padding:12px 14px;border-radius:16px;
+  background:rgba(253,251,246,.93);border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 18px 38px rgba(32,35,74,.18),0 4px 10px rgba(32,35,74,.08);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
 }
-.float-label b{display:block;font-size:15.5px;font-weight:900;color:var(--gold2)}
-.float-label small{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-top:2px}
+.float-label b{display:block;font-size:16px;font-weight:900;color:var(--ink)}
+.float-label small{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-top:2px}
 .float-icon{
-  width:34px;height:34px;border-radius:11px;flex:0 0 34px;
-  display:grid;place-items:center;color:var(--gold);
-  background:rgba(215,181,109,.1);border:1px solid var(--line);
+  width:36px;height:36px;flex:none;display:grid;place-items:center;
+  clip-path:polygon(10px 0,100% 0,100% 100%,0 100%,0 10px);
+  background:var(--foil-soft);color:var(--gold-deep);
 }
-.float-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.float-a{top:26px;right:14px}
-.float-b{bottom:30px;left:13px}
+.float-b .float-icon{background:linear-gradient(150deg,#2b2f60,var(--navy2));color:var(--gold2)}
+.float-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.float-a{top:24px;right:12px}
+.float-b{bottom:26px;left:12px}
 .stage-caption{
-  position:absolute;bottom:12px;right:50%;transform:translateX(50%);
-  color:rgba(215,181,109,.55);font-size:12.5px;font-weight:700;letter-spacing:3px;
-  white-space:nowrap;direction:ltr;font-family:"Cinzel",serif;
+  position:absolute;bottom:14px;left:0;right:0;text-align:center;direction:ltr;
+  font-family:"Cinzel",serif;font-weight:600;font-size:12.5px;letter-spacing:3px;
+  color:rgba(138,104,44,.8);white-space:nowrap;
 }
 
-/* ───── کارت‌های مسیر پرداخت ───── */
-.plans{margin:18px 0 0;display:grid;grid-template-columns:1.15fr .85fr;gap:12px}
-.plan{
-  min-height:150px;position:relative;overflow:hidden;
-  padding:17px 16px;border-radius:22px 8px 22px 22px;
-  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+/* ── دو بلیت پیشنهاد ── */
+.quick-offer{margin-top:18px;display:grid;grid-template-columns:1.18fr .82fr;gap:12px}
+.offer-main{
+  position:relative;min-height:150px;padding:18px 16px;background:var(--card);
+  filter:drop-shadow(0 16px 32px rgba(32,35,74,.1)) drop-shadow(0 3px 8px rgba(32,35,74,.05));
 }
-.plan:hover{transform:translateY(-5px)}
-.plan.gold{
-  background:linear-gradient(140deg,#f0d99c,#caa25c 55%,#8f6d35);
-  border:1px solid #f7e7bb;color:#241a08;
-  box-shadow:0 2px 0 rgba(255,255,255,.45) inset,0 16px 34px rgba(0,0,0,.5),0 10px 26px rgba(215,181,109,.2);
+.offer-main:after{
+  content:"12";position:absolute;left:-4px;bottom:-30px;z-index:0;
+  font-family:"Cinzel",serif;font-weight:800;font-size:108px;line-height:1;
+  background:var(--foil);background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;opacity:.5;
 }
-.plan.dark{
-  background:linear-gradient(150deg,#171724,#0e0e16);
-  border:1px solid var(--line);color:var(--ink);
-  border-radius:8px 22px 22px 22px;box-shadow:var(--shadow-card);
+.offer-kicker{position:relative;z-index:1;font-size:13px;font-weight:800;color:var(--gold-deep)}
+.offer-main strong{position:relative;z-index:1;display:block;margin-top:8px;font-size:23px;line-height:1.55;font-weight:900}
+.offer-main small{position:relative;z-index:1;display:block;margin-top:6px;font-size:13.5px;font-weight:700;color:var(--ink2)}
+.offer-side{
+  position:relative;min-height:150px;padding:18px 14px;color:var(--navy);
+  background:linear-gradient(150deg,#ecd9a9,#d9ba77);
+  filter:drop-shadow(0 16px 32px rgba(138,104,44,.24)) drop-shadow(0 3px 8px rgba(138,104,44,.14));
 }
-.plan .emv{width:34px;height:25px;color:rgba(36,26,8,.65);margin-bottom:9px}
-.plan.dark .emv{color:var(--gold)}
-.plan-label{font-size:13.5px;font-weight:900;opacity:.75}
-.plan strong{display:block;font-size:25px;line-height:1.5;font-weight:1000;margin-top:6px;position:relative;z-index:1}
-.plan small{font-size:13.5px;font-weight:700;opacity:.8}
-.plan .ghost{
-  position:absolute;left:-4px;bottom:-34px;z-index:0;
-  font-size:118px;line-height:1;font-weight:1000;letter-spacing:-4px;
-  color:rgba(36,26,8,.16);pointer-events:none;
+.offer-side:after{
+  content:"✳";position:absolute;left:-8px;bottom:-24px;font-size:96px;line-height:1;
+  color:rgba(32,35,74,.1);transform:rotate(-12deg);
 }
-.plan.dark .ghost{color:rgba(215,181,109,.13)}
-.plan-note{
-  margin-top:12px;display:flex;align-items:center;gap:10px;
-  padding:13px 15px;border-radius:15px;
-  border:1px solid var(--line-soft);background:rgba(215,181,109,.05);
-  font-size:14.5px;font-weight:800;color:var(--gold2);
-}
-.plan-note svg{width:22px;height:22px;flex:0 0 22px;color:var(--gold)}
+.offer-side span{position:relative;z-index:1;font-size:13px;font-weight:800;color:rgba(32,35,74,.75)}
+.offer-side b{position:relative;z-index:1;display:block;margin-top:8px;font-size:21px;line-height:1.55;font-weight:900}
+.offer-side small{position:relative;z-index:1;display:block;margin-top:6px;font-size:13px;font-weight:700;color:rgba(32,35,74,.7)}
 
-/* ───── بیانیهٔ برند ───── */
-.brand-statement{
-  margin:40px 0 20px;position:relative;
-  display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
-}
-.statement-copy{max-width:480px}
+/* ── بیانیه برند ── */
+.brand-statement{margin:42px 0 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px}
+.kicker{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:900;color:var(--gold-deep)}
+.kicker:before{content:"";width:22px;height:3px;border-radius:3px;background:var(--foil);flex:none}
 .statement-title{
-  font-size:clamp(28px,7.6vw,44px);line-height:1.7;
-  font-weight:1000;margin:10px 0 0;
+  margin:10px 0 0;font-size:clamp(27px,7.4vw,42px);
+  line-height:1.6;font-weight:900;
 }
-.statement-title em{font-style:normal;color:var(--gold2);position:relative}
-.statement-title em:after{
-  content:"";position:absolute;right:0;left:0;bottom:4px;height:3px;border-radius:3px;
-  background:linear-gradient(90deg,var(--gold-deep),var(--gold2),var(--gold-deep));opacity:.7;
+.statement-title em{
+  font-style:normal;
+  background:var(--foil);background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-decoration:underline;text-decoration-color:var(--goldhair);
+  text-decoration-thickness:5px;text-underline-offset:6px;
 }
-.statement-mark{flex:0 0 74px;width:74px;height:74px;color:var(--gold);animation:spin 46s linear infinite}
+.seal-mark{position:relative;flex:0 0 84px;width:84px;height:84px;display:grid;place-items:center}
+.seal-mark svg{position:absolute;inset:0;width:100%;height:100%}
+.seal-mark b{font-family:"Cinzel",serif;font-weight:800;font-size:26px;color:var(--gold-deep)}
 
-/* ───── بنتو مزایا ───── */
-.bento{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+/* ── بنتو ── */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .bento-card{
-  position:relative;overflow:hidden;min-height:158px;
-  padding:17px 15px;border-radius:21px;
-  background:linear-gradient(155deg,#151523,#0e0e16);
-  border:1px solid var(--line-soft);
-  box-shadow:var(--shadow-card);
-  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;
+  position:relative;min-height:168px;padding:18px 16px 16px;background:var(--card);
+  filter:drop-shadow(0 16px 32px rgba(32,35,74,.09)) drop-shadow(0 3px 8px rgba(32,35,74,.05));
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
 }
-.bento-card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:var(--shadow-deep)}
+.bento-card:hover{transform:translateY(-5px)}
 .bento-card:before{
-  content:"";position:absolute;top:9px;right:9px;width:15px;height:15px;
-  border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);
+  content:"";position:absolute;top:0;right:0;left:22px;height:2px;background:var(--foil);
+  transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.2,.8,.2,1);
 }
+.bento-card:hover:before{transform:scaleX(1)}
 .bento-card:after{
-  content:"";position:absolute;bottom:9px;left:9px;width:15px;height:15px;
-  border-bottom:1.5px solid var(--line);border-left:1.5px solid var(--line);
+  content:"";position:absolute;width:120px;height:120px;border-radius:50%;left:-44px;bottom:-52px;
+  background:repeating-radial-gradient(circle,rgba(184,147,74,.13) 0 1px,transparent 1px 6px);
+  -webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);
+  mask:radial-gradient(circle,#000 30%,transparent 70%);
+}
+.bento-index{
+  position:absolute;top:14px;left:16px;direction:ltr;
+  font-family:"Cinzel",serif;font-weight:700;font-size:13px;color:rgba(184,147,74,.9);
 }
 .bento-icon{
-  width:42px;height:42px;border-radius:50%;
-  display:grid;place-items:center;color:var(--gold);
-  background:radial-gradient(circle at 32% 28%,rgba(215,181,109,.2),rgba(215,181,109,.05));
-  border:1px solid var(--line);
-  box-shadow:0 6px 14px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.07) inset;
-  margin-bottom:12px;
+  width:46px;height:46px;display:grid;place-items:center;margin-bottom:12px;
+  clip-path:polygon(11px 0,100% 0,100% 100%,0 100%,0 11px);
+  background:var(--foil-soft);color:var(--gold-deep);
+  box-shadow:inset 0 1px 1px #fff;
 }
-.bento-icon svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.bento-card b{display:block;font-size:17px;font-weight:900;position:relative;z-index:1}
-.bento-card p{margin:6px 0 0;color:var(--muted);font-size:15.5px;line-height:1.95;font-weight:500;position:relative;z-index:1}
+.bento-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bento-card b{position:relative;z-index:1;display:block;font-size:17px;font-weight:900}
+.bento-card p{position:relative;z-index:1;margin:6px 0 0;font-size:15px;line-height:1.95;color:var(--ink2);font-weight:500}
 
-/* ───── نوار اعتبار ───── */
-.stats{
-  margin:14px 0 0;display:grid;grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--line-soft);border-radius:19px;overflow:hidden;
-  background:linear-gradient(150deg,#12121d,#0c0c13);box-shadow:var(--shadow-card);
-}
-.stat{padding:16px 8px;text-align:center;position:relative}
-.stat + .stat:before{content:"";position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--line-soft)}
-.stat b{display:block;font-size:33px;line-height:1.4;font-weight:1000;color:var(--gold2);text-shadow:0 0 26px rgba(215,181,109,.35)}
-.stat span{display:block;font-size:13.5px;color:var(--muted);font-weight:700;margin-top:2px}
-
-/* ───── پنل امضای برند ───── */
+/* ── پنل امضا (سرمه‌ای) ── */
 .signature-panel{
-  margin:26px 0 0;padding:24px 19px;
-  border-radius:24px 24px 6px 24px;
-  background:linear-gradient(150deg,#14141f,#0b0b12);
-  border:1px solid var(--line);
-  position:relative;overflow:hidden;isolation:isolate;
-  box-shadow:var(--shadow-deep);
+  margin-top:26px;position:relative;padding:24px 20px;color:#fff;
+  background:linear-gradient(155deg,#262a56,#161831 70%);
+  filter:drop-shadow(0 26px 52px rgba(22,24,49,.35)) drop-shadow(0 6px 14px rgba(22,24,49,.2));
 }
 .signature-panel:before{
-  content:"";position:absolute;inset:8px;border-radius:18px 18px 3px 18px;
-  border:1px solid var(--line-soft);pointer-events:none;
+  content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-70px;bottom:-70px;
+  background:repeating-radial-gradient(circle,rgba(226,196,133,.13) 0 1px,transparent 1px 7px);
+  -webkit-mask:radial-gradient(circle,#000 25%,transparent 70%);
+  mask:radial-gradient(circle,#000 25%,transparent 70%);
 }
-.sig-guilloche{position:absolute;width:300px;height:300px;right:-110px;top:-120px;color:var(--gold);opacity:.1;z-index:-1}
-.sig-watermark{position:absolute;width:190px;height:190px;left:-52px;bottom:-58px;color:var(--gold);opacity:.12;z-index:-1}
-.signature-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.signature-top span{font-size:13.5px;font-weight:800;color:var(--muted)}
-.signature-top b{font-size:12.5px;letter-spacing:2.6px;color:var(--gold);direction:ltr;font-family:"Cinzel",serif}
+.signature-panel:after{
+  content:"N";position:absolute;left:-8px;bottom:-56px;direction:ltr;
+  font-family:"Cinzel",serif;font-weight:800;font-size:190px;line-height:1;color:rgba(226,196,133,.07);
+}
+.signature-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.signature-top span{font-size:13.5px;font-weight:700;color:#b9bdd8}
+.signature-top b{font-family:"Cinzel",serif;font-weight:700;font-size:13px;letter-spacing:2.5px;color:var(--gold2);direction:ltr}
 .signature-panel h3{
-  font-size:clamp(24px,6.4vw,34px);line-height:1.75;font-weight:1000;
-  margin:16px 0 8px;
+  position:relative;z-index:1;margin:16px 0 8px;
+  font-size:clamp(24px,6.6vw,33px);line-height:1.7;font-weight:900;
 }
-.signature-panel h3 em{font-style:normal;color:var(--gold2)}
-.signature-panel p{color:var(--muted);font-size:16.5px;line-height:2.1;margin:0;max-width:460px;font-weight:500}
+.signature-panel h3 em{
+  font-style:normal;
+  background:var(--foil);background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.signature-panel p{position:relative;z-index:1;margin:0;max-width:460px;font-size:15px;line-height:2.15;color:#c6c9de;font-weight:500}
 .signature-bottom{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft);
+  position:relative;z-index:1;margin-top:18px;padding-top:14px;
+  border-top:1px solid rgba(226,196,133,.25);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
 }
-.signature-bottom span{font-size:13.5px;color:var(--muted);font-weight:700}
-.signature-bottom strong{font-size:15px;font-weight:900;letter-spacing:2px;direction:ltr;font-family:"Cinzel",serif}
+.signature-bottom span{font-size:13.5px;font-weight:700;color:#b9bdd8}
+.signature-bottom strong{font-size:14px;font-weight:900;color:var(--gold2)}
 
-/* ───── پروندهٔ مُهرشده: قلاب راهنما ───── */
-.vault-cta{
-  display:block;margin:40px 0 0;padding:26px 19px 22px;
-  border-radius:24px 24px 24px 7px;position:relative;
-  background:
-    radial-gradient(circle at 85% 0%,rgba(215,181,109,.13),transparent 42%),
-    linear-gradient(150deg,#161624,#0c0c13);
-  border:1px solid var(--line);
-  outline:1px solid var(--line-soft);outline-offset:5px;
-  box-shadow:var(--shadow-deep);
-  transition:transform .3s,border-color .3s;
+/* ── کارت آخر: بلیت طلایی راهنما (هوک) ── */
+.final-cta{
+  margin-top:26px;position:relative;padding:24px 20px 24px 88px;
+  background:linear-gradient(140deg,#f7ecca 0%,#ecd9a9 48%,#dfc286 100%);
+  filter:drop-shadow(0 26px 52px rgba(138,104,44,.28)) drop-shadow(0 6px 14px rgba(138,104,44,.18));
 }
-.vault-cta:hover{transform:translateY(-4px);border-color:rgba(215,181,109,.5)}
-.wax{
-  position:absolute;top:-26px;left:16px;width:88px;height:88px;
-  transform:rotate(-12deg);z-index:3;
-  filter:drop-shadow(0 10px 20px rgba(0,0,0,.6)) drop-shadow(0 0 18px rgba(215,181,109,.3));
+.final-cta:before,.final-cta:after{
+  content:"";position:absolute;left:54px;width:20px;height:20px;border-radius:50%;background:var(--paper);z-index:2;
 }
-.vault-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-left:110px}
-.vault-cta h2{
-  margin:14px 0 8px;font-size:clamp(27px,7.4vw,42px);
-  line-height:1.65;font-weight:1000;
+.final-cta:before{top:-10px}
+.final-cta:after{bottom:-10px}
+.cta-stub{
+  position:absolute;left:0;top:0;bottom:0;width:64px;z-index:1;
+  border-right:2px dashed rgba(32,35,74,.3);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
 }
-.vault-cta > p{margin:0 0 16px;color:var(--muted);font-size:16.5px;line-height:2;font-weight:500;max-width:430px}
-.dossier{display:grid;gap:9px;margin-bottom:18px}
-.vault-row{
-  display:flex;align-items:center;gap:11px;
-  padding:13px 14px;border-radius:14px;
-  background:rgba(215,181,109,.04);border:1px solid var(--line-soft);
-  font-size:16px;font-weight:800;
+.stub-word{
+  writing-mode:vertical-rl;transform:rotate(180deg);direction:ltr;
+  font-family:"Cinzel",serif;font-weight:700;font-size:14px;letter-spacing:4px;color:var(--navy);
 }
-.vault-row .lock-ic{width:22px;height:22px;flex:0 0 22px;color:var(--gold);stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.vault-row.open{border-color:rgba(215,181,109,.5);background:rgba(215,181,109,.09)}
-.vault-row.open b{font-weight:900;color:var(--gold2)}
-.vault-row .tag{
-  margin-right:auto;font-size:12.5px;font-weight:900;color:#241a08;
-  background:linear-gradient(140deg,#f3dda2,#c9a258);border-radius:20px;padding:3px 11px;
+.stub-seal{
+  width:30px;height:30px;border-radius:50%;background:var(--navy);
+  display:grid;place-items:center;box-shadow:0 0 0 2px rgba(32,35,74,.2),0 6px 12px rgba(32,35,74,.25);
 }
-.vault-row.locked span.blurred{filter:blur(5px);opacity:.8;user-select:none}
-.vault-row.locked small{margin-right:auto;font-size:12.5px;color:rgba(215,181,109,.55);font-weight:800;letter-spacing:1px}
-.vault-btn{width:100%;font-size:17px}
-.vault-btn .key-ic{width:22px;height:22px;stroke:#241a08;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.vault-note{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  margin-top:12px;font-size:13.5px;color:var(--muted);font-weight:700;
+.stub-seal b{font-family:"Cinzel",serif;font-weight:800;font-size:13px;color:var(--gold2)}
+.stub-num{font-family:"Cinzel",serif;font-weight:700;font-size:13px;color:rgba(32,35,74,.7);direction:ltr}
+.final-cta .kicker{position:relative;z-index:1;color:var(--navy);font-size:13.5px}
+.final-cta .kicker:before{background:var(--navy)}
+.final-cta h2{
+  position:relative;z-index:1;margin:12px 0 8px;
+  font-size:clamp(25px,7vw,38px);line-height:1.65;font-weight:900;color:var(--navy);
 }
-.vault-note svg{width:16px;height:16px;stroke:var(--gold);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.final-cta p{position:relative;z-index:1;margin:0 0 16px;max-width:440px;font-size:15px;line-height:2.05;color:rgba(32,35,74,.82);font-weight:600}
+.cta-path{position:relative;z-index:1;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.path-step{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;
+  font-size:13px;font-weight:800;color:rgba(32,35,74,.65);border:1px solid rgba(32,35,74,.28);
+}
+.path-step i{font-style:normal;font-size:12.5px;font-weight:900}
+.path-step.now{
+  background:var(--navy);color:#f0dda8;border-color:var(--navy);
+  box-shadow:0 8px 18px rgba(32,35,74,.3);
+}
+.path-step.now i{color:var(--gold2)}
+.path-line{width:14px;border-top:2px dashed rgba(32,35,74,.35)}
+.final-cta .btn-navy{position:relative;z-index:1}
 
-/* ───── فوتر ───── */
-.footer{padding:26px 4px 12px;display:flex;justify-content:space-between;align-items:center}
-.footer-brand{display:flex;align-items:center;gap:9px}
-.footer-brand svg{width:32px;height:32px}
-.footer-brand strong{font-size:17px;letter-spacing:3px;direction:ltr;font-family:"Cinzel",serif;color:var(--gold2);font-weight:700}
-.footer-note{text-align:left;color:var(--muted);font-size:13px;line-height:2;font-weight:600}
+/* ── فوتر ── */
+.footer{padding:28px 4px 10px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-tile{
+  width:34px;height:34px;display:grid;place-items:center;background:var(--foil);
+  clip-path:polygon(9px 0,100% 0,100% 100%,0 100%,0 9px);
+}
+.footer-tile b{font-family:"Cinzel",serif;font-weight:800;font-size:16px;color:var(--navy)}
+.footer-brand strong{font-family:"Cinzel",serif;font-weight:700;font-size:17px;letter-spacing:3px;direction:ltr}
+.footer-note{text-align:left;font-size:13px;line-height:1.9;color:var(--ink2);font-weight:600}
 
-/* ───── ناوبری پایین ───── */
+/* ── ناوبری پایین ── */
 .bottom-nav{
   position:fixed;z-index:100;bottom:0;left:0;right:0;
-  padding:9px 12px calc(9px + env(safe-area-inset-bottom));
-  background:rgba(10,10,16,.88);
-  border-top:1px solid var(--line-soft);
-  box-shadow:0 -14px 40px rgba(0,0,0,.55);
-  backdrop-filter:blur(26px) saturate(1.5);
-  -webkit-backdrop-filter:blur(26px) saturate(1.5);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(253,251,246,.92);
+  backdrop-filter:blur(24px) saturate(1.5);
+  -webkit-backdrop-filter:blur(24px) saturate(1.5);
+  box-shadow:0 -14px 40px rgba(32,35,74,.1);
 }
-.nav-inner{max-width:540px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.bottom-nav:before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--goldhair),transparent);
+}
+.nav-inner{max-width:560px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .nav-item{
-  min-height:64px;border-radius:16px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:4px;color:#8d8778;font-size:13px;font-weight:800;
-  transition:all .25s;position:relative;
+  min-height:66px;border-radius:16px;padding:6px 2px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  color:#9a9bb0;font-size:13px;font-weight:800;text-align:center;line-height:1.35;
+  position:relative;transition:all .25s;
 }
-.nav-icon{width:32px;height:32px;display:grid;place-items:center;transition:transform .25s}
+.nav-icon{width:28px;height:28px;display:grid;place-items:center;transition:transform .25s}
 .nav-icon svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .nav-item.active{
-  color:var(--gold2);
-  background:radial-gradient(circle at 50% 0%,rgba(215,181,109,.16),rgba(215,181,109,.05));
-  box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 6px 16px rgba(0,0,0,.35);
+  color:var(--gold-deep);
+  background:linear-gradient(150deg,#f6ecd6,#eddcb2);
+  box-shadow:inset 0 1px 1px #fff,0 6px 16px rgba(184,147,74,.22);
 }
-.nav-item.active .nav-icon{transform:translateY(-2px) scale(1.1)}
+.nav-item.active .nav-icon{transform:translateY(-2px) scale(1.08)}
 .nav-item.active:before{
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:26px;height:3px;border-radius:0 0 5px 5px;
-  background:linear-gradient(90deg,var(--gold-deep),var(--gold2),var(--gold-deep));
+  width:24px;height:3px;border-radius:0 0 5px 5px;background:var(--foil);
 }
 
-/* ───── ریسپانسیو ───── */
+/* ── ریسپانسیو ── */
 @media(min-width:600px){
-  main{padding-left:26px;padding-right:26px}
-  .hero{padding-top:38px}
-  .visual-stage{min-height:396px}
-  :root{--dw:168px;--dh:338px}
-  .device-holder{top:42px}
-  .tick-ring{width:330px;height:330px;left:calc(50% - 165px);top:28px}
-  .plans{gap:14px}
-  .bento{gap:13px}
+  main{padding-left:24px;padding-right:24px}
+  .hero{padding-top:36px}
+  .visual-stage{min-height:430px}
+  .device{width:190px;height:348px;left:calc(50% - 95px);top:42px}
+  .seal-hero{width:128px;height:128px;top:60px;left:20px}
+  .quick-offer{gap:14px}
+  .bento{gap:14px}
+  .bento-card{min-height:178px;padding:20px}
+  .offer-main strong{font-size:25px}
 }
 @media(max-width:370px){
   .header{padding:0 13px}
-  .header-status{font-size:12.5px;padding:8px 11px}
-  .hero-title{font-size:40px}
-  .visual-stage{min-height:330px}
-  :root{--dw:146px;--dh:294px}
-  .device-holder{top:30px}
-  .float-label{padding:9px 10px}
+  .visual-stage{min-height:380px}
+  .device{width:168px;height:312px;left:calc(50% - 84px);top:32px}
+  .seal-hero{width:96px;height:96px;top:52px;left:10px}
+  .seal-hero b{font-size:24px}
+  .float-label{padding:10px 12px}
   .float-a{right:8px}
   .float-b{left:8px}
-  .plan{padding:14px 12px}
-  .plan strong{font-size:22px}
-  .vault-top{padding-left:96px}
-  .wax{width:76px;height:76px;top:-20px}
+  .offer-main strong{font-size:21px}
+  .offer-side b{font-size:19px}
+  .final-cta{padding-left:76px}
+  .cta-stub{width:56px}
+  .final-cta:before,.final-cta:after{left:46px}
+  .path-line{display:none}
+  .stage-caption{letter-spacing:2px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{
     animation-duration:.01ms!important;animation-iteration-count:1!important;
-    scroll-behavior:auto!important;transition-duration:.01ms!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
   }
 }
 </style>
@@ -523,69 +520,16 @@ main{max-width:700px;margin:auto;padding:0 16px 118px}
 
 <body>
 <div class="ambient"></div>
-<div class="vignette"></div>
 <div class="noise"></div>
-<div class="scroll-progress"><i id="progressFill"></i></div>
-
-<!-- کتابخانهٔ امضای بصری NOVA -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6e3ac"/>
-      <stop offset=".5" stop-color="#d7b56d"/>
-      <stop offset="1" stop-color="#9a7434"/>
-    </linearGradient>
-    <symbol id="seal-solid" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="47" fill="url(#goldGrad)"/>
-      <circle cx="50" cy="50" r="47" fill="none" stroke="#f8ecc4" stroke-width="1.4" stroke-dasharray="2.6 2.1"/>
-      <circle cx="50" cy="50" r="39" fill="none" stroke="#5c451c" stroke-width="1.2" opacity=".75"/>
-      <circle cx="50" cy="50" r="33" fill="none" stroke="#5c451c" stroke-width=".7" opacity=".45"/>
-      <path d="M50 9l3.2 4-3.2 4-3.2-4zM50 83l3.2 4-3.2 4-3.2-4zM9 50l4-3.2 4 3.2-4 3.2zM83 50l4-3.2 4 3.2-4 3.2z" fill="#5c451c" opacity=".7"/>
-      <text x="50" y="63" text-anchor="middle" font-family="Cinzel,serif" font-size="38" font-weight="700" fill="#2a1e08">N</text>
-    </symbol>
-    <symbol id="seal-line" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.3" stroke-dasharray="2.6 2.1"/>
-      <circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" opacity=".8"/>
-      <circle cx="50" cy="50" r="33" fill="none" stroke="currentColor" stroke-width=".7" opacity=".5"/>
-      <path d="M50 9l3.2 4-3.2 4-3.2-4zM50 83l3.2 4-3.2 4-3.2-4zM9 50l4-3.2 4 3.2-4 3.2zM83 50l4-3.2 4 3.2-4 3.2z" fill="currentColor" opacity=".8"/>
-      <text x="50" y="63" text-anchor="middle" font-family="Cinzel,serif" font-size="38" font-weight="700" fill="currentColor">N</text>
-    </symbol>
-    <symbol id="guilloche" viewBox="0 0 400 400">
-      <g fill="none" stroke="currentColor" stroke-width=".7">
-        <ellipse cx="200" cy="200" rx="175" ry="70" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(15 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(30 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(45 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(60 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(75 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(90 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(105 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(120 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(135 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(150 200 200)" opacity=".5"/>
-        <ellipse cx="200" cy="200" rx="175" ry="70" transform="rotate(165 200 200)" opacity=".5"/>
-        <circle cx="200" cy="200" r="150" opacity=".5"/>
-        <circle cx="200" cy="200" r="120" opacity=".4"/>
-        <circle cx="200" cy="200" r="90" opacity=".3"/>
-      </g>
-    </symbol>
-    <symbol id="tickring" viewBox="0 0 300 300">
-      <circle cx="150" cy="150" r="140" fill="none" stroke="currentColor" stroke-width="7" pathLength="120" stroke-dasharray="0.55 1.45" opacity=".5"/>
-      <circle cx="150" cy="150" r="140" fill="none" stroke="currentColor" stroke-width="13" pathLength="120" stroke-dasharray="1.1 8.9" opacity=".85"/>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
-    </symbol>
-  </defs>
-</svg>
 
 <header class="header">
   <a class="brand" href="index.html">
-    <svg class="brand-seal" viewBox="0 0 100 100"><use href="#seal-solid"/></svg>
+    <span class="brand-tile"><b>N</b></span>
     <span>
-      <span class="brand-title">NOVA</span>
-      <span class="brand-caption">INSTALLMENT ATELIER</span>
+      <span class="brand-name">NOVA</span>
+      <span class="brand-sub">فروش آنلاین و اقساطی موبایل</span>
     </span>
   </a>
-  <div class="header-status"><i class="status-light"></i> پذیرشِ اقساطی فعال</div>
 </header>
 
 <main>
@@ -593,214 +537,210 @@ main{max-width:700px;margin:auto;padding:0 16px 118px}
   <!-- HERO -->
   <section class="hero">
     <div class="hero-meta">
-      <div class="kicker"><i></i> خانهٔ تخصصی خرید اقساطی موبایل</div>
-      <span class="serial">N° 001 — NOVA</span>
+      <div class="meta-label"><i></i> خرید موبایل، با یک نگاه تازه</div>
+      <span class="meta-number" data-chars>N° 001 — NOVA</span>
     </div>
 
     <h1 class="hero-title">
-      <span class="line">پرچم‌دارِ امسال،</span>
-      <span class="line"><span class="foil">امروز</span> در دستِ تو.</span>
+      <span class="block">گوشی جدیدت</span>
+      <span class="block foil-anim">دور از دسترس</span>
+      <span class="block">نیست؛ <span class="buy">بخرش!<i class="buy-stroke"></i></span></span>
     </h1>
 
     <p class="hero-intro">
-      در <strong>NOVA</strong> گوشی را همین امروز تحویل می‌گیری و هزینه‌اش را در
-      <strong>۶ یا ۱۲ قسطِ</strong> روشن، <strong>بدون سود و نزول</strong> پرداخت می‌کنی.
+      به <strong>NOVA</strong> خوش اومدی؛
+      برای خرید موبایل لازم نیست همه هزینه رو یک‌جا پرداخت کنی.
+      الان انتخاب کن و در <strong>۶ یا ۱۲ قسط</strong> پرداخت کن.
     </p>
 
     <div class="hero-actions">
-      <a href="guide.html" class="btn-gold">
-        شروعِ مسیر خرید
-        <span class="btn-arrow">←</span>
+      <a href="guide.html" class="btn-gold btn-magnetic">
+        <span class="sheen"></span>
+        شروع خرید اقساطی
+        <span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></span>
       </a>
-      <a href="guide.html" class="btn-ghost">شرایطِ اقساط</a>
+      <a href="guide.html" class="btn-quiet">بیشتر درباره NOVA <span>↗</span></a>
     </div>
 
-    <div class="visual-stage">
-      <svg class="guilloche" viewBox="0 0 400 400"><use href="#guilloche"/></svg>
-      <svg class="tick-ring" viewBox="0 0 300 300"><use href="#tickring"/></svg>
+    <div class="visual-stage cut-xl">
+      <i class="cut-edge"></i>
 
-      <div class="device-holder">
-        <div class="device">
-          <div class="device-screen">
-            <div class="device-island"></div>
-            <div class="device-brand">
-              <span>NOVA PAY</span>
-              <svg class="mini-seal" viewBox="0 0 100 100"><use href="#seal-solid"/></svg>
-            </div>
-            <div class="device-plan">پلنِ طلاییِ اقساط</div>
-            <div class="device-ticks">
+      <div class="seal seal-hero" aria-hidden="true">
+        <svg class="seal-ring" viewBox="0 0 120 120">
+          <defs><path id="ringPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(184,147,74,.4)" stroke-width="1"/>
+          <circle cx="60" cy="60" r="33" fill="none" stroke="rgba(184,147,74,.4)" stroke-width="1"/>
+          <text font-family="Cinzel,serif" font-size="8.2" letter-spacing="1.5" fill="rgba(138,104,44,.85)">
+            <textPath href="#ringPath">NOVA ✦ YOUR NEXT PHONE ✦ YOUR WAY ✦</textPath>
+          </text>
+        </svg>
+        <b>N</b>
+      </div>
+
+      <div class="device">
+        <div class="device-screen">
+          <div class="device-camera"></div>
+          <div class="device-brand">
+            <span>NOVA / SMART BUY</span>
+            <i>N</i>
+          </div>
+          <div class="device-word">امروز<br><span>انتخاب کن.</span></div>
+          <div class="device-line"></div>
+          <div class="device-line short"></div>
+          <div class="device-module">
+            <b>۶ / ۱۲</b>
+            <div class="ribbon" aria-hidden="true">
               <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
               <i></i><i></i><i></i><i></i><i></i><i></i>
             </div>
-            <div class="device-status"><span>قسط ۶ از ۱۲</span><b>۵۰٪</b></div>
-            <div class="device-line"></div>
-            <div class="device-line short"></div>
-            <div class="device-btn">پرداختِ قسطِ این ماه</div>
-            <div class="device-foot"><span>SECURE</span><span>2026</span></div>
           </div>
+          <div class="device-button">شروع تجربه خرید</div>
+          <div class="device-footer"><span>NEW EXPERIENCE</span><span>2026</span></div>
         </div>
       </div>
 
       <div class="float-label float-a">
-        <span class="float-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        </span>
-        <span><b>۶ یا ۱۲ قسط</b><small>اقساطِ ماهانهٔ منظم</small></span>
+        <span class="float-icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        <span><b>۶ یا ۱۲ قسط</b><small>پرداخت مرحله‌ای</small></span>
       </div>
       <div class="float-label float-b">
-        <span class="float-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-        </span>
-        <span><b>بدون سود</b><small>شرایطِ مکتوب و شفاف</small></span>
+        <span class="float-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 11.5 2 2 4-4.5"/></svg></span>
+        <span><b>بدون سود</b><small>شرایط شفاف خرید</small></span>
       </div>
-      <div class="stage-caption">NOVA — INSTALLMENT ATELIER</div>
+      <div class="stage-caption">YOUR NEXT PHONE. YOUR WAY.</div>
     </div>
 
-    <div class="plans">
-      <article class="plan gold">
-        <svg class="emv" viewBox="0 0 36 26"><rect x="1" y="1" width="34" height="24" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h11M1 17h11M24 9h11M24 17h11M12 1v8M12 17v8M24 1v8M24 17v8M12 9h12v8H12z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-        <span class="plan-label">مسیرِ دوازده‌ماهه</span>
-        <strong>۱۲ قسطِ سبک</strong>
-        <small>پرداختِ ماهانه، بدون فشار</small>
-        <span class="ghost">۱۲</span>
-      </article>
-      <article class="plan dark">
-        <svg class="emv" viewBox="0 0 24 26"><path d="M4 8a10 10 0 0 1 0 10M9 5a14 14 0 0 1 0 16M14 2a18 18 0 0 1 0 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <span class="plan-label">مسیرِ شش‌ماهه</span>
-        <strong>۶ قسطِ سریع</strong>
-        <small>تسویهٔ زودتر، خیالِ راحت‌تر</small>
-        <span class="ghost">۶</span>
-      </article>
-    </div>
-    <div class="plan-note">
-      <svg viewBox="0 0 100 100"><use href="#seal-line"/></svg>
-      هر دو مسیر: بدون سود و نزول؛ با شرایطِ مکتوب.
+    <div class="quick-offer">
+      <div class="offer-main cut-md">
+        <i class="cut-edge"></i>
+        <span class="offer-kicker">انتخاب با توست</span>
+        <strong>الان بخر؛<br>۱۲ قسط پرداخت کن.</strong>
+        <small>یا مسیر ۶ قسطه رو انتخاب کن.</small>
+      </div>
+      <div class="offer-side cut-md">
+        <i class="cut-edge"></i>
+        <span>یک خرید متفاوت</span>
+        <b>بدون سود<br>و نزول</b>
+        <small>پرداخت روشن و مشخص</small>
+      </div>
     </div>
   </section>
 
-  <!-- بیانیهٔ برند -->
-  <section class="brand-statement reveal">
-    <div class="statement-copy">
-      <div class="kicker"><i></i> امضای NOVA</div>
-      <h2 class="statement-title split-lines">موبایل را <em>امروز</em> ببر؛ پرداختش را ماه‌به‌ماه مدیریت کن.</h2>
+  <!-- BRAND MESSAGE -->
+  <section class="brand-statement" data-reveal>
+    <div>
+      <div class="kicker">NOVA یعنی چی؟</div>
+      <h2 class="statement-title split-scroll">
+        موبایل رو <em class="foil-anim">امروز</em> بخر؛
+        پرداختش رو مدیریت کن.
+      </h2>
     </div>
-    <svg class="statement-mark" viewBox="0 0 100 100"><use href="#seal-line"/></svg>
+    <div class="seal-mark" aria-hidden="true">
+      <svg class="seal-ring" viewBox="0 0 120 120">
+        <defs><path id="ringPath2" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(184,147,74,.4)" stroke-width="1"/>
+        <circle cx="60" cy="60" r="33" fill="none" stroke="rgba(184,147,74,.4)" stroke-width="1"/>
+        <text font-family="Cinzel,serif" font-size="8.2" letter-spacing="1.5" fill="rgba(138,104,44,.85)">
+          <textPath href="#ringPath2">NOVA ✦ YOUR NEXT PHONE ✦ YOUR WAY ✦</textPath>
+        </text>
+      </svg>
+      <b>N</b>
+    </div>
   </section>
 
-  <!-- مزایا -->
+  <!-- BENEFITS -->
   <section class="bento">
-    <article class="bento-card reveal">
-      <div class="bento-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-      </div>
+    <article class="bento-card cut-md" data-reveal>
+      <i class="cut-edge"></i>
+      <span class="bento-index">01</span>
+      <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 11.5 2 2 4-4.5"/></svg></div>
       <b>بدون سود و نزول</b>
-      <p>خرید با شرایطِ شفاف، بدون سودِ اضافه بر مبلغِ خرید.</p>
+      <p>خرید با شرایط شفاف، بدون سود اضافه بر مبلغ خرید.</p>
     </article>
 
-    <article class="bento-card reveal">
-      <div class="bento-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-      </div>
+    <article class="bento-card cut-md" data-reveal>
+      <i class="cut-edge"></i>
+      <span class="bento-index">02</span>
+      <div class="bento-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
       <b>۶ یا ۱۲ قسط</b>
-      <p>مدتِ پرداخت را متناسب با شرایطِ خودت انتخاب کن.</p>
+      <p>مدت پرداخت رو متناسب با شرایط خودت انتخاب کن.</p>
     </article>
 
-    <article class="bento-card reveal">
-      <div class="bento-icon">
-        <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
-      </div>
-      <b>شروعِ آسان</b>
-      <p>همه‌چیز داخل اپلیکیشن؛ از راهنما تا ثبتِ درخواست.</p>
+    <article class="bento-card cut-md" data-reveal>
+      <i class="cut-edge"></i>
+      <span class="bento-index">03</span>
+      <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+      <b>شروع آسان</b>
+      <p>مسیر خرید رو از داخل اپلیکیشن شروع کن.</p>
     </article>
 
-    <article class="bento-card reveal">
-      <div class="bento-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
-      </div>
-      <b>شفافیتِ مکتوب</b>
-      <p>شرایط و تعهدات، پیش از نهایی‌شدنِ خرید مقابلِ توست.</p>
+    <article class="bento-card cut-md" data-reveal>
+      <i class="cut-edge"></i>
+      <span class="bento-index">04</span>
+      <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4"/></svg></div>
+      <b>شفافیت در خرید</b>
+      <p>شرایط و تعهدات رو پیش از نهایی‌کردن خرید ببین.</p>
     </article>
   </section>
 
-  <!-- نوار اعتبار -->
-  <section class="stats reveal">
-    <div class="stat"><b class="split-chars">۰٪</b><span>سودِ اضافه</span></div>
-    <div class="stat"><b class="split-chars">۲</b><span>مسیرِ پرداخت</span></div>
-    <div class="stat"><b class="split-chars">۱۲</b><span>سقفِ اقساط</span></div>
-  </section>
-
-  <!-- پنل امضا -->
-  <section class="signature-panel reveal">
-    <svg class="sig-guilloche" viewBox="0 0 400 400"><use href="#guilloche"/></svg>
-    <svg class="sig-watermark" viewBox="0 0 100 100"><use href="#seal-line"/></svg>
+  <!-- BRAND SIGNATURE -->
+  <section class="signature-panel cut-lg" data-reveal>
+    <i class="cut-edge"></i>
     <div class="signature-top">
-      <span>نگاهِ ما به خرید موبایل</span>
-      <b>THE NOVA IDEA</b>
+      <span>نگاه ما به خرید موبایل</span>
+      <b data-chars-scroll>THE NOVA IDEA</b>
     </div>
-    <h3 class="split-lines">تکنولوژی برای زندگی‌ست؛ <em>نه برای منتظر ماندن.</em></h3>
+    <h3 class="split-scroll">تکنولوژی برای زندگیه؛<br><em class="foil-anim">نه برای منتظر موندن.</em></h3>
     <p>
-      ما فروش موبایل را با یک روشِ پرداختِ متفاوت ارائه می‌کنیم؛
-      انتخابِ امروز، پرداختِ مرحله‌ای و تجربه‌ای روشن‌تر.
+      ما فروش موبایل رو با یک روش پرداخت متفاوت ارائه می‌کنیم؛
+      انتخاب امروز، پرداخت مرحله‌ای و تجربه‌ای روشن‌تر.
     </p>
     <div class="signature-bottom">
-      <span>امضای اختصاصیِ فروشگاهِ NOVA</span>
-      <strong class="foil">NOVA ✦</strong>
+      <span>یک تجربه تازه برای خرید موبایل</span>
+      <strong>NOVA ✳</strong>
     </div>
   </section>
 
-  <!-- پروندهٔ مُهرشده → فقط راهنما -->
-  <a href="guide.html" class="vault-cta reveal">
-    <svg class="wax" viewBox="0 0 100 100"><use href="#seal-solid"/></svg>
-    <div class="vault-top">
-      <div class="kicker"><i></i> پیش از هر درخواست</div>
-      <span class="serial">GUIDE — N° 04</span>
+  <!-- FINAL CTA — بلیت طلایی راهنما -->
+  <section class="final-cta cut-lg" data-reveal>
+    <i class="cut-edge"></i>
+    <span class="sheen" style="opacity:.5"></span>
+    <div class="cta-stub" aria-hidden="true">
+      <span class="stub-word">GUIDE</span>
+      <span class="stub-seal"><b>N</b></span>
+      <span class="stub-num">01</span>
     </div>
-    <h2 class="split-lines">اول این پرونده را باز کن؛ بعد درخواست بده.</h2>
-    <p>سه نکتهٔ حیاتیِ خریدِ قسطی که دانستنشان ضروری‌ست — فقط ۴ دقیقه.</p>
-
-    <div class="dossier">
-      <div class="vault-row open">
-        <svg class="lock-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg>
-        <b>۱. قانونِ طلاییِ اقساطِ بدون سود</b>
-        <span class="tag">باز</span>
-      </div>
-      <div class="vault-row locked">
-        <svg class="lock-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-        <span class="blurred">۲. شرطِ تحویل و حقِ فسخِ قرارداد</span>
-        <small>قفل</small>
-      </div>
-      <div class="vault-row locked">
-        <svg class="lock-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-        <span class="blurred">۳. اشتباهی که بیشترِ خریدارها می‌کنند</span>
-        <small>قفل</small>
-      </div>
+    <div class="kicker">پیش از هر اقدام، یک قدم طلایی</div>
+    <h2 class="split-scroll">فاصله‌ی تو تا یک خرید حرفه‌ای، فقط یک راهنماست.</h2>
+    <p>قبل از انتخاب گوشی، راهنمای خرید NOVA را بخوان؛ همان نقشه‌ی راهی که خرید اقساطی را برایت شفاف می‌کند تا مثل یک حرفه‌ای، با اطمینان انتخاب کنی.</p>
+    <div class="cta-path" aria-hidden="true">
+      <span class="path-step now"><i>۰۱</i> راهنما</span>
+      <span class="path-line"></span>
+      <span class="path-step"><i>۰۲</i> انتخاب</span>
+      <span class="path-line"></span>
+      <span class="path-step"><i>۰۳</i> خرید</span>
     </div>
+    <a href="guide.html" class="btn-navy btn-magnetic">
+      <span class="sheen"></span>
+      خواندن راهنمای خرید
+      <span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></span>
+    </a>
+  </section>
 
-    <span class="btn-gold vault-btn">
-      <svg class="key-ic" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4"/><path d="M10.5 12.5 20 3M15 5l3 3"/></svg>
-      باز کردنِ راهنمای خرید
-      <span class="btn-arrow">←</span>
-    </span>
-    <small class="vault-note">
-      <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
-      مطالعه آزاد است؛ بدون ثبت‌نام و پرداخت.
-    </small>
-  </a>
-
-  <footer class="footer">
+  <footer class="footer" data-reveal>
     <div class="footer-brand">
-      <svg viewBox="0 0 100 100"><use href="#seal-solid"/></svg>
+      <span class="footer-tile"><b>N</b></span>
       <strong>NOVA</strong>
     </div>
     <div class="footer-note">
-      خانهٔ خرید اقساطی موبایل<br>
-      © NOVA — 2026
+      خرید موبایل به روش تازه<br>
+      © NOVA
     </div>
   </footer>
 
 </main>
 
-<!-- ناوبری پایین -->
+<!-- BOTTOM NAV -->
 <nav class="bottom-nav" aria-label="ناوبری اصلی">
   <div class="nav-inner">
 
@@ -820,7 +760,7 @@ main{max-width:700px;margin:auto;padding:0 16px 118px}
 
     <a class="nav-item" href="request.html">
       <span class="nav-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
       </span>
       <span>درخواست</span>
     </a>
@@ -835,130 +775,149 @@ main{max-width:700px;margin:auto;padding:0 16px 118px}
   </div>
 </nav>
 
-<!-- موتور انیمیشن متن: GSAP + SplitText + ScrollTrigger (رایگان، متن‌باز)
-     منبع رسمی: https://github.com/greensock/GSAP -->
+<!-- موتور انیمیشن: GSAP + SplitText + ScrollTrigger — مخزن رسمی گیت‌هاب greensock/GSAP -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/SplitText.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
 
 <script>
-/* ناوبری فعال */
+/* آیتم فعال ناوبری */
 (()=>{
   const page=location.pathname.split('/').pop()||'index.html';
   document.querySelectorAll('.nav-item').forEach(item=>{
     if(item.getAttribute('href')===page){
-      item.classList.add('active');
-      item.setAttribute('aria-current','page');
+      item.classList.add('active');item.setAttribute('aria-current','page');
     }else{
-      item.classList.remove('active');
-      item.removeAttribute('aria-current');
+      item.classList.remove('active');item.removeAttribute('aria-current');
     }
   });
 })();
 
-/* انیمیشن‌ها فقط با موتور GSAP اجرا می‌شوند؛ اگر CDN در دسترس نبود، محتوا کامل و خوانا باقی می‌ماند */
+/* ═══ سیستم موشن لوکس — GSAP SplitText (greensock/GSAP) ═══
+   فارسی: شکست در سطح «کلمه» با ماسک (حفظ چسبندگی حروف)
+   لاتین: شکست در سطح «کاراکتر» با استگر ظریف            */
 (()=>{
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce||!window.gsap||!window.SplitText||!window.ScrollTrigger)return;
+  if(!window.gsap||!window.SplitText||!window.ScrollTrigger)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   gsap.registerPlugin(SplitText,ScrollTrigger);
 
-  const init=()=>{
+  const start=()=>{
 
-    /* ۱) واژه‌نگار NOVA — ورود سه‌بعدی حرف‌به‌حرف (SplitText.chars) */
-    SplitText.create('.brand-title',{
-      type:'chars',autoSplit:true,
+    /* ۱) تیتر هیرو — ریویل ماسک‌دار کلمه‌به‌کلمه */
+    SplitText.create('.hero-title',{
+      type:'words',mask:'words',tag:'span',wordsClass:'w',
+      autoSplit:true,
       onSplit(self){
-        return gsap.from(self.chars,{
-          yPercent:80,opacity:0,rotationX:-90,transformOrigin:'50% 100% -20',
-          duration:.9,ease:'back.out(1.8)',stagger:.07,delay:.15
+        return gsap.from(self.words,{
+          yPercent:118,rotation:2.5,duration:1.05,
+          ease:'expo.out',stagger:.06,delay:.25
         });
       }
     });
 
-    /* ۲) تیتر هیرو — پردهٔ خطی ماسک‌دار (SplitText mask:'lines') */
-    gsap.utils.toArray('.hero-title .line').forEach((el,i)=>{
+    /* ۲) پلاک لاتین — کاراکتر به کاراکتر */
+    document.querySelectorAll('[data-chars]').forEach(el=>{
       SplitText.create(el,{
-        type:'lines',mask:'lines',autoSplit:true,
+        type:'chars',tag:'span',charsClass:'c',autoSplit:true,
         onSplit(self){
-          return gsap.from(self.lines,{
-            yPercent:120,duration:1.2,ease:'power4.out',stagger:.15,delay:.25+i*.18
-          });
+          return gsap.from(self.chars,{opacity:0,y:10,duration:.6,ease:'power3.out',stagger:.035,delay:.5});
+        }
+      });
+    });
+    document.querySelectorAll('[data-chars-scroll]').forEach(el=>{
+      SplitText.create(el,{
+        type:'chars',tag:'span',charsClass:'c',autoSplit:true,
+        onSplit(self){
+          return gsap.from(self.chars,{opacity:0,y:10,duration:.55,ease:'power3.out',stagger:.03,
+            scrollTrigger:{trigger:el,start:'top 90%',once:true}});
         }
       });
     });
 
-    /* ۳) تیترهای اسکرولی — همان پردهٔ لوکس، هماهنگ با اسکرول */
-    gsap.utils.toArray('.split-lines').forEach(el=>{
-      SplitText.create(el,{
-        type:'lines',mask:'lines',autoSplit:true,
-        onSplit(self){
-          return gsap.from(self.lines,{
-            yPercent:120,duration:1.05,ease:'power4.out',stagger:.12,
-            scrollTrigger:{trigger:el,start:'top 88%',once:true}
-          });
-        }
-      });
-    });
+    /* ۳) تایم‌لاین ورود سینمایی */
+    const tl=gsap.timeline({defaults:{ease:'expo.out',duration:1}});
+    tl.from('.header',{y:-26,autoAlpha:0,duration:.8},0)
+      .from('.hero-meta > *',{y:16,autoAlpha:0,stagger:.12,duration:.7},.15)
+      .from('.hero-intro',{y:24,autoAlpha:0,duration:.9},.75)
+      .from('.hero-actions > *',{y:18,autoAlpha:0,stagger:.1,duration:.7},.9)
+      .from('.visual-stage',{y:46,autoAlpha:0,scale:.975,duration:1.1},1.0)
+      .from('.device',{y:64,rotation:-16,autoAlpha:0,duration:1.2},1.15)
+      .from('.seal-hero',{scale:.6,autoAlpha:0,duration:.9,ease:'back.out(1.6)'},1.3)
+      .from('.float-label',{scale:.55,autoAlpha:0,stagger:.16,duration:.7,ease:'back.out(1.8)'},1.4)
+      .from('.ribbon .on',{scale:0,stagger:.05,duration:.4,ease:'back.out(2.2)'},1.6)
+      .from('.stage-caption',{autoAlpha:0,letterSpacing:'9px',duration:1.1},1.7)
+      .from('.quick-offer > *',{y:30,autoAlpha:0,stagger:.12,duration:.9},1.55);
 
-    /* ۴) اعداد طلایی — چرخش سه‌بعدی رقم‌به‌رقم */
-    gsap.utils.toArray('.split-chars').forEach(el=>{
-      SplitText.create(el,{
-        type:'chars',autoSplit:true,
-        onSplit(self){
-          return gsap.from(self.chars,{
-            yPercent:60,opacity:0,rotationX:-80,transformOrigin:'50% 100%',
-            duration:.8,ease:'back.out(1.7)',stagger:.08,
-            scrollTrigger:{trigger:el,start:'top 92%',once:true}
-          });
-        }
-      });
-    });
+    /* ۴) خط طلایی زیر «بخرش!» */
+    gsap.from('.buy-stroke',{scaleX:0,transformOrigin:'100% 50%',duration:.9,ease:'expo.inOut',delay:1.2});
 
-    /* ۵) ورود صحنهٔ هیرو */
-    gsap.from('.hero-intro, .hero-actions',{y:26,opacity:0,duration:1,ease:'power3.out',stagger:.12,delay:.7});
-    gsap.from('.visual-stage',{y:44,opacity:0,scale:.97,duration:1.2,ease:'power3.out',delay:.85});
-    gsap.from('.float-a',{x:30,opacity:0,duration:.9,ease:'power3.out',delay:1.5});
-    gsap.from('.float-b',{x:-30,opacity:0,duration:.9,ease:'power3.out',delay:1.65});
-    gsap.to('.float-a',{y:-8,duration:2.8,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2.4});
-    gsap.to('.float-b',{y:8,duration:3.2,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2.6});
+    /* ۵) درخشش دائمی فویل طلا */
+    gsap.to('.foil-anim',{backgroundPosition:'190% center',duration:3.4,ease:'sine.inOut',repeat:-1,yoyo:true,stagger:.4});
 
-    /* ۶) شناوری دستگاه */
-    gsap.set('.device',{rotation:-7});
-    gsap.to('.device',{y:-12,rotation:-4.5,duration:3.4,ease:'sine.inOut',yoyo:true,repeat:-1});
+    /* ۶) عبور نور از دکمه‌ها و بلیت طلایی */
+    gsap.fromTo('.sheen',{xPercent:-180},{xPercent:340,duration:1.7,ease:'power2.inOut',repeat:-1,repeatDelay:3.6,stagger:.9});
 
-    /* ۷) ظهور پلکانی کارت‌ها */
-    ScrollTrigger.batch('.reveal',{
+    /* ۷) چرخش آرام مهرهای امضا */
+    gsap.to('.seal-ring',{rotation:360,transformOrigin:'50% 50%',duration:30,ease:'none',repeat:-1});
+
+    /* ۸) شناوری گوشی و چیپ‌ها */
+    gsap.to('.device',{y:'-=9',duration:2.9,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2.4});
+    gsap.to('.float-a',{y:-7,duration:3.2,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2.3});
+    gsap.to('.float-b',{y:7,duration:3.6,ease:'sine.inOut',yoyo:true,repeat:-1,delay:2.5});
+
+    /* ۹) ریویل اسکرول دسته‌ای */
+    gsap.set('[data-reveal]',{y:38,autoAlpha:0});
+    ScrollTrigger.batch('[data-reveal]',{
       start:'top 90%',once:true,
-      onEnter:els=>gsap.from(els,{y:36,opacity:0,duration:1,ease:'power3.out',stagger:.1})
+      onEnter:els=>gsap.to(els,{y:0,autoAlpha:1,duration:1.05,ease:'power3.out',stagger:.1})
     });
 
-    /* ۸) مُهرخوردنِ پروندهٔ راهنما + تکانِ قفل‌ها */
-    const tl=gsap.timeline({scrollTrigger:{trigger:'.vault-cta',start:'top 78%',once:true}});
-    tl.from('.wax',{scale:1.8,opacity:0,rotation:-45,duration:.65,ease:'back.out(2.2)'})
-      .from('.vault-row',{x:28,opacity:0,duration:.7,ease:'power3.out',stagger:.12},'-=.25')
-      .to('.vault-row.locked .lock-ic',{rotation:-12,duration:.11,ease:'power1.inOut',yoyo:true,repeat:3,stagger:.18},'-=.15')
-      .from('.vault-btn',{y:18,opacity:0,duration:.6,ease:'power3.out'},'-=.3');
-
-    /* ۹) نوار پیشرفت طلایی */
-    gsap.to('#progressFill',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.35}});
-
-    /* ۱۰) پارالاکس نرم دستگاه (فقط دسکتاپ) */
-    if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-      const stage=document.querySelector('.visual-stage');
-      const holder=document.querySelector('.device-holder');
-      const qx=gsap.quickTo(holder,'x',{duration:.6,ease:'power3.out'});
-      const qy=gsap.quickTo(holder,'y',{duration:.6,ease:'power3.out'});
-      stage.addEventListener('pointermove',e=>{
-        const r=stage.getBoundingClientRect();
-        qx(((e.clientX-r.left)/r.width-.5)*16);
-        qy(((e.clientY-r.top)/r.height-.5)*12);
+    /* ۱۰) تیترهای اسکرولی — ماسک کلمه‌ای */
+    document.querySelectorAll('.split-scroll').forEach(el=>{
+      SplitText.create(el,{
+        type:'words',mask:'words',tag:'span',wordsClass:'w',autoSplit:true,
+        onSplit(self){
+          return gsap.from(self.words,{yPercent:115,duration:.9,ease:'expo.out',stagger:.05,
+            scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+        }
       });
-      stage.addEventListener('pointerleave',()=>{qx(0);qy(0);});
+    });
+
+    /* ۱۱) دکمه‌های مغناطیسی + پارالاکس ویترین (فقط دسکتاپ/پوینتر دقیق) */
+    if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+      document.querySelectorAll('.btn-magnetic').forEach(btn=>{
+        const qx=gsap.quickTo(btn,'x',{duration:.4,ease:'power3'});
+        const qy=gsap.quickTo(btn,'y',{duration:.4,ease:'power3'});
+        btn.addEventListener('pointermove',e=>{
+          const r=btn.getBoundingClientRect();
+          qx((e.clientX-r.left-r.width/2)*.18);
+          qy((e.clientY-r.top-r.height/2)*.3);
+        });
+        btn.addEventListener('pointerleave',()=>gsap.to(btn,{x:0,y:0,duration:.7,ease:'elastic.out(1,.5)'}));
+      });
+      const stage=document.querySelector('.visual-stage');
+      if(stage){
+        const dx=gsap.quickTo('.device','x',{duration:.6,ease:'power3'});
+        const dr=gsap.quickTo('.device','rotation',{duration:.6,ease:'power3'});
+        const ax=gsap.quickTo('.float-a','x',{duration:.7,ease:'power3'});
+        const bx=gsap.quickTo('.float-b','x',{duration:.7,ease:'power3'});
+        stage.addEventListener('pointermove',e=>{
+          const r=stage.getBoundingClientRect();
+          const x=(e.clientX-r.left)/r.width-.5;
+          dx(x*12);dr(-7+x*3);ax(x*-7);bx(x*-5);
+        });
+        stage.addEventListener('pointerleave',()=>{dx(0);dr(-7);ax(0);bx(0);});
+      }
     }
+
+    window.addEventListener('load',()=>ScrollTrigger.refresh());
   };
 
-  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(init);
+  /* اجرای موشن بعد از آماده‌شدن فونت‌ها (با سقف انتظار امن) */
+  if(document.fonts&&document.fonts.ready){
+    Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1600))]).then(start);
+  }else start();
 })();
 </script>
 </body>
-   </html>
+</html>
